@@ -33,34 +33,43 @@ SetBorderColor 0 0 0 0
 #LIGUES
 
 
+
 # SECTION: Précurseur
 #Morceaux d'objet unique de Precurseur
 Show
 Class Piece
-SetBackgroundColor 30 144 255
+SetBackgroundColor 58 124 244
 SetTextColor 0 0 0
-SetBorderColor 30 144 255
+SetBorderColor 58 124 244
 #Currency dont on n'obtient que des fragments
 Show
 Class Currency
-BaseType "Orb of Annulment" "Orb of Binding" "Orb of Horizons" "Harbinger's Orb" "Engineer's Orb" "Ancient Orb"
+BaseType "Orb of Binding" "Orb of Horizons" "Harbinger's Orb" "Engineer's Orb" "Ancient Orb"
 SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
+SetTextColor 58 124 244
 SetBorderColor 255 255 255 212
 #Morceaux de Currency spécifiques aux Precurseurs ou rare
 Show
 Class Currency
 BaseType "Annulment Shard" "Ancient Shard" "Mirror Shard" "Exalted Shard" 
 SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 30 144 255
+SetTextColor 58 124 244
+SetBorderColor 58 124 244
 #Morceaux de Currency communes
 Show
 Class Currency
 BaseType "Binding Shard" "Horizon Shard" "Harbinger's Shard" "Engineer's Shard" "Chaos Shard" "Regal Shard"
 SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
+SetTextColor 58 124 244
 SetBorderColor 0 0 0 0
+# SECTION: Héritage
+#Reliquaire
+Show
+Class "Misc Map Items"
+BaseType "Ancient Reliquary"
+SetBackgroundColor 255 255 255
+SetTextColor 229 160 12
+SetBorderColor 229 160 12
 # SECTION: Brèche
 #Blessing des Breachlords
 Show
@@ -88,29 +97,51 @@ SetBorderColor 0 0 0 0
 Show
 Class Currency
 BaseType Deafening Horror Delirium Hysteria Insanity
-SetBackgroundColor 210 0 220
+SetBackgroundColor 184 218 242
 SetTextColor 0 0 0
-SetBorderColor 210 0 220
+SetBorderColor 184 218 242
 #Essence de Corruption
 Show
 Class Currency
 BaseType Remnant
 SetBackgroundColor 0 0 0 212
-SetTextColor 210 0 220
+SetTextColor 184 218 242
 SetBorderColor 255 40 0
 #Meilleurs tiers d'Essence obtenables normalement
 Show
 Class Currency
 BaseType Shrieking Screaming
 SetBackgroundColor 0 0 0 212
-SetTextColor 210 0 220
-SetBorderColor 210 0 220
+SetTextColor 184 218 242
+SetBorderColor 184 218 242
 #Autres tiers d'Essences
 Show
 Class Currency
 BaseType Wailing Whispering Muttering Weeping
 SetBackgroundColor 0 0 0 212
-SetTextColor 210 0 220
+SetTextColor 184 218 242
+SetBorderColor 0 0 0 0
+# SECTION: Prophétie
+#Fragment pour ouvrir la Court Pale
+Show
+Class "Map Fragment"
+BaseType "'s Key"
+SetBackgroundColor 198 180 246
+SetTextColor 0 0 0
+SetBorderColor 198 180 246
+#Sealed Prophecy
+Show
+Class Currency
+BaseType Prophecy
+SetBackgroundColor 0 0 0 212
+SetTextColor 198 180 246
+SetBorderColor 255 255 255 212
+#Pièce d'argent
+Show
+Class Currency
+BaseType "Silver Coin"
+SetBackgroundColor 0 0 0 212
+SetTextColor 198 180 246
 SetBorderColor 0 0 0 0
 # SECTION: Perandus
 #Pièce de Perandus
@@ -118,30 +149,8 @@ Show
 Class Currency
 BaseType "Perandus Coin"
 SetBackgroundColor 0 0 0 212
-SetTextColor 255 159 0
+SetTextColor 238 158 7
 SetBorderColor 255 255 255 212
-# SECTION: Prophétie
-#Fragment pour ouvrir la Court Pale
-Show
-Class "Map Fragment"
-BaseType "'s Key"
-SetBackgroundColor 192 128 254
-SetTextColor 0 0 0
-SetBorderColor 192 128 254
-#Sealed Prophecy
-Show
-Class Currency
-BaseType Prophecy
-SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
-SetBorderColor 255 255 255 212
-#Pièce d'argent
-Show
-Class Currency
-BaseType "Silver Coin"
-SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
-SetBorderColor 0 0 0 0
 # SECTION: Talisman
 #Amulettes spécifiques à Talisman
 Show
@@ -150,14 +159,6 @@ BaseType Talisman
 SetBackgroundColor 0 0 0 212
 SetTextColor 98 128 0
 SetBorderColor 98 128 0
-# SECTION: Héritage
-#Reliquaire
-Show
-Class "Misc Map Items"
-BaseType "Ancient Reliquary"
-SetBackgroundColor 255 255 255
-SetTextColor 191 90 0
-SetBorderColor 191 90 0
 
 
 #EXTENSIONS
@@ -279,7 +280,7 @@ PlayAlertSound 11 220
 #T2
 Show
 Class Currency
-BaseType "Divine Orb" Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism"
+BaseType "Divine Orb" Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment"
 SetBackgroundColor 170 158 130
 SetTextColor 0 0 0
 SetBorderColor 170 158 130
@@ -426,7 +427,7 @@ SetBorderColor 27 162 155
 #Gemmes avec trop peu de qualité
 Show
 Class "Skill Gems"
-Quality  > 0
+Quality > 0
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 255 255 255 212
@@ -805,8 +806,8 @@ SetBorderColor 0 0 0 0
 #6>11
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare
-DropLevel >= 6
+Rarity = Rare 
+DropLevel >= 6 
 ItemLevel <= 18
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -814,8 +815,8 @@ SetBorderColor 0 0 0 0
 #17>18
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare
-DropLevel >= 17
+Rarity = Rare 
+DropLevel >= 17 
 ItemLevel <= 25
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -823,8 +824,8 @@ SetBorderColor 0 0 0 0
 #21>25
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare
-DropLevel >= 21
+Rarity = Rare 
+DropLevel >= 21 
 ItemLevel <= 28
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -832,8 +833,8 @@ SetBorderColor 0 0 0 0
 #28>28
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare
-DropLevel >= 28
+Rarity = Rare 
+DropLevel >= 28 
 ItemLevel <= 32
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -841,8 +842,8 @@ SetBorderColor 0 0 0 0
 #32>32
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare
-DropLevel >= 32
+Rarity = Rare 
+DropLevel >= 32 
 ItemLevel <= 35
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -1116,7 +1117,7 @@ SetBorderColor 0 0 0 0
 #Meta mais nécessite mod Zana
 Hide
 BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash"
-Rarity = Normal
+Rarity = Normal 
 ItemLevel > 60
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -1135,34 +1136,34 @@ Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes
 Rarity = Normal
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
+SetTextColor 127 127 127
 SetBorderColor 0 0 0 0
 #avec la cape
 Hide
 Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Magic
-Identified True
+Identified True 
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
+SetTextColor 127 127 127
 SetBorderColor 0 0 0 0
 #avec le joyaux
 Hide
 Class Wands Bows
-Rarity = Normal
+Rarity = Normal 
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
-SetBorderColor 192 128 254
+SetTextColor 127 127 127
+SetBorderColor 127 127 127
 #avec la cape et le joyaux
 Hide
 Class Wands Bows
 Rarity = Magic
-Identified True
+Identified True 
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
-SetTextColor 192 128 254
-SetBorderColor 192 128 254
+SetTextColor 127 127 127
+SetBorderColor 127 127 127
 # SECTION: Cacher
 #Laisser par terre
 Hide
