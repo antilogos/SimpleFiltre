@@ -75,22 +75,22 @@ SetBorderColor 229 160 12
 Show
 Class Currency
 BaseType "Blessing of"
-SetBackgroundColor 129 15 213
+SetBackgroundColor 160 90 255
 SetTextColor 0 0 0
-SetBorderColor 129 15 213
+SetBorderColor 160 90 255
 #Stone une fois 100 splinter réunis
 Show
 Class "Misc Map Items"
 BaseType Breachstone
 SetBackgroundColor 0 0 0 255
-SetTextColor 129 15 213
+SetTextColor 160 90 255
 SetBorderColor 255 255 255 212
 #Splinter
 Show
 Class Currency
 BaseType Splinter
 SetBackgroundColor 0 0 0 255
-SetTextColor 129 15 213
+SetTextColor 160 90 255
 SetBorderColor 0 0 0 0
 # SECTION: Essence
 #Essences "Unique" obtenable uniquement par corruption
@@ -427,7 +427,7 @@ SetBorderColor 27 162 155
 #Gemmes avec trop peu de qualité
 Show
 Class "Skill Gems"
-Quality > 0
+Quality  > 0
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 255 255 255 212
@@ -806,8 +806,8 @@ SetBorderColor 0 0 0 0
 #6>11
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare 
-DropLevel >= 6 
+Rarity = Rare
+DropLevel >= 6
 ItemLevel <= 18
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -815,8 +815,8 @@ SetBorderColor 0 0 0 0
 #17>18
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare 
-DropLevel >= 17 
+Rarity = Rare
+DropLevel >= 17
 ItemLevel <= 25
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -824,8 +824,8 @@ SetBorderColor 0 0 0 0
 #21>25
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare 
-DropLevel >= 21 
+Rarity = Rare
+DropLevel >= 21
 ItemLevel <= 28
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -833,8 +833,8 @@ SetBorderColor 0 0 0 0
 #28>28
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare 
-DropLevel >= 28 
+Rarity = Rare
+DropLevel >= 28
 ItemLevel <= 32
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -842,8 +842,8 @@ SetBorderColor 0 0 0 0
 #32>32
 Show
 Class Body Gloves Helmets Boots Shield
-Rarity = Rare 
-DropLevel >= 32 
+Rarity = Rare
+DropLevel >= 32
 ItemLevel <= 35
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -1117,7 +1117,7 @@ SetBorderColor 0 0 0 0
 #Meta mais nécessite mod Zana
 Hide
 BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash"
-Rarity = Normal 
+Rarity = Normal
 ItemLevel > 60
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -1142,7 +1142,7 @@ SetBorderColor 0 0 0 0
 Hide
 Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Magic
-Identified True 
+Identified True
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 127 127 127
@@ -1150,7 +1150,7 @@ SetBorderColor 0 0 0 0
 #avec le joyaux
 Hide
 Class Wands Bows
-Rarity = Normal 
+Rarity = Normal
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 127 127 127
@@ -1159,7 +1159,7 @@ SetBorderColor 127 127 127
 Hide
 Class Wands Bows
 Rarity = Magic
-Identified True 
+Identified True
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 127 127 127
