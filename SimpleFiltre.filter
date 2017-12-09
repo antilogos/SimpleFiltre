@@ -34,15 +34,15 @@ SetBorderColor 0 0 0 0
 
 
 # SECTION: Abysse
-#Ceinture Carcan Stygien
+#Ceinture de Abysse Carcan Stygien
 Show
-Class Ceinture
+BaseType "Stygian Vise"
 SetBackgroundColor 1 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 0 0 0 0
 #Joyaux Abyssaux
 Show
-Class "Joyau abyssal"
+Class "Abyss Jewel"
 SetBackgroundColor 1 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 169 189 149
@@ -53,27 +53,23 @@ Class Piece
 SetBackgroundColor 58 124 244
 SetTextColor 0 0 0
 SetBorderColor 58 124 244
-#
-Objet monétaire dont on n'obtient que des fragments
+#Currency dont on n'obtient que des fragments
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Orb of Binding" "Orb of Horizons" "Harbinger's Orb" "Engineer's Orb" "Ancient Orb"
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 255 255 255 212
-#Morceaux d'Objet monétaire spécifiques aux Precurseurs ou rare
+#Morceaux de Currency spécifiques aux Precurseurs ou rare
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Annulment Shard" "Ancient Shard" "Mirror Shard" "Exalted Shard" 
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 58 124 244
-#Morceaux d'Objet monétaire communes
+#Morceaux de Currency communes
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Binding Shard" "Horizon Shard" "Harbinger's Shard" "Engineer's Shard" "Chaos Shard" "Regal Shard"
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
@@ -89,7 +85,7 @@ SetBorderColor 229 160 12
 # SECTION: Brèche
 #Blessing des Breachlords
 Show
-Class "Objet monétaire"
+Class Currency
 BaseType "Blessing of"
 SetBackgroundColor 160 90 255
 SetTextColor 0 0 0
@@ -103,8 +99,7 @@ SetTextColor 160 90 255
 SetBorderColor 255 255 255 212
 #Splinter
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Splinter
 SetBackgroundColor 0 0 0 255
 SetTextColor 160 90 255
@@ -112,32 +107,28 @@ SetBorderColor 0 0 0 0
 # SECTION: Essence
 #Essences "Unique" obtenable uniquement par corruption
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Deafening Horror Delirium Hysteria Insanity
 SetBackgroundColor 184 218 242
 SetTextColor 0 0 0
 SetBorderColor 184 218 242
 #Essence de Corruption
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Remnant
 SetBackgroundColor 0 0 0 212
 SetTextColor 184 218 242
 SetBorderColor 255 40 0
 #Meilleurs tiers d'Essence obtenables normalement
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Shrieking Screaming
 SetBackgroundColor 0 0 0 212
 SetTextColor 184 218 242
 SetBorderColor 184 218 242
 #Autres tiers d'Essences
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Wailing Whispering Muttering Weeping
 SetBackgroundColor 0 0 0 212
 SetTextColor 184 218 242
@@ -152,16 +143,14 @@ SetTextColor 0 0 0
 SetBorderColor 198 180 246
 #Sealed Prophecy
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType Prophecy
 SetBackgroundColor 0 0 0 212
 SetTextColor 198 180 246
 SetBorderColor 255 255 255 212
 #Pièce d'argent
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Silver Coin"
 SetBackgroundColor 0 0 0 212
 SetTextColor 198 180 246
@@ -169,8 +158,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Perandus
 #Pièce de Perandus
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Perandus Coin"
 SetBackgroundColor 0 0 0 212
 SetTextColor 238 158 7
@@ -191,7 +179,7 @@ SetBorderColor 98 128 0
 # SECTION: Atlas
 #Objet de l'Ancien
 Show
-ElderItem True
+ElderItem True 
 SetBackgroundColor 88 0 179
 SetTextColor 0 0 0
 SetBorderColor 88 0 179
@@ -238,7 +226,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Divination Card
 #Mythique
 Show
-Class "Carte divinatoire"
+Class Divination Card
 BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward"
 SetBackgroundColor 255 255 255
 SetTextColor 170 230 230
@@ -246,28 +234,28 @@ SetBorderColor 170 230 230
 SetFontSize 30
 #Rare
 Show
-Class "Carte divinatoire"
+Class Divination Card
 BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff" "The Wolven King's Bite"
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
 #Peu Commune
 Show
-Class "Carte divinatoire"
+Class Divination Card
 BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
 #Inintéressante
 Show
-Class "Carte divinatoire"
+Class Divination Card
 BaseType "The Incantation" "The Carrion Crow" "Thunderous Skies"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 0 0 0 0
 #Commune
 Show
-Class "Carte divinatoire"
+Class Divination Card
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 0 0 0 0
@@ -305,11 +293,10 @@ Class Quest
 SetBackgroundColor 0 0 0 212
 SetTextColor 74 230 58
 SetBorderColor 0 0 0 0
-# SECTION: Objet monétaire
+# SECTION: Currency
 #T1
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Exalted Orb"
 SetBackgroundColor 255 255 255
 SetTextColor 170 158 130
@@ -318,32 +305,28 @@ SetFontSize 30
 PlayAlertSound 11 220
 #T2
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Divine Orb" Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment"
 SetBackgroundColor 170 158 130
 SetTextColor 0 0 0
 SetBorderColor 170 158 130
 #T3
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Jeweller's Orb" "Glassblower's Bauble" "Blacksmith's Whetstone" "Cartographer's Chisel"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 #Inintéressante
 Show
-Class 
-"Objet monétaire"
+Class Currency
 BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
 #T4
 Show
-Class 
-"Objet monétaire"
+Class Currency
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
@@ -386,13 +369,13 @@ SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
 #Map Jaune qui ne sont pas obtenables par évolution
-Show
-Class Maps
-BaseType "Arachnid Tomb Map" "Reef Map" "Torture Chamber Map" "High Gardens Map" "Barrows Map" "Bog Map" "Thicket Map" "Ramparts Map" "Museum Map"
-ItemLevel < 78
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 100 150
+#Show
+#Class Maps
+#BaseType "Arachnid Tomb Map" "Reef Map" "Torture Chamber Map" "High Gardens Map" "Barrows Map" "Bog Map" "Thicket Map" "Ramparts Map" "Museum Map"
+#ItemLevel < 78
+#SetBackgroundColor 0 0 0 255
+#SetTextColor 0 100 150
+#SetBorderColor 0 100 150
 #Map Jaune dans les Maps Jaunes
 Show
 Class Maps
@@ -410,12 +393,12 @@ SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
 #Map Blanche qui ne sont pas obtenable par évolution
-Show
-Class Maps
-BaseType "Cavern Map" "Grotto Map" "Academy Map" "Pit Map" "Primordial Pool Map" "Marshes Map"
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 100 150
+#Show
+#Class Maps
+#BaseType "Cavern Map" "Grotto Map" "Academy Map" "Pit Map" "Primordial Pool Map" "Marshes Map"
+#SetBackgroundColor 0 0 0 255
+#SetTextColor 0 100 150
+#SetBorderColor 0 100 150
 #Map Blanche dans les Maps Jaune
 Show
 Class Maps
@@ -455,28 +438,28 @@ SetBorderColor 0 0 0 0
 # SECTION: Gemme
 #Gemmes non achetables chez les marchands
 Show
-Class "Gemmes"
+Class "Skill Gems"
 BaseType "Portal" "Empower" "Enlighten" "Vaal Breach" "Enhance" "Detonate Mines" "Added Chaos"
 SetBackgroundColor 27 162 155
 SetTextColor 0 0 0
 SetBorderColor 27 162 155
 #Gemmes avec suffisamment de qualité
 Show
-Class "Gemmes"
+Class "Skill Gems"
 Quality > 15
 SetBackgroundColor 27 162 155
 SetTextColor 0 0 0
 SetBorderColor 27 162 155
 #Gemmes avec trop peu de qualité
 Show
-Class "Gemmes"
+Class "Skill Gems"
 Quality  > 0
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 255 255 255 212
 #Gemmes qui coûte une alch chez les marchands
 Show
-Class "Gemmes"
+Class "Skill Gems"
 DropLevel >= 38
 ItemLevel <= 67
 SetBackgroundColor 0 0 0 212
@@ -484,21 +467,21 @@ SetTextColor 27 162 155
 SetBorderColor 0 0 0 0
 #Gemmes Corrompues
 Show
-Class "Gemmes"
+Class "Skill Gems"
 BaseType Vaal
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 255 40 0
 #Afficher les gemmes pendant le leveling
 Show
-Class "Gemmes"
+Class "Skill Gems"
 ItemLevel <= 50
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 0 0 0 0
 #Gemmes qui ne sont plus intéressantes
 Hide
-Class "Gemmes"
+Class "Skill Gems"
 ItemLevel > 50
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
@@ -511,7 +494,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Chance
 #Meta
 Show
-BaseType "Sorcerer Boots" "Stibnite Flask" "Ebony Tower Shield" "Glorious Plate" "Sapphire Flask" "Carved Wand" "Gold Amulet" "Rawhide Tower Shield"
+BaseType "Sorcerer Boots" "Stibnite Flask" "Ebony Tower Shield" "Glorious Plate" "Sapphire Flask"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -645,7 +628,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Artisanat
 #Base haut-niveau spécifique aux Cartes rare
 Show
-Class Amulet Ring Ceinture Quiver Helmet Boots Gloves
+Class Amulet Ring Belt Quiver Helmet Boots Gloves
 DropLevel > 75
 SetBackgroundColor 255 255 255
 SetTextColor 30 144 255
@@ -653,7 +636,7 @@ SetBorderColor 30 144 255
 PlayAlertSound 16 180
 #Base haut-niveau spécifique aux Cartes commune
 Show
-Class Amulet Ring Ceinture Quiver Helmet Boots Gloves
+Class Amulet Ring Belt Quiver Helmet Boots Gloves
 DropLevel > 71
 SetBackgroundColor 30 144 255
 SetTextColor 0 0 0
@@ -661,7 +644,7 @@ SetBorderColor 30 144 255
 PlayAlertSound 16
 #Meilleure base et Niveau d'objet - Bijoux
 Show
-Class Amulet Ring Ceinture Quiver
+Class Amulet Ring Belt Quiver
 Rarity < Rare
 DropLevel >= 62
 ItemLevel >= 84
@@ -816,7 +799,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Amélioration
 #Objet corrompu pouvant avoir un implicit intéressant
 Show
-Class Amulet Ceinture Quiver Gloves
+Class Amulet Belt Quiver Gloves
 Corrupted True
 ItemLevel >= 68
 SetBackgroundColor 0 0 0 212
@@ -832,7 +815,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 0 0 0
 #Bijoux, indémodable
 Show
-Class Amulet Ring Ceinture Quiver
+Class Amulet Ring Belt Quiver
 Rarity = Rare
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -1200,7 +1183,7 @@ SetTextColor 127 127 127
 SetBorderColor 127 127 127
 #avec la cape et le joyaux
 Hide
-Class Ceinture
+Class Wands Bows
 Rarity = Magic
 Identified True
 SetFontSize 16
@@ -1210,7 +1193,7 @@ SetBorderColor 127 127 127
 # SECTION: Cacher
 #Laisser par terre
 Hide
-Class Amulet Ring Ceinture Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre
+Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre
 SetFontSize 16
 SetBackgroundColor 0 0 0 76
 SetBorderColor 0 0 0 0
