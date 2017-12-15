@@ -33,7 +33,19 @@ SetBorderColor 0 0 0 0
 #LIGUES
 
 
-
+# SECTION: Abysse
+#Ceinture de Abysse Carcan Stygien
+Show
+BaseType "Stygian Vise"
+SetBackgroundColor 1 0 0 212
+SetTextColor 169 189 149
+SetBorderColor 0 0 0 0
+#Joyaux Abyssaux
+Show
+Class "Abyss Jewel"
+SetBackgroundColor 1 0 0 212
+SetTextColor 169 189 149
+SetBorderColor 169 189 149
 # SECTION: Précurseur
 #Morceaux d'objet unique de Precurseur
 Show
@@ -164,6 +176,20 @@ SetBorderColor 98 128 0
 #EXTENSIONS
 
 
+# SECTION: Atlas
+#Objet de l'Ancien
+Show
+ElderItem True 
+SetBackgroundColor 88 0 179
+SetTextColor 0 0 0
+SetBorderColor 88 0 179
+# SECTION: Atlas
+#Objet du Façonneur
+Show
+ShaperItem True
+SetBackgroundColor 88 0 179
+SetTextColor 0 0 0
+SetBorderColor 88 0 179
 # SECTION: Pantheon
 #Vessel remplie
 Show
@@ -276,7 +302,7 @@ SetBackgroundColor 255 255 255
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
-PlayAlertSound 11 220
+PlayAlertSound ShExalted 110
 #T2
 Show
 Class Currency
@@ -342,14 +368,7 @@ ItemLevel > 82
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-#Map Jaune qui ne sont pas obtenables par évolution
-Show
-Class Maps
-BaseType "Arachnid Tomb Map" "Reef Map" "Torture Chamber Map" "High Gardens Map" "Barrows Map" "Bog Map" "Thicket Map" "Ramparts Map" "Museum Map"
-ItemLevel < 78
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 100 150
+
 #Map Jaune dans les Maps Jaunes
 Show
 Class Maps
@@ -366,13 +385,7 @@ ItemLevel > 77
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-#Map Blanche qui ne sont pas obtenable par évolution
-Show
-Class Maps
-BaseType "Cavern Map" "Grotto Map" "Academy Map" "Pit Map" "Primordial Pool Map" "Marshes Map"
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 100 150
+
 #Map Blanche dans les Maps Jaune
 Show
 Class Maps
@@ -468,7 +481,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Chance
 #Meta
 Show
-BaseType "Sorcerer Boots" "Stibnite Flask" "Ebony Tower Shield" "Glorious Plate" "Sapphire Flask"
+BaseType "Sorcerer Boots" "Ebony Tower Shield" "Glorious Plate" "Sapphire Flask" "Rawhide Tower Shield" "Gold Amulet"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -658,7 +671,7 @@ SetTextColor 200 0 100
 SetBorderColor 0 0 0 0
 #Objets impromptus pouvant apartir à des Bataillon via Prophétie
 Show
-Class "Helmets" "Boots" "Gloves" Claw Dagger Wand "Hand" Bow Stave Sceptre
+Class "Helmets" "Boots" "Gloves" 
 Corrupted False
 Identified True
 Rarity = Magic
@@ -1124,7 +1137,7 @@ SetTextColor 255 159 0
 SetBorderColor 255 255 255 212
 #Non-Meta
 Hide
-BaseType "Occultist's Vestment" "Goathide Boots" "Close Helmet" "Prophecy Wand"
+BaseType "Occultist's Vestment" "Goathide Boots" "Close Helmet" "Prophecy Wand" "Stibnite Flask"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
