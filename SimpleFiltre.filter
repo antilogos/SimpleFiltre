@@ -368,7 +368,14 @@ ItemLevel > 82
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-
+#Map Jaune qui ne sont pas obtenables par évolution
+Show
+Class Maps
+BaseType "Phantasmagoria Map" "Gardens Map" "Mineral Pools Map" "Temple Map" "Shipyard Map"
+ItemLevel < 78
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 0 100 150
 #Map Jaune dans les Maps Jaunes
 Show
 Class Maps
@@ -385,7 +392,14 @@ ItemLevel > 77
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-
+#Map Blanche qui ne sont pas obtenable par évolution
+Show
+Class Maps
+BaseType "Arid Lake Map" "Pen Map" "Port Map" "Burial Chambers Map" "Leyline Map" "Cells Map"
+ItemLevel <73
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 0 100 150
 #Map Blanche dans les Maps Jaune
 Show
 Class Maps
