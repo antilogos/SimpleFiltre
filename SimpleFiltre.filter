@@ -180,15 +180,15 @@ SetBorderColor 98 128 0
 #Objet de l'Ancien
 Show
 ElderItem True 
-SetBackgroundColor 88 0 179
-SetTextColor 0 0 0
+SetBackgroundColor 0 0 0 255
+SetTextColor 88 0 179
 SetBorderColor 88 0 179
 # SECTION: Atlas
 #Objet du Façonneur
 Show
 ShaperItem True
-SetBackgroundColor 88 0 179
-SetTextColor 0 0 0
+SetBackgroundColor 0 0 0 255
+SetTextColor 88 0 179
 SetBorderColor 88 0 179
 # SECTION: Pantheon
 #Vessel remplie
@@ -303,10 +303,20 @@ SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
 PlayAlertSound ShExalted 110
+# SECTION: Currency
+#T1.5
+Show
+Class Currency
+BaseType "Divine Orb"
+SetBackgroundColor 255 255 255
+SetTextColor 170 158 130
+SetBorderColor 170 158 130
+SetFontSize 30
+PlayAlertSound ShDivine
 #T2
 Show
 Class Currency
-BaseType "Divine Orb" Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment"
+BaseType Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment"
 SetBackgroundColor 170 158 130
 SetTextColor 0 0 0
 SetBorderColor 170 158 130
@@ -396,7 +406,7 @@ SetBorderColor 0 0 0 0
 Show
 Class Maps
 BaseType "Arid Lake Map" "Pen Map" "Port Map" "Burial Chambers Map" "Leyline Map" "Cells Map"
-ItemLevel <73
+ItemLevel < 73
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
@@ -629,15 +639,15 @@ SetBorderColor 0 0 0 0
 # SECTION: Artisanat
 #Base haut-niveau spécifique aux Cartes rare
 Show
-Class Amulet Ring Belt Quiver Helmet Boots Gloves
-DropLevel > 75
+Class Ring
+DropLevel > 79
 SetBackgroundColor 255 255 255
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
 PlayAlertSound 16 180
 #Base haut-niveau spécifique aux Cartes commune
 Show
-Class Amulet Ring Belt Quiver Helmet Boots Gloves
+Class Amulet Belt Helmet Boots Gloves
 DropLevel > 71
 SetBackgroundColor 30 144 255
 SetTextColor 0 0 0
