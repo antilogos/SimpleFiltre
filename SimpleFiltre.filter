@@ -302,7 +302,7 @@ SetBackgroundColor 255 255 255
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
-PlayAlertSound ShExalted 110
+PlayAlertSound ShExalted 150
 # SECTION: Currency
 #T1.5
 Show
@@ -312,7 +312,7 @@ SetBackgroundColor 255 255 255
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
-PlayAlertSound ShDivine
+PlayAlertSound ShDivine 125
 #T2
 Show
 Class Currency
@@ -651,6 +651,14 @@ Class Amulet Belt Helmet Boots Gloves
 DropLevel > 71
 SetBackgroundColor 30 144 255
 SetTextColor 0 0 0
+SetBorderColor 30 144 255
+PlayAlertSound 16
+#Base haut-niveau spécifique aux Cartes commune
+Show
+Class Amulet Belt Helmet Boots Gloves
+BaseType "Two-Toned"
+SetBackgroundColor 0 0 0 212
+SetTextColor 30 144 255
 SetBorderColor 30 144 255
 PlayAlertSound 16
 #Meilleure base et Niveau d'objet - Bijoux
