@@ -1,4 +1,4 @@
-# SECTION: Unique
+#SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
 BaseType "Mirror of Kalandra"
@@ -33,7 +33,15 @@ SetBorderColor 0 0 0 0
 #LIGUES
 
 
-# SECTION: Abysse
+# SECTION: Bestiary
+#Orbe pour échanger et Filet
+Show
+Class Currency
+BaseType "Bestiary Orb" "Net"
+SetBackgroundColor 0 0 0 212
+SetTextColor 183 172 118
+SetBorderColor 0 0 0 0
+# SECTION: Abyss
 #Ceinture de Abysse Carcan Stygien
 Show
 BaseType "Stygian Vise"
@@ -46,7 +54,7 @@ Class "Abyss Jewel"
 SetBackgroundColor 1 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 169 189 149
-# SECTION: Précurseur
+# SECTION: Harbinger
 #Morceaux d'objet unique de Precurseur
 Show
 Class Piece
@@ -74,7 +82,7 @@ BaseType "Binding Shard" "Horizon Shard" "Harbinger's Shard" "Engineer's Shard" 
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 0 0 0 0
-# SECTION: Héritage
+# SECTION: Legacy
 #Reliquaire
 Show
 Class "Misc Map Items"
@@ -82,7 +90,7 @@ BaseType "Ancient Reliquary"
 SetBackgroundColor 255 255 255
 SetTextColor 229 160 12
 SetBorderColor 229 160 12
-# SECTION: Brèche
+# SECTION: Breach
 #Blessing des Breachlords
 Show
 Class Currency
@@ -133,7 +141,7 @@ BaseType Wailing Whispering Muttering Weeping
 SetBackgroundColor 0 0 0 212
 SetTextColor 184 218 242
 SetBorderColor 0 0 0 0
-# SECTION: Prophétie
+# SECTION: Prophecy
 #Fragment pour ouvrir la Court Pale
 Show
 Class "Map Fragment"
@@ -505,7 +513,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Chance
 #Meta
 Show
-BaseType "Sorcerer Boots" "Ebony Tower Shield" "Glorious Plate" "Sapphire Flask" "Rawhide Tower Shield" "Gold Amulet"
+BaseType "Sorcerer Boots" "Ebony Tower Shield" "Sapphire Flask" "Rawhide Tower Shield" "Gold Amulet"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -656,7 +664,7 @@ PlayAlertSound 16
 #Base haut-niveau spécifique aux Cartes commune
 Show
 Class Amulet Belt Helmet Boots Gloves
-BaseType "Two-Toned"
+BaseType "Two-Toned" "Bone Helmet" "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
@@ -670,7 +678,7 @@ ItemLevel >= 84
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
-# SECTION: Bataillon
+# SECTION: Warband
 #Carte Chantier naval, repaire des Selrance
 Show
 Class "Gloves"
@@ -1161,7 +1169,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Chance
 #Meta mais nécessite mod Zana
 Hide
-BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash"
+BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash" "Glorious Plate" 
 Rarity = Normal
 ItemLevel > 60
 SetBackgroundColor 0 0 0 212
