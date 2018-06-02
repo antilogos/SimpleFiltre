@@ -1,4 +1,4 @@
-#SECTION: Unique
+# SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
 BaseType "Mirror of Kalandra"
@@ -33,27 +33,50 @@ SetBorderColor 0 0 0 0
 #LIGUES
 
 
-# SECTION: Bestiary
-#Orbe pour échanger et Filet
+# SECTION: Incursion
+#Clés de la pyramide
+Show
+Class Incursion Item
+SetBackgroundColor 220 255 40
+SetTextColor 0 0 0
+SetBorderColor 220 255 40
+# SECTION: Incursion
+#Objet pour augmenter les uniques de Incursion
 Show
 Class Currency
-BaseType "Bestiary Orb" "Net"
+BaseType "Vial"
 SetBackgroundColor 0 0 0 212
-SetTextColor 183 172 118
-SetBorderColor 0 0 0 0
+SetTextColor 220 255 40
+SetBorderColor 220 255 40
+
 # SECTION: Abyss
 #Ceinture de Abysse Carcan Stygien
 Show
 BaseType "Stygian Vise"
-SetBackgroundColor 1 0 0 212
+ItemLevel > 75
+SetBackgroundColor 0 0 0 212
+SetTextColor 169 189 149
+SetBorderColor 169 189 149
+# SECTION: Abyss
+#Ceinture de Abysse Carcan Stygien
+Show
+BaseType "Stygian Vise"
+SetBackgroundColor 0 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 0 0 0 0
 #Joyaux Abyssaux
 Show
 Class "Abyss Jewel"
-SetBackgroundColor 1 0 0 212
+ItemLevel > 75
+SetBackgroundColor 0 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 169 189 149
+#Joyaux Abyssaux
+Show
+Class "Abyss Jewel"
+SetBackgroundColor 0 0 0 212
+SetTextColor 169 189 149
+SetBorderColor 0 0 0 0
 # SECTION: Harbinger
 #Morceaux d'objet unique de Precurseur
 Show
@@ -71,14 +94,14 @@ SetBorderColor 255 255 255 212
 #Morceaux de Currency spécifiques aux Precurseurs ou rare
 Show
 Class Currency
-BaseType "Annulment Shard" "Ancient Shard" "Mirror Shard" "Exalted Shard" 
+BaseType "Annulment Shard" "Ancient Shard" "Mirror Shard" "Exalted Shard" "Harbinger's Shard" 
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 58 124 244
 #Morceaux de Currency communes
 Show
 Class Currency
-BaseType "Binding Shard" "Horizon Shard" "Harbinger's Shard" "Engineer's Shard" "Chaos Shard" "Regal Shard"
+BaseType "Binding Shard" "Horizon Shard" "Engineer's Shard" "Chaos Shard" "Regal Shard"
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 0 0 0 0
@@ -112,6 +135,14 @@ BaseType Splinter
 SetBackgroundColor 0 0 0 255
 SetTextColor 160 90 255
 SetBorderColor 0 0 0 0
+# SECTION: Bestiary
+#Orbe de la Ménagerie
+Show
+Class Currency
+BaseType "Bestiary Orb"
+SetBackgroundColor 0 0 0 212
+SetTextColor 183 172 118
+SetBorderColor 255 255 255 212
 # SECTION: Essence
 #Essences "Unique" obtenable uniquement par corruption
 Show
@@ -179,6 +210,13 @@ BaseType Talisman
 SetBackgroundColor 0 0 0 212
 SetTextColor 98 128 0
 SetBorderColor 98 128 0
+# SECTION: Warband
+#Mods spécifique Warbands
+Show
+HasExplicitMod "Redblade" "Brinerot" "Mutewind" "Turncoat's" "Betrayer's" "Deceiver's"
+SetBackgroundColor 0 0 0 212
+SetTextColor 200 0 100
+SetBorderColor 200 0 100
 
 
 #EXTENSIONS
@@ -232,10 +270,18 @@ SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 50
 SetBorderColor 0 0 0 0
 # SECTION: Divination Card
+#Commune dont le nom pose problème
+Show
+Class Divination Card
+BaseType "The Wolf's Shadow"
+SetBackgroundColor 0 0 0 212
+SetTextColor 170 230 230
+SetBorderColor 0 0 0 0
+# SECTION: Divination Card
 #Mythique
 Show
 Class Divination Card
-BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward"
+BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite"
 SetBackgroundColor 255 255 255
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -243,14 +289,14 @@ SetFontSize 30
 #Rare
 Show
 Class Divination Card
-BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff" "The Wolven King's Bite"
+BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff"
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
 #Peu Commune
 Show
 Class Divination Card
-BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia"
+BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -462,10 +508,10 @@ BaseType "Portal" "Empower" "Enlighten" "Vaal Breach" "Enhance" "Detonate Mines"
 SetBackgroundColor 27 162 155
 SetTextColor 0 0 0
 SetBorderColor 27 162 155
-#Gemmes avec suffisamment de qualité
+#Gemmes avec suffisamment de niveau
 Show
 Class "Skill Gems"
-Quality > 15
+GemLevel > 18
 SetBackgroundColor 27 162 155
 SetTextColor 0 0 0
 SetBorderColor 27 162 155
@@ -513,7 +559,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Chance
 #Meta
 Show
-BaseType "Sorcerer Boots" "Ebony Tower Shield" "Sapphire Flask" "Rawhide Tower Shield" "Gold Amulet"
+BaseType "Sorcerer Boots" "Gold Amulet"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 159 0
@@ -678,48 +724,83 @@ ItemLevel >= 84
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
-# SECTION: Warband
-#Carte Chantier naval, repaire des Selrance
+#6L
 Show
-Class "Gloves"
-Corrupted False
-Identified True
-Rarity = Magic
-ItemLevel = 81
-SetBackgroundColor 0 0 0 212
-SetTextColor 200 0 100
-SetBorderColor 0 0 0 0
-#Carte Phare et Désert de souffre, repaire des Lamerouge et Ventmuet
+LinkedSockets = 6
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+#Meilleure Affixes de vie par type
 Show
-Class "Helmets" "Boots" 
-Corrupted False
-Identified True
-Rarity = Magic
-ItemLevel = 82
-SetBackgroundColor 0 0 0 212
-SetTextColor 200 0 100
-SetBorderColor 0 0 0 0
-#Carte Ruines abandonées, Repaire des Réprouvés
+Class Body
+HasExplicitMod "Prime"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Second meilleur Affixes de vie par type
 Show
-Class Claw Dagger Wand "Hand" Bow Stave Sceptre
-Corrupted False
-Identified True
-Rarity = Magic
-ItemLevel = 84
-SetBackgroundColor 0 0 0 212
-SetTextColor 200 0 100
-SetBorderColor 0 0 0 0
-#Objets impromptus pouvant apartir à des Bataillon via Prophétie
+HasExplicitMod "Prime"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Meilleure Affixes Accessoire
 Show
-Class "Helmets" "Boots" "Gloves" 
-Corrupted False
-Identified True
-Rarity = Magic
-ItemLevel > 67
-SetBackgroundColor 0 0 0 212
-SetTextColor 200 0 100
-SetBorderColor 255 255 255 212
-# SECTION: Artisanat
+Class Amulet Ring Belt Quiver
+HasExplicitMod "Dazzling" "Impregnable" "Vaporous" "Unassailable" "Vaporous" "Resplendent" "Encased" "Dazzling" "Fecund" "Flawless" "of the Gale" "of Ease"
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+#Second Meilleure Affixes Accessoire
+Show
+Class Amulet Ring Belt Quiver
+HasExplicitMod "Athlete's" "Virile" "Resplendent" "Wizard's" "Phased" "Incandescent" "Annealed" "Quintessential"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Meilleure Affixes Attaques
+Show
+HasExplicitMod "Cremating" "Entombing" "Flaring" "Electrocuting" "Overpowering" "Devastating" "Malicious" "of Incision" "of Destruction" "Dictator's" "Merciless"
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+
+
+#Meilleure Affixes Sorts
+Show
+HasExplicitMod "Lich's" "Runic" "of Finesse" "of Unmaking" "of Ashes" "of Glaciation" "of Arcing" "of Conflagrating"
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+#Second Meilleure Affixes Sorts
+Show
+HasExplicitMod "Glyphic" "of Sortilege"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Meilleure Affixes de défenses
+Show
+HasExplicitMod "Rapturous" "Crocodile's" "Carapaced" "Impenetrable" "Impregnable" "of Numbing" "Ibex's" "Mirage's" "Illusion's" "of Fog" "of Exuberance" "Exarch's" "Unassailable" "Unfaltering" "Resplendent" "Illusory" "Incorporeal" "Eidolon's" "Consecrated" "Inspired" "Interpermeated" "Legend's" "Victor's" "Resilient"
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+#Second Meilleure Affixes de défenses
+Show
+HasExplicitMod "Vigorous" "Girded" "Nautilus's" "Nightmare's" "Hummingbird's" "Phased" "Seraphim's" "Indomitable" "Unreal" "Interpolated" "Hero's"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Meilleure Affixes générique
+Show
+HasExplicitMod "Zaffre" "Ultramarine" "of the Gods" "of the Wind" "of the Genius" "of the Multiverse" "of Nirvana" "of the Rainbow" "of Bameth" "of Haast" "of Tzteosh" "of Ephij"
+SetBackgroundColor 255 255 255
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
+#Second Meilleure Affixes générique
+Show
+HasExplicitMod "Blue" "Perandus'" "of the Titan" "of the Phantom" "of the Virtuoso" "of the Infinite" "of Excavation" "of Expertise" "of the Assassin" "of Exile" "of the Ice" "of the Magma" "of the Lightning" 
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
 #Meilleure base et Niveau d'objet - Armures
 Hide
 Class Body Gloves Helmets Boots Shield
@@ -734,12 +815,6 @@ Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Han
 DropLevel >= 64
 ItemLevel >= 84
 SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 30 144 255
-#6L
-Show
-LinkedSockets = 6
-SetBackgroundColor 255 255 255
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
 #5L
