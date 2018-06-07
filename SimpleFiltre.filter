@@ -36,7 +36,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Incursion
 #Clés de la pyramide
 Show
-Class Incursion Item
+Class "Incursion Item"
 SetBackgroundColor 220 255 40
 SetTextColor 0 0 0
 SetBorderColor 220 255 40
@@ -45,10 +45,16 @@ SetBorderColor 220 255 40
 Show
 Class Currency
 BaseType "Vial"
+SetBackgroundColor 220 255 40
+SetTextColor 0 0 0
+SetBorderColor 220 255 40
+# SECTION: Incursion
+#Objets avec des mods spécifique
+Show
+HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
 SetBackgroundColor 0 0 0 212
 SetTextColor 220 255 40
 SetBorderColor 220 255 40
-
 # SECTION: Abyss
 #Ceinture de Abysse Carcan Stygien
 Show
@@ -281,7 +287,7 @@ SetBorderColor 0 0 0 0
 #Mythique
 Show
 Class Divination Card
-BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite"
+BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve"
 SetBackgroundColor 255 255 255
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -289,14 +295,14 @@ SetFontSize 30
 #Rare
 Show
 Class Divination Card
-BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff"
+BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff" "The Master" "The Samurai's Eye"
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
 #Peu Commune
 Show
 Class Divination Card
-BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer"
+BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer" "The Celestial Stone" "The Mayor" "The Undaunted" "The Undisputed" "Perfection" "The Professor"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -763,8 +769,18 @@ HasExplicitMod "Cremating" "Entombing" "Flaring" "Electrocuting" "Overpowering" 
 SetBackgroundColor 255 255 255
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
-
-
+#Second Meilleure Affixes Attaques
+Show
+HasExplicitMod "Unleashed" "Emperor's" "Tyrannical" "Cremating" "of Ferocity" "of the Ranger"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
+#Affixe de niveau de gemmes
+Show
+HasExplicitMod "Paragon's" "Weaponmaster's" "Lava Caller's" "Winterbringer's" "Tempest King's" "Anarchist's"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
 #Meilleure Affixes Sorts
 Show
 HasExplicitMod "Lich's" "Runic" "of Finesse" "of Unmaking" "of Ashes" "of Glaciation" "of Arcing" "of Conflagrating"
@@ -834,7 +850,7 @@ SetBorderColor 30 144 255
 #4L pour le leveling
 Show
 LinkedSockets > 3
-ItemLevel <= 45
+ItemLevel <= 40
 Height = 2
 Rarity < Rare
 SetBackgroundColor 0 0 0 212
@@ -849,51 +865,11 @@ Rarity < Rare
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 30 144 255
-#Bottes de leveling pour rechercher de la vitesse de déplacement, maximum 15%
+#Bottes de leveling pour rechercher de la vitesse de déplacement, maximum 25%
 Show
 Class Boots
-ItemLevel < 30
-Rarity = Magic
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 0 0 0 0
-#Bottes de leveling pour rechercher de la vitesse de déplacement, maximum 25% mais avec deux liens minimum
-Show
-Class Boots
-ItemLevel < 55
 LinkedSockets > 2
-Rarity = Magic
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 0 0 0 0
-#Premiers carquois
-Show
-Class Quiver
-ItemLevel < 19
-Rarity < Rare
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 0 0 0 0
-#Carquois une peu plus poussé
-Show
-Class Quiver
-ItemLevel < 35
-Rarity = Magic
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 0 0 0 0
-#Objet pouvant être utile même en magique en premier personnage
-Show
-Class Amulet Ring
-ItemLevel < 60
-Rarity = Magic
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 0 0 0 0
-#Objet de première base
-Show
-ItemLevel < 2
-DropLevel < 2
+ItemLevel < 55
 Rarity < Rare
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -1173,6 +1149,62 @@ DropLevel >= 64
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 0 0 0 0
+#Ceinture premières bases
+Show
+Class Belt
+ItemLevel < 25
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Carquois bases avancées
+Show
+Class Quiver
+ItemLevel < 35
+DropLevel > 18
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Carquois premières bases
+Show
+Class Quiver
+ItemLevel < 19
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Objet pouvant être utile même en magique en premier personnage
+Show
+Class Amulet Ring
+ItemLevel < 60
+Rarity = Magic
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Objet pouvant être utile même en magique en premier personnage
+Show
+Class Amulet Ring
+ItemLevel < 20
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Objet de première base
+Show
+ItemLevel < 4
+DropLevel > 2
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
+#Objet de première base
+Show
+ItemLevel < 2
+Rarity < Rare
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 255 212
 # SECTION: Formule
 #6s pour formule joaillier
 Show
