@@ -874,12 +874,20 @@ Rarity < Rare
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 0 0 0 0
+#Objet corrompu pouvant avoir un implicit intéressant
+Show
+Corrupted True
+ItemLevel <= 68
+SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 30 144 255
+SetBorderColor 255 40 0
 # SECTION: Amélioration
 #Objet corrompu pouvant avoir un implicit intéressant
 Show
-Class Amulet Belt Quiver Gloves
 Corrupted True
 ItemLevel >= 68
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 255 40 0
