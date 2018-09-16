@@ -1,3 +1,4 @@
+# Version du 16/09/2018
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -210,6 +211,13 @@ BaseType "Bestiary Orb"
 SetBackgroundColor 0 0 0 212
 SetTextColor 183 172 118
 SetBorderColor 255 255 255 212
+#Mod d'aspect
+Show
+Class Currency
+HasExplicitMod "of Farrul" "of Craiceann" "of Fenumus" "of Saqawal"
+SetBackgroundColor 0 0 0 212
+SetTextColor 183 172 118
+SetBorderColor 255 255 255 212
 # SECTION: Essence
 #Essences "Unique" obtenable uniquement par corruption
 Show
@@ -346,14 +354,16 @@ BaseType "The Wolf's Shadow"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 0 0 0 0
+MinimapIcon 0 Blue Diamond
 #Mythique
 Show
 Class "Divination Card"
-BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve"
+BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death"
 SetBackgroundColor 255 255 255
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
 SetFontSize 30
+MinimapIcon 0 Blue Diamond
 #Rare
 Show
 Class "Divination Card"
@@ -361,13 +371,15 @@ BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The La
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
+MinimapIcon 0 Blue Diamond
 #Peu Commune
 Show
 Class "Divination Card"
-BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer" "The Celestial Stone" "The Mayor" "The Undaunted" "The Undisputed" "Perfection" "The Professor"
+BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer" "The Celestial Stone" "The Mayor" "The Undaunted" "The Undisputed" "Perfection" "The Professor" "The Mayor" "The Celestial Stone" "Boon of the First Ones"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
+MinimapIcon 0 Blue Diamond
 #Inintéressante
 Show
 Class "Divination Card"
@@ -425,6 +437,7 @@ SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
 PlayEffect Yellow
+MinimapIcon 0 Yellow Star
 #T1.5
 Show
 Class Currency
@@ -433,6 +446,8 @@ SetBackgroundColor 255 255 255
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
+PlayEffect Yellow Temp
+MinimapIcon 0 Yellow Star
 #T2
 Show
 Class Currency
@@ -473,6 +488,7 @@ BaseType "Fragment of the Chimera" "Fragment of the Phoenix" "Fragment of the Hy
 SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
+MinimapIcon 0 Brown Circle
 #Map T16
 Show
 Class Maps
@@ -481,6 +497,7 @@ SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
 PlayEffect Blue
+MinimapIcon 0 Brown Circle
 #Map Rouge dans les maps Rouges
 Show
 Class Maps
@@ -489,6 +506,7 @@ ItemLevel < 83
 SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
+MinimapIcon 0 Brown Circle
 #Map Rouge dans les Fragments
 Show
 Class Maps
@@ -497,6 +515,7 @@ ItemLevel > 82
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
+MinimapIcon 0 Brown Circle
 #Map Jaune qui ne sont pas obtenables par évolution
 Show
 Class Maps
@@ -862,6 +881,7 @@ SetBorderColor 30 144 255
 #Objet corrompu
 Show
 Rarity = Rare
+Sockets < 6
 Corrupted True
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -876,6 +896,7 @@ SetBorderColor 255 40 0
 #Objet corrompu avec châsse blanche
 Hide
 Rarity = Magic
+Sockets < 6
 Corrupted True
 ItemLevel <= 68
 SetFontSize 16
@@ -886,6 +907,7 @@ SetBorderColor 255 40 0
 #Objet corrompu pouvant avoir un implicit intéressant
 Show
 Rarity = Magic
+Sockets < 6
 Corrupted True
 ItemLevel <= 68
 SetFontSize 16
@@ -896,6 +918,7 @@ SetBorderColor 255 40 0
 #Objet corrompu avec châsse blanche
 Hide
 Rarity = Normal
+Sockets < 6
 Corrupted True
 ItemLevel <= 68
 SetFontSize 16
@@ -906,6 +929,7 @@ SetBorderColor 255 40 0
 #Objet corrompu pouvant avoir un implicit intéressant
 Show
 Rarity = Normal
+Sockets < 6
 Corrupted True
 ItemLevel <= 68
 SetFontSize 16
