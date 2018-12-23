@@ -1,4 +1,4 @@
-# Version du 08/12/2018
+# Version du 23/12/2018
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -44,6 +44,13 @@ MinimapIcon 0 Brown Hexagon
 Show
 Class "Map Fragment"
 BaseType Scarab
+SetBackgroundColor 0 0 0 212
+SetTextColor 240 91 4
+SetBorderColor 0 0 0 0
+# SECTION: Betrayal
+#Objet crypté
+Show
+Veiled
 SetBackgroundColor 0 0 0 212
 SetTextColor 240 91 4
 SetBorderColor 0 0 0 0
@@ -230,7 +237,6 @@ SetTextColor 183 172 118
 SetBorderColor 255 255 255 212
 #Mod d'aspect
 Show
-Class Currency
 HasExplicitMod "of Farrul" "of Craiceann" "of Fenumus" "of Saqawal"
 SetBackgroundColor 183 172 118
 SetTextColor 0 0 0
@@ -534,6 +540,15 @@ SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
 MinimapIcon 0 Red Circle
+#Map Jaune qui ne sont pas obtenables par évolution
+Show
+Class Maps
+BaseType "Infested Valley" "Orchard"
+ItemLevel < 78
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 170 158 130
+MinimapIcon 0 Yellow Circle
 #Map Jaune dans les Maps Jaunes
 Show
 Class Maps
@@ -551,6 +566,15 @@ ItemLevel > 77
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
+#Map Blanche qui ne sont pas obtenable par évolution
+Show
+Class Maps
+BaseType "Cage" "Bone Crypt" "Peninsula" "Shipyard" "Armory" "Thicket" "Iceberg" "Arid Lake" "Grotto" "Fungal Hollow" "Cursed Crypt" "Excavation" "Graveyard" "Desert"
+ItemLevel < 73
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 170 158 130
+MinimapIcon 0 White Circle
 #Map Blanche dans les Maps Jaune
 Show
 Class Maps
