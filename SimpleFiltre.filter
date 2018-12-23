@@ -50,13 +50,6 @@ SetBorderColor 0 0 0 0
 # SECTION: Betrayal
 #Objet crypté
 Show
-Veiled
-SetBackgroundColor 0 0 0 212
-SetTextColor 240 91 4
-SetBorderColor 0 0 0 0
-# SECTION: Betrayal
-#Objet crypté
-Show
 HasExplicitMod "Veiled" "Veil"
 SetBackgroundColor 0 0 0 212
 SetTextColor 240 91 4
