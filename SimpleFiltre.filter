@@ -1,4 +1,4 @@
-# Version du 23/12/2018
+# Version du 07/03/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -8,7 +8,7 @@ SetTextColor 175 96 37
 SetBorderColor 175 96 37
 SetFontSize 30
 PlayEffect White
-MinimapIcon 2 White Diamond
+MinimapIcon 0 White Diamond
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
 BaseType "Albino Rhoa Feather" "Fishing Rod"
@@ -33,12 +33,27 @@ SetBackgroundColor 0 0 0 212
 SetTextColor 175 96 37
 SetBorderColor 0 0 0 0
 PlayEffect Brown Temp
-MinimapIcon 0 Brown Hexagon
+MinimapIcon 2 Brown Hexagon
 
 
 #LIGUES
 
 
+# SECTION: Synthesis
+#Objet fracturé
+Show
+FracturedItem True
+SetBackgroundColor 0 0 0 212
+SetTextColor 15 185 210
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+#Objet synthétisé
+Show
+SynthesisedItem True
+SetBackgroundColor 0 0 0 212
+SetTextColor 15 185 210
+SetBorderColor 15 185 210
 # SECTION: Betrayal
 #Scarabées
 Show
@@ -46,7 +61,16 @@ Class "Map Fragment"
 BaseType Scarab
 SetBackgroundColor 0 0 0 212
 SetTextColor 240 91 4
-SetBorderColor 0 0 0 0
+SetBorderColor 240 91 4
+# SECTION: Betrayal
+#Objet crypté
+Show
+HasExplicitMod "Leo's Veiled" "Catarina's Veiled" "Elreon's Veiled" "Vorici's Veiled" "Haku's Veiled" "Tora's Veiled" "Vagan's Veiled" "Guff's Veiled" "It That Fled's Veiled" "Gravicius' Veiled" "Korell's Veiled" "Rin's Veiled" "of Janus' Veil" "of Hillock's Veil" "of Jorgin's Veil" "of Cameria's Veil" "of Aisling's Veil" "of Riker's Veil"
+SetBackgroundColor 240 91 4
+SetTextColor 0 0 0
+SetBorderColor 240 91 4
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Betrayal
 #Objet crypté
 Show
@@ -74,6 +98,8 @@ HasExplicitMod "Subterranean" "of the Underground" "of Weaponcraft" "of Spellcra
 SetBackgroundColor 0 0 0 212
 SetTextColor 22 104 204
 SetBorderColor 22 104 204
+PlayEffect Blue
+MinimapIcon 2 Blue Circle
 #Résonateur primitif
 Show
 Class Currency
@@ -111,7 +137,8 @@ SetBackgroundColor 255 255 255 128
 SetTextColor 22 104 204
 SetBorderColor 22 104 204
 SetFontSize 30
-PlayEffect Blue
+PlayEffect Green
+MinimapIcon 0 Green Square
 # SECTION: Incursion
 #Clés de la pyramide
 Show
@@ -119,6 +146,8 @@ Class "Incursion Item"
 SetBackgroundColor 220 255 40
 SetTextColor 0 0 0
 SetBorderColor 220 255 40
+PlayEffect Green
+MinimapIcon 0 Green Circle
 #Objet pour augmenter les uniques de Incursion
 Show
 Class Currency
@@ -126,27 +155,35 @@ BaseType "Vial"
 SetBackgroundColor 220 255 40
 SetTextColor 0 0 0
 SetBorderColor 220 255 40
-PlayEffect Yellow
+PlayEffect Brown
+MinimapIcon 2 Brown Star
 #Objets avec des mods spécifique
 Show
+Rarity = Rare
 HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
 SetBackgroundColor 0 0 0 212
 SetTextColor 220 255 40
 SetBorderColor 220 255 40
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+#Objets avec des mods spécifique
+Show
+Rarity = Magic
+HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
+SetBackgroundColor 0 0 0 212
+SetTextColor 220 255 40
+SetBorderColor 220 255 40
+PlayEffect Blue
+MinimapIcon 2 Blue Triangle
 # SECTION: Abyss
 #Ceinture de Abysse Carcan Stygien
 Show
 BaseType "Stygian Vise"
-ItemLevel > 75
 SetBackgroundColor 0 0 0 212
 SetTextColor 169 189 149
 SetBorderColor 169 189 149
-#Ceinture de Abysse Carcan Stygien
-Show
-BaseType "Stygian Vise"
-SetBackgroundColor 0 0 0 212
-SetTextColor 169 189 149
-SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 #Joyaux Abyssaux
 Show
 Class "Abyss Jewel"
@@ -167,6 +204,8 @@ Class Piece
 SetBackgroundColor 58 124 244
 SetTextColor 0 0 0
 SetBorderColor 58 124 244
+PlayEffect Brown
+MinimapIcon 2 Brown Triangle
 #Currency dont on n'obtient que des fragments
 Show
 Class Currency
@@ -177,7 +216,7 @@ SetBorderColor 58 124 244
 #Morceaux de Currency spécifiques aux Precurseurs ou rare
 Show
 Class Currency
-BaseType "Annulment Shard" "Ancient Shard" "Mirror Shard" "Exalted Shard" "Harbinger's Shard" 
+BaseType "Annulment Shard" "Ancient Shard"  "Exalted Shard" "Harbinger's Shard" 
 SetBackgroundColor 0 0 0 212
 SetTextColor 58 124 244
 SetBorderColor 58 124 244
@@ -197,6 +236,8 @@ SetBackgroundColor 255 255 255 128
 SetTextColor 229 160 12
 SetBorderColor 229 160 12
 SetFontSize 30
+PlayEffect Green
+MinimapIcon 0 Greem Square
 # SECTION: Breach
 #Blessing des Breachlords
 Show
@@ -205,7 +246,8 @@ BaseType "Blessing of"
 SetBackgroundColor 160 90 255
 SetTextColor 0 0 0
 SetBorderColor 160 90 255
-PlayEffect Red
+PlayEffect Brown
+MinimapIcon 2 Brown Star
 #Stone une fois 100 splinter réunis
 Show
 Class "Misc Map Items"
@@ -213,6 +255,8 @@ BaseType Breachstone
 SetBackgroundColor 0 0 0 255
 SetTextColor 160 90 255
 SetBorderColor 160 90 255
+PlayEffect Green
+MinimapIcon 2 Greem Square
 #Splinter
 Show
 Class Currency
@@ -234,6 +278,8 @@ HasExplicitMod "of Farrul" "of Craiceann" "of Fenumus" "of Saqawal"
 SetBackgroundColor 183 172 118
 SetTextColor 0 0 0
 SetBorderColor 183 172 118
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Essence
 #Essences "Unique" obtenable uniquement par corruption
 Show
@@ -242,7 +288,8 @@ BaseType Deafening Horror Delirium Hysteria Insanity
 SetBackgroundColor 184 218 242
 SetTextColor 0 0 0
 SetBorderColor 184 218 242
-PlayEffect White
+PlayEffect Brown
+MinimapIcon 2 Brown Star
 #Essence de Corruption
 Show
 Class Currency
@@ -272,7 +319,8 @@ BaseType "'s Key"
 SetBackgroundColor 198 180 246
 SetTextColor 0 0 0
 SetBorderColor 198 180 246
-PlayEffect White
+PlayEffect Green
+MinimapIcon 2 Green Square
 #Sealed Prophecy
 Show
 Class Currency
@@ -310,6 +358,8 @@ HasExplicitMod "Redblade" "Brinerot" "Mutewind" "Turncoat's" "Betrayer's" "Decei
 SetBackgroundColor 0 0 0 212
 SetTextColor 200 0 100
 SetBorderColor 200 0 100
+PlayEffect Blue
+MinimapIcon 2 Blue Triangle
 
 
 #EXTENSIONS
@@ -322,12 +372,16 @@ ElderItem True
 SetBackgroundColor 0 0 0 255
 SetTextColor 88 0 179
 SetBorderColor 88 0 179
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 #Objet du Façonneur
 Show
 ShaperItem True
 SetBackgroundColor 0 0 0 255
 SetTextColor 88 0 179
 SetBorderColor 88 0 179
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Pantheon
 #Vessel remplie
 Show
@@ -350,12 +404,16 @@ BaseType "Offering to the Goddess"
 SetBackgroundColor 0 100 50
 SetTextColor 0 0 0
 SetBorderColor 0 100 50
+PlayEffect Green
+MinimapIcon 2 Green Square
 #Key pour les portes dans le Labyrinth
 Show
 Class "Labyrinth Item"
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 50
 SetBorderColor 0 100 50
+PlayEffect Green
+MinimapIcon 0 Green Circle
 #Trinket pour le Labyrinth
 Show
 Class "Labyrinth Trinket"
@@ -366,7 +424,7 @@ SetBorderColor 0 0 0 0
 #Commune dont le nom pose problème
 Show
 Class "Divination Card"
-BaseType "The Wolf's Shadow"
+BaseType "The Wolf's Shadow" "The Master Artisan"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 0 0 0 0
@@ -386,7 +444,7 @@ BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The La
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
-MinimapIcon 0 Blue Diamond
+MinimapIcon 1 Blue Diamond
 #Peu Commune
 Show
 Class "Divination Card"
@@ -394,7 +452,7 @@ BaseType "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
-MinimapIcon 0 Blue Diamond
+MinimapIcon 2 Blue Diamond
 #Inintéressante
 Show
 Class "Divination Card"
@@ -409,20 +467,24 @@ SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 0 0 0 0
 # SECTION: Vaal
-#Fragment de Mortal rare
+#Fragment de Mortal
 Show
 Class "Map Fragment"
-BaseType "Mortal Hope" "Mortal Ignorance"
+BaseType Mortal
 SetBackgroundColor 210 0 0
 SetTextColor 0 0 0
 SetBorderColor 210 0 0
-#Fragment de Mortal commun et Fragment de sacrifice rare
+PlayEffect Green
+MinimapIcon 2 Green Square
+#Fragment de sacrifice rare
 Show
 Class "Map Fragment"
-BaseType Mortal "Sacrifice at Midnight"
+BaseType "Sacrifice at Midnight"
 SetBackgroundColor 0 0 0 255
 SetTextColor 210 0 0
 SetBorderColor 210 0 0
+PlayEffect Green
+MinimapIcon 2 Green Square
 #Fragement de Sacrifice commun
 Show
 Class "Map Fragment"
@@ -430,6 +492,8 @@ BaseType Sacrifice
 SetBackgroundColor 0 0 0 255
 SetTextColor 210 0 0
 SetBorderColor 0 0 0 0
+PlayEffect Green
+MinimapIcon 2 Green Square
 
 
 #NON - OBJETS
@@ -442,45 +506,47 @@ Class Quest
 SetBackgroundColor 0 0 0 212
 SetTextColor 74 230 58
 SetBorderColor 0 0 0 0
+PlayEffect Red
+MinimapIcon 2 Red Circle
 # SECTION: Currency
 #T1
 Show
 Class Currency
-BaseType "Exalted Orb"
+BaseType "Exalted Orb" "Mirror Shard"
 SetBackgroundColor 255 255 255 128
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
-PlayEffect Yellow
-MinimapIcon 0 Yellow Star
+PlayEffect Brown
+MinimapIcon 1 Brown Star
 #T1.5
 Show
 Class Currency
-BaseType "Divine Orb"
+BaseType "Divine Orb" "Orb of Annulment"
 SetBackgroundColor 255 255 255 128
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
-PlayEffect Yellow Temp
-MinimapIcon 0 Yellow Star
+PlayEffect Brown
+MinimapIcon 2 Brown Star
 #T2
 Show
 Class Currency
-BaseType Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment" "Stacked Deck"
+BaseType Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Stacked Deck"
 SetBackgroundColor 170 158 130
 SetTextColor 0 0 0
 SetBorderColor 170 158 130
 #T3
 Show
 Class Currency
-BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Jeweller's Orb" "Glassblower's Bauble" "Blacksmith's Whetstone" "Cartographer's Chisel"
+BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 #Inintéressante
 Show
 Class Currency
-BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap"
+BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" 
 SetFontSize 26
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
@@ -504,8 +570,8 @@ BaseType "Fragment of the Chimera" "Fragment of the Phoenix" "Fragment of the Hy
 SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
-PlayEffect Blue
-MinimapIcon 1 Green Circle
+PlayEffect Green
+MinimapIcon 1 Green Square
 #Map T16
 Show
 Class Maps
@@ -514,7 +580,7 @@ SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
 PlayEffect Blue
-MinimapIcon 0 Blue Circle
+MinimapIcon 2 Blue Hexagon
 #Map Rouge dans les maps Rouges
 Show
 Class Maps
@@ -523,7 +589,7 @@ ItemLevel < 83
 SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
-MinimapIcon 0 Red Circle
+MinimapIcon 2 Red Hexagon
 #Map Rouge dans les Fragments
 Show
 Class Maps
@@ -532,7 +598,7 @@ ItemLevel > 82
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
-MinimapIcon 0 Red Circle
+MinimapIcon 2 Red Hexagon
 #Map Jaune dans les Maps Jaunes
 Show
 Class Maps
@@ -541,7 +607,7 @@ ItemLevel < 78
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
-MinimapIcon 0 Yellow Circle
+MinimapIcon 2 Yellow Hexagon
 #Map Jaune dans les Maps Rouges
 Show
 Class Maps
@@ -566,7 +632,7 @@ ItemLevel < 72
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-MinimapIcon 0 White Circle
+MinimapIcon 2 White Hexagon
 #Map Corrompues
 Show
 Class Maps
@@ -591,7 +657,7 @@ SetBorderColor 0 0 0 0
 #Gemmes non achetables chez les marchands
 Show
 Class "Skill Gems"
-BaseType "Portal" "Empower" "Enlighten" "Vaal Breach" "Enhance" "Detonate Mines" "Added Chaos"
+BaseType "Portal" "Empower" "Enlighten" "Vaal Breach" "Enhance"
 SetBackgroundColor 27 162 155
 SetTextColor 0 0 0
 SetBorderColor 27 162 155
@@ -835,6 +901,12 @@ MinimapIcon 0 White Square
 #MODS D'OBJETS (identifiés)
 
 
+#Objet avec un enchantement
+Show
+AnyEnchantment True
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 50
+SetBorderColor 0 100 50
 # SECTION: Rare
 #Affixes les plus rares
 Show
@@ -928,7 +1000,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Rare 
 ItemLevel >= 86
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -958,7 +1030,7 @@ SetBorderColor 88 0 179 212
 Show
 Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Rare 
-DropLevel >= 64
+DropLevel >= 59
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -968,7 +1040,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Rare 
 ItemLevel >= 82
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -988,7 +1060,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Magic 
 ItemLevel >= 86
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1019,7 +1091,7 @@ SetBorderColor 88 0 179 212
 Show
 Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Magic 
-DropLevel >= 64
+DropLevel >= 59
 ItemLevel >= 86
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1039,7 +1111,7 @@ SetBorderColor 88 0 179 212
 Show
 Class Amulet Belt Ring
 Rarity = Magic 
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1057,7 +1129,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Normal 
 ItemLevel >= 86
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1088,7 +1160,7 @@ SetBorderColor 88 0 179 212
 Show
 Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Normal 
-DropLevel >= 64
+DropLevel >= 59
 ItemLevel >= 86
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1109,7 +1181,7 @@ Show
 Class Amulet Belt Helmet Boots Gloves
 Rarity = Normal 
 ItemLevel >= 82
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1118,7 +1190,7 @@ MinimapIcon 0 White Square
 Show
 Class Amulet Belt Ring
 Rarity = Normal 
-DropLevel > 71
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1147,7 +1219,7 @@ SetBorderColor 255 255 119
 #Meilleure base, niveau d'objet faible
 Show
 Rarity = Rare 
-DropLevel > 62
+DropLevel >= 59
 ItemLevel >= 68
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -1490,24 +1562,6 @@ Show
 Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
 Rarity = Rare
 DropLevel >= 58
-ItemLevel <= 63
-SetBackgroundColor 0 0 0 164
-SetTextColor 255 255 119
-SetBorderColor 0 100 50 164
-#62>63
-Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
-Rarity = Rare
-DropLevel >= 62
-ItemLevel <= 70
-SetBackgroundColor 0 0 0 164
-SetTextColor 255 255 119
-SetBorderColor 0 100 50 164
-#64>70
-Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
-Rarity = Rare
-DropLevel >= 64
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
@@ -1793,16 +1847,16 @@ SetBorderColor 170 158 130
 
 
 # SECTION: Commun
-#Meta mais nécessite mod Zana
+#Objet à chance méta mais nécessite mod Zana
 Hide
 BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash" "Glorious Plate" 
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
-#Non-Meta
+#Objet à chance non-méta
 Hide
-BaseType "Sorcerer Boots" "Gold Amulet" "Occultist's Vestment" "Goathide Boots" "Close Helmet" "Prophecy Wand" "Stibnite Flask"
+BaseType "Sorcerer Boots" "Gold Amulet" "Occultist's Vestment" "Goathide Boots" "Close Helmet" "Prophecy Wand" "Stibnite Flask" "Sadist Garb"
 Rarity = Normal
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
