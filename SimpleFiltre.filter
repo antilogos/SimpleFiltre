@@ -1,4 +1,4 @@
-# Version du 07/03/2019
+# Version du 02/04/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -432,7 +432,7 @@ SetBorderColor 0 0 0 0
 Show
 Class "Divination Card"
 BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death"
-SetBackgroundColor 255 255 255 128
+SetBackgroundColor 255 255 255 196
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
 SetFontSize 30
@@ -512,46 +512,55 @@ MinimapIcon 2 Red Circle
 #T1
 Show
 Class Currency
-BaseType "Exalted Orb" "Mirror Shard"
-SetBackgroundColor 255 255 255 128
+BaseType "Mirror Shard"
+SetBackgroundColor 255 255 255 196
+SetTextColor 170 158 130
+SetBorderColor 170 158 130
+SetFontSize 30
+PlayEffect Brown
+MinimapIcon 0 Brown Star
+#T1.5
+Show
+Class Currency
+BaseType "Exalted Orb" 
+SetBackgroundColor 255 255 255 196
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
 PlayEffect Brown
 MinimapIcon 1 Brown Star
-#T1.5
-Show
-Class Currency
-BaseType "Divine Orb" "Orb of Annulment"
-SetBackgroundColor 255 255 255 128
-SetTextColor 170 158 130
-SetBorderColor 170 158 130
-SetFontSize 30
-PlayEffect Brown
-MinimapIcon 2 Brown Star
 #T2
 Show
 Class Currency
-BaseType Sextant "Blessed Orb" "Orb of Scouring" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Stacked Deck"
+BaseType "Divine Orb" "Orb of Annulment"
 SetBackgroundColor 170 158 130
 SetTextColor 0 0 0
 SetBorderColor 170 158 130
+PlayEffect Brown
+MinimapIcon 2 Brown Star
 #T3
 Show
 Class Currency
-BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel"
+BaseType Sextant "Blessed Orb" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Stacked Deck"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
+#T4
+Show
+Class Currency
+BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel" "Orb of Scouring"
+SetBackgroundColor 0 0 0 212
+SetTextColor 170 158 130
+SetBorderColor 0 0 0 0
 #Inintéressante
 Show
 Class Currency
-BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" 
+BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Transmutation Shard" "Augmentation"
 SetFontSize 26
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
-#T4
+#Sécurité pour celle non-catché par le filtre
 Show
 Class Currency
 SetBackgroundColor 0 0 0 212
