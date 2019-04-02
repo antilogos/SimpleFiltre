@@ -555,7 +555,7 @@ SetBorderColor 0 0 0 0
 #Inintéressante
 Show
 Class Currency
-BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Transmutation Shard" "Augmentation"
+BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Augmentation"
 SetFontSize 26
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
