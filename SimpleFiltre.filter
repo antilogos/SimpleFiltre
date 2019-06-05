@@ -1,4 +1,4 @@
-# Version du 02/04/2019
+# Version du 05/06/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -39,6 +39,24 @@ MinimapIcon 2 Brown Hexagon
 #LIGUES
 
 
+# SECTION: Legion
+#Incubateurs
+Show
+BaseType "Emblem" "Karui Splinter" "Maraketh Splinter" "Eternal Empire Splinter" "Templar Splinter" "Vaal Splinter"
+SetBackgroundColor 0 0 0 255
+SetTextColor 192 128 254
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+# SECTION: Legion
+#Incubateurs
+Show
+BaseType "Incubator"
+SetBackgroundColor 0 0 0 255
+SetTextColor 192 128 254
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Synthesis
 #Objet fracturé
 Show
@@ -260,7 +278,7 @@ MinimapIcon 2 Green Square
 #Splinter
 Show
 Class Currency
-BaseType Splinter
+BaseType "Splinter of Tul" "Splinter of Xoph" "Splinter of Esh" "Splinter of Uul-Netol" "Splinter of Chayula"
 SetBackgroundColor 0 0 0 255
 SetTextColor 160 90 255
 SetBorderColor 0 0 0 0
@@ -440,7 +458,7 @@ MinimapIcon 0 Blue Diamond
 #Rare
 Show
 Class "Divination Card"
-BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Standoff" "The Master" "The Samurai's Eye"
+BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Master" "The Samurai's Eye"
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
@@ -541,14 +559,15 @@ MinimapIcon 2 Brown Star
 #T3
 Show
 Class Currency
-BaseType Sextant "Blessed Orb" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Stacked Deck"
+BaseType Sextant "Blessed Orb" "Orb of Regret" "Regal Orb" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Stacked Deck" "Orb of Scouring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
+MinimapIcon 2 Brown Star
 #T4
 Show
 Class Currency
-BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel" "Orb of Scouring"
+BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
@@ -594,7 +613,7 @@ MinimapIcon 2 Blue Hexagon
 Show
 Class Maps
 MapTier > 10
-ItemLevel < 83
+ItemLevel <= 85
 SetBackgroundColor 0 100 150
 SetTextColor 0 0 0
 SetBorderColor 0 100 150
@@ -612,7 +631,7 @@ MinimapIcon 2 Red Hexagon
 Show
 Class Maps
 MapTier > 5
-ItemLevel < 78
+ItemLevel <= 79
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 100 150
@@ -621,23 +640,24 @@ MinimapIcon 2 Yellow Hexagon
 Show
 Class Maps
 MapTier > 5
-ItemLevel > 77
+ItemLevel > 79
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
-#Map Blanche dans les Maps Jaune
+#Map Blanche dans les Maps Blanches
 Show
 Class Maps
-MapTier > 0
+MapTier >= 1
+ItemLevel <= 73
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 0 0 0 0
+MinimapIcon 2 White Hexagon
+#Map Blanche dans les Maps Jaunes
+Show
+Class Maps
+MapTier >= 1
 ItemLevel < 78
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 0 0 0
-#Map Blanche dans les Maps Blanche
-Show
-Class Maps
-MapTier > 0
-ItemLevel < 72
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
@@ -1026,20 +1046,40 @@ SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
 PlayEffect Yellow
 MinimapIcon 1 Yellow Square
-#Meilleure base et Niveau d'objet - Armures
+#Meilleure base et Niveau d'objet - Torse
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body
+Rarity = Rare 
+DropLevel >= 62
+ItemLevel >= 86
+SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 88 0 179 212
+#Meilleure base et Niveau d'objet - Autres armures
+Show
+Class Gloves Helmets Boots Shield
 Rarity = Rare 
 DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
-#Meilleure base et Niveau d'objet - Armes
+#Meilleure base et Niveau d'objet - Armes à deux mains
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces"
 Rarity = Rare 
 DropLevel >= 59
+ItemLevel >= 86
+SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 88 0 179 212
+#Meilleure base et Niveau d'objet - Armes à une mains
+Show
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Sceptre
+Rarity = Rare 
+DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -1858,15 +1898,17 @@ SetBorderColor 170 158 130
 # SECTION: Commun
 #Objet à chance méta mais nécessite mod Zana
 Hide
-BaseType "Leather Belt" "Ritual Sceptre" "Hubris Circlet" "Legion Gloves" "Rustic Sash" "Glorious Plate" 
+BaseType "Leather Belt"
 Rarity = Normal
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
 #Objet à chance non-méta
-Hide
-BaseType "Sorcerer Boots" "Gold Amulet" "Occultist's Vestment" "Goathide Boots" "Close Helmet" "Prophecy Wand" "Stibnite Flask" "Sadist Garb"
+Show
+BaseType "Sadist Garb"
 Rarity = Normal
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
