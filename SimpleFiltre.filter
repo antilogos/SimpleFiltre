@@ -1,4 +1,4 @@
-# Version du 05/06/2019
+# Version du 07/06/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -42,10 +42,21 @@ MinimapIcon 2 Brown Hexagon
 # SECTION: Legion
 #Incubateurs
 Show
-BaseType "Emblem" "Karui Splinter" "Maraketh Splinter" "Eternal Empire Splinter" "Templar Splinter" "Vaal Splinter"
+Class "Map Fragment"
+BaseType "Emblem"
+SetBackgroundColor 192 128 254
+SetTextColor 0 0 0
+SetBorderColor 192 128 254
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+# SECTION: Legion
+#Incubateurs
+Show
+Class Currency
+BaseType "Karui Splinter" "Maraketh Splinter" "Eternal Empire Splinter" "Templar Splinter" "Vaal Splinter"
 SetBackgroundColor 0 0 0 255
 SetTextColor 192 128 254
-SetBorderColor 0 0 0 0
+SetBorderColor 192 128 254
 PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
 # SECTION: Legion
