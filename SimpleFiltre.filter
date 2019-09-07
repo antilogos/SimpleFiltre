@@ -1,4 +1,4 @@
-# Version du 23/08/2019
+# Version du 06/09/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -39,9 +39,51 @@ MinimapIcon 2 Brown Hexagon
 #LIGUES
 
 
-
-
-
+# SECTION: Blight
+#Huiles communes
+Show
+Class Currency
+BaseType "Clear Oil" "Sepia Oil" "Amber Oil" "Verdant Oil" "Teal Oil" "Azure Oil" "Violet Oil" "Crimson Oil"
+SetBackgroundColor 0 0 0 212
+SetTextColor 204 187 0
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+#Huiles moyennes
+Show
+Class Currency
+BaseType "Black Oil" "Opalescent Oil"
+SetBackgroundColor 0 0 0 212
+SetTextColor 204 187 0
+SetBorderColor 204 187 0
+PlayEffect Yellow
+MinimapIcon 1 Yellow Triangle
+#Huiles rares
+Show
+Class Currency
+BaseType  "Silver Oil" "Golden Oil"
+SetBackgroundColor 204 187 0
+SetTextColor 0 0 0
+SetBorderColor 204 187 0
+PlayEffect Yellow
+MinimapIcon 0 Yellow Triangle
+#Cartes infestées
+Show
+Class Map
+SetBackgroundColor 0 0 0 212
+SetTextColor 204 187 0
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+#Enchantement
+Show
+Class Ring Amulet
+AnyEnchantment True
+SetBackgroundColor 0 0 0 212
+SetTextColor 204 187 0
+SetBorderColor 204 187 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Legion
 #Incubateurs
 Show
@@ -138,28 +180,28 @@ PlayEffect Blue
 MinimapIcon 2 Blue Circle
 #Résonateur primitif
 Show
-Class Currency
+Class Delve Stackable Socketable Currency
 BaseType "Primitive Chaotic Resonator" "Primitive Alchemical Resonator"
 SetBackgroundColor 0 0 0 212
 SetTextColor 22 104 204
 SetBorderColor 0 0 0 0
 #Résonateur fort
 Show
-Class Currency
+Class Delve Stackable Socketable Currency
 BaseType "Potent Chaotic Resonator" "Potent Alchemical Resonator"
 SetBackgroundColor 0 0 0 212
 SetTextColor 22 104 204
 SetBorderColor 22 104 204
 #Résonateur puissant
 Show
-Class Currency
+Class Delve Stackable Socketable Currency
 BaseType "Powerful Chaotic Resonator" "Powerful Alchemical Resonator"
 SetBackgroundColor 22 104 204
 SetTextColor 0 0 0
 SetBorderColor 22 104 204
 #Résonateur prodigieux
 Show
-Class Currency
+Class Delve Stackable Socketable Currency
 BaseType "Prime Chaotic Resonator" "Prime Alchemical Resonator"
 SetBackgroundColor 255 255 255 128
 SetTextColor 22 104 204
@@ -479,7 +521,7 @@ SetBorderColor 0 0 0 0
 #Mythique
 Show
 Class "Divination Card"
-BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death"
+BaseType "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death" "The Demon"
 SetBackgroundColor 255 255 255 196
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -488,7 +530,7 @@ MinimapIcon 0 Blue Diamond
 #Rare
 Show
 Class "Divination Card"
-BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Master" "The Samurai's Eye"
+BaseType "The Immortal" "Abandoned Wealth" "The Vast" "Wealth and Power" "The Last One Standing" "The Celestial Justicar" "The Dragon's Heart" "The Offering" "Last Hope" "Bowyer's Dream" "The Wolf" "The Master" "The Samurai's Eye" "The Price of Loyalty" "Remembrance" "The Eye of Terror"
 SetBackgroundColor 170 230 230
 SetTextColor 0 0 0
 SetBorderColor 170 230 230
@@ -779,7 +821,6 @@ ItemLevel > 50
 SetBackgroundColor 0 0 0 212
 SetTextColor 27 162 155
 SetBorderColor 0 0 0 0
-
 
 #OBJETS
 
@@ -1112,7 +1153,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Rare 
 ItemLevel >= 86
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -1120,10 +1161,10 @@ PlayEffect Yellow
 MinimapIcon 1 Yellow Square
 #Base haut-niveau spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Rare 
 ItemLevel >= 86
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -1170,7 +1211,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Rare 
 ItemLevel >= 82
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -1178,10 +1219,10 @@ PlayEffect Yellow
 MinimapIcon 0 Yellow Square
 #Base haut-niveau spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Rare 
 ItemLevel >= 82
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -1191,15 +1232,15 @@ MinimapIcon 0 Yellow Square
 Show
 Class Amulet Belt Ring
 Rarity = Rare 
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
 #Base spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Rare 
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
@@ -1217,10 +1258,10 @@ PlayEffect Blue
 MinimapIcon 1 Blue Square
 #Base spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Magic 
 ItemLevel >= 86
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1258,7 +1299,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Magic 
 ItemLevel >= 82
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1266,10 +1307,10 @@ PlayEffect Blue
 MinimapIcon 0 Blue Square
 #Base spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Magic 
 ItemLevel >= 82
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1285,9 +1326,9 @@ SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
 #Base spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Magic 
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
@@ -1297,7 +1338,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Normal 
 ItemLevel >= 86
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1305,10 +1346,10 @@ PlayEffect White
 MinimapIcon 1 White Square
 #Base haut-niveau spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Normal 
 ItemLevel >= 86
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1346,7 +1387,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Normal 
 ItemLevel >= 82
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1354,10 +1395,10 @@ PlayEffect White
 MinimapIcon 0 White Square
 #Base haut-niveau spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Normal 
 ItemLevel >= 82
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1367,15 +1408,15 @@ MinimapIcon 0 White Square
 Show
 Class Amulet Belt Ring
 Rarity = Normal 
-BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
+BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
 #Base haut-niveau spécifique à l'Atlas
 Show
-Class Helmet Boots Gloves
+Class Helmet Boots Gloves Wand
 Rarity = Normal 
-BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves"
+BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
@@ -1496,7 +1537,6 @@ SetBorderColor 0 100 50 164
 Show
 LinkedSockets > 3
 ItemLevel <= 40
-Height = 2
 Rarity = Rare
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 119
@@ -1505,7 +1545,6 @@ SetBorderColor 0 100 50 164
 Show
 LinkedSockets > 2
 ItemLevel <= 9
-Height = 2
 Rarity = Rare
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 119
@@ -1638,7 +1677,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #Armes pour niveau 1>4
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 1
 ItemLevel <= 9
@@ -1647,7 +1686,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #5>9
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 5
 ItemLevel <= 13
@@ -1656,7 +1695,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #10>13
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 10
 ItemLevel <= 18
@@ -1665,7 +1704,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #15>18
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 15
 ItemLevel <= 23
@@ -1674,7 +1713,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #20>23
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 20
 ItemLevel <= 27
@@ -1683,7 +1722,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #24>27
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 24
 ItemLevel <= 34
@@ -1692,7 +1731,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #28>34
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 28
 ItemLevel <= 40
@@ -1701,7 +1740,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #35>40
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 35
 ItemLevel <= 46
@@ -1710,7 +1749,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #41>46
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 41
 ItemLevel <= 52
@@ -1719,7 +1758,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #47>52
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 47
 ItemLevel <= 57
@@ -1728,7 +1767,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #53>57
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 53
 ItemLevel <= 61
@@ -1737,7 +1776,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #58>61
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Rare
 DropLevel >= 58
 ItemLevel <= 67
@@ -1757,8 +1796,8 @@ SetBorderColor 0 100 50 164
 Show
 LinkedSockets > 3
 ItemLevel <= 40
-Height = 2
 Rarity = Magic
+SetFontSize 20
 SetBackgroundColor 0 0 0 164
 SetTextColor 30 144 255
 SetBorderColor 0 100 50 164
@@ -1767,7 +1806,7 @@ Show
 Rarity = Magic
 LinkedSockets > 2
 ItemLevel <= 9
-Height = 2
+SetFontSize 20
 SetBackgroundColor 0 0 0 164
 SetTextColor 30 144 255
 SetBorderColor 0 100 50 164
@@ -1834,7 +1873,7 @@ Show
 Rarity = Normal
 LinkedSockets > 3
 ItemLevel <= 40
-Height = 2
+SetFontSize 20
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 255
 SetBorderColor 0 100 50 164
@@ -1843,7 +1882,7 @@ Show
 Rarity = Normal
 LinkedSockets > 2
 ItemLevel <= 9
-Height = 2
+SetFontSize 20
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 255
 SetBorderColor 0 100 50 164
@@ -2005,6 +2044,14 @@ SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 170 158 130
+#Formule pour flacon d'animation pour faire un casque +1 gemme de créature
+Show
+BaseType "Bone Spirit Shield"
+Rarity <= Rare
+SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 255
+SetBorderColor 170 158 130
 #Formule Armurier pour le leveling
 Show
 Class Body Gloves Helmets Boots Shield
@@ -2017,7 +2064,7 @@ SetTextColor 255 255 255
 SetBorderColor 170 158 130
 #Formule Forgeron pour le leveling
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Quality = 20
 Rarity = Normal
 ItemLevel <= 60
@@ -2049,7 +2096,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Animation
 #base
 Hide
-Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Normal
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -2058,7 +2105,7 @@ SetBorderColor 0 0 0 0
 #PlayEffect Green Temp
 #avec la cape
 Hide
-Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
 Rarity = Magic
 Identified True
 SetFontSize 16
@@ -2088,7 +2135,7 @@ SetBorderColor 127 127 127
 # SECTION: Cacher
 #Laisser par terre
 Hide
-Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre
+Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre Warstaff "Rune Dagger"
 SetFontSize 16
 SetBackgroundColor 0 0 0 76
 SetBorderColor 0 0 0 0
