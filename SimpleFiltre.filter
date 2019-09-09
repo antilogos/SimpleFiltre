@@ -70,6 +70,7 @@ MinimapIcon 0 Yellow Triangle
 #Cartes infestées
 Show
 Class Map
+BlightedMap True
 SetBackgroundColor 0 0 0 212
 SetTextColor 204 187 0
 SetBorderColor 0 0 0 0
