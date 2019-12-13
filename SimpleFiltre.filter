@@ -1,4 +1,4 @@
-# Version du 06/09/2019
+# Version du 13/12/2019
 # SECTION: Unique
 #Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -39,6 +39,26 @@ MinimapIcon 2 Brown Hexagon
 #LIGUES
 
 
+# SECTION: Metamorph
+#Échantillon
+Show
+Class Metamorph Sample
+BaseType "Metamorph Brain" "Metamorph Eye" "Metamorph Liver" "Metamorph Lung" "Metamorph Heart"
+SetBackgroundColor 0 0 0 212
+SetTextColor 0 191 0
+SetBorderColor 0 191 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+# SECTION: Metamorph
+#Catalyseur
+Show
+Class Currency
+BaseType "Turbulent Catalyst" "Imbued Catalyst" "Abrasive Catalyst" "Tempering Catalyst" "Fertile Catalyst" "Prismatic Catalyst" "Intrinsic Catalyst"
+SetBackgroundColor 0 0 0 212
+SetTextColor 0 191 0
+SetBorderColor 0 0 0 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Blight
 #Huiles communes
 Show
@@ -457,17 +477,25 @@ MinimapIcon 2 Blue Triangle
 
 
 # SECTION: Atlas
-#Objet de l'Ancien
+#Pierre de veilleur
 Show
-ElderItem True 
+Class "Map Fragments"
+BaseType Watchstone
 SetBackgroundColor 0 0 0 255
 SetTextColor 88 0 179
-SetBorderColor 88 0 179
-PlayEffect Yellow
-MinimapIcon 2 Yellow Triangle
-#Objet du Façonneur
+SetBorderColor 0 0 0 0
+# SECTION: Atlas
+#Fragment
 Show
-ShaperItem True
+Class "Map Fragments"
+BaseType Enslavement Eradication Constriction Purification Shape Knowledge Terror Emptiness
+SetBackgroundColor 0 0 0 255
+SetTextColor 88 0 179
+SetBorderColor 0 0 0 0
+# SECTION: Atlas
+#Objet influencé
+Show
+HasInfluence Shaper Elder Crusader Redeemer Hunter Warlord
 SetBackgroundColor 0 0 0 255
 SetTextColor 88 0 179
 SetBorderColor 88 0 179
@@ -613,7 +641,7 @@ MinimapIcon 0 Brown Star
 #T1.5
 Show
 Class Currency
-BaseType "Exalted Orb" 
+BaseType "Exalted Orb" "Awakener's Orb"
 SetBackgroundColor 255 255 255 196
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
@@ -755,6 +783,15 @@ Class Maps
 SetBackgroundColor 0 0 0 255
 SetTextColor 0 100 150
 SetBorderColor 0 0 0 0
+# SECTION: Gemme
+#Gemmes éveillées
+Show
+Class "Support Skill Gems"
+BaseType Awakened
+SetBackgroundColor 255 255 255 128
+SetTextColor 27 162 155
+SetBorderColor 27 162 155
+SetFontSize 30
 # SECTION: Gemme
 #Gemmes non achetables chez les marchands
 Show
@@ -1191,7 +1228,7 @@ SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
 #Meilleure base et Niveau d'objet - Armes à deux mains
 Show
-Class Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces"
+Class Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare 
 DropLevel >= 59
 ItemLevel >= 86
@@ -1200,7 +1237,7 @@ SetTextColor 255 255 119
 SetBorderColor 88 0 179 212
 #Meilleure base et Niveau d'objet - Armes à une mains
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Sceptre "Rune Dagger"
 Rarity = Rare 
 DropLevel >= 62
 ItemLevel >= 86
@@ -1279,7 +1316,7 @@ SetTextColor 30 144 255
 SetBorderColor 88 0 179 212
 #Meilleure base et Niveau d'objet - Armes
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre Warstaves "Rune Daggers"
 Rarity = Magic 
 DropLevel >= 59
 ItemLevel >= 86
@@ -1367,7 +1404,7 @@ SetTextColor 255 255 255
 SetBorderColor 88 0 179 212
 #Meilleure base et Niveau d'objet - Armes
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre Warstaves "Rune Daggers"
 Rarity = Normal 
 DropLevel >= 59
 ItemLevel >= 86
@@ -1676,9 +1713,17 @@ ItemLevel <= 67
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
+#Armes pour lanceur de sort
+Show
+Class Wands Staves Sceptre "Rune Daggers"
+Rarity = Rare
+ItemLevel <= 67
+SetBackgroundColor 0 0 0 164
+SetTextColor 255 255 119
+SetBorderColor 0 100 50 164
 #Armes pour niveau 1>4
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 1
 ItemLevel <= 9
@@ -1687,7 +1732,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #5>9
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 5
 ItemLevel <= 13
@@ -1696,7 +1741,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #10>13
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 10
 ItemLevel <= 18
@@ -1705,7 +1750,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #15>18
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 15
 ItemLevel <= 23
@@ -1714,7 +1759,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #20>23
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 20
 ItemLevel <= 27
@@ -1723,7 +1768,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #24>27
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 24
 ItemLevel <= 34
@@ -1732,7 +1777,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #28>34
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 28
 ItemLevel <= 40
@@ -1741,7 +1786,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #35>40
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 35
 ItemLevel <= 46
@@ -1750,7 +1795,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #41>46
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 41
 ItemLevel <= 52
@@ -1759,7 +1804,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #47>52
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 47
 ItemLevel <= 57
@@ -1768,7 +1813,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #53>57
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 53
 ItemLevel <= 61
@@ -1777,7 +1822,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 #58>61
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 DropLevel >= 58
 ItemLevel <= 67
@@ -1966,7 +2011,7 @@ SetTextColor 255 255 119
 SetBorderColor 170 158 130
 #Rare pour formule chaos
 Hide
-Class Gloves Helmets Boots Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces"
+Class Gloves Helmets Boots Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves
 Rarity = Rare
 ItemLevel >= 60
 SetBackgroundColor 0 0 0 212
@@ -2009,6 +2054,7 @@ Show
 BaseType "Stone Hammer" "Rock Breaker" "Gavel" 
 Rarity = Magic
 Quality >= 12
+ItemLevel >= 50
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -2041,6 +2087,7 @@ SetBorderColor 170 158 130
 Show
 BaseType "Stone Hammer" "Rock Breaker" "Gavel" 
 Rarity = Normal
+ItemLevel >= 50
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
@@ -2049,6 +2096,7 @@ SetBorderColor 170 158 130
 Show
 BaseType "Bone Spirit Shield"
 Rarity <= Rare
+ItemLevel <= 40
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
@@ -2065,10 +2113,10 @@ SetTextColor 255 255 255
 SetBorderColor 170 158 130
 #Formule Forgeron pour le leveling
 Show
-Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 Quality = 20
 Rarity = Normal
-ItemLevel <= 60
+ItemLevel <= 50
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 170 158 130
@@ -2097,7 +2145,7 @@ SetBorderColor 0 0 0 0
 # SECTION: Animation
 #base
 Hide
-Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 Rarity = Normal
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -2106,7 +2154,7 @@ SetBorderColor 0 0 0 0
 #PlayEffect Green Temp
 #avec la cape
 Hide
-Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Dagger" Warstaff
+Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 Rarity = Magic
 Identified True
 SetFontSize 16
@@ -2136,7 +2184,6 @@ SetBorderColor 127 127 127
 # SECTION: Cacher
 #Laisser par terre
 Hide
-Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre Warstaff "Rune Dagger"
+Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre "Rune Daggers" Warstaves
 SetFontSize 16
 SetBackgroundColor 0 0 0 76
-SetBorderColor 0 0 0 0
