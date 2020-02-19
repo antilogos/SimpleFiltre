@@ -1,20 +1,20 @@
-# Version du 18/02/2020
+# Version du 19/02/2020
 # SECTION: Unique
 # Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
 BaseType "Mirror of Kalandra"
+PlayEffect White
+MinimapIcon 0 White Diamond
+Continue
+# Tellement rarissime que vous n'en verrez surement jamais la couleur
+Show
+BaseType "Albino Rhoa Feather" "Fishing Rod"
 SetBackgroundColor 255 255 255 128
 SetTextColor 175 96 37
 SetBorderColor 175 96 37
 SetFontSize 30
 PlayEffect White
-MinimapIcon 0 White Diamond
-# Tellement rarissime que vous n'en verrez surement jamais la couleur
-Show
-BaseType "Albino Rhoa Feather" "Fishing Rod"
-PlayEffect White
 MinimapIcon 1 White Triangle
-Continue
 # Objet qui ne sont plus obtenables sauf en l'achetant à d'autre joueurs
 Show
 BaseType "Item Quantity" "Eternal Orb"
@@ -69,18 +69,18 @@ MinimapIcon 2 Yellow Triangle
 Show
 Class Currency
 BaseType "Black Oil" "Opalescent Oil"
-SetBackgroundColor 0 0 0 212
-SetTextColor 204 187 0
-SetBorderColor 204 187 0
 PlayEffect Yellow
 MinimapIcon 1 Yellow Triangle
+Continue
 # Enchantement
 Show
 Class Ring Amulet
 AnyEnchantment True
+SetBackgroundColor 0 0 0 212
+SetTextColor 204 187 0
+SetBorderColor 204 187 0
 PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
-Continue
 # Huiles rares
 Show
 Class Currency
@@ -172,26 +172,26 @@ SetBorderColor 0 0 0 0
 Show
 Class Currency
 BaseType "Fossil"
-SetBackgroundColor 0 0 0 212
-SetTextColor 22 104 204
-SetBorderColor 88 0 179 212
+Continue
 # Objet avec de la qualité bonus
 Show
 Quality > 23
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 22 104 204
+SetBorderColor 88 0 179 212
 # Objet avec des mods spécifique
 Show
 HasExplicitMod "Subterranean" "of the Underground" "of Weaponcraft" "of Spellcraft" "of Crafting"
-SetBackgroundColor 0 0 0 212
-SetTextColor 22 104 204
-SetBorderColor 22 104 204
 PlayEffect Blue
 MinimapIcon 2 Blue Circle
+Continue
 # Résonateur fort
 Show
 Class Delve Stackable Socketable Currency
 BaseType "Potent Chaotic Resonator" "Potent Alchemical Resonator"
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 22 104 204
+SetBorderColor 22 104 204
 # Résonateur primitif
 Show
 Class Delve Stackable Socketable Currency
@@ -210,34 +210,34 @@ SetBorderColor 22 104 204
 Show
 Class Delve Stackable Socketable Currency
 BaseType "Prime Chaotic Resonator" "Prime Alchemical Resonator"
-SetBackgroundColor 255 255 255 128
-SetTextColor 22 104 204
-SetBorderColor 22 104 204
-SetFontSize 30
+Continue
 # Reliquaire érodé par le temps
 Show
 Class "Misc Map Items"
 BaseType "Timeworn Reliquary Key"
+SetBackgroundColor 255 255 255 128
+SetTextColor 22 104 204
+SetBorderColor 22 104 204
+SetFontSize 30
 PlayEffect Green
 MinimapIcon 0 Green Square
-Continue
 # SECTION: Incursion
 # Clés de la pyramide
 Show
 Class "Incursion Item"
 
-SetBackgroundColor 220 255 40
-SetTextColor 0 0 0
-SetBorderColor 220 255 40
 PlayEffect Green
 MinimapIcon 0 Green Circle
+Continue
 # Objet pour augmenter les uniques de Incursion
 Show
 Class Currency
 BaseType "Vial"
+SetBackgroundColor 220 255 40
+SetTextColor 0 0 0
+SetBorderColor 220 255 40
 PlayEffect Brown
 MinimapIcon 2 Brown Star
-Continue
 # Objets avec des mods spécifique
 Show
 Rarity = Rare
@@ -260,11 +260,9 @@ MinimapIcon 2 Blue Triangle
 # Ceinture de Abysse Carcan Stygien
 Show
 BaseType "Stygian Vise"
-SetBackgroundColor 0 0 0 212
-SetTextColor 169 189 149
-SetBorderColor 169 189 149
 PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
+Continue
 # Objet quelconque avec châsse abyssale
 Show
 SocketGroup A
@@ -275,7 +273,9 @@ Continue
 Show
 Class "Abyss Jewel"
 ItemLevel > 75
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 169 189 149
+SetBorderColor 169 189 149
 # Joyaux Abyssaux
 Show
 Class "Abyss Jewel"
@@ -288,16 +288,16 @@ SetBorderColor 0 0 0 0
 Show
 Class Piece
 
-SetBackgroundColor 58 124 244
-SetTextColor 0 0 0
-SetBorderColor 58 124 244
 PlayEffect Brown
 MinimapIcon 2 Brown Triangle
+Continue
 # Currency dont on n'obtient que des fragments
 Show
 Class Currency
 BaseType "Orb of Binding" "Harbinger's Orb" "Engineer's Orb" "Ancient Orb"
-Continue
+SetBackgroundColor 58 124 244
+SetTextColor 0 0 0
+SetBorderColor 58 124 244
 # Morceaux de Currency spécifiques aux Precurseurs ou rare
 Show
 Class Currency
@@ -337,18 +337,18 @@ MinimapIcon 2 Green Square
 Show
 Class "Map Fragment"
 BaseType "Breachstone"
-SetBackgroundColor 160 90 255
-SetTextColor 0 0 0
-SetBorderColor 160 90 255
 PlayEffect Green
 MinimapIcon 2 Green Square
+Continue
 # Blessing des Breachlords
 Show
 Class Currency
 BaseType "Blessing of"
+SetBackgroundColor 160 90 255
+SetTextColor 0 0 0
+SetBorderColor 160 90 255
 PlayEffect Brown
 MinimapIcon 2 Brown Star
-Continue
 # Splinter
 Show
 Class Currency
@@ -466,14 +466,14 @@ MinimapIcon 2 Blue Triangle
 # Pierre de veilleur
 Show
 BaseType Watchstone
-SetBackgroundColor 0 0 0 255
-SetTextColor 88 0 179
-SetBorderColor 0 0 0 0
+Continue
 # Fragment
 Show
 Class "Map Fragments"
 BaseType Enslavement Eradication Constriction Purification Shape Knowledge Terror Emptiness
-Continue
+SetBackgroundColor 0 0 0 255
+SetTextColor 88 0 179
+SetBorderColor 0 0 0 0
 # Objet influencé
 Show
 HasInfluence Shaper Elder Crusader Redeemer Hunter Warlord
@@ -560,14 +560,14 @@ MinimapIcon 2 Blue Diamond
 Show
 Class "Divination Card"
 BaseType "The Incantation" "The Carrion Crow" "Thunderous Skies"
-SetBackgroundColor 0 0 0 212
-SetTextColor 170 230 230
-SetBorderColor 0 0 0 0
+Continue
 # Commune
 Show
 Class "Divination Card"
 
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 170 230 230
+SetBorderColor 0 0 0 0
 # SECTION: Vaal
 # Fragment de Mortal
 Show
@@ -624,19 +624,19 @@ MinimapIcon 2 Red Circle
 Show
 Class Currency
 BaseType "Mirror Shard"
+PlayEffect Brown
+MinimapIcon 0 Brown Star
+Continue
+# T1.5
+Show
+Class Currency
+BaseType "Exalted Orb" "Awakener's Orb"
 SetBackgroundColor 255 255 255 196
 SetTextColor 170 158 130
 SetBorderColor 170 158 130
 SetFontSize 30
 PlayEffect Brown
-MinimapIcon 0 Brown Star
-# T1.5
-Show
-Class Currency
-BaseType "Exalted Orb" "Awakener's Orb"
-PlayEffect Brown
 MinimapIcon 1 Brown Star
-Continue
 # T2
 Show
 Class Currency
@@ -658,9 +658,7 @@ MinimapIcon 2 Brown Star
 Show
 Class Currency
 BaseType "Orb of Chance" "Orb of Alteration" "Chromatic Orb" "Orb of Alchemy" "Orb of Fusing" "Glassblower's Bauble" "Cartographer's Chisel"
-SetBackgroundColor 0 0 0 212
-SetTextColor 170 158 130
-SetBorderColor 0 0 0 0
+Continue
 # Inintéressante
 Show
 Class Currency
@@ -671,7 +669,9 @@ Continue
 Show
 Class Currency
 
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 170 158 130
+SetBorderColor 0 0 0 0
 
 
 # OBJETS (Rareté indiférente)
@@ -682,11 +682,9 @@ Continue
 Show
 Class "Map Fragment"
 BaseType "Fragment of the Chimera" "Fragment of the Phoenix" "Fragment of the Hydra" "Fragment of the Minotaur" 
-SetBackgroundColor 0 100 150
-SetTextColor 0 0 0
-SetBorderColor 0 100 150
 PlayEffect Green
 MinimapIcon 1 Green Square
+Continue
 # Map T16
 Show
 Class Maps
@@ -699,32 +697,32 @@ Show
 Class Maps
 MapTier > 10
 AreaLevel <= 82
+SetBackgroundColor 0 100 150
+SetTextColor 0 0 0
+SetBorderColor 0 100 150
 MinimapIcon 2 Red Hexagon
-Continue
 # Map Rouge dans la fin
 Show
 Class Maps
 MapTier > 10
 AreaLevel > 82
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 100 150
 MinimapIcon 2 Red Hexagon
+Continue
 # Map Jaune dans les Maps Jaunes
 Show
 Class Maps
 MapTier > 5
 AreaLevel <= 77
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 0 100 150
 MinimapIcon 2 Yellow Hexagon
-Continue
 # Map Jaune dans les Maps Rouges
 Show
 Class Maps
 MapTier > 5
 AreaLevel > 77
-SetBackgroundColor 0 0 0 255
-SetTextColor 0 100 150
-SetBorderColor 0 0 0 0
+Continue
 # Map Blanche dans les Maps Blanches
 Show
 Class Maps
@@ -737,8 +735,10 @@ Show
 Class Maps
 MapTier > 1
 AreaLevel <= 77
+SetBackgroundColor 0 0 0 255
+SetTextColor 0 100 150
+SetBorderColor 0 0 0 0
 MinimapIcon 2 White Hexagon
-Continue
 # Map Corrompues
 Show
 Class Maps
@@ -773,9 +773,7 @@ SetFontSize 30
 Show
 Class "Skill Gems"
 BaseType "Portal" "Empower" "Enlighten" "Vaal Breach" "Enhance"
-SetBackgroundColor 27 162 155
-SetTextColor 0 0 0
-SetBorderColor 27 162 155
+Continue
 # Gemmes avec suffisamment de niveau
 Show
 Class "Skill Gems"
@@ -791,7 +789,9 @@ Continue
 Show
 Class "Skill Gems"
 Quality  > 14
-Continue
+SetBackgroundColor 27 162 155
+SetTextColor 0 0 0
+SetBorderColor 27 162 155
 # Gemmes avec trop peu de qualité
 Show
 Class "Skill Gems"
@@ -812,9 +812,7 @@ Class "Skill Gems"
 DropLevel >= 38
 AreaLevel <= 67
 SetFontSize 24
-SetBackgroundColor 0 0 0 212
-SetTextColor 27 162 155
-SetBorderColor 0 0 0 0
+Continue
 # Afficher les gemmes pendant le leveling
 Show
 Class "Skill Gems"
@@ -824,7 +822,9 @@ Continue
 Hide
 Class "Skill Gems"
 AreaLevel > 50
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 27 162 155
+SetBorderColor 0 0 0 0
 
 
 # OBJETS
@@ -860,9 +860,7 @@ AreaLevel > 67
 Quality >= 10
 Rarity = Normal
 SetFontSize 16
-SetBackgroundColor 0 0 0 212
-SetTextColor 136 136 255
-SetBorderColor 88 0 179 212
+Continue
 # Flask Utilitaire avec de la qualité
 Show
 Class "Utility Flasks"
@@ -870,7 +868,9 @@ AreaLevel > 67
 Quality >= 16
 Rarity = Magic
 SetFontSize 16
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 136 136 255
+SetBorderColor 88 0 179 212
 # Flask Utilitaire
 Show
 Class "Utility Flasks"
@@ -884,9 +884,7 @@ Class Flasks
 BaseType Mana Life Hybrid
 DropLevel >= 1
 AreaLevel < 11
-SetBackgroundColor 0 0 0 164
-SetTextColor 136 136 255
-SetBorderColor 0 100 50 164
+Continue
 # 6>12
 Show
 Class Flasks
@@ -921,37 +919,39 @@ Class Flasks
 BaseType Mana Life Hybrid
 DropLevel >= 60
 AreaLevel < 66
-Continue
+SetBackgroundColor 0 0 0 164
+SetTextColor 136 136 255
+SetBorderColor 0 100 50 164
 # Flacon avec de la Qualité
 Show
 Class Flasks
 DropLevel >= 60
 Quality >= 10
 Rarity = Normal
-SetBackgroundColor 0 0 0 212
-SetTextColor 136 136 255
-SetBorderColor 88 0 179 212
+Continue
 # Flacon avec de la Qualité
 Show
 Class Flasks
 DropLevel >= 60
 Quality >= 16
 Rarity = Magic
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 136 136 255
+SetBorderColor 88 0 179 212
 # Flacon de qualité pour formule
 Show
 Class Flasks
 Quality = 20
 Rarity = Normal
-SetBackgroundColor 0 0 0 212
-SetTextColor 136 136 255
-SetBorderColor 170 158 130
+Continue
 # Flacon de qualité pour formule
 Show
 Class Flasks
 Quality >= 13
 AreaLevel < 75
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 136 136 255
+SetBorderColor 170 158 130
 # Dépassé
 Hide
 Class Flasks
@@ -1017,22 +1017,20 @@ MinimapIcon 2 Yellow Triangle
 Show
 Rarity = Rare
 HasExplicitMod "Dictator's" "Merciless" "Flaring" "Overpowering" "Devastating" "Paragon's" "Runic" "of Grandmastery" "of Bameth" "Crocodile's" "Ibex" "Exarch's" "of the Multiverse" "of Grandmastery"
-SetBackgroundColor 255 255 119
-SetTextColor 0 0 0
-SetBorderColor 255 255 119
+Continue
 # Affixes les plus rares
 Show
 Class Shield Ring Amulet
 Rarity = Rare
 HasExplicitMod "of Mastery" "Cremating" "Entombing" "Electrocuting"
-Continue
+SetBackgroundColor 255 255 119
+SetTextColor 0 0 0
+SetBorderColor 255 255 119
 # Meilleurs tiers d'affixes disponibles
 Show
 Rarity = Rare
 HasExplicitMod "Prime" "Resplendent" "Phased" "Carapaced" "Perandus'" "Flawless" "Necromancer's" "Unfaltering" "Impenetrable" "Illusion's" "Interpermeated" "Victor's" "Incorporeal" "Resilient" "Consecrated" "Eidolon's" "Hellion's" "Ultramarine" "Mammoth's" "Hummingbird's" "Seraphim's" "of the Godslayer" "of the Blur" "of the Polymath" "of Celebration" "of Tzteosh" "of Haast" "of Ephij" "of the Span" "of Rending" "of Destruction" "of Lioneye" "of Unmaking" "of Finesse" "of Blocking" "of Fog" "of Incantations" "of Revitalization" "of Exuberance"
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 119
-SetBorderColor 255 255 119
+Continue
 # Second meilleurs tiers d'affixes rares
 Show
 Rarity = Rare
@@ -1043,37 +1041,37 @@ Show
 Class Helm Shield Ring
 Rarity = Rare
 HasExplicitMod "Nautilus's" "Ram's" "Abbot's" "Overpowering" "of Excavation" 
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 255 119
 # SECTION: Magique
 # Affixes les plus rares
 Show
 Rarity = Magic
 Mirrored False
 HasExplicitMod "Dictator's" "Merciless" "Flaring" "Overpowering" "Devastating" "Paragon's" "Runic" "of Grandmastery" "of Bameth" "Crocodile's" "Ibex" "Exarch's"
-SetBackgroundColor 30 144 255
-SetTextColor 0 0 0
-SetBorderColor 30 144 255
 PlayEffect Blue
 MinimapIcon 0 Blue Square
+Continue
 # Affixes les plus rares
 Show
 Class Shield Ring Amulet
 Rarity = Magic
 Mirrored False
 HasExplicitMod "of Mastery" "Cremating" "Entombing" "Electrocuting"
+SetBackgroundColor 30 144 255
+SetTextColor 0 0 0
+SetBorderColor 30 144 255
 PlayEffect Blue
 MinimapIcon 0 Blue Square
-Continue
 # Meilleurs tiers d'affixes disponibles
 Show
 Rarity = Magic
 Mirrored False
 HasExplicitMod "Prime" "Resplendent" "Phased" "Carapaced" "Perandus'" "Flawless" "Necromancer's" "Unfaltering" "Impenetrable" "Illusion's" "Interpermeated" "Victor's" "Incorporeal" "Resilient" "Consecrated" "Eidolon's" "Hellion's" "Ultramarine" "Mammoth's" "Hummingbird's" "Seraphim's" "of the Godslayer" "of the Blur" "of the Polymath" "of Celebration" "of Tzteosh" "of Haast" "of Ephij" "of the Span" "of Rending" "of Destruction" "of Lioneye" "of Unmaking" "of Finesse" "of Blocking" "of Fog" "of Incantations" "of Revitalization" "of Exuberance"
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 30 144 255
 PlayEffect Blue
 MinimapIcon 0 Blue Square
+Continue
 # Second meilleurs tiers d'affixes rares
 Show
 Rarity = Magic
@@ -1086,16 +1084,18 @@ Class Helm Shield Ring
 Rarity = Magic
 Mirrored False
 HasExplicitMod "Nautilus's" "Ram's" "Abbot's" "Overpowering"
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 30 144 255
+SetBorderColor 30 144 255
 
 
 # Meilleure Affixes de vie par type
 
 
+Continue
 # Second meilleur Affixes de vie par type
 
 
-Continue
 # Meilleure Affixes Accessoire
 
 
@@ -1108,10 +1108,10 @@ Continue
 # Second Meilleure Affixes Attaques
 
 
+Continue
 # Affixe de niveau de gemmes
 
 
-Continue
 # Meilleure Affixes Sorts
 
 
@@ -1140,11 +1140,9 @@ Class Amulet Belt Ring
 Rarity = Rare 
 ItemLevel >= 86
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 119
-SetBorderColor 88 0 179 212
 PlayEffect Yellow
 MinimapIcon 1 Yellow Square
+Continue
 # Base haut-niveau spécifique à l'Atlas
 Show
 Class Helmet Boots Gloves Wand
@@ -1211,7 +1209,9 @@ Show
 Class Helmet Boots Gloves Wand
 Rarity = Rare 
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 88 0 179 212
 # SECTION: Magique
 # Base spécifique à l'Atlas
 Show
@@ -1219,11 +1219,9 @@ Class Amulet Belt Ring
 Rarity = Magic 
 ItemLevel >= 86
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 88 0 179 212
 PlayEffect Blue
 MinimapIcon 1 Blue Square
+Continue
 # Base spécifique à l'Atlas
 Show
 Class Helmet Boots Gloves Wand
@@ -1283,7 +1281,9 @@ Show
 Class Helmet Boots Gloves Wand
 Rarity = Magic 
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 30 144 255
+SetBorderColor 88 0 179 212
 # SECTION: Commun
 # Base haut-niveau spécifique à l'Atlas
 Show
@@ -1292,11 +1292,9 @@ Rarity = Normal
 Mirrored False
 ItemLevel >= 86
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 255
-SetBorderColor 88 0 179 212
 PlayEffect White
 MinimapIcon 1 White Square
+Continue
 # Base haut-niveau spécifique à l'Atlas
 Show
 Class Helmet Boots Gloves Wand
@@ -1364,7 +1362,9 @@ Class Helmet Boots Gloves Wand
 Rarity = Normal 
 Mirrored False
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 255
+SetBorderColor 88 0 179 212
 
 
 # OBJETS à ramasser pour upgrade potentiel
@@ -1385,14 +1385,14 @@ Rarity = Rare
 DropLevel >= 59
 ItemLevel >= 68
 SetFontSize 28
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 119
-SetBorderColor 0 0 0 0
+Continue
 # Bijoux, indémodable
 Show
 Class Amulet Ring Belt Quiver
 Rarity = Rare
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 0 0 0 0
 # Objet corrompu
 Show
 Rarity = Rare
@@ -1453,9 +1453,7 @@ Show
 LinkedSockets > 4 
 AreaLevel <= 68
 Rarity = Rare
-SetBackgroundColor 0 0 0 164
-SetTextColor 255 255 119
-SetBorderColor 0 100 50 164
+Continue
 # 4L pour le leveling
 Show
 LinkedSockets > 3
@@ -1655,7 +1653,9 @@ Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes
 Rarity = Rare
 DropLevel >= 58
 AreaLevel <= 67
-Continue
+SetBackgroundColor 0 0 0 164
+SetTextColor 255 255 119
+SetBorderColor 0 100 50 164
 # SECTION: Magique
 # 5L pour le leveling
 Show
@@ -1663,9 +1663,7 @@ LinkedSockets > 4
 AreaLevel < 68
 Rarity = Magic
 Mirrored False
-SetBackgroundColor 0 0 0 164
-SetTextColor 30 144 255
-SetBorderColor 0 100 50 164
+Continue
 # 4L pour le leveling
 Show
 LinkedSockets > 3
@@ -1724,7 +1722,9 @@ Class Amulet Ring
 ItemLevel < 60
 Rarity = Magic
 Mirrored False
-Continue
+SetBackgroundColor 0 0 0 164
+SetTextColor 30 144 255
+SetBorderColor 0 100 50 164
 # SECTION: Commun
 # 5L pour le leveling
 Show
@@ -1732,9 +1732,7 @@ Rarity = Normal
 Mirrored False
 LinkedSockets > 4 
 AreaLevel < 68
-SetBackgroundColor 0 0 0 164
-SetTextColor 255 255 255
-SetBorderColor 0 100 50 164
+Continue
 # 4L pour le leveling
 Show
 Rarity = Normal
@@ -1786,7 +1784,9 @@ Continue
 Show
 Rarity = Normal
 AreaLevel < 2
-Continue
+SetBackgroundColor 0 0 0 164
+SetTextColor 255 255 255
+SetBorderColor 0 100 50 164
 
 
 # OBJETS à ramasser pour formule de marchand
@@ -1797,9 +1797,7 @@ Continue
 Show
 Rarity = Rare
 Sockets 6
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 119
-SetBorderColor 170 158 130
+Continue
 # Formule chromatic
 Show
 Rarity = Rare
@@ -1829,15 +1827,15 @@ Show
 Rarity = Rare
 Mirrored True
 SetFontSize 16
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 170 158 130
 # SECTION: Magique
 # 6s pour formule joaillier
 Show
 Rarity = Magic
 Sockets 6
-SetBackgroundColor 0 0 0 212
-SetTextColor 30 144 255
-SetBorderColor 170 158 130
+Continue
 # Formule chromatic
 Show
 Rarity = Magic
@@ -1858,15 +1856,15 @@ Mirrored False
 Quality >= 12
 ItemLevel >= 50
 SetFontSize 16
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 30 144 255
+SetBorderColor 170 158 130
 # SECTION: Commun
 # 6s pour formule joaillier
 Show
 Rarity = Normal
 Sockets 6
-SetBackgroundColor 0 0 0 212
-SetTextColor 255 255 255
-SetBorderColor 170 158 130
+Continue
 # Formule chromatic
 Show
 Rarity = Normal
@@ -1908,7 +1906,9 @@ Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Han
 Quality = 20
 Rarity = Normal
 AreaLevel <= 50
-Continue
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 255
+SetBorderColor 170 158 130
 
 
 # OBJETS particulier à ramasser selon préférences
@@ -1937,35 +1937,35 @@ Hide
 Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 Rarity = Normal
 SetFontSize 16
-SetBackgroundColor 0 0 0 212
-SetTextColor 127 127 127
-SetBorderColor 0 0 0 0
 #PlayEffect Green Temp
+Continue
 # avec la cape
 Hide
 Class Claws Daggers "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 Rarity = Magic
 Identified True
 SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 127 127 127
+SetBorderColor 0 0 0 0
 #PlayEffect Green Temp
-Continue
 # avec le joyaux
 Hide
 Class Wands Bows
 Rarity = Normal
 SetFontSize 16
-SetBackgroundColor 0 0 0 212
-SetTextColor 127 127 127
-SetBorderColor 127 127 127
 #PlayEffect Green Temp
+Continue
 # avec la cape et le joyaux
 Hide
 Class Wands Bows
 Rarity = Magic
 Identified True
 SetFontSize 16
+SetBackgroundColor 0 0 0 212
+SetTextColor 127 127 127
+SetBorderColor 127 127 127
 #PlayEffect Green Temp
-Continue
 # SECTION: Cacher
 # Laisser par terre
 Hide
