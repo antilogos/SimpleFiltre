@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TREE PARSER</title>
+    <style>
+    </style>
+    <script src="data.txt" type="text/javascript"></script>
+    <script>
+      function init() {
+        const shiftX = passiveSkillTreeData.min_x;
+        const shiftY = passiveSkillTreeData.min_y;
+
+        const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+        svg.setAttribute("viewBox","0 0 " + (passiveSkillTreeData.max_x-shiftX) + " " + (passiveSkillTreeData.max_y-shiftY));
+        svg.setAttribute("width","1000");
+        svg.setAttribute("height","1000");
+
+        // filter only node that matters
+        const nodeMap = new Map();
+        for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+          if(!value.isAscendancyStart && !value.isMultipleChoice && !value.isMultipleChoiceOption && !value.m && !value.ascendancyName && (!value.spc || value.spc.length == 0)) {
+            nodeMap[key] = value;
+            //if(value.ks) console.log(value);
+          }
+        }
+        //console.log("filter out ", nodeMap);
+
+        // Parse the groups to get coordinate of the center of circle if needed
+        for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
+          const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          groupNode.setAttribute("cx", value.x -shiftX);
+          groupNode.setAttribute("cy", value.y -shiftY);
+          groupNode.setAttribute("r", 75);
+          groupNode.setAttribute("stroke", "#00F");
+          groupNode.setAttribute("stroke-width", value.n.length);
+          groupNode.setAttribute("fill", "none");
+          svg.appendChild(groupNode);
+
+          if(value.n.indexOf(54307) > 0) console.log(groupNode);
+
+          // Only node that matters
+          const filteredNode = value.n.filter(function (node) {return nodeMap[node]; });
+          for( let node of filteredNode) {
+            const radius = passiveSkillTreeData.constants.orbitRadii[node.o];
+            const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.oidx];
+
+            const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            nodePoint.setAttribute("cx", value.x -shiftX);
+            nodePoint.setAttribute("cy", value.y -shiftY);
+            nodePoint.setAttribute("fill", "#F00");
+            if(node.ks) nodePoint.setAttribute("r", 128);
+            else if(node.not) nodePoint.setAttribute("r", 64);
+            else nodePoint.setAttribute("r", 32);
+            if(node.ks) console.log(ks, value);
+            svg.appendChild(nodePoint);
+          }
+          //console.log(value.oo);
+        };
+
+        document.getElementById("maindiv").appendChild(svg);
+        console.log(passiveSkillTreeData);
+      }
+    </script>
+  </head>
+    <body onload="init()">
+     <div id="maindiv" style="overflow: auto">
+     </div>
+     <input type="file" id="file-input" />
+    <h3>Contents of the file:</h3>
+    <pre id="file-content"></pre>
+  </body>
+</html>
