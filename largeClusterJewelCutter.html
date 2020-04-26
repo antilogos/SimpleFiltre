@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Large Cluster Jewel Cutter</title>
+    <script src="cluster.js" type="text/javascript"></script>
+    <script>
+		function darkMode() {
+			document.body.classList.toggle("dark-mode");
+			document.getElementById("resulttable").classList.toggle("dark-mode");
+		}
+	</script>
+	<style>
+	table, th, td {
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	}
+	table.dark-mode, th.dark-mode, td.dark-mode {
+	  border: 1px solid white;
+	  background-color: black;
+	  color: white;
+	}
+	body {
+	  background-color: white;
+	  color: black;
+	}
+	.dark-mode {
+	  background-color: black;
+	  color: white;
+	}
+	</style>
+  </head>
+  <body class="dark-mode">
+  	<div id="maindiv" style="min-height:200px;" >
+		<div style="width:50%; min-width:600px; margin-left:auto; margin-right:auto;">
+			<table id="resulttable" style="width: 100%" class="dark-mode">
+				<thead>
+					<tr>
+						<th>Cluster Type</th>
+						<th>Notable 1</th>
+						<th>Notable 2</th>
+						<th>Notable 3</th>
+					</tr>
+				</thead>
+				<tbody>
+          <tr>
+            <td><select id="clusterSelect" /></td>
+            <td><select id="firstSelect" /></td>
+            <td><select id="secondSelect" /></td>
+            <td><div id="resultdiv" /></td>
+          </tr>
+				</tbody>
+			</table>
+		</div>
+    </div
+  </body>
+</html>
