@@ -10,15 +10,14 @@ else {
 }
 
 display = function() {
-  for(i = 1; i<=numberOfTips; i++) {
-    if(randomNumber == i || randomNumber == 0) document.getElementById("tips"+i).style.display = "inline";
-    else document.getElementById("tips"+i).style.display = "none";
-  }
-  document.getElementById("tips11").style.display = "none";
+	for(i = 1; i<=numberOfTips; i++) {
+		if(randomNumber == i || randomNumber == 0) document.getElementById("tips"+i).style.display = "inline";
+		else document.getElementById("tips"+i).style.display = "none";
+	}
+	document.getElementById("tips11").style.display = "none";
 }
 
 window.onload = function() {
-	randomNumber = Math.floor(Math.random()*numberOfTips+1);
 	display();
 }
 
