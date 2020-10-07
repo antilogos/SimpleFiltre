@@ -8,7 +8,7 @@
 	<script src="data.json" type="text/json"></script>
     <script>
 		var passiveSkillTreeData;
-		fetch("my.json").then(response => response.json()).then(parsed => {
+		fetch("data.json").then(response => response.json()).then(parsed => {
 			passiveSkillTreeData = parsed;
 			init();
 		}); 
