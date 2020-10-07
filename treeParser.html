@@ -38,14 +38,14 @@
           groupNode.setAttribute("cy", value.y -shiftY);
           groupNode.setAttribute("r", 75);
           groupNode.setAttribute("stroke", "#00F");
-          groupNode.setAttribute("stroke-width", value.n.length);
+          groupNode.setAttribute("stroke-width", value.nodes.length);
           groupNode.setAttribute("fill", "none");
           svg.appendChild(groupNode);
 
           if(value.n.indexOf(54307) > 0) console.log(groupNode);
 
           // Only node that matters
-          const filteredNode = value.n.filter(function (node) {return nodeMap[node]; });
+          const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
           for( let node of filteredNode) {
             const radius = passiveSkillTreeData.constants.orbitRadii[node.o];
             const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.oidx];
