@@ -2,11 +2,16 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>TREE PARSER</title>
+    <title>TREE DATA TO SVG CONVERTER</title>
     <style>
     </style>
-    <script src="data.txt" type="text/javascript"></script>
+	<script src="data.json" type="text/json"></script>
     <script>
+		var passiveSkillTreeData;
+		fetch("my.json").then(response => response.json()).then(parsed => {
+			passiveSkillTreeData = parsed;
+			init();
+		}); 
       function init() {
         const shiftX = passiveSkillTreeData.min_x;
         const shiftY = passiveSkillTreeData.min_y;
@@ -63,11 +68,6 @@
       }
     </script>
   </head>
-    <body onload="init()">
-     <div id="maindiv" style="overflow: auto">
-     </div>
-     <input type="file" id="file-input" />
-    <h3>Contents of the file:</h3>
-    <pre id="file-content"></pre>
-  </body>
+    <body>
+	</body>
 </html>
