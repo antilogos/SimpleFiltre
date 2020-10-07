@@ -42,7 +42,7 @@
           groupNode.setAttribute("fill", "none");
           svg.appendChild(groupNode);
 
-          if(value.n.indexOf(54307) > 0) console.log(groupNode);
+          if(value.nodes.indexOf(54307) > 0) console.log(groupNode);
 
           // Only node that matters
           const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
