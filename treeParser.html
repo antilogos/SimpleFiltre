@@ -63,10 +63,15 @@
 		if(skillOrbit != 0 && radius != 0) {
 	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius));
                   nodePoint.setAttribute("cy", value.y -shiftY - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius));
+		  nodeObject.x = value.x -shiftX + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+		  nodeObject.y = value.y -shiftY - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 		} else {
 		  nodePoint.setAttribute("cx", value.x -shiftX);
                   nodePoint.setAttribute("cy", value.y -shiftY);
+		  nodeObject.x = value.x -shiftX;
+		  nodeObject.y = value.y -shiftY;
 		}
+		nodeMap[node] = nodeObject;
 	        if(nodeObject.isKeystone) {
                   nodePoint.setAttribute("fill", "#F00");
 	          nodePoint.setAttribute("r", 128);
@@ -84,7 +89,12 @@
 	  }
           //console.log(value.oo);
         };
-
+	      
+	// Drawing the links between nodes
+	for( let node of nodeMap[node]) {
+		console.log(node);
+	}
+	
         document.getElementById("maindiv").appendChild(svg);
         console.log(passiveSkillTreeData);
       }
