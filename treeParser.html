@@ -52,13 +52,23 @@
             const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
 
             const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            nodePoint.setAttribute("cx", value.x -shiftX);
-            nodePoint.setAttribute("cy", value.y -shiftY);
-            nodePoint.setAttribute("fill", "#F00");
-            if(node.ks) nodePoint.setAttribute("r", 128);
-            else if(node.not) nodePoint.setAttribute("r", 64);
-            else nodePoint.setAttribute("r", 32);
-            if(node.ks) console.log(ks, value);
+	    if(node.orbitIndex) {
+              nodePoint.setAttribute("cx", value.x -shiftX + Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
+              nodePoint.setAttribute("cy", value.y -shiftY + Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
+	    } else {
+              nodePoint.setAttribute("cx", value.x -shiftX);
+              nodePoint.setAttribute("cy", value.y -shiftY);
+	    }
+            if(node.isKeystone) {
+              nodePoint.setAttribute("fill", "#F00");
+	      nodePoint.setAttribute("r", 128);
+	    } else if(node.isNotable) {
+              nodePoint.setAttribute("fill", "#0F0");
+	      nodePoint.setAttribute("r", 64);
+	    } else {
+              nodePoint.setAttribute("fill", "#292");
+	      nodePoint.setAttribute("r", 32);
+	    }
             svg.appendChild(nodePoint);
           }
           //console.log(value.oo);
