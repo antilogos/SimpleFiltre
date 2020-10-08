@@ -49,7 +49,7 @@
               // Only node that matters
               const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
               for( let node of filteredNode) {
-                const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
+                const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbit];
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 		if(skillOrbit != 0 && radius != 0) {
 	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
