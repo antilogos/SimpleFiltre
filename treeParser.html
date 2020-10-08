@@ -33,8 +33,8 @@
 
         // Parse the groups to get coordinate of the center of circle if needed
         for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
-	  // Groups with orbits
-	  if(value.orbits) {
+	  if(!value.isProxy) {
+	    // Orbit are at radius 0 when node is at the center
 	    for( let orbit of value.orbits) {
 	      // get the radius of the orbits from the groupNode
 	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
