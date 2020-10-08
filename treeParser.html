@@ -54,7 +54,7 @@
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 		if(skillOrbit != 0 && radius != 0) {
 	          nodePoint.setAttribute("cx", value.x -shiftX - (Math.sin(Math.PI*2*passiveSkillTreeData.nodes[node].orbitIndex/skillOrbit)*radius));
-                  nodePoint.setAttribute("cy", value.y -shiftY + (Math.cos(Math.PI*2*passiveSkillTreeData.nodes[node].orbitIndex/skillOrbit)*radius));
+                  nodePoint.setAttribute("cy", value.y -shiftY - (Math.cos(Math.PI*2*passiveSkillTreeData.nodes[node].orbitIndex/skillOrbit)*radius));
 		} else {
 		  nodePoint.setAttribute("cx", value.x -shiftX);
                   nodePoint.setAttribute("cy", value.y -shiftY);
