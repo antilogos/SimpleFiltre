@@ -53,7 +53,7 @@
                 const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbit];
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 		if(skillOrbit != 0 && radius != 0) {
-			console.log("orbit:",skillOrbit," radius:",radius," value:",value.x," shift:",shiftX," math:",(Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
+			console.log("orbitSkill:",skillOrbit," nodeOrbit:",node.orbit," groupOrbit:",orbit," radius:",radius," value:",value.x," shift:",shiftX," math:",(Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
 	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
                   nodePoint.setAttribute("cy", value.y -shiftY + (Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
 		} else {
