@@ -33,44 +33,40 @@
 
         // Parse the groups to get coordinate of the center of circle if needed
         for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
+	  // Groups with orbits
 	  if(value.orbits) {
 	    for( let orbit of value.orbits) {
-	  const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	  groupNode.setAttribute("cx", value.x -shiftX);
-	  groupNode.setAttribute("cy", value.y -shiftY);
-	  groupNode.setAttribute("r", passiveSkillTreeData.constants.orbitRadii[orbit]);
-	  groupNode.setAttribute("stroke", "#00F");
-	  groupNode.setAttribute("stroke-width", value.nodes.length);
-	  groupNode.setAttribute("fill", "none");
-	  svg.appendChild(groupNode);
-	    }
+	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
+              const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
+	      const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	      groupNode.setAttribute("cx", value.x -shiftX);
+	      groupNode.setAttribute("cy", value.y -shiftY);
+	      groupNode.setAttribute("r", radius);
+	      groupNode.setAttribute("stroke", "#00F");
+	      groupNode.setAttribute("stroke-width", value.nodes.length);
+	      groupNode.setAttribute("fill", "none");
+	      svg.appendChild(groupNode);
+		    
+              // Only node that matters
+              const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
+              for( let node of filteredNode) {
+                const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	        nodePoint.setAttribute("cx", value.x -shiftX + Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
+                nodePoint.setAttribute("cy", value.y -shiftY + Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
+	        if(node.isKeystone) {
+                  nodePoint.setAttribute("fill", "#F00");
+	          nodePoint.setAttribute("r", 128);
+	        } else if(node.isNotable) {
+                  nodePoint.setAttribute("fill", "#0F0");
+	          nodePoint.setAttribute("r", 64);
+	        } else {
+                  nodePoint.setAttribute("fill", "#292");
+	          nodePoint.setAttribute("r", 32);
+	        }
+                svg.appendChild(nodePoint);
+	      }
+            }
 	  }
-          // Only node that matters
-          const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
-          for( let node of filteredNode) {
-            const radius = passiveSkillTreeData.constants.orbitRadii[node.orbit];
-            const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
-
-            const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	    if(node.orbitIndex) {
-              nodePoint.setAttribute("cx", value.x -shiftX + Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
-              nodePoint.setAttribute("cy", value.y -shiftY + Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
-	    } else {
-              nodePoint.setAttribute("cx", value.x -shiftX);
-              nodePoint.setAttribute("cy", value.y -shiftY);
-	    }
-            if(node.isKeystone) {
-              nodePoint.setAttribute("fill", "#F00");
-	      nodePoint.setAttribute("r", 128);
-	    } else if(node.isNotable) {
-              nodePoint.setAttribute("fill", "#0F0");
-	      nodePoint.setAttribute("r", 64);
-	    } else {
-              nodePoint.setAttribute("fill", "#292");
-	      nodePoint.setAttribute("r", 32);
-	    }
-            svg.appendChild(nodePoint);
-          }
           //console.log(value.oo);
         };
 
