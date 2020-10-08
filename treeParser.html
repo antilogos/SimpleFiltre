@@ -21,7 +21,7 @@
         svg.setAttribute("width","1000");
         svg.setAttribute("height","1000");
 
-        // filter only node that matters
+        // keep a map of nodes that matters
         const nodeMap = new Map();
         for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
           if(!value.isAscendancyStart && !value.isMultipleChoice && !value.isMultipleChoiceOption && !value.isMastery && !value.ascendancyName && (!value.spc || value.spc.length == 0)) {
@@ -36,8 +36,10 @@
 	  // Groups with orbits
 	  if(value.orbits) {
 	    for( let orbit of value.orbits) {
+	      // get the radius of the orbits from the groupNode
 	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
 	      if(radius == 0) continue;
+	      // DEBUG: drawing the circle
 	      const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	      groupNode.setAttribute("cx", value.x -shiftX);
 	      groupNode.setAttribute("cy", value.y -shiftY);
@@ -47,11 +49,13 @@
 	      groupNode.setAttribute("fill", "none");
 	      svg.appendChild(groupNode);
 		    
-              // Only node that matters
+              // Read only the nodes that matters
               const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
               for( let node of filteredNode) {
+		// Number of point on the circle
                 const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[passiveSkillTreeData.nodes[node].orbit];
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	        // Place the node in the orbit and use orbit position to get him at the right location
 		if(skillOrbit != 0 && radius != 0) {
 	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.sin(Math.PI*2*passiveSkillTreeData.nodes[node].orbitIndex/skillOrbit)*radius));
                   nodePoint.setAttribute("cy", value.y -shiftY - (Math.cos(Math.PI*2*passiveSkillTreeData.nodes[node].orbitIndex/skillOrbit)*radius));
@@ -71,7 +75,26 @@
 	        }
                 svg.appendChild(nodePoint);
 	      }
-            }
+            } else {
+              // Read only the nodes that matters
+              const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
+              for( let node of filteredNode) {
+                const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		nodePoint.setAttribute("cx", value.x -shiftX);
+		nodePoint.setAttribute("cy", value.y -shiftY);
+	        if(node.isKeystone) {
+                  nodePoint.setAttribute("fill", "#F00");
+	          nodePoint.setAttribute("r", 128);
+	        } else if(node.isNotable) {
+                  nodePoint.setAttribute("fill", "#00F");
+	          nodePoint.setAttribute("r", 64);
+	        } else {
+                  nodePoint.setAttribute("fill", "#229");
+	          nodePoint.setAttribute("r", 32);
+	        }
+                svg.appendChild(nodePoint);
+	      }
+	    }
 	  }
           //console.log(value.oo);
         };
