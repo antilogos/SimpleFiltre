@@ -55,9 +55,9 @@
 	      }
 
               for( let node of filteredNode) {
+		const nodeObject = nodeMap[node];
 		// Number of point on the circle
                 const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit];
-		const nodeObject = nodeMap[node];
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	        // Place the node in the orbit and use orbit position to get him at the right location
 		if(skillOrbit != 0 && radius != 0) {
