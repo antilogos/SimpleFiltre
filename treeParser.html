@@ -24,7 +24,7 @@
         // filter only node that matters
         const nodeMap = new Map();
         for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
-          if(!value.isAscendancyStart && !value.isMultipleChoice && !value.isMultipleChoiceOption && !value.m && !value.ascendancyName && (!value.spc || value.spc.length == 0)) {
+          if(!value.isAscendancyStart && !value.isMultipleChoice && !value.isMultipleChoiceOption && !value.isMastery && !value.ascendancyName && (!value.spc || value.spc.length == 0)) {
             nodeMap[key] = value;
             //if(value.ks) console.log(value);
           }
@@ -33,22 +33,21 @@
 
         // Parse the groups to get coordinate of the center of circle if needed
         for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
-          const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          groupNode.setAttribute("cx", value.x -shiftX);
-          groupNode.setAttribute("cy", value.y -shiftY);
-          groupNode.setAttribute("r", 75);
-          groupNode.setAttribute("stroke", "#00F");
-          groupNode.setAttribute("stroke-width", value.nodes.length);
-          groupNode.setAttribute("fill", "none");
-          svg.appendChild(groupNode);
-
-          if(value.nodes.indexOf(54307) > 0) console.log(groupNode);
-
+	  for( let orbit of value.oribts) {
+	  const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	  groupNode.setAttribute("cx", value.x -shiftX);
+	  groupNode.setAttribute("cy", value.y -shiftY);
+	  groupNode.setAttribute("r", passiveSkillTreeData.constants.orbitRadii[orbit]);
+	  groupNode.setAttribute("stroke", "#00F");
+	  groupNode.setAttribute("stroke-width", value.nodes.length);
+	  groupNode.setAttribute("fill", "none");
+	  svg.appendChild(groupNode);
+	  }
           // Only node that matters
           const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
           for( let node of filteredNode) {
-            const radius = passiveSkillTreeData.constants.orbitRadii[node.o];
-            const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.oidx];
+            const radius = passiveSkillTreeData.constants.orbitRadii[node.orbit];
+            const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
 
             const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             nodePoint.setAttribute("cx", value.x -shiftX);
