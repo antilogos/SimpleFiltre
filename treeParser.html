@@ -46,6 +46,7 @@
 	      groupNode.setAttribute("stroke", "#00F");
 	      groupNode.setAttribute("stroke-width", value.nodes.length);
 	      groupNode.setAttribute("fill", "none");
+	      groupNode.setAttribute("id", "group"+key);
 	      svg.appendChild(groupNode);
 		    
               // Read only the nodes that matters
@@ -72,6 +73,7 @@
                   nodePoint.setAttribute("fill", "#292");
 	          nodePoint.setAttribute("r", 32);
 	        }
+	        groupNode.setAttribute("id", "node"+node);
                 svg.appendChild(nodePoint);
 	      }
             }
