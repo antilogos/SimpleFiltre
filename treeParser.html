@@ -33,7 +33,8 @@
 
         // Parse the groups to get coordinate of the center of circle if needed
         for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
-	  for( let orbit of value.oribts) {
+	  if(value.orbits) {
+	    for( let orbit of value.orbits) {
 	  const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	  groupNode.setAttribute("cx", value.x -shiftX);
 	  groupNode.setAttribute("cy", value.y -shiftY);
@@ -42,6 +43,7 @@
 	  groupNode.setAttribute("stroke-width", value.nodes.length);
 	  groupNode.setAttribute("fill", "none");
 	  svg.appendChild(groupNode);
+	    }
 	  }
           // Only node that matters
           const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
