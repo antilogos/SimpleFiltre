@@ -37,20 +37,22 @@
 	    // Orbit are at radius 0 when node is at the center
 	    for( let orbit of value.orbits) {
 	      // get the radius of the orbits from the groupNode
-	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
-	      // DEBUG: drawing the circle
-	      const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	      groupNode.setAttribute("cx", value.x -shiftX);
-	      groupNode.setAttribute("cy", value.y -shiftY);
-	      groupNode.setAttribute("r", radius);
-	      groupNode.setAttribute("stroke", "#00F");
-	      groupNode.setAttribute("stroke-width", value.nodes.length);
-	      groupNode.setAttribute("fill", "none");
-	      groupNode.setAttribute("id", "group"+key);
-	      svg.appendChild(groupNode);
-		    
+	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];		    
               // Read only the nodes that matters
               const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
+	      // DEBUG: drawing the circle
+	      if(filteredNode) {
+	        const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+	        groupNode.setAttribute("cx", value.x -shiftX);
+	        groupNode.setAttribute("cy", value.y -shiftY);
+	        groupNode.setAttribute("r", radius);
+	        groupNode.setAttribute("stroke", "#00F");
+	        groupNode.setAttribute("stroke-width", value.nodes.length);
+	        groupNode.setAttribute("fill", "none");
+	        groupNode.setAttribute("id", "group"+key+":"+orbit);
+	        svg.appendChild(groupNode);
+	      }
+
               for( let node of filteredNode) {
 		// Number of point on the circle
                 const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[passiveSkillTreeData.nodes[node].orbit];
