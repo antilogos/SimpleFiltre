@@ -38,7 +38,6 @@
 	    for( let orbit of value.orbits) {
 	      // get the radius of the orbits from the groupNode
 	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
-	      if(radius == 0) continue;
 	      // DEBUG: drawing the circle
 	      const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	      groupNode.setAttribute("cx", value.x -shiftX);
