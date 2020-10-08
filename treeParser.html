@@ -37,6 +37,7 @@
 	  if(value.orbits) {
 	    for( let orbit of value.orbits) {
 	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];
+	      if(radius == 0) continue;
 	      const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	      groupNode.setAttribute("cx", value.x -shiftX);
 	      groupNode.setAttribute("cy", value.y -shiftY);
