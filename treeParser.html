@@ -41,7 +41,7 @@
               // Read only the nodes that matters
               const filteredNode = value.nodes.filter(function (node) {return nodeMap[node]; });
 	      // DEBUG: drawing the circle
-	      if(filteredNode) {
+	      if(filteredNode.length > 0) {
 	        const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	        groupNode.setAttribute("cx", value.x -shiftX);
 	        groupNode.setAttribute("cy", value.y -shiftY);
