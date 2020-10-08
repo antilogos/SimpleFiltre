@@ -51,8 +51,14 @@
               for( let node of filteredNode) {
                 const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[node.orbitIndex];
                 const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	        nodePoint.setAttribute("cx", value.x -shiftX + Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
-                nodePoint.setAttribute("cy", value.y -shiftY + Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius);
+		if(skillOrbit != 0) {
+	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.cos(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
+                  nodePoint.setAttribute("cy", value.y -shiftY + (Math.sin(Math.PI*2*node.orbitIndex/skillOrbit)*radius));
+		} else {
+		console.log("orbit of ",node," was 0");
+		  nodePoint.setAttribute("cx", value.x -shiftX);
+                  nodePoint.setAttribute("cy", value.y -shiftY);
+		}
 	        if(node.isKeystone) {
                   nodePoint.setAttribute("fill", "#F00");
 	          nodePoint.setAttribute("r", 128);
