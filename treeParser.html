@@ -67,6 +67,7 @@
               // Read only the nodes that matters
               const filteredNode = value.nodes.filter(function (node) {return nodeMap[node] && nodeMap[node].orbit == orbit; });
 	      // DEBUG: drawing the circle
+		/*
 	      if(filteredNode.length > 0) {
 	        const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 	        groupNode.setAttribute("cx", value.x -shiftX);
@@ -78,6 +79,7 @@
 	        groupNode.setAttribute("id", "group"+key+":"+orbit);
 	        svg.appendChild(groupNode);
 	      }
+		*/
 
               for( let node of filteredNode) {
 		const nodeObject = nodeMap[node];
@@ -137,9 +139,8 @@
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
 								    + isBefore + " " + target.x + " " + target.y);
 					nodeConnection.setAttribute("fill", "none");
-					nodeConnection.setAttribute("stroke", "url(#linear)");
+					nodeConnection.setAttribute("stroke", "#229");
 					nodeConnection.setAttribute("stroke-width", "8");
-					nodeConnection.setAttribute("stroke-dasharray", "16");
 					svg.appendChild(nodeConnection);
 				// If not, draw line
 				} else {
@@ -148,7 +149,7 @@
 					nodeConnection.setAttribute("y1", value.y);
 					nodeConnection.setAttribute("x2", target.x);
 					nodeConnection.setAttribute("y2", target.y);
-					nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8;stroke-dasharray:16");
+					nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8");
 					svg.appendChild(nodeConnection);
 				}
 			}
