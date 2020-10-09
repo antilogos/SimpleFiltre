@@ -101,8 +101,8 @@
 				// If nodes are of the same group with orbit, draw arc
 				if(target.group == value.group && target.orbit == value.orbit && passiveSkillTreeData.constants.orbitRadii[target.orbit] != 0) {
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
-					let isBefore = "1";
-					if(value.orbitIndex > target.orbitIndex) isBefore = "0";
+					let isBefore = "0";
+					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " " 
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
