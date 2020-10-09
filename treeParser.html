@@ -127,9 +127,10 @@
 				let numberInOrbit = passiveSkillTreeData.constants.orbitRadii[target.orbit];
 				if(target.group == value.group && target.orbit == value.orbit && numberInOrbit != 0) {
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
+					let diffIndexOrbit = target.orbitIndex - value.orbitIndex;
 					let isBefore = "1";
-					if((target.orbitIndex + numberInOrbit - value.orbitIndex)%numberInOrbit < numberInOrbit/2) isBefore = "1";
-					else isBefore = "0"
+					if((diffIndexOrbit < numberInOrbit/2 && diffIndexOrbit > 0) || diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2 ) isBefore = "1";
+					else isBefore = "0";
 					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " " 
