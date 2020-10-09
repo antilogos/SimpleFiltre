@@ -22,6 +22,11 @@
         svg.setAttribute("height","1000");
 	const gradient = document.createElementNS("http://www.w3.org/2000/svg","defs");
 	const linearGradient = document.createElementNS("http://www.w3.org/2000/svg","linearGradient");
+        linearGradient.setAttribute("id","linear");
+        linearGradient.setAttribute("x1","0%");
+        linearGradient.setAttribute("y1","0%");
+        linearGradient.setAttribute("x2","100%");
+        linearGradient.setAttribute("y2","100%");
         const stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop");
         stop1.setAttribute("offset","0%");
         stop1.setAttribute("stop-color","#05a");
