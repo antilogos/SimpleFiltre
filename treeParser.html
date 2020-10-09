@@ -101,13 +101,16 @@
 				// If nodes are of the same group with orbit, draw arc
 				if(target.group == value.group && target.orbit == value.orbit && passiveSkillTreeData.constants.orbitRadii[target.orbit] != 0) {
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
-					let isBefore = "0";
-					if(value.orbitIndex > target.orbitIndex) isBefore = "1";
+					let isBefore = "1";
+					if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " " 
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
 								    + isBefore + " " + target.x + " " + target.y);
-					nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8;stroke-dasharray:16");
+					nodeConnection.setAttribute("fill", "none");
+					nodeConnection.setAttribute("stroke", "#00F");
+					nodeConnection.setAttribute("stroke-width", "8");
+					nodeConnection.setAttribute("stroke-dasharray", "16");
 					svg.appendChild(nodeConnection);
 				// If not, draw line
 				} else {
