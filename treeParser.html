@@ -123,8 +123,14 @@
 			const target = nodeMap[nodeTo];
 			// Some nodes out point to ascendancy or large cluster jewel
 			if(target && target.x && target.y) {
-				// If nodes are of the same group with orbit, draw arc
-				if(target.group == value.group && target.orbit == value.orbit && passiveSkillTreeData.constants.orbitRadii[target.orbit] != 0) {
+				let isBetweenAttributeNode = ((target.grantedDexterity && value.grantedDexterity) || 
+				    (target.grantedStrength && value.grantedStrength) ||
+				    (target.grantedIntelligence && value.grantedIntelligence) ||
+				    ((target.grantedDexterity || target.grantedStrength || target.grantedIntelligence) && value.isJewelSocket) ||
+				    ((value.grantedDexterity || value.grantedStrength || value.grantedIntelligence) && target.isJewelSocket));
+				// If nodes are of the same group with orbit, draw arc, unless it's between attribute/jewel nodes
+				if(target.group == value.group && target.orbit == value.orbit && passiveSkillTreeData.constants.orbitRadii[target.orbit] != 0
+				  && !isBetweenAttributeNode) {
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
 					let isBefore = "0";
 					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
