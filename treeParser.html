@@ -98,13 +98,26 @@
 			const target = nodeMap[nodeTo];
 			// Some nodes out point to ascendancy or large cluster jewel
 			if(target && target.x && target.y) {
-				const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
-				nodeConnection.setAttribute("x1", value.x);
-				nodeConnection.setAttribute("y1", value.y);
-				nodeConnection.setAttribute("x2", target.x);
-				nodeConnection.setAttribute("y2", target.y);
-				nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8;stroke-dasharray:16");
-				svg.appendChild(nodeConnection);
+				// If nodes are of the same group with orbit, draw arc
+				if(target.group == value.group && target.orbit == value.orbit && passiveSkillTreeData.constants.orbitRadii[target.orbit] != 0) {
+					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
+					let isBefore = if(value.orbitIndex > target.orbitIndex) "1" else "0"
+					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
+								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " " 
+								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
+								    + isBefore + " " + target.x + " " + target.y);
+					nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8;stroke-dasharray:16");
+					svg.appendChild(nodeConnection);
+				// If not, draw line
+				} else {
+					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
+					nodeConnection.setAttribute("x1", value.x);
+					nodeConnection.setAttribute("y1", value.y);
+					nodeConnection.setAttribute("x2", target.x);
+					nodeConnection.setAttribute("y2", target.y);
+					nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8;stroke-dasharray:16");
+					svg.appendChild(nodeConnection);
+				}
 			}
 		}
                 
