@@ -29,12 +29,20 @@
         linearGradient.setAttribute("y2","100%");
         const stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop");
         stop1.setAttribute("offset","0%");
-        stop1.setAttribute("stop-color","#229");
+        stop1.setAttribute("stop-color","#000");
         const stop2 = document.createElementNS("http://www.w3.org/2000/svg","stop");
-        stop2.setAttribute("offset","100%");
-        stop2.setAttribute("stop-color","#f0f");
+        stop2.setAttribute("offset","20%");
+        stop2.setAttribute("stop-color","#115");
+        const stop3 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+        stop3.setAttribute("offset","80%");
+        stop3.setAttribute("stop-color","#f0f");
+        const stop4 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+        stop4.setAttribute("offset","100%");
+        stop4.setAttribute("stop-color","#fff");
         linearGradient.appendChild(stop1);
         linearGradient.appendChild(stop2);
+        linearGradient.appendChild(stop3);
+        linearGradient.appendChild(stop4);
         gradient.appendChild(linearGradient);
         svg.appendChild(gradient);
 
