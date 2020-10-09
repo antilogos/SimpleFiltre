@@ -92,11 +92,12 @@
 	      
 	// Drawing the links between nodes
 	for( let[key, value] of Object.entries(nodeMap)) {
-		if(value.out)
+		// Some nodes got no x or y ? FIXME research this further
+		if(value.out && value.x && value.y)
 		for( let nodeTo of value.out) {
 			const target = nodeMap[nodeTo];
 			// Some nodes out point to ascendancy or large cluster jewel
-			if(target && value.x && value.y && target.x && target.y) {
+			if(target && target.x && target.y) {
 				const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
 				nodeConnection.setAttribute("x1", value.x);
 				nodeConnection.setAttribute("y1", value.y);
