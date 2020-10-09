@@ -92,7 +92,17 @@
 	      
 	// Drawing the links between nodes
 	for( let[key, value] of Object.entries(nodeMap)) {
-		console.log(value);
+		for( let nodeTo of value.out) {
+			const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	        	nodeConnection.setAttribute("x1", value.x);
+			nodeConnection.setAttribute("y1", value.y);
+	        	nodeConnection.setAttribute("x2", nodeTo.x);
+			nodeConnection.setAttribute("y3", nodeTo.y);
+			nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8");
+			svg.appendChild(nodeConnection);
+			
+		}
+                
 	}
 	
         document.getElementById("maindiv").appendChild(svg);
