@@ -129,7 +129,7 @@
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
 					let diffIndexOrbit = target.orbitIndex - value.orbitIndex;
 					let isBefore = "1";
-					if((diffIndexOrbit < numberInOrbit/2 && diffIndexOrbit > 0) || diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2 ) isBefore = "1";
+					if((diffIndexOrbit < numberInOrbit/2 && diffIndexOrbit > 0) || diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit -1 < numberInOrbit/2 ) isBefore = "1";
 					else isBefore = "0";
 					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
