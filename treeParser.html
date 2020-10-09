@@ -20,6 +20,18 @@
         svg.setAttribute("viewBox","3000 3000 " + (passiveSkillTreeData.max_x-shiftX) + " " + (passiveSkillTreeData.max_y-shiftY));
         svg.setAttribute("width","1000");
         svg.setAttribute("height","1000");
+	const gradient = document.createElementNS("http://www.w3.org/2000/svg","defs");
+	const linearGradient = document.createElementNS("http://www.w3.org/2000/svg","linearGradient");
+        const stop1 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+        stop1.setAttribute("offset","0%");
+        stop1.setAttribute("stop-color","#05a");
+        const stop2 = document.createElementNS("http://www.w3.org/2000/svg","stop");
+        stop2.setAttribute("offset","100%");
+        stop2.setAttribute("stop-color","#0a5");
+        linearGradient.appendChild(stop1);
+        linearGradient.appendChild(stop2);
+        gradient.appendChild(linearGradient);
+        svg.appendChild(gradient);
 
         // keep a map of nodes that matters
         const nodeMap = new Map();
@@ -108,7 +120,7 @@
 								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
 								    + isBefore + " " + target.x + " " + target.y);
 					nodeConnection.setAttribute("fill", "none");
-					nodeConnection.setAttribute("stroke", "#00F");
+					nodeConnection.setAttribute("stroke", "url(#linear)");
 					nodeConnection.setAttribute("stroke-width", "8");
 					nodeConnection.setAttribute("stroke-dasharray", "16");
 					svg.appendChild(nodeConnection);
