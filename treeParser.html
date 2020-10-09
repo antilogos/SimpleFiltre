@@ -94,12 +94,13 @@
 	for( let[key, value] of Object.entries(nodeMap)) {
 		if(value.out)
 		for( let nodeTo of value.out) {
+			const target = nodeMap[nodeTo];
 			const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
 	        	nodeConnection.setAttribute("x1", value.x);
 			nodeConnection.setAttribute("y1", value.y);
-	        	nodeConnection.setAttribute("x2", nodeTo.x);
-			nodeConnection.setAttribute("y3", nodeTo.y);
-			nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8");
+	        	nodeConnection.setAttribute("x2", target.x);
+			nodeConnection.setAttribute("y3", target.y);
+			nodeConnection.setAttribute("style", "stroke:#00F;stroke-width:8;stroke-dasharray:16");
 			svg.appendChild(nodeConnection);
 			
 		}
