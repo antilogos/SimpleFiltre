@@ -124,7 +124,7 @@
 			// Some nodes out point to ascendancy or large cluster jewel
 			if(target && target.x && target.y) {
 				// If nodes are of the same group with orbit, draw arc
-				let numberInOrbit = passiveSkillTreeData.constants.orbitRadii[target.orbit];
+				let numberInOrbit = passiveSkillTreeData.constants.skillsPerOrbit[target.orbit];
 				if(target.group == value.group && target.orbit == value.orbit && numberInOrbit != 0) {
 					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
 					let diffIndexOrbit = target.orbitIndex - value.orbitIndex;
