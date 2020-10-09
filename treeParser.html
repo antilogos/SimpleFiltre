@@ -95,7 +95,8 @@
 		if(value.out)
 		for( let nodeTo of value.out) {
 			const target = nodeMap[nodeTo];
-			if(target) {
+			// Some nodes out point to ascendancy or large cluster jewel
+			if(target && target.x && target.y) {
 				const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
 				nodeConnection.setAttribute("x1", value.x);
 				nodeConnection.setAttribute("y1", value.y);
