@@ -1,4 +1,4 @@
-# Version du 18/09/2020
+"# Version du 10/10/2020
 # SECTION: Unique
 # Tellement rarissime que vous n'en verrez surement jamais la couleur
 Show
@@ -45,7 +45,7 @@ MinimapIcon 2 Brown Hexagon
 Show
 Class Currency
 BaseType "Rogue's Marker"
-SetFontSize 16
+SetFontSize 22
 SetBackgroundColor 0 0 0 212
 SetTextColor 200 0 100
 SetBorderColor 0 0 0 0
@@ -86,7 +86,7 @@ SetBackgroundColor 200 0 100
 SetTextColor 0 0 0
 SetBorderColor 200 0 100
 PlayEffect Yellow
-MinimapIcon 1 Yellow Triangle
+MinimapIcon 2 Yellow Triangle
 # Objectif
 Show
 Class Heist Target
@@ -116,7 +116,7 @@ PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
 # Enchantement d'armes et armures
 Show
-Class Body Claws Daggers Wands "One Hand Swords" Thrusting "One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
+Class Body Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
 AnyEnchantment True
 SetBackgroundColor 0 0 0 212
 SetTextColor 200 0 100
@@ -198,7 +198,7 @@ MinimapIcon 0 Yellow Triangle
 # Enchantement de joyaux
 Show
 Class Jewel
-BaseType "Viridian Jewel" "Cobalt Jewel" "Crimson Jewel" Eye
+BaseType "Viridian Jewel" "Cobalt Jewel" "Crimson Jewel" "Eye"
 AnyEnchantment True
 SetBackgroundColor 0 0 0 212
 SetTextColor 40 220 255
@@ -677,7 +677,18 @@ SetBorderColor 0 0 0 0
 # Amulettes spécifiques à Talisman
 Show
 Class Amulet
+AnyEnchantment True
 BaseType Talisman
+SetBackgroundColor 0 0 0 212
+SetTextColor 98 128 0
+SetBorderColor 98 128 0
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+# Amulettes spécifiques à Talisman
+Show
+Class Amulet
+BaseType Talisman
+SetFontSize 22
 SetBackgroundColor 0 0 0 212
 SetTextColor 98 128 0
 SetBorderColor 98 128 0
@@ -905,8 +916,8 @@ SetBorderColor 0 0 0 0
 # Inintéressante
 Show
 Class Currency
-BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Orb of Augmentation" "Alteration Shard" "Horizon Shard" "Alchemy Shard"
-SetFontSize 16
+BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Orb of Augmentation" "Transmutation Shard" "Alteration Shard" "Horizon Shard" "Alchemy Shard"
+SetFontSize 22
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
@@ -1117,6 +1128,7 @@ SetBorderColor 255 200 0
 Show
 Class Jewel
 Rarity < Rare
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 200 0
 SetBorderColor 0 0 0 0
@@ -1342,6 +1354,7 @@ SetBorderColor 255 255 119
 Show
 Rarity = Magic
 Mirrored False
+Corrupted False
 HasExplicitMod "Dictator's" "Merciless" "Flaring" "Overpowering" "Devastating" "Paragon's" "Runic" "of Grandmastery" "of Bameth" "Crocodile's" "Ibex" "Exarch's"
 SetBackgroundColor 30 144 255
 SetTextColor 0 0 0
@@ -1353,6 +1366,7 @@ Show
 Class Shield Ring Amulet
 Rarity = Magic
 Mirrored False
+Corrupted False
 HasExplicitMod "of Mastery" "Cremating" "Entombing" "Electrocuting"
 SetBackgroundColor 30 144 255
 SetTextColor 0 0 0
@@ -1363,6 +1377,7 @@ MinimapIcon 0 Blue Square
 Show
 Rarity = Magic
 Mirrored False
+Corrupted False
 HasExplicitMod "Prime" "Resplendent" "Phased" "Carapaced" "Perandus'" "Flawless" "Necromancer's" "Unfaltering" "Impenetrable" "Illusion's" "Interpermeated" "Victor's" "Incorporeal" "Resilient" "Consecrated" "Eidolon's" "Hellion's" "Ultramarine" "Mammoth's" "Hummingbird's" "Seraphim's" "of the Godslayer" "of the Blur" "of the Polymath" "of Celebration" "of Tzteosh" "of Haast" "of Ephij" "of the Span" "of Rending" "of Destruction" "of Lioneye" "of Unmaking" "of Finesse" "of Blocking" "of Fog" "of Incantations" "of Revitalization" "of Exuberance"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -1373,6 +1388,7 @@ MinimapIcon 0 Blue Square
 Show
 Rarity = Magic
 Mirrored False
+Corrupted False
 HasExplicitMod "Emperor's" "Tyrannical" "Tempered" "Glyphic" "of the Infinite"
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1383,6 +1399,7 @@ Show
 Class Helm Shield Ring
 Rarity = Magic
 Mirrored False
+Corrupted False
 HasExplicitMod "Nautilus's" "Ram's" "Abbot's" "Overpowering"
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -1524,6 +1541,8 @@ SetBorderColor 88 0 179 212
 Show
 Class Amulet Belt Ring
 Rarity = Magic 
+Mirrored False
+Corrupted False
 ItemLevel >= 86
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetBackgroundColor 0 0 0 212
@@ -1535,6 +1554,8 @@ MinimapIcon 1 Blue Square
 Show
 Class Helmet Boots Gloves Wand
 Rarity = Magic 
+Mirrored False
+Corrupted False
 ItemLevel >= 86
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
@@ -1546,6 +1567,8 @@ MinimapIcon 1 Blue Square
 Show
 Class Body Gloves Helmets Boots Shield
 Rarity = Magic 
+Mirrored False
+Corrupted False
 DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1555,6 +1578,8 @@ SetBorderColor 88 0 179 212
 Show
 Class Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Warstaves Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Sceptre "Rune Dagger"
 Rarity = Magic
+Mirrored False
+Corrupted False
 DropLevel >= 58
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1564,6 +1589,8 @@ SetBorderColor 88 0 179 212
 Show
 Class Amulet Ring Belt Quiver
 Rarity = Magic 
+Mirrored False
+Corrupted False
 DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1573,6 +1600,8 @@ SetBorderColor 88 0 179 212
 Show
 Class Amulet Belt Ring
 Rarity = Magic 
+Mirrored False
+Corrupted False
 ItemLevel >= 82
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
@@ -1584,6 +1613,8 @@ MinimapIcon 0 Blue Square
 Show
 Class Helmet Boots Gloves Wand
 Rarity = Magic 
+Mirrored False
+Corrupted False
 ItemLevel >= 82
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
@@ -1595,6 +1626,8 @@ MinimapIcon 0 Blue Square
 Show
 Class Amulet Belt Ring
 Rarity = Magic 
+Mirrored False
+Corrupted False
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet"
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1604,6 +1637,8 @@ SetBorderColor 88 0 179 212
 Show
 Class Helmet Boots Gloves Wand
 Rarity = Magic 
+Mirrored False
+Corrupted False
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1613,8 +1648,9 @@ SetBorderColor 88 0 179 212
 # Base haut-niveau spécifique à l'Atlas
 Show
 Class Amulet Belt Ring
-Rarity = Normal 
+Rarity = Normal
 Mirrored False
+Corrupted False
 ItemLevel >= 86
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
@@ -1627,6 +1663,7 @@ Show
 Class Helmet Boots Gloves Wand
 Rarity = Normal 
 Mirrored False
+Corrupted False
 ItemLevel >= 86
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
@@ -1639,6 +1676,7 @@ Show
 Class Body Gloves Helmets Boots Shield
 Rarity = Normal 
 Mirrored False
+Corrupted False
 DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1649,6 +1687,7 @@ Show
 Class Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre Warstaves "Rune Daggers"
 Rarity = Normal 
 Mirrored False
+Corrupted False
 DropLevel >= 58
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1659,6 +1698,7 @@ Show
 Class Amulet Ring Belt Quiver
 Rarity = Normal 
 Mirrored False
+Corrupted False
 DropLevel >= 62
 ItemLevel >= 86
 SetBackgroundColor 0 0 0 212
@@ -1669,6 +1709,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Normal 
 Mirrored False
+Corrupted False
 ItemLevel >= 82
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetBackgroundColor 0 0 0 212
@@ -1681,6 +1722,7 @@ Show
 Class Helmet Boots Gloves Wand
 Rarity = Normal 
 Mirrored False
+Corrupted False
 ItemLevel >= 82
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetBackgroundColor 0 0 0 212
@@ -1693,6 +1735,7 @@ Show
 Class Amulet Belt Ring
 Rarity = Normal 
 Mirrored False
+Corrupted False
 BaseType "Steel Ring" "Opal Ring" "Vanguard Belt" "Crystal Belt" "Blue Pearl Amulet" "Marble Amulet" "Vermillion Ring" "Cerulean Ring"
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1703,6 +1746,7 @@ Show
 Class Helmet Boots Gloves Wand
 Rarity = Normal 
 Mirrored False
+Corrupted False
 BaseType "Two-Toned" "Bone Helmet" "Fingerless Silk Gloves" "Spiked Gloves" "Gripped Gloves" "Convoking Wand"
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
@@ -1742,11 +1786,20 @@ SetBorderColor 0 0 0 0
 Show
 Rarity = Rare
 Sockets < 6
+CorruptedMods 1
+SetFontSize 20
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 119
+SetBorderColor 255 40 0
+# Objet corrompu
+Show
+Rarity = Rare
+Sockets < 6
 Corrupted True
 SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
-SetBorderColor 255 40 0
+SetBorderColor 0 0 0 0
 # SECTION: Magique
 # 5L trop haut niveau
 Show
@@ -1763,7 +1816,7 @@ Rarity = Magic
 Sockets < 6
 CorruptedMods 1
 ItemLevel <= 68
-SetFontSize 16
+SetFontSize 20
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
 SetBorderColor 255 40 0
@@ -1783,7 +1836,7 @@ Rarity = Normal
 Sockets < 6
 CorruptedMods 1
 ItemLevel <= 68
-SetFontSize 16
+SetFontSize 20
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 255 40 0
@@ -1819,16 +1872,24 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # Armure pour niveau 1>4
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 1
 AreaLevel <= 11
 SetBackgroundColor 0 0 0 164
 SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
+# Gants Casques Bottes
+Show
+Class Gloves Helm Boots
+Rarity = Rare
+AreaLevel <= 67
+SetBackgroundColor 0 0 0 164
+SetTextColor 255 255 119
+SetBorderColor 0 100 50 164
 # 6>11
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 6
 AreaLevel <= 18
@@ -1837,7 +1898,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 17>18
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 17
 AreaLevel <= 25
@@ -1846,7 +1907,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 21>25
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 21
 AreaLevel <= 28
@@ -1855,7 +1916,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 28>28
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 28
 AreaLevel <= 32
@@ -1864,7 +1925,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 32>32
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 32
 AreaLevel <= 35
@@ -1873,7 +1934,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 35>35
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 35
 AreaLevel <= 40
@@ -1882,7 +1943,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 37>40
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 37
 AreaLevel <= 44
@@ -1891,7 +1952,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 41>44
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 41
 AreaLevel <= 48
@@ -1900,7 +1961,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 45>48
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 45
 AreaLevel <= 52
@@ -1909,7 +1970,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 49>52
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 49
 AreaLevel <= 56
@@ -1918,7 +1979,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 53>56
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 53
 AreaLevel <= 59
@@ -1927,7 +1988,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 56>59
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 56
 AreaLevel <= 61
@@ -1936,7 +1997,7 @@ SetTextColor 255 255 119
 SetBorderColor 0 100 50 164
 # 59>61
 Show
-Class Body Gloves Helmets Boots Shield
+Class Body Shield
 Rarity = Rare
 DropLevel >= 59
 AreaLevel <= 67
@@ -2231,6 +2292,7 @@ SetBorderColor 0 100 50 164
 # 6s pour formule joaillier
 Show
 Rarity = Rare
+AreaLevel < 78
 Sockets 6
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -2239,6 +2301,7 @@ SetBorderColor 170 158 130
 Show
 Rarity = Rare
 SocketGroup RGB
+AreaLevel < 78
 Height = 2
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -2247,6 +2310,7 @@ SetBorderColor 170 158 130
 Show
 Rarity = Rare
 SocketGroup RGB 
+AreaLevel < 78
 Width = 1
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 119
@@ -2283,6 +2347,7 @@ SetBorderColor 170 158 130
 # 6s pour formule joaillier
 Show
 Rarity = Magic
+AreaLevel < 78
 Sockets 6
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -2291,6 +2356,7 @@ SetBorderColor 170 158 130
 Show
 Rarity = Magic
 SocketGroup RGB
+AreaLevel < 78
 Height = 2
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -2299,6 +2365,7 @@ SetBorderColor 170 158 130
 Show
 Rarity = Magic
 SocketGroup RGB 
+AreaLevel < 78
 Width = 1
 SetBackgroundColor 0 0 0 212
 SetTextColor 30 144 255
@@ -2318,7 +2385,16 @@ SetBorderColor 170 158 130
 # 6s pour formule joaillier
 Show
 Rarity = Normal
+AreaLevel < 78
 Sockets 6
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 255
+SetBorderColor 170 158 130
+# 6s pour formule joaillier
+Show
+Rarity = Normal
+Sockets 6
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 170 158 130
@@ -2326,6 +2402,7 @@ SetBorderColor 170 158 130
 Show
 Rarity = Normal
 SocketGroup RGB
+AreaLevel < 78
 Height = 2
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
@@ -2334,7 +2411,18 @@ SetBorderColor 170 158 130
 Show
 Rarity = Normal
 SocketGroup RGB 
+AreaLevel < 78
 Width = 1
+SetBackgroundColor 0 0 0 212
+SetTextColor 255 255 255
+SetBorderColor 170 158 130
+# Formule chromatic
+Show
+Rarity = Normal
+SocketGroup RGB 
+AreaLevel >= 78
+Width = 1
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 255 255 255
 SetBorderColor 170 158 130
@@ -2406,4 +2494,4 @@ Hide
 Class Amulet Ring Belt Quiver Body Gloves Helmets Boots Claws Daggers Wands "One Hand Swords" "Thrusting One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Shield Sceptre "Rune Daggers" Warstaves
 SetFontSize 16
 SetBackgroundColor 0 0 0 76
-SetBorderColor 0 0 0 0
+SetBorderColor 0 0 0 0"
