@@ -45,6 +45,7 @@ MinimapIcon 2 Brown Hexagon
 Show
 Class Currency
 BaseType "Rogue's Marker"
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 200 0 100
 SetBorderColor 0 0 0 0
@@ -85,7 +86,7 @@ SetBackgroundColor 200 0 100
 SetTextColor 0 0 0
 SetBorderColor 200 0 100
 PlayEffect Yellow
-MinimapIcon 2 Yellow Triangle
+MinimapIcon 1 Yellow Triangle
 # Objectif
 Show
 Class Heist Target
@@ -113,6 +114,15 @@ SetTextColor 200 0 100
 SetBorderColor 200 0 100
 PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
+# Enchantement d'armes et armures
+Show
+Class Body Claws Daggers Wands "One Hand Swords" Thrusting "One Hand Swords" "One Hand Axes" "One Hand Maces" Bows Staves "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" Sceptre "Rune Daggers" Warstaves
+AnyEnchantment True
+SetBackgroundColor 0 0 0 212
+SetTextColor 200 0 100
+SetBorderColor 200 0 100
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # Réplique d'unique
 Show
 Rarity = Unique
@@ -124,7 +134,7 @@ PlayEffect Yellow
 MinimapIcon 2 Yellow Triangle
 # Base expérimentale
 Show
-BaseType "Assembler Wand" "Congregator Wand" "Accumulator Wand" "Hollowpoint Dagger" "Pressurised Dagger" "Pneumatic Dagger" "Flickerflame Blade" "Flashfire Blade" "Infernal Blade" "Shadow Fangs" "Malign Fangs" "Void Fangs" "Maltreatment Axe" "Disapprobation Axe" "Psychotic Axe" "Fickle Spiritblade" "Capricious Spiritblade" "Anarchic Spiritblade" "Flare Mace" "Crack Mace" "Boom Mace" "Oscillating Sceptre" "Stabilising Sceptre" "Alternating Sceptre" "Hedron Bow" "Foundry Bow" "Solarine Bow" "Reciprocation Staff" "Accumulator Staff" "Battery Staff" "Capacity Rod" "Potentiality Rod" "Eventuality Rod" "Prime Cleaver" "Honed Cleaver" "Apex Cleaver" "Rebuking Blade" "Blasting Blade" "Banishing Blade" "Blunt Force Condenser" "Crushing Force Magnifier" "Impact Force Propagator"
+BaseType "Assembler Wand" "Congregator Wand" "Accumulator Wand" "Hollowpoint Dagger" "Pressurised Dagger" "Pneumatic Dagger" "Flickerflame Blade" "Flashfire Blade" "Infernal Blade" "Shadow Fangs" "Malign Fangs" "Void Fangs" "Maltreatment Axe" "Disapprobation Axe" "Psychotic Axe" "Fickle Spiritblade" "Capricious Spiritblade" "Anarchic Spiritblade" "Flare Mace" "Crack Mace" "Boom Mace" "Oscillating Sceptre" "Stabilising Sceptre" "Alternating Sceptre" "Hedron Bow" "Foundry Bow" "Solarine Bow" "Reciprocation Staff" "Transformer Staff" "Battery Staff" "Capacity Rod" "Potentiality Rod" "Eventuality Rod" "Prime Cleaver" "Honed Cleaver" "Apex Cleaver" "Rebuking Blade" "Blasting Blade" "Banishing Blade" "Blunt Force Condenser" "Crushing Force Magnifier" "Impact Force Propagator"
 SetBackgroundColor 0 0 0 212
 SetTextColor 200 0 100
 SetBorderColor 200 0 100
@@ -151,7 +161,7 @@ MinimapIcon 2 Yellow Triangle
 # Graines palier 1
 Show
 Class "Harvest Seed"
-BasType "Seed"
+BaseType "Seed"
 SetBackgroundColor 0 0 0 212
 SetTextColor 40 220 255
 SetBorderColor 0 0 0 0
@@ -160,7 +170,7 @@ MinimapIcon 2 Yellow Triangle
 # Graines palier 2 et 3
 Show
 Class "Harvest Seed"
-BasType "Bulb" "Grain"
+BaseType "Bulb" "Grain"
 SetBackgroundColor 0 0 0 212
 SetTextColor 40 220 255
 SetBorderColor 40 220 255
@@ -185,6 +195,25 @@ SetTextColor 40 220 255
 SetBorderColor 40 220 255
 PlayEffect Yellow
 MinimapIcon 0 Yellow Triangle
+# Enchantement de joyaux
+Show
+Class Jewel
+BaseType "Viridian Jewel" "Cobalt Jewel" "Crimson Jewel" Eye
+AnyEnchantment True
+SetBackgroundColor 0 0 0 212
+SetTextColor 40 220 255
+SetBorderColor 40 220 255
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
+# Enchantement de flacon et carte
+Show
+Class Maps Flask
+AnyEnchantment True
+SetBackgroundColor 0 0 0 212
+SetTextColor 40 220 255
+SetBorderColor 40 220 255
+PlayEffect Yellow
+MinimapIcon 2 Yellow Triangle
 # SECTION: Delirium
 # Orbe du délire
 Show
@@ -735,7 +764,7 @@ SetBorderColor 0 0 0 0
 # Mythique
 Show
 Class "Divination Card"
-BaseType == "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death" "The Demon" "The Cheater" "Succor of the Sinless"
+BaseType == "House of Mirrors" "The Doctor" "The Fiend" "Mawr Blaidd" "The Queen" "The Spark and the Flame" "Hunter's Reward" "The Iron Bard" "The Wolven King's Bite" "Immortal Resolve" "Beauty Through Death" "The Demon" "The Cheater" "Succor of the Sinless" "Desecrated Virtue" "Unrequited Love" "Brother's Stash"
 SetBackgroundColor 255 255 255 196
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -754,7 +783,7 @@ MinimapIcon 1 Blue Diamond
 # Peu Commune
 Show
 Class "Divination Card"
-BaseType == "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer" "The Celestial Stone" "The Mayor" "The Undaunted" "The Undisputed" "Perfection" "The Professor" "The Mayor" "The Celestial Stone" "Boon of the First Ones" "Alluring Bounty" "Seven Years Bad Luck" "Nook's Crown" "Pride of the First Ones" "Immortal Resolve" "The Strategist" "The Price of Loyalty" "Void of the Elements" "The Damned" "The Eye of Terror" "Etched in Blood" "The Escape" "The Eldritch Decay" "The Betrayal"
+BaseType == "The Saint's Treasure" "The Thaumaturgist" "The Ethereal" "The Polymath" "The Valkyrie" "The Artist" "The Sephirot" "The Hunger" "Pride Before the Fall" "The Brittle Emperor" "The King's Heart" "The Enlightened" "The Hoarder" "Chaotic Disposition" "The Formless Sea" "The Void" "The Dapper Prodigy" "The Forsaken" "Lucky Deck" "The Warlord" "The Dark Mage" "Emperor of Purity" "The Porcupine" "Heterochromia" "The World Eater" "Blessing of God" "The Dreamer" "The Celestial Stone" "The Mayor" "The Undaunted" "The Undisputed" "Perfection" "The Professor" "The Mayor" "The Celestial Stone" "Boon of the First Ones" "Alluring Bounty" "Seven Years Bad Luck" "Nook's Crown" "Pride of the First Ones" "Immortal Resolve" "The Strategist" "The Price of Loyalty" "Void of the Elements" "The Damned" "The Eye of Terror" "Etched in Blood" "The Escape" "The Eldritch Decay" "The Betrayal" "The Gulf" "Cursed Words"
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 230 230
 SetBorderColor 170 230 230
@@ -866,8 +895,8 @@ SetBorderColor 0 0 0 0
 # Inintéressante
 Hide
 Class Currency
-BaseType == "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Orb of Augmentation" "Transmutation Shard"
-AreaLevel > 50
+BaseType == "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Blacksmith's Whetstone" "Transmutation Shard"
+AreaLevel > 70
 SetFontSize 16
 
 SetBackgroundColor 0 0 0 212
@@ -876,8 +905,8 @@ SetBorderColor 0 0 0 0
 # Inintéressante
 Show
 Class Currency
-BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Orb of Augmentation" "Transmutation Shard" "Alteration Shard" "Horizon Shard" "Alchemy Shard"
-SetFontSize 26
+BaseType "Scroll of Wisdom" "Portal Scroll" "Armourer's Scrap" "Jeweller's Orb" "Blacksmith's Whetstone" "Orb of Transmutation" "Transmutation Shard" "Orb of Augmentation" "Alteration Shard" "Horizon Shard" "Alchemy Shard"
+SetFontSize 16
 SetBackgroundColor 0 0 0 212
 SetTextColor 170 158 130
 SetBorderColor 0 0 0 0
