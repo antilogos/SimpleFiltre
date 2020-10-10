@@ -13,8 +13,8 @@
 			init();
 		}); 
       function init() {
-        const shiftX = passiveSkillTreeData.min_x;
-        const shiftY = passiveSkillTreeData.min_y;
+        const shiftX = passiveSkillTreeData.min_x + 3650;
+        const shiftY = passiveSkillTreeData.min_y + 1600;
 
         const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
         svg.setAttribute("viewBox","3000 3000 " + (passiveSkillTreeData.max_x-shiftX) + " " + (passiveSkillTreeData.max_y-shiftY));
