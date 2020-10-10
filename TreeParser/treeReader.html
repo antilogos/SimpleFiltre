@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TREE PARSER</title>
+    <style>
+    </style>
+    <script src="parser.js" type="text/javascript"></script>
+    <script>
+		var skillTreeNodes = [];
+
+		function parseSubmit() {
+			skillTreeNodes = parseUrl(document.getElementById("tree-input").value);
+		}
+    </script>
+  </head>
+    <body>
+     <div id="maindiv" style="overflow: auto">
+     </div>
+     <input type="text" id="tree-input" size=80 required/>
+     <input type="submit" id="tree-submit" size=15 onclick="parseSubmit()" />
+    <h3>Contents of the file:</h3>
+    <pre id="file-content"></pre>
+  </body>
+</html>
