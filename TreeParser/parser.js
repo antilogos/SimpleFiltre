@@ -63,11 +63,11 @@ function extractNodesData(jsonData) {
 					const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit];
 					// Place the node in the orbit and use orbit position to get him at the right location
 					if(skillOrbit != 0 && radius != 0) {
-						nodeObject.x = value.x -shiftX + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-						nodeObject.y = value.y -shiftY - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+						nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+						nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 					} else {
-						nodeObject.x = value.x -shiftX;
-						nodeObject.y = value.y -shiftY;
+						nodeObject.x = value.x;
+						nodeObject.y = value.y;
 					}
 					nodeObject.id = node;
 					// Store back the coordinates
