@@ -13,11 +13,10 @@
 			init();
 		}); 
       function init() {
-        const shiftX = passiveSkillTreeData.min_x + 3650;
-        const shiftY = passiveSkillTreeData.min_y + 2200;
+        const shiftX = passiveSkillTreeData.min_x;
+        const shiftY = passiveSkillTreeData.min_y;
 
         const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-        svg.setAttribute("viewBox","0 0 " + (passiveSkillTreeData.max_x-shiftX-1000) + " " + (passiveSkillTreeData.max_y-shiftY-1000));
         svg.setAttribute("width","800");
         svg.setAttribute("height","800");
 	const gradient = document.createElementNS("http://www.w3.org/2000/svg","defs");
@@ -162,6 +161,12 @@
                 
 	}
 	
+	let minViewX = Math.min(Object.entries(nodeMap).map(n => n.x));
+	let minViewY = Math.min(Object.entries(nodeMap).map(n => n.y));
+	let maxViewX = Math.max(Object.entries(nodeMap).map(n => n.x));
+	let maxViewY = Math.max(Object.entries(nodeMap).map(n => n.y));
+	      console.log(minViewX, minViewY, maxViewX, maxViewY);
+        svg.setAttribute("viewBox","0 0 " + (maxViewX-50) + " " + (maxViewY-50));
         document.getElementById("maindiv").appendChild(svg);
         console.log(passiveSkillTreeData);
       }
