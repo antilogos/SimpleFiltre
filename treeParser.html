@@ -161,12 +161,12 @@
                 
 	}
 	
-	let minViewX = Math.min(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x));
-	let minViewY = Math.min(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y));
-	let maxViewX = Math.max(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x));
-	let maxViewY = Math.max(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y));
+	let minViewX = Math.ceil(Math.min(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x)));
+	let minViewY = Math.ceil(Math.min(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y)));
+	let maxViewX = Math.ceil(Math.max(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x)));
+	let maxViewY = Math.ceil(Math.max(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y)));
 	
-        svg.setAttribute("viewBox",(minViewX -50) + " " + (minViewY -50) + " " + (maxViewX-minViewX+50) + " " + (maxViewY-minViewY+50));
+        svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX+150) + " " + (maxViewY-minViewY+150));
         document.getElementById("maindiv").appendChild(svg);
         console.log(passiveSkillTreeData);
       }
