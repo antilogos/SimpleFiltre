@@ -142,7 +142,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 };
 
 
-function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
+function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	var filteredNode = [];
 	var svgElements = [];
 	for( let origin of Object.values(nodeArray)) {
@@ -151,7 +151,7 @@ function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
 		}
 	}
 	// Draw array by getting all nodes and cheking their out
-	for( let [key, origin] of Object.entries(nodeArray)) {
+	for( let [key, origin] of Object.entries(filteredNode)) {
 		if(origin.x && origin.y && origin.out) {
 			for( let value of origin.out) {
 				if(filteredNode[dest]) {
@@ -169,6 +169,7 @@ function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("fill", "none");
 						nodeConnection.setAttribute("stroke", style);
 						nodeConnection.setAttribute("stroke-width", "24");
+						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);
 					// If not, draw line
 					} else {
@@ -178,6 +179,7 @@ function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("x2", dest.x);
 						nodeConnection.setAttribute("y2", dest.y);
 						nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:8");
+						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);	
 					}
 				}
