@@ -46,6 +46,8 @@
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b3"]), "#6d9eeb",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b2"]), "#38761d",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b1"]), "#93c47d",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+		} else if(urlParams.get("hash")) {
+			buildPath(parseUrl(urlParams.get("hash")), "#00F",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 		}
 
 		let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
