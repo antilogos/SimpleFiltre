@@ -1,13 +1,14 @@
+// Function found on the web to decode Base64 in pure javascript
 function decodeBase64(s) {
-        var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=s.length;
-        var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-        for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-        for(x=0;x<L;x++){
-            c=e[s.charAt(x)];b=(b<<6)+c;l+=6;
-            while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-        }
-        return r;
-    };
+	var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=s.length;
+	var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	for(i=0;i<64;i++){e[A.charAt(i)]=i;}
+	for(x=0;x<L;x++){
+		c=e[s.charAt(x)];b=(b<<6)+c;l+=6;
+		while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
+	}
+	return r;
+};
 	
 function parseUrl(u) {
 	// Converting url encoded in base64 with some quirks into binary
@@ -32,7 +33,7 @@ function parseUrl(u) {
 	}
 
 	return passiveNodes;
-}
+};
 
 // Take the passive skill tree and extract all the nodes that are relevant with added coordinates
 function extractNodesData(jsonData) {
@@ -77,7 +78,7 @@ function extractNodesData(jsonData) {
 		}
 	}
 	return nodeMap;
-}
+};
 
 function buildSvgNode(node) {
 	const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -96,13 +97,13 @@ function buildSvgNode(node) {
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
 	} else if(node.grantedStrength && node.grantedStrength == 10 && !node.grantedIntelligence && !node.grantedDexterity) {
-		nodePoint.setAttribute("fill", "#C44");
+		nodePoint.setAttribute("fill", "#800");
 		nodePoint.setAttribute("r", 32);
 	} else if(node.grantedDexterity && node.grantedDexterity == 10 && !node.grantedStrength && !node.grantedIntelligence) {
-		nodePoint.setAttribute("fill", "#4C4");
+		nodePoint.setAttribute("fill", "#080");
 		nodePoint.setAttribute("r", 32);
 	} else if(node.grantedIntelligence && node.grantedIntelligence == 10 && !node.grantedStrength && !node.grantedDexterity) {
-		nodePoint.setAttribute("fill", "#44C");
+		nodePoint.setAttribute("fill", "#008");
 		nodePoint.setAttribute("r", 32);
 	} else {
 		nodePoint.setAttribute("fill", "#888");
@@ -111,7 +112,7 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("id", "node_"+node.id);
 	
 	return nodePoint;
-}
+};
 
 function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
 	// If nodes are of the same group with orbit, draw arc
@@ -124,7 +125,7 @@ function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
 		//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 		nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 		nodeConnection.setAttribute("fill", "none");
-		nodeConnection.setAttribute("stroke", "#333");
+		nodeConnection.setAttribute("stroke", "#000");
 		nodeConnection.setAttribute("stroke-width", "8");
 		return nodeConnection;
 	// If not, draw line
@@ -134,7 +135,13 @@ function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
 		nodeConnection.setAttribute("y1", origin.y);
 		nodeConnection.setAttribute("x2", dest.x);
 		nodeConnection.setAttribute("y2", dest.y);
-		nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8");
+		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:8");
 		return nodeConnection;
 	}
-}
+};
+
+
+function buildPath(nodeArray, style) {
+	// Draw array by getting all nodes and cheking their out
+	
+};
