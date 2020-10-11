@@ -8,72 +8,46 @@
 	<script src="data.json" type="text/json"></script>
     <script src="parser.js" type="text/javascript"></script>
     <script>
-		var passiveSkillTreeData;
-		var nodes;
-		fetch("data.json").then(response => response.json()).then(parsed => {
-			passiveSkillTreeData = parsed;
-			nodes = extractNodesData(parsed);
-			init();
-		}); 
-      function init() {
-        const shiftX = passiveSkillTreeData.min_x;
-        const shiftY = passiveSkillTreeData.min_y;
+	var passiveSkillTreeData;
+	var nodes;
+	fetch("data.json").then(response => response.json()).then(parsed => {
+		passiveSkillTreeData = parsed;
+		nodes = extractNodesData(parsed);
+		init();
+	});
+	
+	function init() {
+		const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+		svg.setAttribute("width","800");
+		svg.setAttribute("height","800");
 
-        const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-        svg.setAttribute("width","800");
-        svg.setAttribute("height","800");
-	      
-	// Drawing the links between nodes
-	for( let[key, value] of Object.entries(nodes)) {
-		// Some nodes got no x or y ? FIXME research this further
-		if(value.out && value.x && value.y)
-		for( let nodeTo of value.out) {
-			const target = nodes[nodeTo];
-			// Some nodes out point to ascendancy or large cluster jewel
-			if(target && target.x && target.y) {
-				// If nodes are of the same group with orbit, draw arc
-				let numberInOrbit = passiveSkillTreeData.constants.skillsPerOrbit[target.orbit];
-				if(target.group == value.group && target.orbit == value.orbit && numberInOrbit != 0) {
-					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
-					let diffIndexOrbit = target.orbitIndex - value.orbitIndex;
-					let isBefore = "1";
-					if((diffIndexOrbit > 0 && diffIndexOrbit < numberInOrbit/2) || (diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2) ) isBefore = "1";
-					else isBefore = "0";
-					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
-					nodeConnection.setAttribute("d", "M " + value.x + " " + value.y + " A " 
-								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " " 
-								    + passiveSkillTreeData.constants.orbitRadii[target.orbit] + " 0 0 "
-								    + isBefore + " " + target.x + " " + target.y);
-					nodeConnection.setAttribute("fill", "none");
-					nodeConnection.setAttribute("stroke", "#229");
-					nodeConnection.setAttribute("stroke-width", "8");
-					svg.appendChild(nodeConnection);
-				// If not, draw line
-				} else {
-					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
-					nodeConnection.setAttribute("x1", value.x);
-					nodeConnection.setAttribute("y1", value.y);
-					nodeConnection.setAttribute("x2", target.x);
-					nodeConnection.setAttribute("y2", target.y);
-					nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8");
-					svg.appendChild(nodeConnection);
+		// Drawing the links between nodes
+		for( let[key, value] of Object.entries(nodes)) {
+			// Some nodes got no x or y ? FIXME research this further
+			if(value.out && value.x && value.y)
+			for( let nodeTo of value.out) {
+				const target = nodes[nodeTo];
+				// Some nodes out point to ascendancy or large cluster jewel
+				if(target && target.x && target.y) {
+					// If nodes are of the same group with orbit, draw arc
+					let numberInOrbit = passiveSkillTreeData.constants.skillsPerOrbit[target.orbit];
+					svg.appendChild(buildSvgConnection(value, target, numberInOrbit, passiveSkillTreeData.constants.orbitRadii));
 				}
 			}
 		}
+		for( let[key, value] of Object.entries(nodes)) {
+			if(value.id) svg.appendChild(buildSvgNode(value));
+		}
+
+		let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
+		let minViewY = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
+		let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
+		let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
+
+		svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX +300) + " " + (maxViewY-minViewY +300));
+		document.getElementById("maindiv").appendChild(svg);
+		console.log(passiveSkillTreeData);
 	}
-	for( let[key, value] of Object.entries(nodes)) {
-		if(value.id) svg.appendChild(buildSvgNode(value));
-	}
-	
-	let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
-	let minViewY = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
-	let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
-	let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
-	
-        svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX+300) + " " + (maxViewY-minViewY+300));
-        document.getElementById("maindiv").appendChild(svg);
-        console.log(passiveSkillTreeData);
-      }
     </script>
   </head>
 	<body>
