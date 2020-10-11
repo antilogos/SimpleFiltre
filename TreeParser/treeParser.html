@@ -22,89 +22,13 @@
         const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
         svg.setAttribute("width","800");
         svg.setAttribute("height","800");
-
-        // keep a map of nodes that matters
-        const nodeMap = new Map();
-        for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
-          if(!value.isAscendancyStart && !value.isMultipleChoice && !value.isMultipleChoiceOption && !value.isMastery && !value.ascendancyName 
-	     && !value.isBlighted && (!value.spc || value.spc.length == 0)) {
-            nodeMap[key] = value;
-            //if(value.ks) console.log(value);
-          }
-        }
-        //console.log("filter out ", nodeMap);
-
-        // Parse the groups to get coordinate of the center of circle if needed
-        for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
-	  if(!value.isProxy) {
-	    // Orbit are at radius 0 when node is at the center
-	    for( let orbit of value.orbits) {
-	      // get the radius of the orbits from the groupNode
-	      const radius = passiveSkillTreeData.constants.orbitRadii[orbit];		    
-              // Read only the nodes that matters
-              const filteredNode = value.nodes.filter(function (node) {return nodeMap[node] && nodeMap[node].orbit == orbit; });
-	      // DEBUG: drawing the circle
-		/*
-	      if(filteredNode.length > 0) {
-	        const groupNode = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	        groupNode.setAttribute("cx", value.x -shiftX);
-	        groupNode.setAttribute("cy", value.y -shiftY);
-	        groupNode.setAttribute("r", radius);
-	        groupNode.setAttribute("stroke", "#000");
-	        groupNode.setAttribute("stroke-width", 2);
-	        groupNode.setAttribute("fill", "none");
-	        groupNode.setAttribute("id", "group"+key+":"+orbit);
-	        svg.appendChild(groupNode);
-	      }
-		*/
-
-              for( let node of filteredNode) {
-		const nodeObject = nodeMap[node];
-		// Number of point on the circle
-                const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit];
-                const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-	        // Place the node in the orbit and use orbit position to get him at the right location
-		if(skillOrbit != 0 && radius != 0) {
-	          nodePoint.setAttribute("cx", value.x -shiftX + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius));
-                  nodePoint.setAttribute("cy", value.y -shiftY - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius));
-		  nodeObject.x = value.x -shiftX + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-		  nodeObject.y = value.y -shiftY - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-		} else {
-		  nodePoint.setAttribute("cx", value.x -shiftX);
-                  nodePoint.setAttribute("cy", value.y -shiftY);
-		  nodeObject.x = value.x -shiftX;
-		  nodeObject.y = value.y -shiftY;
-		}
-		nodeMap[node] = nodeObject;
-	        if(nodeObject.isKeystone) {
-                  nodePoint.setAttribute("fill", "#F00");
-	          nodePoint.setAttribute("r", 128);
-	        } else if(nodeObject.isNotable) {
-                  nodePoint.setAttribute("fill", "#0F0");
-	          nodePoint.setAttribute("r", 64);
-	        } else if(nodeObject.isJewelSocket) {
-                  nodePoint.setAttribute("fill", "none");
-                  nodePoint.setAttribute("stroke", "#292");
-		  nodePoint.setAttribute("stroke-width", "8");
-	          nodePoint.setAttribute("r", 48);
-	        } else {
-                  nodePoint.setAttribute("fill", "#292");
-	          nodePoint.setAttribute("r", 32);
-	        }
-	        nodePoint.setAttribute("id", "node"+node);
-                svg.appendChild(nodePoint);
-	      }
-            }
-	  }
-          //console.log(value.oo);
-        };
 	      
 	// Drawing the links between nodes
-	for( let[key, value] of Object.entries(nodeMap)) {
+	for( let[key, value] of Object.entries(nodes)) {
 		// Some nodes got no x or y ? FIXME research this further
 		if(value.out && value.x && value.y)
 		for( let nodeTo of value.out) {
-			const target = nodeMap[nodeTo];
+			const target = nodes[nodeTo];
 			// Some nodes out point to ascendancy or large cluster jewel
 			if(target && target.x && target.y) {
 				// If nodes are of the same group with orbit, draw arc
@@ -136,13 +60,15 @@
 				}
 			}
 		}
-                
+	}
+	for( let[key, value] of Object.entries(nodes)) {
+		svg.appendChild(buildSvgNode(value))
 	}
 	
-	let minViewX = Math.ceil(Math.min(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x)));
-	let minViewY = Math.ceil(Math.min(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y)));
-	let maxViewX = Math.ceil(Math.max(...Object.entries(nodeMap).filter(n => n[1].x).map(n => n[1].x)));
-	let maxViewY = Math.ceil(Math.max(...Object.entries(nodeMap).filter(n => n[1].y).map(n => n[1].y)));
+	let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
+	let minViewY = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
+	let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
+	let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
 	
         svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX+300) + " " + (maxViewY-minViewY+300));
         document.getElementById("maindiv").appendChild(svg);
