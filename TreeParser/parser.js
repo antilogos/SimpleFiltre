@@ -115,7 +115,7 @@ function buildSvgNode(node) {
 };
 
 function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
-	let numberInOrbit = orbitMap[target.orbit];
+	let numberInOrbit = orbitMap[dest.orbit];
 	// If nodes are of the same group with orbit, draw arc
 	if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
 		const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -144,9 +144,9 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 
 function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	// Draw array by getting all nodes and cheking their out
-	for( let node of nodeArray) {
-		for( let nodeOut of nodeMap[node].out) {
-			if(nodeArray.includes(nodeOut)) {
+	for( let origin of nodeArray) {
+		for( let dest of nodeMap[origin].out) {
+			if(nodeArray.includes(dest)) {
 				let numberInOrbit = orbitMap[dest.orbit];
 				// If nodes are of the same group with orbit, draw arc
 				if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
