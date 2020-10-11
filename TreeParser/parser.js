@@ -148,8 +148,6 @@ function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
 	for( let origin of Object.values(nodeArray)) {
         	if(nodeMap[origin]) {
 			filteredNode[origin] = nodeMap[origin];
-		} else {
-			console.log(origin, "absent");
 		}
 	}
 	// Draw array by getting all nodes and cheking their out
