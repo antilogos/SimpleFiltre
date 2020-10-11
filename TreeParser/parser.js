@@ -154,7 +154,7 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	for( let [key, origin] of Object.entries(filteredNode)) {
 		if(origin.x && origin.y && origin.out) {
 			for( let value of origin.out) {
-				if(filteredNode[dest]) {
+				if(filteredNode[value]) {
 					let dest = filteredNode[value];
 					let numberInOrbit = orbitMap[dest.orbit];
 					// If nodes are of the same group with orbit, draw arc
