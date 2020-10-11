@@ -30,8 +30,7 @@
 				// Some nodes out point to ascendancy or large cluster jewel
 				if(target && target.x && target.y) {
 					// If nodes are of the same group with orbit, draw arc
-					let numberInOrbit = passiveSkillTreeData.constants.skillsPerOrbit[target.orbit];
-					svg.appendChild(buildSvgConnection(value, target, numberInOrbit, passiveSkillTreeData.constants.orbitRadii));
+					svg.appendChild(buildSvgConnection(value, target, passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii));
 				}
 			}
 		}
@@ -46,7 +45,6 @@
 
 		svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX +300) + " " + (maxViewY-minViewY +300));
 		document.getElementById("maindiv").appendChild(svg);
-		console.log(passiveSkillTreeData);
 	}
     </script>
   </head>

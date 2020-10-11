@@ -114,7 +114,8 @@ function buildSvgNode(node) {
 	return nodePoint;
 };
 
-function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
+function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
+	let numberInOrbit = orbitMap[target.orbit];
 	// If nodes are of the same group with orbit, draw arc
 	if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
 		const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -126,7 +127,7 @@ function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
 		nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 		nodeConnection.setAttribute("fill", "none");
 		nodeConnection.setAttribute("stroke", "#000");
-		nodeConnection.setAttribute("stroke-width", "8");
+		nodeConnection.setAttribute("stroke-width", "12");
 		return nodeConnection;
 	// If not, draw line
 	} else {
@@ -135,13 +136,42 @@ function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
 		nodeConnection.setAttribute("y1", origin.y);
 		nodeConnection.setAttribute("x2", dest.x);
 		nodeConnection.setAttribute("y2", dest.y);
-		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:8");
+		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:12");
 		return nodeConnection;
 	}
 };
 
 
-function buildPath(nodeArray, style) {
+function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	// Draw array by getting all nodes and cheking their out
-	
+	for( let node of nodeArray) {
+		for( let nodeOut of nodeMap[node].out) {
+			if(nodeArray.includes(nodeOut)) {
+				let numberInOrbit = orbitMap[dest.orbit];
+				// If nodes are of the same group with orbit, draw arc
+				if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
+					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
+					let diffIndexOrbit = dest.orbitIndex - origin.orbitIndex;
+					let isBefore = "1";
+					if((diffIndexOrbit > 0 && diffIndexOrbit < numberInOrbit/2) || (diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2) ) isBefore = "1";
+					else isBefore = "0";
+					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
+					nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
+					nodeConnection.setAttribute("fill", "none");
+					nodeConnection.setAttribute("stroke", style);
+					nodeConnection.setAttribute("stroke-width", "24");
+					svg.appendChild(nodeConnection);
+				// If not, draw line
+				} else {
+					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
+					nodeConnection.setAttribute("x1", origin.x);
+					nodeConnection.setAttribute("y1", origin.y);
+					nodeConnection.setAttribute("x2", dest.x);
+					nodeConnection.setAttribute("y2", dest.y);
+					nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:8");
+					svg.appendChild(nodeConnection);	
+				}
+			}
+		}
+	}
 };
