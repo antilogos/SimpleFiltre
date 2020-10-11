@@ -145,31 +145,33 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	// Draw array by getting all nodes and cheking their out
 	for( let origin of nodeArray) {
-		for( let dest of nodeMap[origin].out) {
-			if(nodeArray.includes(dest)) {
-				let numberInOrbit = orbitMap[dest.orbit];
-				// If nodes are of the same group with orbit, draw arc
-				if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
-					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
-					let diffIndexOrbit = dest.orbitIndex - origin.orbitIndex;
-					let isBefore = "1";
-					if((diffIndexOrbit > 0 && diffIndexOrbit < numberInOrbit/2) || (diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2) ) isBefore = "1";
-					else isBefore = "0";
-					//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
-					nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
-					nodeConnection.setAttribute("fill", "none");
-					nodeConnection.setAttribute("stroke", style);
-					nodeConnection.setAttribute("stroke-width", "24");
-					svg.appendChild(nodeConnection);
-				// If not, draw line
-				} else {
-					const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
-					nodeConnection.setAttribute("x1", origin.x);
-					nodeConnection.setAttribute("y1", origin.y);
-					nodeConnection.setAttribute("x2", dest.x);
-					nodeConnection.setAttribute("y2", dest.y);
-					nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:8");
-					svg.appendChild(nodeConnection);	
+		if(nodeMap[origin].out) {
+			for( let dest of nodeMap[origin].out) {
+				if(nodeArray.includes(dest)) {
+					let numberInOrbit = orbitMap[dest.orbit];
+					// If nodes are of the same group with orbit, draw arc
+					if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
+						const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
+						let diffIndexOrbit = dest.orbitIndex - origin.orbitIndex;
+						let isBefore = "1";
+						if((diffIndexOrbit > 0 && diffIndexOrbit < numberInOrbit/2) || (diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2) ) isBefore = "1";
+						else isBefore = "0";
+						//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
+						nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
+						nodeConnection.setAttribute("fill", "none");
+						nodeConnection.setAttribute("stroke", style);
+						nodeConnection.setAttribute("stroke-width", "24");
+						svg.appendChild(nodeConnection);
+					// If not, draw line
+					} else {
+						const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
+						nodeConnection.setAttribute("x1", origin.x);
+						nodeConnection.setAttribute("y1", origin.y);
+						nodeConnection.setAttribute("x2", dest.x);
+						nodeConnection.setAttribute("y2", dest.y);
+						nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:8");
+						svg.appendChild(nodeConnection);	
+					}
 				}
 			}
 		}
