@@ -145,7 +145,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	// Draw array by getting all nodes and cheking their out
 	for( let origin of nodeArray) {
-		if(nodeMap[origin].out) {
+		if(nodeMap[origin] && nodeMap[origin].out) {
 			for( let dest of nodeMap[origin].out) {
 				if(nodeArray.includes(dest)) {
 					let numberInOrbit = orbitMap[dest.orbit];
