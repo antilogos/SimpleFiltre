@@ -92,26 +92,20 @@ function buildSvgNode(node) {
 		nodePoint.setAttribute("r", 64);
 	} else if(node.isJewelSocket) {
 		nodePoint.setAttribute("fill", "none");
-		nodePoint.setAttribute("stroke", "#292");
+		nodePoint.setAttribute("stroke", "#000");
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
 	} else if(node.grantedStrength && node.grantedStrength == 10) {
-		nodePoint.setAttribute("fill", "none");
-		nodePoint.setAttribute("stroke", "#611");
-		nodePoint.setAttribute("stroke-width", "8");
-		nodePoint.setAttribute("r", 48);
+		nodePoint.setAttribute("fill", "#A33");
+		nodePoint.setAttribute("r", 32);
 	} else if(node.grantedDexterity && node.grantedDexterity == 10) {
-		nodePoint.setAttribute("fill", "none");
-		nodePoint.setAttribute("stroke", "#161");
-		nodePoint.setAttribute("stroke-width", "8");
-		nodePoint.setAttribute("r", 48);
+		nodePoint.setAttribute("fill", "#3A3");
+		nodePoint.setAttribute("r", 32);
 	} else if(node.grantedIntelligence && node.grantedIntelligence == 10) {
-		nodePoint.setAttribute("fill", "none");
-		nodePoint.setAttribute("stroke", "#116");
-		nodePoint.setAttribute("stroke-width", "8");
-		nodePoint.setAttribute("r", 48);
+		nodePoint.setAttribute("fill", "#33A");
+		nodePoint.setAttribute("r", 32);
 	} else {
-		nodePoint.setAttribute("fill", "#292");
+		nodePoint.setAttribute("fill", "#000");
 		nodePoint.setAttribute("r", 32);
 	}
 	nodePoint.setAttribute("id", "node_"+node.id);
