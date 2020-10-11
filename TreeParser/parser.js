@@ -29,7 +29,11 @@ function parseUrl(u) {
 	// List of passiveNodes are Int16 from offset 5
 	var passiveNodes = [];
 	for(var i = 7; i < buffer.length; i+=2){
-	  passiveNodes.push(view.getUint16(i));
+		try {
+	  		passiveNodes.push(view.getUint16(i));
+		} catch (error) {
+  			console.error(error);
+		}
 	}
 
 	return passiveNodes;
