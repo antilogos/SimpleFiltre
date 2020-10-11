@@ -168,7 +168,7 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 						nodeConnection.setAttribute("fill", "none");
 						nodeConnection.setAttribute("stroke", style);
-						nodeConnection.setAttribute("stroke-width", "48");
+						nodeConnection.setAttribute("stroke-width", "64");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);
 					// If not, draw line
@@ -178,7 +178,7 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("y1", origin.y);
 						nodeConnection.setAttribute("x2", dest.x);
 						nodeConnection.setAttribute("y2", dest.y);
-						nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:48");
+						nodeConnection.setAttribute("style", "stroke:"+style+";stroke-width:64");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);	
 					}
