@@ -16,9 +16,8 @@
 		nodes = extractNodesData(parsed);
 		init();
 	});
-	const queryString = window.location.search;
-	const urlParams = new URLSearchParams(queryString);
-			//skillTreeNodes = parseUrl(document.getElementById("tree-input").value);
+	const urlParams = new URLSearchParams(window.location.search);
+			
 	function init() {
 		const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
 		svg.setAttribute("width","800");
@@ -40,12 +39,19 @@
 		for( let[key, value] of Object.entries(nodes)) {
 			if(value.id) svg.appendChild(buildSvgNode(value));
 		}
+		
+		// Draw a tutorial skill tree
+		if(urlParams.get("draw")) {
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b4"]), "#1155cc",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b3"]), "#6d9eeb",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b2"]), "#38761d",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b1"]), "#93c47d",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+		}
 
 		let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
 		let minViewY = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
 		let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
 		let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
-
 		svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX +300) + " " + (maxViewY-minViewY +300));
 		document.getElementById("maindiv").appendChild(svg);
 	}
