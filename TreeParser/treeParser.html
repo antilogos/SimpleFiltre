@@ -6,8 +6,9 @@
     <style>
     </style>
 	<script src="data.json" type="text/json"></script>
-    <script src="parser.js" type="text/javascript"></script>
-    <script>
+	<script src="tutorialPath.js" type="text/javascript"></script>
+    	<script src="parser.js" type="text/javascript"></script>
+    	<script>
 	var passiveSkillTreeData;
 	var nodes;
 	fetch("data.json").then(response => response.json()).then(parsed => {
@@ -15,7 +16,9 @@
 		nodes = extractNodesData(parsed);
 		init();
 	});
-	
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+			//skillTreeNodes = parseUrl(document.getElementById("tree-input").value);
 	function init() {
 		const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
 		svg.setAttribute("width","800");
