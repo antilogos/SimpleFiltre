@@ -105,10 +105,36 @@ function buildSvgNode(node) {
 		nodePoint.setAttribute("fill", "#44C");
 		nodePoint.setAttribute("r", 32);
 	} else {
-		nodePoint.setAttribute("fill", "#000");
+		nodePoint.setAttribute("fill", "#888");
 		nodePoint.setAttribute("r", 32);
 	}
 	nodePoint.setAttribute("id", "node_"+node.id);
 	
 	return nodePoint;
+}
+
+function buildSvgConnection(origin, dest, numberInOrbit, radiiMap) {
+	// If nodes are of the same group with orbit, draw arc
+	if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
+		const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "path");
+		let diffIndexOrbit = dest.orbitIndex - origin.orbitIndex;
+		let isBefore = "1";
+		if((diffIndexOrbit > 0 && diffIndexOrbit < numberInOrbit/2) || (diffIndexOrbit < 0 && diffIndexOrbit + numberInOrbit < numberInOrbit/2) ) isBefore = "1";
+		else isBefore = "0";
+		//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
+		nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
+		nodeConnection.setAttribute("fill", "none");
+		nodeConnection.setAttribute("stroke", "#333");
+		nodeConnection.setAttribute("stroke-width", "8");
+		return nodeConnection;
+	// If not, draw line
+	} else {
+		const nodeConnection = document.createElementNS("http://www.w3.org/2000/svg", "line");
+		nodeConnection.setAttribute("x1", origin.x);
+		nodeConnection.setAttribute("y1", origin.y);
+		nodeConnection.setAttribute("x2", dest.x);
+		nodeConnection.setAttribute("y2", dest.y);
+		nodeConnection.setAttribute("style", "stroke:#229;stroke-width:8");
+		return nodeConnection;
+	}
 }
