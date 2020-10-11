@@ -147,7 +147,7 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	for( let origin of Object.values(nodeArray)) {
 		if(nodeMap[origin] && nodeMap[origin].out) {
 			for( let dest of nodeMap[origin].out) {
-				console.log("does",Object.values(nodeArray).map(v => JSON.stringify(v)),"includes",JSON.stringify(dest),Object.values(nodeArray).map(v => JSON.stringify(v)).includes(JSON.stringify(dest));
+				console.log("does",Object.values(nodeArray).map(v => JSON.stringify(v)),"includes",JSON.stringify(dest),Object.values(nodeArray).map(v => JSON.stringify(v)).includes(JSON.stringify(dest)));
 				if(Object.values(nodeArray).map(v => JSON.stringify(v)).includes(JSON.stringify(dest))) {
 					let numberInOrbit = orbitMap[dest.orbit];
 					// If nodes are of the same group with orbit, draw arc
