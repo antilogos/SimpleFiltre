@@ -62,7 +62,7 @@
 		}
 	}
 	for( let[key, value] of Object.entries(nodes)) {
-		svg.appendChild(buildSvgNode(value))
+		if(value.id) svg.appendChild(buildSvgNode(value));
 	}
 	
 	let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
