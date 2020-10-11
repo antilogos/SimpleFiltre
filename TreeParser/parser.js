@@ -153,11 +153,11 @@ function buildPath(nodeArray, style, nodeMap, orbitMap, radiiMap) {
 		}
 	}
 	// Draw array by getting all nodes and cheking their out
-	for( let origin of Object.values(nodeArray)) {
-		if(nodeMap[origin] && nodeMap[origin].x && nodeMap[origin].y && nodeMap[origin].out) {
-			for( let dest of nodeMap[origin].out) {
+	for( let [key, origin] of Object.entries(nodeArray)) {
+		if(origin.x && origin.y && origin.out) {
+			for( let value of origin.out) {
 				if(filteredNode[dest]) {
-					console.log("it's in", filteredNode[origin], "to",filteredNode[dest]);
+					let dest = filteredNode[value];
 					let numberInOrbit = orbitMap[dest.orbit];
 					// If nodes are of the same group with orbit, draw arc
 					if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
