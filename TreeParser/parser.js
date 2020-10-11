@@ -84,28 +84,28 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cx", node.x);
 	nodePoint.setAttribute("cy", node.y);
 	
-	if(nodeObject.isKeystone) {
+	if(node.isKeystone) {
 		nodePoint.setAttribute("fill", "#F00");
 		nodePoint.setAttribute("r", 128);
-	} else if(nodeObject.isNotable) {
+	} else if(node.isNotable) {
 		nodePoint.setAttribute("fill", "#0F0");
 		nodePoint.setAttribute("r", 64);
-	} else if(nodeObject.isJewelSocket) {
+	} else if(node.isJewelSocket) {
 		nodePoint.setAttribute("fill", "none");
 		nodePoint.setAttribute("stroke", "#292");
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
-	} else if(nodeObject.grantedStrength && nodeObject.grantedStrength == 10) {
+	} else if(node.grantedStrength && node.grantedStrength == 10) {
 		nodePoint.setAttribute("fill", "none");
 		nodePoint.setAttribute("stroke", "#611");
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
-	} else if(nodeObject.grantedDexterity && nodeObject.grantedDexterity == 10) {
+	} else if(node.grantedDexterity && node.grantedDexterity == 10) {
 		nodePoint.setAttribute("fill", "none");
 		nodePoint.setAttribute("stroke", "#161");
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
-	} else if(nodeObject.grantedIntelligence && nodeObject.grantedIntelligence == 10) {
+	} else if(node.grantedIntelligence && node.grantedIntelligence == 10) {
 		nodePoint.setAttribute("fill", "none");
 		nodePoint.setAttribute("stroke", "#116");
 		nodePoint.setAttribute("stroke-width", "8");
