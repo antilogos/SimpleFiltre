@@ -143,12 +143,19 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 
 
 function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
+	var filteredNode = [];
+	for( let origin of Object.values(nodeArray)) {
+        	if(nodeMap[origin]) {
+			filteredNode[origin] = nodeMap[origin];
+		} else {
+			console.log(origin, "absent");
+		}
+	}
 	// Draw array by getting all nodes and cheking their out
 	for( let origin of Object.values(nodeArray)) {
 		if(nodeMap[origin] && nodeMap[origin].out) {
 			for( let dest of nodeMap[origin].out) {
-				console.log("does",Object.values(nodeArray).map(v => JSON.stringify(v)),"includes",JSON.stringify(dest),Object.values(nodeArray).map(v => JSON.stringify(v)).includes(JSON.stringify(dest)));
-				if(Object.values(nodeArray).map(v => JSON.stringify(v)).includes(JSON.stringify(dest))) {
+				if(filteredNode[dest]) {
 					let numberInOrbit = orbitMap[dest.orbit];
 					// If nodes are of the same group with orbit, draw arc
 					if(dest.group == origin.group && dest.orbit == origin.orbit && numberInOrbit != 0) {
