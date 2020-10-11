@@ -95,14 +95,14 @@ function buildSvgNode(node) {
 		nodePoint.setAttribute("stroke", "#000");
 		nodePoint.setAttribute("stroke-width", "8");
 		nodePoint.setAttribute("r", 48);
-	} else if(node.grantedStrength && node.grantedStrength == 10) {
-		nodePoint.setAttribute("fill", "#A33");
+	} else if(node.grantedStrength && node.grantedStrength == 10 && !node.grantedIntelligence && !node.grantedDexterity) {
+		nodePoint.setAttribute("fill", "#C44");
 		nodePoint.setAttribute("r", 32);
-	} else if(node.grantedDexterity && node.grantedDexterity == 10) {
-		nodePoint.setAttribute("fill", "#3A3");
+	} else if(node.grantedDexterity && node.grantedDexterity == 10 && !node.grantedStrength && !node.grantedIntelligence) {
+		nodePoint.setAttribute("fill", "#4C4");
 		nodePoint.setAttribute("r", 32);
-	} else if(node.grantedIntelligence && node.grantedIntelligence == 10) {
-		nodePoint.setAttribute("fill", "#33A");
+	} else if(node.grantedIntelligence && node.grantedIntelligence == 10 && !node.grantedStrength && !node.grantedDexterity) {
+		nodePoint.setAttribute("fill", "#44C");
 		nodePoint.setAttribute("r", 32);
 	} else {
 		nodePoint.setAttribute("fill", "#000");
