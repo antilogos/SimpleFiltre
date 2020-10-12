@@ -90,16 +90,16 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cy", node.y);
 	
 	if(node.isKeystone) {
-		nodePoint.setAttribute("fill", "#A44");
+		nodePoint.setAttribute("fill", "#A00");
 		nodePoint.setAttribute("r", 128);
 	} else if(node.isNotable) {
-		nodePoint.setAttribute("fill", "#4A4");
+		nodePoint.setAttribute("fill", "#A00");
 		nodePoint.setAttribute("r", 64);
 	} else if(node.isJewelSocket) {
 		nodePoint.setAttribute("fill", "none");
 		nodePoint.setAttribute("stroke", "#000");
-		nodePoint.setAttribute("stroke-width", "8");
-		nodePoint.setAttribute("r", 48);
+		nodePoint.setAttribute("stroke-width", "16");
+		nodePoint.setAttribute("r", 58);
 	} else if(node.grantedStrength && node.grantedStrength == 10 && !node.grantedIntelligence && !node.grantedDexterity) {
 		nodePoint.setAttribute("fill", "#A00");
 		nodePoint.setAttribute("r", 32);
@@ -110,7 +110,7 @@ function buildSvgNode(node) {
 		nodePoint.setAttribute("fill", "#00A");
 		nodePoint.setAttribute("r", 32);
 	} else {
-		nodePoint.setAttribute("fill", "#888");
+		nodePoint.setAttribute("fill", "#222");
 		nodePoint.setAttribute("r", 32);
 	}
 	nodePoint.setAttribute("id", "node_"+node.id);
@@ -131,7 +131,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 		nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 		nodeConnection.setAttribute("fill", "none");
 		nodeConnection.setAttribute("stroke", "#000");
-		nodeConnection.setAttribute("stroke-width", "12");
+		nodeConnection.setAttribute("stroke-width", "16");
 		return nodeConnection;
 	// If not, draw line
 	} else {
@@ -140,7 +140,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 		nodeConnection.setAttribute("y1", origin.y);
 		nodeConnection.setAttribute("x2", dest.x);
 		nodeConnection.setAttribute("y2", dest.y);
-		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:12");
+		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:16");
 		return nodeConnection;
 	}
 };
