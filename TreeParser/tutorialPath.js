@@ -17,8 +17,8 @@ elementalist["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3
 elementalist["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMCABzcEFiboSycjxp0VayXU1LdjPnoakMWv0lRg9tqGzWSsnD-j2KVbAt8S7Xy3uVMixSpwGZ6l1vXOuEmlVXGiFq3PiL01YG4k--IgsfwH_fXVEdo8u_roS_VpipT4BKWdPDVBLN8g17AVUsI9Iw2ghCt8QceSbGa4BhdMFtJsoUyKPrXz5Uuple-ilBCiaGsmH_G2L3IDemCgpu86jpYpwh2Ea7_QYffsFZIXyoC4xEt_rMy0Y0Zj0ZtGWHiEZYRD6IApr7YJJD6_gpFnYVt-TfvS36vB6W9rCTYRUffbTsNTeNTNY0LHYPyRdlf6-6TJw==";
 elementalist["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMCABzcEFiboQx2Z71MLY0L9OmPGjaJrJeCEN2M-ehqQxa_bAu1hTrhNZJJUfDV99d-x52uVkhMixvxwGZ6l1vX6YImlVXGtz4i9CycuJPviILH8B8tfVRH2jrv66Ev1aZtGeASsQX-jwSzfIPvUNi9JNjIDcG0rfFQQhSwSbGa4BhdMFtJsgceKPrXz5Uuple-ir2siaGsmH_G322MNoKbvOo6WKcIdhGu_0GH37BTUuWLAuMRLYPbMtGNGY9GuNARlmHiEQ-iAKa-2CSQ-v4KRZ2Fbfk370t-rwel1YFVS0VHCPQ7DU3jUzUdg_JF2V_r7pMn";
 elementalist["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMCABzcEFiboS2p8NXfbY8arJf3192M-ehqQxa_ghDviAceNZLjYv6PKPoNRrc4LiymV0yLvOrAZnqXW9c64SaVVcbYvbc-IvQsnLiTUEKCx_AfyA1UR-mC7-uhL9WmmuDgEo0LJNgEs3yD70tWSFNSjDZMs63xAuOD20mxHwIYXTBbSbKNGUb-18-VLmwLj_ph4omhrJioNREPogCmvoKbQYcEB9gkdhGu_20ZAovGio9G_goRLUWdMtGFbS_WSkDfsBGWpwg6WNWBVUuQ-n_GCPS-ivk3art-rwelSVG9rEVHGnI7DVM1TeMdg_JF2V_r7pMn";
-elementalist["labelExt"] = ["Reine","Horde","Essence"];
-elementalist["labelPos"] = [10000,10000];
+elementalist["labelExt"] = ["Choc","Esprit","Tempête"];
+elementalist["labelPos"] = [100,100];
 
 var occultist = {};
 occultist["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBAN-KEVDw1acrwcXpAkwtlSBDVDW50eR-obv8nwHsGEuuFLBJUR1P9HGP-ohCGyVtGY2Cadgd2RdUXY6SdIIeU9TZW8Hz";
@@ -28,8 +28,8 @@ occultist["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 occultist["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBABzcL9qXLR0UcLubofVLqDGPGi9vwfMBb9-KvKrQ0BFQFy-3MICk23r7CfDV6rp2guOELizbGqcrN2bBxW1s6QKQ1tlbBueLeuNWTC2CHriT53SESL46lSAZiuL37-tDVCymGyUTbdHkHU9-obv8SU-fAZhTS661SCy_FLC9gklRN4PDOisKjYLsGPRxlS4UCY_6iEIaj6yYJoikBabrAovBAG0ZEZYi6mnYNAqSdA5I9toy0R3ZK5qPRhdUVdbZE12OXGsNfFfJw20HHh9BZOc1uVKyfbBqGxB7pwhT1F3y99c7DSj6yAwRD_rS6-4ksA==";
 occultist["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBABzcL9qXLeTrjxrndCKBAW_firyq0NARUIt6uNCxBZ7Epr6nCOq6doLjhC4sjjynKzdmwcVtbOkCkNZWSgbnnqHYJEwtVki4k9t6gse-OpUghEj52-_rQ1T31xsl9UsTbR9B2xp-obv8SU-fAbcwS661SCy_FLC9gklR4vfB8xB7m6GoMfRxlS4UCY_6NbnR5AcefscdT9lb41bsGMEAbRmCHo2Cna40CgKLXGvliw5IadgspjLRK5qPRhdUknQRll2ON4MrCiaIw22kBabrmFMd2VKyfbBqGw18iEJT1F3yV8k7DSj62jrIDBEPrJjr7vDV";
 occultist["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBABzcL9qXLeTrjxrndCKBAW_firyq0NARUIt6uNCxBZ7Epr6nCOq6doLjhC4sjjynKzdmwcVtbOkCkNZWSgbnnqHYJEwtVki4k9t6gse-OpUghEj52-_rQ1T31xsl9UsTbR9B2xp-obv8SU-fAbcwS661SCy_FLC9gklR4vfB8xB7m6GoMfRxlS4UCY_6NbnR5AcefscdT9lb41bsGMEAbRmCHo2Cna40CgKLXGvliw5IadgspjLRK5qPRhdUknQRll2ON4MrCiaIw22kBabrmFMd2VKyfbBqGw18iEJT1F3yV8k7DSj62jrIDBEPrJjr7vDV";
-occultist["labelExt"] = ["Reine","Horde","Essence"];
-occultist["labelPos"] = [10000,10000];
+occultist["labelExt"] = ["Énergie","Murmure","Frisson"];
+occultist["labelPos"] = [100,100];
 
 var saboteur = {};
 saboteur["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYDAGHrlPEWv0jlshmsRviXm5qkFmJPjDZQQntfwzrviNfPz3oi6iaV8nXJBlVLMgEki7kGYeL5N0mxelNTNQ-rBkCTJw==";
@@ -39,8 +39,8 @@ saboteur["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 saboteur["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYDACNfGFlwuwj0YevKWTmZjX16U4R3vOqU8Y2_0UV6i0jlny_7CfDVYqxsCzIYbIxUYtQj4YjBxRqPHaqyGRODVcY6Qv5JwuwsnKxGUEKExS9vGYrZE4MJoS9sCGpDm5pNkpu1IvQ9X6QWUUfPeow2TLNFuSP27-t7X0lR8Yq0DMrT3ajsGNfPlS7viL6K6NYwfAcef8adqha_l5VtGTBxBAfxsyLqJpXA45f0OljydfbandnJBnBRVUtLVySLYeIRlkt4oEMOjlMxb57hDzIBuQb5N9AfSbGD2wW12-e0xVJT-JezA1M1RnEPq8M6Yk8GQJMn";
 saboteur["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYDALIog_EjXwj0Bndh6yT9D6uNfXpThHe86mpDFr_nVC3ESOWNv_DVYqxsC1RibIyio2HiO3zBxbjKidOyGRODVcY6Qg_EwuwsnKxGm7X4lwVCQZbQ9e_roS_Peu-Im5pNklBCbAg9X6QWUUeDCYw2TLNFuSP2lPF7X0lR8YrDOsrT3agyGNfPlS5iT76K6NYwfAcef8adqiL0l5VtGTBxBAfxsyLqJpXA45f0OljyddQjndnJBnBRVUsyASSLcFIRlkt4oEMOjlMxb57hD0tXuQb5N9AfSbGD2wW12-e0xVJT_96zA1M1pvhGcbQMhMUGQJMn";
 saboteur["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYDACNfCPQN0SBuYetQMGNDjX16U4R3vOpqQxa_DPKly0jlPs-95vDVYqxsCzIYbIz6615FJinBxaa-DkiyGRODVcY6QuOEwuwsnKxG74iExaBDVEdeA-_roS-Nv1Rim5pNkmJPwzo9X6QWUUcPq4w2TLNFuSP2RnF7X0lR8Yq0DMrT3aibtdfPlS7Per6K6NYwfAcef8adqviXl5UEB7TFbRnb5yLqJpXA44PbSbHyddAf-Te5BnBRMgFLVySLEZZh4kt4b54OjlMxwWvhD1VLyQad2dQjOliX9AW18bMwcVJTIvSzA1M1lPGDCWwIUEIGQJMn";
-saboteur["labelExt"] = ["Reine","Horde","Essence"];
-saboteur["labelPos"] = [10000,10000];
+saboteur["labelExt"] = ["Explosion","Démolition","Galvanique"];
+saboteur["labelPos"] = [-5000,100];
 
 var trickster = {};
 trickster["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYCAElRotmVLhQJtNEHHha_o6OkBW1sJpUG52HiM6MRlvDVD6uYU7cwE22w2CaI36Bd8h9BvV0OSDy2yAzaO4w2W9O1SFVL";
@@ -50,8 +50,8 @@ trickster["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 trickster["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYCABzcm6EdFIWxCPRZ87cwieC00bzqakMPqxOasvKlxFgHo6OnCGKsbAsYamyMu011nqebnaptbJrg74gmlVXG-5HKJCL0LJytSpu1hMXw1TbpTm1cQCaIoS_dX9o7Bx4TbR9BVUu9XQbn36DmWIw2h8u1SHzlrJhJsc8VbRnDOmf8hTLsGNfPlS4UCUkT-Tei2UWdf8ZmnnIPGjiw2ONqM3B0VaQFOlhJUSSq-tJfKhGWES3-s-bqkFWPRpwyJIth4jY9M6MWvw5IU1K-ioPbmFMnL5MfahuP-uKwXfJ4LxZvfIM8tsgMW9OPGvfX6-6TJw==";
 trickster["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYCABzcm6GbIaLZCPRZ87cwieC00bzqo6P7qvfXbIy7TVFgJpUi9Ju1hMWhLxNtH0EOSN-g2juMNrVINulKLoUyRv7Xz5UuFAlJE0Wdf8Zmnho4BjkEB6QFxopfKhEtkFUv1rDY42qTH91f6-6TJx0UdZ4Wb2pDW9OnpfDVfLtsC21sVcYsnFBCrUo9D3yD5ljVi4fL8wZJscM6Z_xVS8F-j_ql9UyzrJioNZyLBudtGe-IPLaD21xAvV0HHjrYJKpd8ha_Jy-dqv6zNj1qu1NSJItyDxGWHwIzo_rSOlhh4o9GdFWYU_k3vopqGyaIjxrPFRpypwhJUVM1yAya4A-rYqynmx7u";
 trickster["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYCABzcm6GXLR0UdZ4I9FnztzCJ4LTRvOpqQ1vTD6tilcekL9qjo6cIYqz310lPbIy7TbyqsnBtrG1snaqCxyaVBucWb7c-IvQsnLiT74iExfnoQYetSlxAotmhL6ebKlNXyBNtH0Ga4HyDjxpVS9o7jDaHy7VITRTw1UmxzxU26cM6Z_yFMr1d18-VLhQJj_rdX-ZYrJh_xmaeBx4aOIPbvoptGVNSpAX5Nw5IJKpyD18qsNgRLf6zNj2QVY9GJIvjamHidFUzozpY-tIRlklRFr-YUycvkx9qG0kTRZ1d8iaI36Ao-jy2yAybtVXGbAvr7pMn";
-trickster["labelExt"] = ["Reine","Horde","Essence"];
-trickster["labelPos"] = [10000,10000];
+trickster["labelExt"] = ["Fatalité","Voile","Âme"];
+trickster["labelPos"] = [-5000,100];
 
 var assassin = {};
 assassin["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAKLZyBSJ4PDVJpWEokyOidMOSBa_JoiMNuZYSVG3MF3y9W8Pq5UuSRPDOuhaaowki2HisNhwUhGWVUuTHweZKgsHHlnw";
@@ -61,8 +61,8 @@ assassin["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 assassin["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAM_pk5kGcCpNotkuCLIZb4Q6rWHryBSJ4I19elMuSv8c7T8Wv06fN9QbrTWSexQi4mKsfVvjhGyMSsj667GzeK5tbD3iOuEmlaOKhKJeRcLsHF9MjluZhMVEyJMftzCHE4MJidOkeHcHD6tNkiYpBLEOSJVm2L0miIw2en-1SKQ5aozI3ElR_o_DOioLnKT1b14DlS5RR0kTz3owfAce5lidqgeZ3e7oWujW8bMj9iLqDHPA40fiMgGNv7XyVUs2PX8rS1cki3BSPydh4rDYk_wRlsFrrEfe-Ju1wdVvnv4KykoFtbZmXfJfsKZXTeNuqv0B8NXyRVnwUUxbbw==";
 assassin["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAAZwKk2i2Xn2Klth67cwieCNfXpTwdX1b0scFr-PwTfUDSI1kgIRIuJirH1b44QV_RMEeBnWB21s8uY64SaVo4qEorTFjYEcX0yOW5mExcGgPP6cpFFMgwmJ06R4dwfPek2SbqruDg5ID6vYveZYjDZ6f7VII_ZKyGqMSVGyGcM6KgsmKWyMUUeVLujWSROHEzB8_gomiJ2qB5mTH-hab1fxs5u1Iuph4sDj7T9H4o2_tfKTmTY9VUt_K7DYcFIRlj8nJIsyAUtXwWusR974XfLIFG-epDnKSgW18NVOn1-wpldN414D_QH-j_JFWfAHHltv";
 assassin["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAA8XBnAqTaLZ1Dlh67cwieCNfXpTD6sFfa-8Fr_7_TfUTsc1kpgj_o9irH1b44TI3I2_HF-ExSaIbWw64SaV5liEok6fwuxKyEyOm7VQg2yMKlvb1CP2gwmJ02-eaoxJUU2SwzpZ8A5IwdVRR33jjDZ6f7VIpDnPerXyFqrw1V4D6Nb1bwceYeKVLv4KSROHEzB8UUyw2J2qfysmKehaMgHxsxGWIurIFMDj7T9H4l3yDWA3TUtXNj13B5OZJItwUj8nPdFVS5ykpnDBa6xH3vjYvZMfB5luqspKBbVwVioLX7CmV03jW5n9AbIZ8kWkeCLiW28=";
-assassin["labelExt"] = ["Reine","Horde","Essence"];
-assassin["labelPos"] = [10000,10000];
+assassin["labelExt"] = ["Ombre","Griffe","Dague"];
+assassin["labelPos"] = [-5000,100];
 
 var raider = {};
 raider["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIBAGHrjX3vejvwshmjiq_p_MVNku4OPL5RRyP20Ezo1ivnAF7PegguBbV6U5uN7YONvzIBmybY1RmO034wfF9wg20NjQ==";
@@ -72,8 +72,8 @@ raider["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/
 raider["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.11.0/AAAABAIBAGOnW6_dRhR1jblh6xcmelMuSo9gBS3jhGyMJnTmKVWFTiqjijpCft3Mx6_pQxP-uloaCpsfQQ5IUUdJD4w2tUgj9klRXgPdqGuQlS5eRejWCC6dqt3ueoSpeS5T7UH1GORq7YMzknMOpctwUmHiS3jBaxLx034k_TBx_97vj8jMpHji1fzFfXV1_dctnyfQTI1973qLoOOfD6v3EzfU_W7w1QBe32_nCnj5bWzgaUMx9qOJ04GsPs9Nku4OAjrB1dhgO_BJUoRvK-fawXTtshk93TB8Bx7Pepsm02-Hdu0_51QWv42_C48_VSYpm41dj73mYqxEyHrvNj3e-DIB-vG2ARGWQKATUM8KBucF6V3yTP-YUxmO1CMNjed0d9cFtbZmfyvDM6QF-utnoJ1fJpVVS0p9EYE=";
 raider["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.11.0/AAAABAIBAGOnW6_dRhR1jblh6xcmelMuSo9gBS3jhGyMJnTmKVWFTiqjijpCft3Mx6_pQxP-uloaCpsfQQ5IUUdJD4w2tUgj9klRXgPdqGuQlS5eRejWCC6dqt3ueoSpeS5T7UH1GORq7YMzknMOpctwUmHiS3jBaxLx034k_TBx_97vj8jMpHji1fzFfXV1_dctnyfQTI1973qLoOOfD6v3EzfU_W7w1QBe32_nCnj5bWzgaUMx9qOJ04GsPs9Nku4OAjrB1dhgO_BJUoRvK-fawXTtshk93TB8Bx7Pepsm02-Hdu0_51QWv42_C48_VSYpm41dj73mYqxEyHrvNj3e-DIB-vG2ARGWQKATUM8KBucF6V3yTP-YUxmO1CMNjed0d9cFtbZmfyvDM6QF-utnoJ1fJpVVS0p9EYE=";
 raider["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.11.0/AAAABAIBAGOnW6_dRhR1jblh6xcmelMuSo9gBS3jhGyMJnTmKVWFTiqjijpCft3Mx6_pQxP-uloaCpsfQQ5IUUdJD4w2tUgj9klRXgPdqGuQlS5eRejWCC6dqt3ueoSpeS5T7UH1GORq7YMzknMOpctwUmHiS3jBaxLx034k_TBx_97vj8jMpHji1fzFfXV1_dctnyfQTI1973qLoOOfD6v3EzfU_W7w1QBe32_nCnj5bWzgaUMx9qOJ04GsPs9Nku4OAjrB1dhgO_BJUoRvK-fawXTtshk93TB8Bx7Pepsm02-Hdu0_51QWv42_C48_VSYpm41dj73mYqxEyHrvNj3e-DIB-vG2ARGWQKATUM8KBucF6V3yTP-YUxmO1CMNjed0d9cFtbZmfyvDM6QF-utnoJ1fJpVVS0p9EYE=";
-raider["labelExt"] = ["Reine","Horde","Essence"];
-raider["labelPos"] = [10000,10000];
+raider["labelExt"] = ["Assaut","Froid","Crit"];
+raider["labelPos"] = [-5000,-5000];
 
 var deadeye = {};
 deadeye["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAICAFb6FHW-p9rBjX0ILhPat7aPYAUtm43tg38rTipDMepiI_ZM_xmO034wfHfX8LuNfk2SAF7uDrEBdcvpve96W6907Xrv";
@@ -83,8 +83,8 @@ deadeye["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0
 deadeye["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAICAFb6fXV1_RR17T9bmWHr2capNI1973oT2j9s45-Nv6TCN9Sgn7e2j2D9AQUtCIkmlWyMBnCAIsN5hs5tbL63shlOKprx_MW32Rxf6Ua9NpOZTp-xMEsK1lSJ0yU_ZU2Eb02S02_uDjH6I_ZVS3pTjDZ6f7VIwdXo1jnUdcubJr6n2sFd8kMxR34wfF1oz3oILo1-xIKdqgBeh3aE2Weg53QuUxa_6b2VBZuNdvftg38CTP-wqzY9MgF_K_C7cFJh4lFH6mJkpnTtYqyK8N741EIZjtN-JP3KqXfXBbVbryoLMpT_3rEBwTP-uudUpHhKfXrv";
 deadeye["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAICAFb6fXVbr91GFHWNuaa-YevZxqk0jX3vehPa45-Nv6TCN9Sgn7e2j2AFLQiJbIz9biP27494-W1s32-yGU4qmvHe-Mqpft167-lGvTYZjkMTVEdLCmOn51QRgYGsSn1NknpT7g6bJujWdcsmlYw2_rq1SMHV02851InTVUu-p9rBKgt1_Ud-MHxdaM96CC6NfsSCnaoAXod2hNlnoKl5LlMWv-m9lQWbjeRq7YN_AjOSivA2PWKsfyvwu3BSYeJ07epi7T9RRzIBsKtM_9RCdvfTfiT953R31wW1QzFd8jKU_96xAbfZwTPIzDH6pHiEb2VN";
 deadeye["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAICAFb6fXVbrxR1gxbTb2Hr2capNI1973oT2sSi45-Nv6TCN9Sgn7e2j2BRRwUtCIkmOmyMlQXnCi8k0ExtbK_pshlOKprxO_Bd8gzt_sjpRr02hG8NjUHTSwqn1DH6un9lTQqbTZK32e4OQzGJ01VLjDYmlbVII_Z6UznUdcvB1b6n2sG74-dUR34wfF1oz3oILo1-xIKdqgBeh3aE2Weg53QuUxa_6b0R3ZuNdvftg38CTP-wqzY9fysyAfC7cFJh4upi7T907WKsivDe-NRCGY7TfiT9yql31wW1df0qCzKU_96xAf66wTPo1psmpHhKfXrv";
-deadeye["labelExt"] = ["Reine","Horde","Essence"];
-deadeye["labelPos"] = [10000,10000];
+deadeye["labelExt"] = ["Nuage","Primordiale","Vent"];
+deadeye["labelPos"] = [-5000,-5000];
 
 var pathfinder = {};
 pathfinder["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDACpNRA2fbSLiAF7fmKPv9qNlTX-ALOmkOcjwvqcVIFSCR37vegguYloZtC2Dm41H4u2D035_lv8QxKIZjiSdvTYA7g==";
@@ -94,8 +94,8 @@ pathfinder["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.1
 pathfinder["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAIbOw3mcAt7lRA3pdoazjX16UwWTxKINjSzp_xCfbfzFNZJfmFSCAF66f_4KbqryRYAiIWAqTbXycaGyGVlto4pNFLc-t7ZKyGHr35ghdhmK1lSj7_ajp9TuDjrhsTCPT02Skx9B03-AXsB1y-ZYzzL-yHTtpDno1jGeyPDDOr6n2sEVIAOiR36m4EkTz3qbJo1-FKliWhm0h3YvJGegZU0uU9i9LYMi4puNR-Ltg0MxQKA_JwguMgEFLb02vrcF-epiyCNKfaqkI_ZM_yxkGY7Tfn-WtQjjnySdP2yXBongpldN4_6P028A7oha73olP3rv";
 pathfinder["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAIbOw3mcAt7lRA1h69nGhrONfXpTxKJ_ltNvGwGfbaCft7ZfmCLiAF4FLX8rbqpB04Aidvcx-pUFVIKyGX8Co4o64bc-MHxKyFFH35ghdv_ejX6j7_ajp9TnVHrvJT8s6U2SiFruDn-AXsB1y00UzzLvenTtpDnPejnUyPDYvb6n2sEVIOOfR36m4LEw6NabJv4KFKliWhm0h3YvJGegP2wuU_7ILYP_EJuNR-Ltgwgu035DMdZUMgENjb63PycF-epiun8j9mVNvTZM_xn-GY5ZbST9NZIqTSSdMZ6XBjKUpldN4_6PwTMA7vJFtfJKffzF";
 pathfinder["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAFb6hs7DeZwC1y3e5UQNYeuDFoazjX16U896xKJ_lrXyO_CfbSpNt7axMCLiAF5B026qgCImOv7I5wpxobIZ0Eyjiq_ptz4M7UrICpvfmCF245-1CKPv9qOn1NNveu8lP49PTZKIWu4Of4BewHXLSQ_PMu96dO1NFP6P2GDI8Ni9vqfawRUgA6JHfqbgLOno1psm_gpiWhSpGbSHdi8kZ6A_bC5T7YMtg5uNR-L_EAgu035DMdZUMgENjT8nvrcF-epiun8j9mVNvTZM_wUtGY5ZbY1-NZJ31ySdMZ6XBlSCpldN46Q5OuEA7vJFX5hKffzF";
-pathfinder["labelExt"] = ["Reine","Horde","Essence"];
-pathfinder["labelPos"] = [10000,10000];
+pathfinder["labelExt"] = ["Améthyste","Argent","Diamant"];
+pathfinder["labelPos"] = [-5000,-5000];
 
 var gladiator = {};
 gladiator["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQCAN3nIOPbp4O9my1jcEMxvnjpRhjbivB678GLPQAGi76n2sGwqwvBdPHEgnTtYEHT_F85QKAJWFeXBS3miL02IWBHfmVN";
@@ -105,8 +105,8 @@ gladiator["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 gladiator["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQCABR1AefL9fxL1FIYkdunxKRkUl85g72bLeaIo4oTTBpV6UaCB4rwJvi8n1FHVsk9ACP2TjK-p0d-CC508cSC_muXdOna-OtnoC5TDHOxswlYF5vqf38rYEHyWtd-k_wv19N-8kEhYEWpeu9W-n11fTX-RRRNHHXpdhuqjX0g4-Of02831GKswQdjcEMxOlLC7L54vTYGi2a23L1Nkk0SlWYbrWMXDjwUcdrBC8EwfBIwMbDnD4d27T-cxyQuA4cTyRjbEPDcJ2yMF-E26GEhRZpany0wV5ewqwUt7YNAoP66ZaedqtP8z-lM_yxkGY4AXo2_gTp31wW1qqS0xa5Q2Xzd57EddO1lTS4IwYtKfYTv";
 gladiator["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQCAFb6fXV9Nd3nFE0cdQHn6Xb8S3Ttmv4g49unjb_63TfUQzH_zaXL5ohirIO9veZsjOYphO-8n1oa3rNjcKOKOlLgacLsGlXpRr02GNtdj_66P1V_sma2_XJlTUWpPs9Nkr54TRJHfpVmNugbrTB8wYs9ACP2RZqK8A48LTAUcb6nWp-CBwzysKvjn5stC8EILnTxxIKdqpd0h3btP2eg028DhwBeDHONfVeXsbPtgwUtYSFRRy5TGJF_K2BBL9dfOUCgCViT_Kqk0_zP6Uz_LGQZjtN-LIXVZXfXBbXyQbTF2XzawQaLFHUhYC4I3CdKfXrv";
 gladiator["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQCAFb6fXV9Nd3nFE0cdQHn6Xb8Sxv6IOPbp9NvRMg31N3utmaBQTB8YqyDvTrtmy1br51fi6DMxwaLY3CjijpSUUfC7L546Ua9Nhjbxxn-ulFjwYtmtqQZeu9KfeOfTZJDMU0SivC8nzboG63awQI6PQAj9hR1R34OPC0wFHG-p1qflWbcJ7CrGlVsjAvBCC508cSCnaqXdId27T9noI2_A4d07QxzhO_TfrGz7YMFLWEhLbQuUxiRfytgQdP8qqRAoAlYk_xfOS_Xz-lM_yxkGY5Xl419AF531wW18kG0xYIH2XxFmiXfNe8hYC4I5ohFqWVN";
-gladiator["labelExt"] = ["Reine","Horde","Essence"];
-gladiator["labelPos"] = [10000,10000];
+gladiator["labelExt"] = ["Sang","Arène","Sable"];
+gladiator["labelPos"] = [100,-5000];
 
 var slayer = {};
 slayer["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAFuvDY2PYF85vTZ670p9TioKm6U145907UMxR347tr6n2sGwqyPTapMZtId2hNn1YfzFeOtnoJpqTP_05gUtDHCbLd3jZU0=";
@@ -116,8 +116,8 @@ slayer["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/
 slayer["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAH11W69eExRNNmIB52HruXzssPxL73ob-hiRDY0Wv_cT_rqfJ6QFj2BIeF85BfkFPJsto4qkGWS1bWynMLIZTiqGYJ7NI9NNkjgwlcz1Ye0_Pd0RGowL9qNirM96xVNsjAqbpTUfQe4OVUu8nzboJpWMNlFjdO0j9pOoelNGt-d0O7a-p9rB0291_bCr1EIV8JsmhG9qk52qGbSHdoTZc2vo1ppq9Ri1SAbn7078xdwyKjhzDjY9-WMyAfrxYVJh4ldUeOvHGf5YR35M_5hT45_Tfnrv9OaNfUCgvTZd8megQzEMcCXfBS0ttN3jSVJKfWVN";
 slayer["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAH11W69eExRNAeeJ02HrYVImlfxL73qLoBiRDY0Wv_cTN9TcjGegj2BirFFHLbRsjF85UWMEsW1smmqyGU4qhmB7FCPT8MR6U8zHRreTD2VNERpKfUlS02_nVAUto4oKm6U1H0HuDgxwvJ826EMxjDYCOnTtI_aTqM96vTZAoDu2vqfawY199Oawq3rvuXwV8Jsm459qk52qGbSHdoTZc2uYU6QF9RhHfk2Sxxn5Yyo4cw42PVdUMgH-unBSYeIF-Xjr7T_vTgbntUhM_9RC6NbTfiT953SVzFVLjAtd8pst_97ssJcI9WGdX93jdf2Eb_zF";
 slayer["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAH11W69eExRNAedU_mHr_EvvensUGJHjn9Nv9xN670p9Z6CPYKOKBS2NfdrBbIzmKb02VYVtbAxw4GlOKkMxYqwmlfVhFr9RY4ZgveYRGvTmZU1aGowLR36YUwqbpTUfQQSxTP-8nzboSQ-MNscZdO0j9pOo2GBfOfljO7a-p0lScw6VzLCrQKBNks96myZhUmqTnaoZtId2hNlza_66MgGkBT9VBfkG5-9O7T9XVCo4LbQ2PbVIpcv1GJpqYeITUHjr6NYV8F2Pmy3PCtRCVUvTfrl853R31-4OelNd8sMzdf3ssA2NRrcj093jshmEb_zF";
-slayer["labelExt"] = ["Reine","Horde","Essence"];
-slayer["labelPos"] = [10000,10000];
+slayer["labelExt"] = ["Renforcement","Critique","Assaut"];
+slayer["labelPos"] = [100,-5000];
 
 var champion = {};
 champion["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQDAKHZ73rGqjxbvTaK8KluvqcVIBtGAF7Eghm0hNkB3C2Dd-MZju2DCC426F85R37TfrCr8KKLppstYJA0PvajAedYr2VN";
@@ -127,8 +127,8 @@ champion["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 champion["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQDAFb6XhMUTaHZnydNRkp9PeKGs_xL73ob-hiR45-18i_MCTNnoDWSAH_-jwUtXzkB3Ium5woblzxNYJA64WFShmC3PiP2GlXTb702wL893YrwqZU7FC2eNujFU6yvCpvvTqlu7g5I7uxxdcvAGohadO2tEka3hY9Nko19TeO-p7yfFSAhChtGn4mDLjJOCC4xnsSCexkZtId2hNkFPABeLOnQLC2DwYLMQNE27YPcMhmOI-p34_4KSHj68XrvbztAoOpiDPejiti94ixHfqQZeA3TfrCr8KJ315stxqoB517Aplc0PiXf9qMhYPJFPFtYr2VN";
 champion["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQDAFb6XhMUTaHZnyc53aB6hrP8S-96G_oYkeOfLOlaMmVNNZJYr_6PBS0B5_JFxqrnCo19exk8Wz3dOuFhUuKIOlJ6GTQ-GlU7FOSx7HH_eIrwYJD2oy2emy3FU4umKWJNkryf7g5Gt17Agy6wq8AadO0j9ngNhY-kGYidR36-p185htEhChtGn4mDtti9CC4xnicL9jMZtId2hNkFPKOKNuhnoC2Dd-PMQO9O9jncMmEhI-r-CnrvSHj68e2DbztAoOpiAdzQLMSCAF4VIHXLGY7Tfq0S8KJ319NvhmAKm7XypldN4yXf0uO9Nohatz5Kfalu";
 champion["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQDAFb6XhMUTaHZnydXVIaz_Evvehv6GJHjn7XyjX1zaxEaNZIB5_6PBS3YYP4KxqrnChNQcmw8W2xGOuFhUoZgMgm3PjgwGlWnML02ns093YrwNug7FC2eZLXFUzZiCpvvTmVN7g5Yr7yfdctJD_JFdO2tEpOohY_2o9NvND6-p17AFSAhChtGn4nscWCQCC4xnsSCmy0ZtId2hNkFPIumLOnQLC2DsKvMQGeg7YPcMngNI-qkGUd-SHj68V85bztAoOpi2L2jiv5Yeu_PCnfjGY7TfgHc8KJ31wBeexkj9oMupldN4yXfTZJGt4hawBpKfalu";
-champion["labelExt"] = ["Reine","Horde","Essence"];
-champion["labelPos"] = [10000,10000];
+champion["labelExt"] = ["Mur","Terreur","Adrénaline"];
+champion["labelPos"] = [100,-5000];
 
 var juggernaut = {};
 juggernaut["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEBABRN_EsYkZd5LPshVWFSOlKMz18_hmAUILyfxtjvDooiNug5DsABWGMWuz389kjBBHlo97kGxuRRCZZQRycgWK-pbg==";
@@ -138,8 +138,8 @@ juggernaut["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.1
 juggernaut["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEBAH-yXhMUTcAaB3VqAaB63D38S-8O5K05DvcytfLTb2CR_80Ja_6PBS2GYBQGl3n9cooiIOrApopsLPshVT384og6UnoZAefelvZIgge8n5gK89182YzPXz8t0ka3Z1gpYgmWaGUUIDxOXsDYveSxOd32OVBHJy9Z83asDjz9MBRxcqk26IbRcWpVqeoYWGN674O2MZ4nC5e0FrsaOPjrz37yRf4Ktz5hUgbG2Xy77cEEeWitjcABOuGQVTWSaqXvTm87QKCnMORRGJF07ZLQEuF4Dbakkc6mV6yqagTyQZ8-JyDG2E3j3rPS46suiFr3uVivqW4=";
 juggernaut["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEBAH-yXhMUTcAaNrFqAaB6CZb8S2Eh9jM5Dvcy029ewP_Nd-P-jwUt_TBqBJd5_XLGqozPrj48Wyz7IVU9_OKIOlJ6GRiRGlXqGIIHqzn_ePPdeu9VqV8_iiKDtvJFKWLvDka3FCDksbyfNuhZ84Zg2XxQR62NZ5t2rA48iJ0UcXKp2L2G0WhltfJ82VhjLdInLzGeJwuXtBa7Gjj4689-tz5hUgbG_grBBLvt9jn3ucElwAE64ZBVNZJqpe9ObztAoPZIeWjkUTnd-rV07RLheA2S0ADg8KKsqt6z8kGfPicgpldN48bY0uNLPYhakc5Yr6lu";
 juggernaut["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEBAH-y36leExRNwBr2OWoBoHr9MPxLOxSRzjkOiiLTb8SkA2D_zWEa_o8FLfZIF5uXef1ysR3qf8AB6hgs-yFVPfziiDpSehkaVexxggeFj4Mu892pbozPXz9YY-_MiFopYu8OagQUIFWpXsDYvcbY9zKmV1BHJyBZ83asDjy8nxRxcqnes4bR5LHQLJ-Jg7aS0HgNMZ4nC5e0FrsaOPjrz34S4XTtGJE53cEEeWi77QbG97lhISPqOuGQVe9OaqU1km87QKAJluRR_gphUrc-Jy8t0ka3tfKsqjbo8kGfPq2N2XxN44Zg0uNoZfJFfNlYr3rv";
-juggernaut["labelExt"] = ["Reine","Horde","Essence"];
-juggernaut["labelPos"] = [10000,10000];
+juggernaut["labelExt"] = ["Ecrasement","Hurlement","Empalement"];
+juggernaut["labelPos"] = [100,-5000];
 
 var chieftain = {};
 chieftain["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEDAKIAwGbGrnfl8B-Mz18_uX7vDhQgC2H2SK3xZ5sYXe-rBLNYYzH7aPI9_IKb5FWuPsbYwSXkUfq1J_6vbFBHfflLPX_j";
@@ -149,8 +149,8 @@ chieftain["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 chieftain["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEDAAuNYVJ5sRRN704B5w3NWfNeEydZ_EuUbxv6GJGRzqIAK1C_-64-_o89_H_jagE1ksBmggfvqxzOVakgBjrhxq6GYDpStz5iUBU2HKd35cbY8B_z3XbnjM9fP3GFFCDZfO8O2rlTpQthMfv2SPrdplc4U63xr6dnm3asuX4YXRRxcqnVZYKbZlRoZbyfWGMzbC3S_gpQR5e0rTsaOOoYz373MuDDJLsn7Wjyffm77YNfDF_BJXIP20_-VA48wQjE9pBVJ_7fv-RR-Ov6tTGe2L0nL69sBLPkVayq8kGfPq2Ng8xN4yXfPC1LPfJFIq-a_qQZ";
 chieftain["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEDAHmxFE2QVQHnDc1Z84KbtqT8S5RvagQYkWhlogArUGqlrj59-f6P_TDelpgKl3nBBDxO890czhQgIAY64cauhmA6Urc-YlAVNopsggcJlvAfPC1254zPXz9xhTkOkc73Mu8O2rkEswthMfv2SPrdMZ44U63x2Xxnm3asuX5_4xRxcqnAZiDqcWqmV4PMWGPvqxhd_grYvWZUrTst0uoYz341kuDD5FUn7Ro4M2y77YNfeWjBJXIPJ_7bT_5U378ku8T2pzAOPORRaPL6tT38UEcnL69svJ_VZayqr6fyQZ8-rY3G2E3jd-X460s98kUir5r-qW4=";
 chieftain["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAEDAFnz_EuUbxiR9zLvfCtQwGY8Wz38hmCvp2JQGlV35f94dudfPzNsBLPfv7yfNuhQR7l-f-Nyqa07LdLqGM9-u-3BJS20J_6QVSS75FH6tTwFr2zkVayq8kGfPq2NpldN4_JFebEUTQ3Nkc6iAH35NZL-j8aqIAbGrjpStz5RY_AfPC2Mz--rcYXvDtq5FCALYTH72L363ThTZ5t2rGjyiJ0UcVhjMZ72M-DDJ-1Yr64-HM6DX2ZUYSFyD8bY_lTHGYPM8KIOPBhd893-CsT2aGUaOCcv-OvVZdtPgput8fZI2XyCBxU2d-NLPTrhIq-a_qlu";
-chieftain["labelExt"] = ["Reine","Horde","Essence"];
-chieftain["labelPos"] = [10000,10000];
+chieftain["labelExt"] = ["Radiance","Colère","Calme"];
+chieftain["labelPos"] = [100,-5000];
 
 var berserker = {};
 berserker["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAECAH_jvqckN0d-hNkelMEEeWgttHfjhmBYryKvnldRY702Nuhf0HbnqW5fP4TEfuDkUe8OFukUIHuMMfvHGWVN-F84U1BHAdw=";
@@ -160,8 +160,8 @@ berserker["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 berserker["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAECANlhcmxsRhRNNmLAGg3NMgllTViv_EuDXxv6GJHcMgYOK1CExK4-Fun-j3y7YlB7jBynns29NqluHM4UIDD4d-PGrmS1OlKvp_e-FTYJ9lFj5FXwHzwtdufHGV8_eA3FU37gPAXvDj0PBLM1kjbo-t34XzhTrfEYXWebDjx_4-RRvqckN_4KnldHflBHAdx2rM9-n8tulzH7GjiCmwU8_lQ62LXyJ-0elKIA73wMX3loLbS8n5BVSHgB58EEbzuE2acwGS7ynP5Yd-U64di9Jy8xnjgw1WXE9oZgU6Vf0K2NpldN4yXfYVLAZvJFIq-a_qQZ";
 berserker["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAECANlhcmw2sRRNbEbAGg3NMgkB3GSj_EsW6Rv6GJFaMgYOK1CuPjrh_o98u4KbhMTGqk3jd-U1khzOPFv_eHfjxq6GYDpSr6diUBU2CfZRYzbo8B88LXbnn8tfP1BH5FV-4L027w49D8T2AefYvScv-F84U63xvJ9nm6IAiJ2kGb6nJDfvfPKcR36E2c9-GF0xnm6X9jOrORo46hiezXasMfvAZiftOtiDX7XywQR5aGEhLbTBJZBV_lTkUR6Ubzs8BacwGS6eV_4K-rUw-BQgeA2pbgDg8KIEs3_jxxlf0K2Npld7jCXf975LPfJFIq9Yr2VN";
 berserker["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAECANlh4e-pbmxGFE33MsAaDc0__Dru_Et34xv67nrcjAYOK1C9NjWSJd_-j3y7TePGrjwtGJEJ9gixHM4xnq4-OuFhUoZgmG-vp2JQFTYw-HflNujwH5J9Fumt8V8_Adx4DX7gJy_vDtncFCBybLyfxxl25_hfOFNQR-98Z5t2rPKcf-NRY3KpJDfYvTH7R35ulwHnZU2E2f4Kkw_PfoTEGjiCm57NtfKeV8T2J-0elMEEwGaDX3loOtgttBhdkFX-VIjt5c9vO5_LpzAZLuRRMgnoZsQxvqc8Bfe-BLPkVfoYPQ-kGV_QrY2mV3uMlwiiAF5b8kUir1iv3CM=";
-berserker["labelExt"] = ["Reine","Horde","Essence"];
-berserker["labelPos"] = [10000,10000];
+berserker["labelExt"] = ["Douleur","Guerre","Sauvagerie"];
+berserker["labelPos"] = [100,-5000];
 
 var guardian = {};
 guardian["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzcQ8hBh08Ekiv56KIADUYuLMBmmK23PoLH8B8Es_4K2L2lGNdqmuC4k2jyW6BFnQKLMtF8Dn5sU1KnVUVHKPrr7g==";
@@ -171,8 +171,8 @@ guardian["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 guardian["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUGH8WyPGvnoBS331y4swGaYrXfj1YG4k18_xPat8ddqmuCWbFugVw1FnYTZz34uUwKLu-0y0Y9GbzsXHORREuGtjaZXKPrEWIVt6-5670PIcXlPBJIrkc6iADWS_o8NRsauVca3PhynvTaCx_AfPC2Xhe8OFCBWSKUYR35nm3asaPI879rBQKDes__Ng18xngHc02_yRYPbTeN07TpYU6WuPift_gr2SMEEDF9hIWVNeWjUfC6UfA5-bBJpoupkoxkuHRRQR6cIwBqsmFNSCfY096dV2L0YXUVHBg6DzASzhO8k2Drh2CQhsKlu";
 guardian["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48a8kX56LJwogB67zWS99enCAUtDUagQi4sMlia4P6PwGaYrdNvOuHGrlXGKPq3PoPMpRi4k702gsfwHzwtBLNfP3fjl4UqU0Wd7w7XasT2Bg5ewPZIxLhilSdZUEdNFGebdqw099rBrj7AGlugHKfBBEd-g1-pbjpYLlMxnmVNEmkn7XwOhNnPfoPb1fgMXy6U1HwCizLRXyp5aGEhhO90VX5sj0Zko8EIbztAoBccGS7kUXTt_gqsmNi9U1K_-1Olp1Vo8hQgHRRFR62NpldN414TxFgJ9ohaIbDr7gHc";
 guardian["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48aPAXvfA1G-eiE76IAAdxYr1BHNZJOUqcIBS331xcvbqoGDmjyrj7AZpitgKR348auVcZN47c-pldKyLiTvTaCx_AfPC0dFMT2Xz_Tb5eFCfYEs-8OU6UUIMAaNuj2SKUY2L107ddqZ5t2rJrgqW5boPrS2sGG0TGeR35vO4O2RZ0SaayYJwuD2yftfA6E2c9-OlguU35sLpSDXwKLwQRkowxfYSF5aDLR1HyPRsHnPyf-ChccGS7kUXrvtfJTUv6PNPenVTrhHKcuLEVHrY2DzCj6JLDEWCpN8kUhsOvuZU0=";
-guardian["labelExt"] = ["Reine","Horde","Essence"];
-guardian["labelPos"] = [10000,10000];
+guardian["labelExt"] = ["Surcharge","Mana","Solitaire"];
+guardian["labelPos"] = [100,100];
 
 var hierophant = {};
 hierophant["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUCAEPITwRZ85XzwGYgBjD4ySTVpjNs2rkEs_AfW6AqE2aeogAaOIKbrv2u_zrYcYVyD5BVfA7DE2jypWcnL6dV7C5aKw==";
@@ -182,8 +182,8 @@ hierophant["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.1
 hierophant["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUCABzcEFhDyB0Ug_MI9E8EWfOPGs8alG9knbzqakMWv5XzoqNBljt8uMrw1WwL0PW2-o5kdKWJ08Bm42ogBrE2JpVVxgVCD8RmVCycMPhQQvAf8h2P-u-IoS_Vpk6uKhPauQSzfINtGVVLRZ2MNq4SL52iAB2DSbGa4MrycWk26VugMFvXz5UucYW-iuv1FvMHHn_GZp6fSBo4gpuu_YPbU412Ea7_OtgkqhZvIvRJUREtPmXk7JBVfA5yD3BSYeIRlicvU1KlZ2jyMtHDEzpY-TcEB_rSp1UmPOwuWitFR6yX96YzbFM1HwIyNMkkNsXr7pMn";
 hierophant["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUCABzcEFhDyIPzCPRPBFnzjxrPGpRv30-86mpDFr-V88ekUEIHHvDVbAtxaSaVSVF0pTI0wGafSCAGsTY2xVXGL5306WZULJww-O-IySQtfVRHoS_BtE6u1aZMLVfIKhPauQSzfIPvUFVLmuCMNq4SM2xnvRSwSbE26cryMFs2iVugrJjXz5UurJe-ivk3FvNFnX_GZp5TjRo4gpuu_YPbFm92Ea7_OtgkqiL0ES1yDyY8PmUy0ZBVfA760uNqEZYEB2HibRk6WOTswxNo8qVnJy9TUn6vp1WiAOwuWitFR6a-tYVxhVM18B8dgxEPHwLr7pMn";
 hierophant["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUCABzcEFhDyIPzCPRPBFnzjxong88alG-86mpDFr-V84CkYeIWb_DVbAsXLzbpHwJ0pTI0wGYqEyAGsTYmlVXGbRmslyL0LJww-O-IySQ2xZ9ITq6a4HGF1aahLxEtM2zauQSzfIOnVVVL42qMNkyzBAf5Ny-dSbFo8srycWnDE4UyRv7Xz5UuMtG-inYRFvMHHn_GZp6lZxo4lnSu_TpYU1JTja7_OtgkqsaKXypFnSY8_rPk7JBVfA4RllXWMnH60nIPPmVJUevkg9uCm2TnJy-iADBbahtboOwuWitFR1BCrhKn-FM1fEsdg_AfZlTr7pMn";
-hierophant["labelExt"] = ["Reine","Horde","Essence"];
-hierophant["labelPos"] = [10000,10000];
+hierophant["labelExt"] = ["Critique","Électrocution","Esprit"];
+hierophant["labelPos"] = [100,100];
 
 var inquisitor = {};
 inquisitor["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUBAAj0TwS86mpDFr9sCyaVIvQsnFBC8B8ClgSzfIPr7lVLjDZboJJuRUcy0XwOaPIRLWHivFZtGdJ8p1XAZlM1Q8iiAJMn";
@@ -193,8 +193,8 @@ inquisitor["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.1
 inquisitor["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUBABzcdf2bITqtCPRPBA3Njxq86mpDFr8rUPuqYqxsC9D1bIxRYMBmbWwmlVXGr6ci9CycMPjviPAf7-uhL9WmFvM9DwSzfIOEb1VLQ8iMNkyztUia4PMGSbFo8hhdrrOt8VugRv7Xz0GWBUK-ikWdqDWdqkVHGjiCmwY5g9sEBwKWrv862BzOxoptGTY9ES3QHzLRkFUv1vk3cFJh4tJ8_lS8VjpYfLsnL3wO1EJTUmq7JjynVaIAL53_HLTFGnJvhFBCUzUfAonTwuySbuvukyc=";
 inquisitor["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUBABzcdf2bITqtCPRPBA3Njxqf35f0vOpqQxa_PAUrUO98l5VSU_uqYqxsC9D1bIw9X5hTUWDAZm1sH0EqCyaVVcZd8q-nwuwsnDD4UEI2PfAfhG9_xspZ7-uhL9WmvaknLxbzPQ8Es3yD0UVVSyL0jDZMs7VIHwLzBkmxQZYYXa6zrfFboEb-18_viAVCvopFnag1napFRxo4gpsGOYPbBAdtGa7_OtiiAMaKL506WBEt0B8y0ZBVL9b5N3BSYeLSfHy7vFaSG3wOOZn-VNRCU1JquyY8p1UClhzO_xy0xRpyb4RDyFM1aPKJ05rgkm7r7pMn";
 inquisitor["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUBABzcdf2bITqtCPRPBA3Njxong3RVvOpqQ6IAJy8rUGwLvazr7vuq99fQ9WyMMlhDyFFgwGZtbFvX6YImlVXGFr-vp8LsLJww-FBC74jwH2KsaPKhL-_ridPVphpytMVBlj0PBLN8g63xVUuus4w2TLO1SNte8wZJsZrgGF1COgQHW6BG_tfPHwJTUr6K1EIW86yYkm6dqmq7GjiCmwY5bRkClq7_Me98DsaKXyp8uyY8YeI2PZBVUDAgbnBSMnH-VDLRvFYv1hEtOlg62NJ8-TfQH4Pbp1WoNUWd_xxFRyQtBUKn-FM1IvRvhBzOL52Eb5Mn";
-inquisitor["labelExt"] = ["Reine","Horde","Essence"];
-inquisitor["labelPos"] = [10000,10000];
+inquisitor["labelExt"] = ["Intensification","Déchaînement","Sacré"];
+inquisitor["labelPos"] = [100,100];
 
 var tutorial = {};
 tutorial["necromancer"] = necromancer;
