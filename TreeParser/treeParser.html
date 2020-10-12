@@ -45,17 +45,17 @@
 		if(urlParams.get("draw")) {
 			let tutorialNodes = tutorial[urlParams.get("draw")];
 			// Draw path of the different step in reverse order
-			buildPath(parseUrl(tutorialNodes["e1"], nodes), "stroke:#166;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["e2"], nodes), "stroke:#A00;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["e3"], nodes), "stroke:#C90;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["b4"], nodes), "stroke:#15C;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["b3"], nodes), "stroke:#7AF;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["b2"], nodes), "stroke:#090;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorialNodes["b1"], nodes), "stroke:#7C7;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["e1"]), "stroke:#166;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["e2"]), "stroke:#A00;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["e3"]), "stroke:#C90;stroke-width:96;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["b4"]), "stroke:#15C;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["b3"]), "stroke:#7AF;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["b2"]), "stroke:#090;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorialNodes["b1"]), "stroke:#7C7;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			// Draw the explanation box
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
-			for( let value of Object.entries(parseUrl(tutorialNodes["b1"], nodes))) {
+			for( let value of Object.entries(parseUrl(tutorialNodes["b1"]))) {
 				if(nodes[value].classStartIndex) {
 					console.log("roger that", nodes[value]);
 				}
