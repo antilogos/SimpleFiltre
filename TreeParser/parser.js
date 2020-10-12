@@ -203,7 +203,7 @@ function buildContext(labels, pos, svg) {
 	contextBox.setAttribute("stroke", "black");
 	contextBox.setAttribute("fill", "white");
 	contextBox.setAttribute("stroke-width", 64);
-	svg.appenChild(contextBox);
+	svg.appendChild(contextBox);
 
 	const lineB1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
 	lineB1.setAttribute("x1", pos[0]+500);
@@ -219,5 +219,5 @@ function buildContext(labels, pos, svg) {
 	//["b3"]), "stroke:#7AF;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 	//["b2"]), "stroke:#090
 	//["b1"]), "stroke:#7C7
-	svg.appenChild(lineB1);
+	svg.appendChild(lineB1);
 }
