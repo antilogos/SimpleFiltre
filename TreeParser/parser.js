@@ -270,7 +270,8 @@ function buildContext(labels, pos, svg) {
 	svg.appendChild(lineE3);
 	
 	const textB1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
-	textB1.setAttribute("font-size", 768);
+	textB1.setAttribute("font-size", 512);
+	textB1.setAttribute("font-family", "bitter");
 	textB1.setAttribute("x", pos[0]+2000);
 	textB1.setAttribute("y", pos[1]+400);
 	textB1.textContent = 'Base';
