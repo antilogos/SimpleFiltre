@@ -90,10 +90,10 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cy", node.y);
 	
 	if(node.isKeystone) {
-		nodePoint.setAttribute("fill", "#D22");
+		nodePoint.setAttribute("fill", "#A44");
 		nodePoint.setAttribute("r", 128);
 	} else if(node.isNotable) {
-		nodePoint.setAttribute("fill", "#2D2");
+		nodePoint.setAttribute("fill", "#4A4");
 		nodePoint.setAttribute("r", 64);
 	} else if(node.isJewelSocket) {
 		nodePoint.setAttribute("fill", "none");
