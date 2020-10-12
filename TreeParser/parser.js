@@ -191,3 +191,33 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 	}
 	return svgElements;
 };
+
+function buildContext(labels, pos, svg) {
+	const contextBox = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+	contextBox.setAttribute("x", pos[0]);
+	contextBox.setAttribute("y", pos[1]);
+	contextBox.setAttribute("rx", 128);
+	contextBox.setAttribute("ry", 128);
+	contextBox.setAttribute("width", 5000);
+	contextBox.setAttribute("height", 5000);
+	contextBox.setAttribute("stroke", "black");
+	contextBox.setAttribute("fill", "white");
+	contextBox.setAttribute("stroke-width", 64);
+	svg.appenChild(contextBox);
+
+	const lineB1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineB1.setAttribute("x1", pos[0]+500);
+	lineB1.setAttribute("y1", pos[1]+1000);
+	lineB1.setAttribute("x2", pos[0]+1000);
+	lineB1.setAttribute("y2", pos[1]+1000);
+	lineB1.setAttribute("stroke", "#166");
+	lineB1.setAttribute("stroke-width", 128);
+	//["e1"]), "stroke:#166
+	//["e2"]), "stroke:#A00;stroke-width:96;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+	//["e3"]), "stroke:#C90
+	//["b4"]), "stroke:#15C
+	//["b3"]), "stroke:#7AF;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+	//["b2"]), "stroke:#090
+	//["b1"]), "stroke:#7C7
+	svg.appenChild(lineB1);
+}
