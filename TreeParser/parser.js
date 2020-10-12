@@ -283,7 +283,7 @@ function buildContext(labels, pos, svg) {
 	const textOption = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
 	textOption.setAttribute("x", pos[0]+2000);
 	textOption.setAttribute("y", pos[1]+800+1600);
-	textOption.textContent = 'Extension :';
+	textOption.textContent = 'Variations :';
 	textB1.appendChild(textOption);
 	const textE1 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
 	textE1.setAttribute("x", pos[0]+2000);
