@@ -291,9 +291,9 @@ function buildContext(labels, pos, svg) {
 	textE2.textContent = labels[1];
 	textB1.appendChild(textE2);
 	const textE3 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-	textE2.setAttribute("x", pos[0]+2000);
-	textE2.setAttribute("y", pos[1]+400+3700);
-	textE2.textContent = labels[2];
-	textB1.appendChild(textE2);
+	textE3.setAttribute("x", pos[0]+2000);
+	textE3.setAttribute("y", pos[1]+400+3700);
+	textE3.textContent = labels[2];
+	textB1.appendChild(textE3);
 	svg.appendChild(textB1);
 }
