@@ -38,7 +38,7 @@ function parseUrl(u, nodes) {
 	
 	// Get the passives nodes for the Ascendancy and Starting class
 	for( let nodeValues of Object.entries(nodes)) {
-        	if(nodes[nodeValues].classStartIndex == characterClass) {
+        	if(nodes[nodeValues] && nodes[nodeValues].classStartIndex == characterClass) {
 			console.log("now for the ascendancy :",ascendancyClass);
 			passiveNodes.push(nodeValues);
 		}
