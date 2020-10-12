@@ -208,16 +208,64 @@ function buildContext(labels, pos, svg) {
 	const lineB1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
 	lineB1.setAttribute("x1", pos[0]+500);
 	lineB1.setAttribute("y1", pos[1]+1000);
-	lineB1.setAttribute("x2", pos[0]+1000);
+	lineB1.setAttribute("x2", pos[0]+1500);
 	lineB1.setAttribute("y2", pos[1]+1000);
-	lineB1.setAttribute("stroke", "#166");
+	lineB1.setAttribute("stroke", "#7C7");
 	lineB1.setAttribute("stroke-width", 128);
-	//["e1"]), "stroke:#166
-	//["e2"]), "stroke:#A00;stroke-width:96;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-	//["e3"]), "stroke:#C90
-	//["b4"]), "stroke:#15C
-	//["b3"]), "stroke:#7AF;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-	//["b2"]), "stroke:#090
-	//["b1"]), "stroke:#7C7
+	lineB1.setAttribute("stroke-linecap","round");
 	svg.appendChild(lineB1);
+	const lineB2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineB2.setAttribute("x1", pos[0]+500);
+	lineB2.setAttribute("y1", pos[1]+1000+300);
+	lineB2.setAttribute("x2", pos[0]+1500);
+	lineB2.setAttribute("y2", pos[1]+1000+300);
+	lineB2.setAttribute("stroke", "#090");
+	lineB2.setAttribute("stroke-width", 128);
+	lineB2.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineB2);
+	const lineB3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineB3.setAttribute("x1", pos[0]+500);
+	lineB3.setAttribute("y1", pos[1]+1000+900);
+	lineB3.setAttribute("x2", pos[0]+1500);
+	lineB3.setAttribute("y2", pos[1]+1000+900);
+	lineB3.setAttribute("stroke", "#7AF");
+	lineB3.setAttribute("stroke-width", 128);
+	lineB3.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineB3);
+	const lineB4 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineB4.setAttribute("x1", pos[0]+500);
+	lineB4.setAttribute("y1", pos[1]+1000+1200);
+	lineB4.setAttribute("x2", pos[0]+1500);
+	lineB4.setAttribute("y2", pos[1]+1000+1200);
+	lineB4.setAttribute("stroke", "#15C");
+	lineB4.setAttribute("stroke-width", 128);
+	lineB4.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineB4);
+	const lineE1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineE1.setAttribute("x1", pos[0]+500);
+	lineE1.setAttribute("y1", pos[1]+1000);
+	lineE1.setAttribute("x2", pos[0]+1500);
+	lineE1.setAttribute("y2", pos[1]+1000);
+	lineE1.setAttribute("stroke", "#166");
+	lineE1.setAttribute("stroke-width", 128);
+	lineE1.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineE1);
+	const lineE2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineE2.setAttribute("x1", pos[0]+500);
+	lineE2.setAttribute("y1", pos[1]+1000+300);
+	lineE2.setAttribute("x2", pos[0]+1500);
+	lineE2.setAttribute("y2", pos[1]+1000+300);
+	lineE2.setAttribute("stroke", "#A00");
+	lineE2.setAttribute("stroke-width", 128);
+	lineE2.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineE2);
+	const lineE3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+	lineE3.setAttribute("x1", pos[0]+500);
+	lineE3.setAttribute("y1", pos[1]+1000+900);
+	lineE3.setAttribute("x2", pos[0]+1500);
+	lineE3.setAttribute("y2", pos[1]+1000+900);
+	lineE3.setAttribute("stroke", "#C90");
+	lineE3.setAttribute("stroke-width", 128);
+	lineE3.setAttribute("stroke-linecap","round");
+	svg.appendChild(lineE3);
 }
