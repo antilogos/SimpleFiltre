@@ -10,7 +10,7 @@ function decodeBase64(s) {
 	return r;
 };
 	
-function parseUrl(u, nodes) {
+function parseUrl(u) {
 	// Converting url encoded in base64 with some quirks into binary
     	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
 	let reader = new Uint8Array(buffer.length);
@@ -37,10 +37,10 @@ function parseUrl(u, nodes) {
 	}
 	
 	// Get the passives nodes for the Ascendancy and Starting class
-	for( let nodeValues of Object.entries(nodes)) {
-        	if(nodes[nodeValues] && nodes[nodeValues].classStartIndex == characterClass) {
+	for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+        	if(value.classStartIndex == characterClass) {
 			console.log("now for the ascendancy :",ascendancyClass);
-			passiveNodes.push(nodeValues);
+			passiveNodes.push(key);
 		}
 	}
 
