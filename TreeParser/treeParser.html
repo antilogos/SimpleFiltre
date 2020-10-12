@@ -56,7 +56,7 @@
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
 			for( let value of Object.entries(parseUrl(tutorialNodes["b1"]))) {
-				if(nodes[value].classStartIndex) {
+				if(!nodes[value] && passiveSkillTreeData.nodes[value].classStartIndex) {
 					console.log("roger that", nodes[value]);
 				}
 			}
