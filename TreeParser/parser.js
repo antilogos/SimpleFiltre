@@ -90,10 +90,10 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cy", node.y);
 	
 	if(node.isKeystone) {
-		nodePoint.setAttribute("fill", "#A00");
-		nodePoint.setAttribute("r", 128);
+		nodePoint.setAttribute("fill", "#F00");
+		nodePoint.setAttribute("r", 96);
 	} else if(node.isNotable) {
-		nodePoint.setAttribute("fill", "#A00");
+		nodePoint.setAttribute("fill", "#F00");
 		nodePoint.setAttribute("r", 64);
 	} else if(node.isJewelSocket) {
 		nodePoint.setAttribute("fill", "none");
@@ -131,7 +131,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 		nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 		nodeConnection.setAttribute("fill", "none");
 		nodeConnection.setAttribute("stroke", "#000");
-		nodeConnection.setAttribute("stroke-width", "16");
+		nodeConnection.setAttribute("stroke-width", "24");
 		return nodeConnection;
 	// If not, draw line
 	} else {
@@ -140,7 +140,7 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 		nodeConnection.setAttribute("y1", origin.y);
 		nodeConnection.setAttribute("x2", dest.x);
 		nodeConnection.setAttribute("y2", dest.y);
-		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:16");
+		nodeConnection.setAttribute("style", "stroke:#000;stroke-width:24");
 		return nodeConnection;
 	}
 };
