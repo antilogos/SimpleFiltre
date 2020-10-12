@@ -10,9 +10,9 @@ function decodeBase64(s) {
 	return r;
 };
 	
-function parseUrl(u) {
+function parseUrl(u, nodes) {
 	// Converting url encoded in base64 with some quirks into binary
-    let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
+    	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
 	let reader = new Uint8Array(buffer.length);
 	for(let i = 0; i < buffer.length; i++){
 		reader[i] = buffer[i].charCodeAt(0);
@@ -33,6 +33,14 @@ function parseUrl(u) {
 	  		passiveNodes.push(view.getUint16(i));
 		} catch (error) {
   			console.error(error);
+		}
+	}
+	
+	// Get the passives nodes for the Ascendancy and Starting class
+	for( let nodeValues of Object.entries(nodes)) {
+        	if(nodes[nodeValues].classStartIndex == characterClass) {
+			console.log("now for the ascendancy :",ascendancyClass);
+			passiveNodes.push(nodeValues);
 		}
 	}
 
