@@ -39,8 +39,7 @@ function parseUrl(u) {
 	// Get the passives nodes for the Ascendancy and Starting class
 	for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
         	if(value.classStartIndex == characterClass) {
-			console.log("now for the ascendancy :",ascendancyClass);
-			passiveNodes.push(key);
+			passiveNodes.push(parseInt(key));
 		}
 	}
 
