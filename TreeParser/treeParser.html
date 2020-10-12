@@ -43,9 +43,9 @@
 		
 		// Draw a tutorial skill tree
 		if(urlParams.get("draw")) {
-			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e1"]), "stroke:#166;stroke-width:96;stroke-dasharray:386;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e2"]), "stroke:#B0B;stroke-width:96;stroke-dasharray:386;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
-			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e3"]), "stroke:#BB0;stroke-width:96;stroke-dasharray:386;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e1"]), "stroke:#166;stroke-width:96;stroke-dasharray:32;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e2"]), "stroke:#B0B;stroke-width:96;stroke-dasharray:32;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(tutorial[urlParams.get("draw")]["e3"]), "stroke:#BB0;stroke-width:96;stroke-dasharray:32;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b4"]), "stroke:#15C;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b3"]), "stroke:#7AF;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b2"]), "stroke:#090;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
