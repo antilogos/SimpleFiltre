@@ -50,6 +50,7 @@
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b3"]), "stroke:#7AF;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b2"]), "stroke:#090;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 			buildPath(parseUrl(tutorial[urlParams.get("draw")]["b1"]), "stroke:#7C7;stroke-width:128;",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildContext(tutorial[urlParams.get("draw")]["labelExt"], tutorial[urlParams.get("draw")]["labelPos"],svg);
 		} else if(urlParams.get("hash")) {
 			buildPath(parseUrl(urlParams.get("hash")), "#00F",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 		}
