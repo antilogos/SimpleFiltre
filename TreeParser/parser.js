@@ -199,7 +199,7 @@ function buildContext(labels, pos, svg) {
 	contextBox.setAttribute("rx", 128);
 	contextBox.setAttribute("ry", 128);
 	contextBox.setAttribute("width", 5000);
-	contextBox.setAttribute("height", 5000);
+	contextBox.setAttribute("height", 4800);
 	contextBox.setAttribute("stroke", "black");
 	contextBox.setAttribute("fill", "white");
 	contextBox.setAttribute("stroke-width", 64);
@@ -268,4 +268,31 @@ function buildContext(labels, pos, svg) {
 	lineE3.setAttribute("stroke-width", 128);
 	lineE3.setAttribute("stroke-linecap","round");
 	svg.appendChild(lineE3);
+	
+	const textB1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+	textB1.setAttribute("font-size", 128);
+	textB1.setAttribute("x", pos[0]+2000);
+	textB1.setAttribute("y", pos[1]+400);
+	textB1.setContent('Base');
+	const textB2 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+	textB2.setAttribute("x", pos[0]+2000);
+	textB2.setAttribute("y", pos[1]+400+900);
+	textB2.setContent('Extension');
+	textB1.appendChild(textB2);
+	const textE1 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+	textE1.setAttribute("x", pos[0]+2000);
+	textE1.setAttribute("y", pos[1]+400+2300);
+	textE1.setContent(labels[0]);
+	textB1.appendChild(textE1);
+	const textE2 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+	textE2.setAttribute("x", pos[0]+2000);
+	textE2.setAttribute("y", pos[1]+400+3000);
+	textE2.setContent(labels[1]);
+	textB1.appendChild(textE2);
+	const textE3 = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+	textE2.setAttribute("x", pos[0]+2000);
+	textE2.setAttribute("y", pos[1]+400+3700);
+	textE2.setContent(labels[2]);
+	textB1.appendChild(textE2);
+	svg.appendChild(textB1);
 }
