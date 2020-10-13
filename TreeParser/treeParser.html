@@ -57,15 +57,26 @@
 			// Draw the icon of the class
 			for( let [key, value] of Object.entries(parseUrl(tutorialNodes["b1"]))) {
 				if(passiveSkillTreeData.nodes[value].classStartIndex) {
-					console.log("here it is");
+					const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
+					clipPath.setAttribute("id","clipper");
+					const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
+					rectClip.setAttribute("x","658");
+					rectClip.setAttribute("y","160");
+					rectClip.setAttribute("width","80");
+					rectClip.setAttribute("height","80");
+					clipPath.appendChild(rectClip);
+					svg.appendChild(clipPath);
+					const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+					gPanel.setAttribute("transform","scale(10) translate(0,0)")
 					const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 					img.setAttribute("x", passiveSkillTreeData.nodes[value].x);
 					img.setAttribute("y", passiveSkillTreeData.nodes[value].y);
 					img.setAttribute("width", 788);
 				 	img.setAttribute("height", 710);
 					img.setAttribute("xlink:href","https://web.poecdn.com/image/gen/inventory-sprite.png");
-					img.setAttribute("transform","translate(-30,-30)");
-					svg.appendChild(img);
+					img.setAttribute("clip-path","url(#clipper)");
+					gPanel.appendChild(img);
+					svg.appendChild(gPanel);
 				}
 			}
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
