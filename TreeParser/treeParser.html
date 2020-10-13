@@ -67,10 +67,12 @@
 					clipPath.appendChild(rectClip);
 					svg.appendChild(clipPath);
 					const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-					gPanel.setAttribute("transform","scale(10) translate(0,0)")
+					gPanel.setAttribute("transform","scale(1) translate(0,0)")
 					const img = document.createElementNS("http://www.w3.org/2000/svg","image");
-					img.setAttribute("x", passiveSkillTreeData.nodes[value].x);
-					img.setAttribute("y", passiveSkillTreeData.nodes[value].y);
+					img.setAttribute("x", 0//passiveSkillTreeData.nodes[value].x
+							);
+					img.setAttribute("y", 0//passiveSkillTreeData.nodes[value].y
+							);
 					img.setAttribute("width", 788);
 				 	img.setAttribute("height", 710);
 					img.setAttribute("xlink:href","https://web.poecdn.com/image/gen/inventory-sprite.png");
