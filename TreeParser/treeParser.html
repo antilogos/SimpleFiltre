@@ -56,7 +56,8 @@
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
 			for( let [key, value] of Object.entries(parseUrl(tutorialNodes["b1"]))) {
-				if(!nodes[value] && passiveSkillTreeData.nodes[value].classStartIndex) {
+				if(passiveSkillTreeData.nodes[value].classStartIndex) {
+					console.log("here it is");
 					const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 					img.setAttribute("x", passiveSkillTreeData.nodes[value].x);
 					img.setAttribute("y", passiveSkillTreeData.nodes[value].y);
