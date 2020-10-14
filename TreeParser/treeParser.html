@@ -57,18 +57,15 @@
 			// Draw the icon of the class
 			for( let [key, value] of Object.entries(parseUrl(tutorialNodes["b1"]))) {
 				if(passiveSkillTreeData.nodes[value].classStartIndex) {
-					const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-					gPanel.setAttribute("transform","scale(10)")
 					const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+					img.setAttribute("xlink:href","https://lh6.googleusercontent.com/0sDMeM0o9O8NEaVM1xo5Dhi9TB-iqIsh-JhwrvKHy51yEst5xsnkuoptbDZ0Z0OGBnzMgCanYhdubOjkv9NXgWLVx9OY_rAmoPgH7YgjG1oU1sALZes=w1280");
 					img.setAttribute("x", 0//passiveSkillTreeData.nodes[value].x
 							);
 					img.setAttribute("y", 0//passiveSkillTreeData.nodes[value].y
 							);
-					img.setAttribute("width", 88);
-				 	img.setAttribute("height", 84);
-					img.setAttribute("xlink:href","https://lh6.googleusercontent.com/0sDMeM0o9O8NEaVM1xo5Dhi9TB-iqIsh-JhwrvKHy51yEst5xsnkuoptbDZ0Z0OGBnzMgCanYhdubOjkv9NXgWLVx9OY_rAmoPgH7YgjG1oU1sALZes=w1280");
-					gPanel.appendChild(img);
-					svg.appendChild(gPanel);
+					img.setAttribute("width", 880);
+				 	img.setAttribute("height", 840);
+					svg.appendChild(img);
 				}
 			}
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
