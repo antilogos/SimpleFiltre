@@ -309,3 +309,11 @@ function buildContext(labels, pos, svg) {
 	textB1.appendChild(textE3);
 	svg.appendChild(textB1);
 }
+
+function buildClassIcon{
+	let imageUrl = "https://pathofexile.com/image/gen/inventory-sprite.png";
+	let classPostion = [{x:298,y:340},{x:658,y:160},{x:298,y:420},{x:658,y:480},{x:658,y:80},{x:298,y:500},{x:658,y:400}];
+	let imageSize = 80;
+}
+
+
