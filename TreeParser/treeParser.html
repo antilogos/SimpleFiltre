@@ -58,29 +58,7 @@
 			// Draw the icon of the class
 			for( let [key, value] of Object.entries(parseUrl(tutorialNodes["b1"]))) {
 				if(passiveSkillTreeData.nodes[value].classStartIndex) {
-					let offsetClipX = 658 + passiveSkillTreeData.nodes[value].x/10;
-					let offsetClipY = 160 + passiveSkillTreeData.nodes[value].y/10;
-					const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
-					clipPath.setAttribute("id","clipper");
-					const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
-					rectClip.setAttribute("x", offsetClipX);
-					rectClip.setAttribute("y", offsetClipY);
-					rectClip.setAttribute("width","80");
-					rectClip.setAttribute("height","80");
-					clipPath.appendChild(rectClip);
-					svg.appendChild(clipPath);
-					const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-					gPanel.setAttribute("transform","scale(10) translate("+(-1*658-40)+","+(-1*160-40)+")");
-					const img = document.createElementNS("http://www.w3.org/2000/svg","image");
-					img.setAttribute("x", passiveSkillTreeData.nodes[value].x/10);
-					img.setAttribute("y", passiveSkillTreeData.nodes[value].y/10);
-					img.setAttribute("width", 788);
-				 	img.setAttribute("height", 710);
-					img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
-					img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
-					img.setAttribute("clip-path","url(#clipper)");
-					gPanel.appendChild(img);
-					svg.appendChild(gPanel);
+					buildClassIcon(passiveSkillTreeData.nodes[value], svg);
 				}
 			}
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
