@@ -315,8 +315,8 @@ function buildClassIcon(node, svg) {
 	let classPosition = [{x:658,y:80},{x:298,y:420},{x:298,y:340},{x:658,y:480},{x:298,y:500},{x:658,y:160},{x:658,y:400}];
 	let imageSize = {x:76,y:80};
 	let zoom = 10;
-	let offsetClipX = classPosition[node.classStartIndex].x + node.x/zoom;
-	let offsetClipY = classPosition[node.classStartIndex].y + node.y/zoom;
+	let offsetClipX = classPosition[node.classStartIndex-1].x + node.x/zoom;
+	let offsetClipY = classPosition[node.classStartIndex-1].y + node.y/zoom;
 	const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
 	clipPath.setAttribute("id","clipper");
 	const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
@@ -327,7 +327,7 @@ function buildClassIcon(node, svg) {
 	clipPath.appendChild(rectClip);
 	svg.appendChild(clipPath);
 	const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-	gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*classPosition[node.classStartIndex].x-imageSize.x/2)+","+(-1*classPosition[node.classStartIndex].y-imageSize.y/2)+")");
+	gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*classPosition[node.classStartIndex-1].x-imageSize.x/2)+","+(-1*classPosition[node.classStartIndex-1].y-imageSize.y/2)+")");
 	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 	img.setAttribute("x", node.x/zoom);
 	img.setAttribute("y", node.y/zoom);
