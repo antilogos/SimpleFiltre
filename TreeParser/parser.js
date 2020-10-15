@@ -308,12 +308,36 @@ function buildContext(labels, pos, svg) {
 	textE3.textContent = labels[2];
 	textB1.appendChild(textE3);
 	svg.appendChild(textB1);
-}
+};
 
-function buildClassIcon{
+function buildClassIcon(node, svg) {
 	let imageUrl = "https://pathofexile.com/image/gen/inventory-sprite.png";
-	let classPostion = [{x:298,y:340},{x:658,y:160},{x:298,y:420},{x:658,y:480},{x:658,y:80},{x:298,y:500},{x:658,y:400}];
-	let imageSize = 80;
-}
+	let classPosition = [{x:298,y:340},{x:658,y:160},{x:298,y:420},{x:658,y:480},{x:658,y:80},{x:298,y:500},{x:658,y:400}];
+	let imageSize = {x:76,y:80};
+	let zoom = 10;
+	let offsetClipX = classPosition[node.classStartIndex].x + node.x/zoom;
+	let offsetClipY = classPosition[node.classStartIndex].y + node.y/zoom;
+	const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
+	clipPath.setAttribute("id","clipper");
+	const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
+	rectClip.setAttribute("x", offsetClipX);
+	rectClip.setAttribute("y", offsetClipY);
+	rectClip.setAttribute("width", imageSize.x);
+	rectClip.setAttribute("height", imageSize.y);
+	clipPath.appendChild(rectClip);
+	svg.appendChild(clipPath);
+	const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+	gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*classPosition[node.classStartIndex].x-imageSize.x/2)+","+(-1*classPosition[node.classStartIndex].y-imageSize.y/2)+")");
+	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+	img.setAttribute("x", node.x/zoom);
+	img.setAttribute("y", node.y/zoom);
+	img.setAttribute("width", 788);
+	img.setAttribute("height", 710);
+	img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
+	img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
+	img.setAttribute("clip-path","url(#clipper)");
+	gPanel.appendChild(img);
+	svg.appendChild(gPanel);
+};
 
 
