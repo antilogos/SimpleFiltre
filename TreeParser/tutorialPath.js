@@ -29,7 +29,7 @@ occultist["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12
 occultist["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBABzcly2FsbcwN4OlxOq6doLjhC4spys3ZvuRyiS4k-_rEHsTbR9BHU9-oUlP41a1SHzlvYJJUewYlS4UCYhCl_SkBTQKDXySdGnYMtErmo9GnDJSsl3yeC87DSj6nL7B8xEP6-4v2jwoAW_firyq0NARUBhqpwjBxabrkNYG50wtvjqVIENUUlPR5NsaPV-7_J8BDR8svxSwgh6LehslJogHHqgx9HE1uY_6rJhLrk5tV8nBAG0ZAouNglgHahuESFxr6QJtbB3Zm6EXVBGWXY6PGubqw23bephT2Vt9sOd08NXi91PULKb318gMDkgrCvVL";
 occultist["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAMBABzcL9qXLeTrjxrndCKBAW_firyq0NARUIt6uNCxBZ7Epr6nCOq6doLjhC4sjjynKzdmwcVtbOkCkNZWSgbnnqHYJEwtVki4k9t6gse-OpUghEj52-_rQ1T31xsl9UsTbR9B2xp-obv8SU-fAbcwS661SCy_FLC9gklR4vfB8xB7m6GoMfRxlS4UCY_6NbnR5AcefscdT9lb41bsGMEAbRmCHo2Cna40CgKLXGvliw5IadgspjLRK5qPRhdUknQRll2ON4MrCiaIw22kBabrmFMd2VKyfbBqGw18iEJT1F3yV8k7DSj62jrIDBEPrJjr7vDV";
 occultist["labelExt"] = ["Énergie","Murmure","Frisson"];
-occultist["labelPos"] = [100,100];
+occultist["labelPos"] = [-5000,100];
 
 var saboteur = {};
 saboteur["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYDAGHrlPEWv0jlshmsRviXm5qkFmJPjDZQQntfwzrviNfPz3oi6iaV8nXJBlVLMgEki7kGYeL5N0mxelNTNQ-rBkCTJw==";
@@ -62,7 +62,7 @@ assassin["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 assassin["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAAZwKk2i2Xn2Klth67cwieCNfXpTwdX1b0scFr-PwTfUDSI1kgIRIuJirH1b44QV_RMEeBnWB21s8uY64SaVo4qEorTFjYEcX0yOW5mExcGgPP6cpFFMgwmJ06R4dwfPek2SbqruDg5ID6vYveZYjDZ6f7VII_ZKyGqMSVGyGcM6KgsmKWyMUUeVLujWSROHEzB8_gomiJ2qB5mTH-hab1fxs5u1Iuph4sDj7T9H4o2_tfKTmTY9VUt_K7DYcFIRlj8nJIsyAUtXwWusR974XfLIFG-epDnKSgW18NVOn1-wpldN414D_QH-j_JFWfAHHltv";
 assassin["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAYBAA8XBnAqTaLZ1Dlh67cwieCNfXpTD6sFfa-8Fr_7_TfUTsc1kpgj_o9irH1b44TI3I2_HF-ExSaIbWw64SaV5liEok6fwuxKyEyOm7VQg2yMKlvb1CP2gwmJ02-eaoxJUU2SwzpZ8A5IwdVRR33jjDZ6f7VIpDnPerXyFqrw1V4D6Nb1bwceYeKVLv4KSROHEzB8UUyw2J2qfysmKehaMgHxsxGWIurIFMDj7T9H4l3yDWA3TUtXNj13B5OZJItwUj8nPdFVS5ykpnDBa6xH3vjYvZMfB5luqspKBbVwVioLX7CmV03jW5n9AbIZ8kWkeCLiW28=";
 assassin["labelExt"] = ["Ombre","Griffe","Dague"];
-assassin["labelPos"] = [-5000,100];
+assassin["labelPos"] = [-5000,-5000];
 
 var raider = {};
 raider["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIBAFb6fXVrkDB845-HdguPZ6AAXpuN7YN_KxNQJnQS8QXp_97PCv66GY7TfiT951R3119wCC62Ae4Og23velFHSQ_YYEp9";
@@ -117,7 +117,7 @@ slayer["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/
 slayer["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAH11W69eExRNAeeJ02HrYVImlfxL73qLoBiRDY0Wv_cTN9TcjGegj2BirFFHLbRsjF85UWMEsW1smmqyGU4qhmB7FCPT8MR6U8zHRreTD2VNERpKfUlS02_nVAUto4oKm6U1H0HuDgxwvJ826EMxjDYCOnTtI_aTqM96vTZAoDu2vqfawY199Oawq3rvuXwV8Jsm459qk52qGbSHdoTZc2uYU6QF9RhHfk2Sxxn5Yyo4cw42PVdUMgH-unBSYeIF-Xjr7T_vTgbntUhM_9RC6NbTfiT953SVzFVLjAtd8pst_97ssJcI9WGdX93jdf2Eb_zF";
 slayer["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQBAH11W69eExRNAedU_mHr_EvvensUGJHjn9Nv9xN670p9Z6CPYKOKBS2NfdrBbIzmKb02VYVtbAxw4GlOKkMxYqwmlfVhFr9RY4ZgveYRGvTmZU1aGowLR36YUwqbpTUfQQSxTP-8nzboSQ-MNscZdO0j9pOo2GBfOfljO7a-p0lScw6VzLCrQKBNks96myZhUmqTnaoZtId2hNlza_66MgGkBT9VBfkG5-9O7T9XVCo4LbQ2PbVIpcv1GJpqYeITUHjr6NYV8F2Pmy3PCtRCVUvTfrl853R31-4OelNd8sMzdf3ssA2NRrcj093jshmEb_zF";
 slayer["labelExt"] = ["Renforcement","Critique","Assaut"];
-slayer["labelPos"] = [100,-5000];
+slayer["labelPos"] = [-5000,-5000];
 
 var champion = {};
 champion["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAQDAKHZ73rGqjxbvTaK8KluvqcVIBtGAF7Eghm0hNkB3C2Dd-MZju2DCC426F85R37TfrCr8KKLppstYJA0PvajAedYr2VN";
@@ -172,7 +172,7 @@ guardian["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 guardian["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48a8kX56LJwogB67zWS99enCAUtDUagQi4sMlia4P6PwGaYrdNvOuHGrlXGKPq3PoPMpRi4k702gsfwHzwtBLNfP3fjl4UqU0Wd7w7XasT2Bg5ewPZIxLhilSdZUEdNFGebdqw099rBrj7AGlugHKfBBEd-g1-pbjpYLlMxnmVNEmkn7XwOhNnPfoPb1fgMXy6U1HwCizLRXyp5aGEhhO90VX5sj0Zko8EIbztAoBccGS7kUXTt_gqsmNi9U1K_-1Olp1Vo8hQgHRRFR62NpldN414TxFgJ9ohaIbDr7gHc";
 guardian["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48aPAXvfA1G-eiE76IAAdxYr1BHNZJOUqcIBS331xcvbqoGDmjyrj7AZpitgKR348auVcZN47c-pldKyLiTvTaCx_AfPC0dFMT2Xz_Tb5eFCfYEs-8OU6UUIMAaNuj2SKUY2L107ddqZ5t2rJrgqW5boPrS2sGG0TGeR35vO4O2RZ0SaayYJwuD2yftfA6E2c9-OlguU35sLpSDXwKLwQRkowxfYSF5aDLR1HyPRsHnPyf-ChccGS7kUXrvtfJTUv6PNPenVTrhHKcuLEVHrY2DzCj6JLDEWCpN8kUhsOvuZU0=";
 guardian["labelExt"] = ["Surcharge","Mana","Solitaire"];
-guardian["labelPos"] = [100,100];
+guardian["labelPos"] = [100,-5000];
 
 var hierophant = {};
 hierophant["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUCAEPITwRZ85XzwGYgBjD4ySTVpjNs2rkEs_AfW6AqE2aeogAaOIKbrv2u_zrYcYVyD5BVfA7DE2jypWcnL6dV7C5aKw==";
