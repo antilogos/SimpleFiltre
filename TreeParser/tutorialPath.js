@@ -94,7 +94,7 @@ pathfinder["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.1
 pathfinder["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAIbOw3mcAt7lRA3pdoazjX16UwWTxKINjSzp_xCfbfzFNZJfmFSCAF66f_4KbqryRYAiIWAqTbXycaGyGVlto4pNFLc-t7ZKyGHr35ghdhmK1lSj7_ajp9TuDjrhsTCPT02Skx9B03-AXsB1y-ZYzzL-yHTtpDno1jGeyPDDOr6n2sEVIAOiR36m4EkTz3qbJo1-FKliWhm0h3YvJGegZU0uU9i9LYMi4puNR-Ltg0MxQKA_JwguMgEFLb02vrcF-epiyCNKfaqkI_ZM_yxkGY7Tfn-WtQjjnySdP2yXBongpldN4_6P028A7oha73olP3rv";
 pathfinder["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAIbOw3mcAt7lRA1h69nGhrONfXpTxKJ_ltNvGwGfbaCft7ZfmCLiAF4FLX8rbqpB04Aidvcx-pUFVIKyGX8Co4o64bc-MHxKyFFH35ghdv_ejX6j7_ajp9TnVHrvJT8s6U2SiFruDn-AXsB1y00UzzLvenTtpDnPejnUyPDYvb6n2sEVIOOfR36m4LEw6NabJv4KFKliWhm0h3YvJGegP2wuU_7ILYP_EJuNR-Ltgwgu035DMdZUMgENjb63PycF-epiun8j9mVNvTZM_xn-GY5ZbST9NZIqTSSdMZ6XBjKUpldN4_6PwTMA7vJFtfJKffzF";
 pathfinder["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAIDAFb6hs7DeZwC1y3e5UQNYeuDFoazjX16U896xKJ_lrXyO_CfbSpNt7axMCLiAF5B026qgCImOv7I5wpxobIZ0Eyjiq_ptz4M7UrICpvfmCF245-1CKPv9qOn1NNveu8lP49PTZKIWu4Of4BewHXLSQ_PMu96dO1NFP6P2GDI8Ni9vqfawRUgA6JHfqbgLOno1psm_gpiWhSpGbSHdi8kZ6A_bC5T7YMtg5uNR-L_EAgu035DMdZUMgENjT8nvrcF-epiun8j9mVNvTZM_wUtGY5ZbY1-NZJ31ySdMZ6XBlSCpldN46Q5OuEA7vJFX5hKffzF";
-pathfinder["labelExt"] = ["Améthyste","Argent","Diamant"];
+pathfinder["labelExt"] = ["Améthyste","Diamant","Argent"];
 pathfinder["labelPos"] = [-5000,-5000];
 
 var gladiator = {};
