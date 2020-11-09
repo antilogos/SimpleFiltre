@@ -171,7 +171,7 @@ guardian["b4"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.
 guardian["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUGH8WyPGvnoBS331y4swGaYrXfj1YG4k18_xPat8ddqmuCWbFugVw1FnYTZz34uUwKLu-0y0Y9GbzsXHORREuGtjaZXKPrEWIVt6-5670PIcXlPBJIrkc6iADWS_o8NRsauVca3PhynvTaCx_AfPC2Xhe8OFCBWSKUYR35nm3asaPI879rBQKDes__Ng18xngHc02_yRYPbTeN07TpYU6WuPift_gr2SMEEDF9hIWVNeWjUfC6UfA5-bBJpoupkoxkuHRRQR6cIwBqsmFNSCfY096dV2L0YXUVHBg6DzASzhO8k2Drh2CQhsKlu";
 guardian["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48a8kX56LJwogB67zWS99enCAUtDUagQi4sMlia4P6PwGaYrdNvOuHGrlXGKPq3PoPMpRi4k702gsfwHzwtBLNfP3fjl4UqU0Wd7w7XasT2Bg5ewPZIxLhilSdZUEdNFGebdqw099rBrj7AGlugHKfBBEd-g1-pbjpYLlMxnmVNEmkn7XwOhNnPfoPb1fgMXy6U1HwCizLRXyp5aGEhhO90VX5sj0Zko8EIbztAoBccGS7kUXTt_gqsmNi9U1K_-1Olp1Vo8hQgHRRFR62NpldN414TxFgJ9ohaIbDr7gHc";
 guardian["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.12.0/AAAABAUDABzc2WGboUPIcXlBh08E8WySK48aPAXvfA1G-eiE76IAAdxYr1BHNZJOUqcIBS331xcvbqoGDmjyrj7AZpitgKR348auVcZN47c-pldKyLiTvTaCx_AfPC0dFMT2Xz_Tb5eFCfYEs-8OU6UUIMAaNuj2SKUY2L107ddqZ5t2rJrgqW5boPrS2sGG0TGeR35vO4O2RZ0SaayYJwuD2yftfA6E2c9-OlguU35sLpSDXwKLwQRkowxfYSF5aDLR1HyPRsHnPyf-ChccGS7kUXrvtfJTUv6PNPenVTrhHKcuLEVHrY2DzCj6JLDEWCpN8kUhsOvuZU0=";
-guardian["labelExt"] = ["Surcharge","Mana","Solitaire"];
+guardian["labelExt"] = ["Surcharge","Agnostique","Solitaire"];
 guardian["labelPos"] = [100,-5000];
 
 var hierophant = {};
