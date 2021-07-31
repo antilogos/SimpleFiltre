@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TREE DATA TO SVG CONVERTER</title>
+	<link rel="shortcut icon" type="image/png" href="https://docs.google.com/drawings/d/e/2PACX-1vRmsUqz_w0baXylHjox1oadVVCB2B0kq8LtyvLEx9M7rZTjSr18UDf0IaDljbf5db3uUkd2Fi9MRwHX/pub?w=51&h=50"/>
+	<style>
+	</style>
+	<script src="tutorialPath.js" type="text/javascript"></script>
+	<script>
+	const urlParams = new URLSearchParams(window.location.search);
+			
+	function init() {
+		// Redirect to a tutorial skill tree
+		if(urlParams.get("link")) {
+			let tutorialTrees = tutorial[urlParams.get("link")];
+			if(urlParams.get("step")) {
+				let tutorialStep = tutorialTrees[urlParams.get("step")];
+				//window.location.href = tutorialStep;
+				const redirectText = "Vous allez être redirigez vers " + tutorialStep;
+				const text = document.createTextNode()
+				document.getElementById("maindiv").appendChild(text);
+			}
+		}
+	}
+	</script>
+</head>
+	<body height="100vh">
+		<div id="maindiv" height="100vh">
+		</div>
+	</body>
+</html>
