@@ -18,7 +18,7 @@
 				let tutorialStep = tutorialTrees[urlParams.get("step")];
 				//window.location.href = tutorialStep;
 				const redirectText = "Vous allez être redirigez vers " + tutorialStep;
-				const text = document.createTextNode()
+				const text = document.createTextNode(redirectText);
 				document.getElementById("maindiv").appendChild(text);
 			}
 		}
