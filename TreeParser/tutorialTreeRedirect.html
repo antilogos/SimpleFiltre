@@ -16,7 +16,7 @@
 			let tutorialTrees = tutorial[urlParams.get("link")];
 			if(urlParams.get("step")) {
 				let tutorialStep = tutorialTrees[urlParams.get("step")];
-				//window.location.href = tutorialStep;
+				window.location.href = tutorialStep;
 				const redirectText = "Vous allez être redirigez vers " + tutorialStep;
 				const text = document.createTextNode(redirectText);
 				document.getElementById("maindiv").appendChild(text);
@@ -25,8 +25,8 @@
 	}
 	</script>
 </head>
-	<body height="100vh">
-		<div id="maindiv" height="100vh" onload="init()">
+	<body height="100vh" onload="init()">
+		<div id="maindiv" height="100vh">
 		</div>
 	</body>
 </html>
