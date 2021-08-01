@@ -51,7 +51,7 @@ trickster["e1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.15
 trickster["e2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.15.0/AAAABAYCABzcm6Gi2XWeCPRh67cwieD1-npTTLO86mpDW9N0Vd-gtMXC7KOjpwhirGwLtzhsjLtNOq1vhJrgbWy9XbIZJpUG52q7BAci9CycHwLviITFL9aoNeNirUqhL6yY6-731xNtH0GPGnyDSRNVS9o7jDaHy7VIXEAdFEmxzxWbtcM6Z_yFMkb-18-VLhQJj_rPeuZYBx5_xp2qXfImiLTRg9ttGQ5IIuqkBVNSJKrGil8qvooRLf6zNj0WvzIBsNiPRvrSSVEzo-NqOlgRlmHiJIuYU_k3kx9qG_DV_xzdXxpyD6s26Ty2yAwWb1XGRZ2nm5Mn";
 trickster["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.15.0/AAAABAYCABzcm6GXLaLZdZ5Bh2HrtzCJ4LTRvKqycFvTakPPFQj0p5ujo6cIYqz316BCbIy7TY8a-egv2m1s74iyGSaVBuetSrc-IvQsnLiTm7WExXpT3V8Wb1xA36ChLyaIKlNilRNtH0EPq3yDXsBVS-ZYjDaHy7VITRT5N0mxNulJE8M6Z_yFMr1d18-VLhQJj_rPeqyYBx5_xp2qVcaa4PDV-tJtGQ5IIuph4r6KJKoki18qMgERLf6zNj2kBY9GsNh0VeNqEZYzozpYg9tJURa_RZ2YU1NSkx9qG0lPbAtd8to7gsco-jy2yAwdFIhavOrr7pMn";
 trickster["labelExt"] = ["Fatalité","Voile","Âme"];
-trickster["labelPos"] = [-5000,100];
+trickster["labelPos"] = [-500,1500];
 
 var assassin = {};
 assassin["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.15.0/AAAABAYBAAZwotn1b8gU6Nadqha_YqxsjG1shG-TmbDYcFJh4lnwKgt1_UyONj1On9RCJpUFtQeZidOEomqM53Rd8lVLjDZ6f7VI";
