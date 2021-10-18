@@ -403,10 +403,7 @@ function buildMasteryIcon(svg) {
 	
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
 		if(value.isMastery && value.group) {
-			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
-			const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-			const group = passiveSkillTreeData.groups[value.group];
-			
+			const group = passiveSkillTreeData.groups[value.group];			
 			const masteryImg = masteryPosition.find(m => m.mastery == value.activeIcon);
 			let offsetClipX = masteryImg.x + value.x/zoom;
 			let offsetClipY = masteryImg.y + value.y/zoom
