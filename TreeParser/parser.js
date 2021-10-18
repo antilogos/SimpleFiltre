@@ -333,8 +333,8 @@ function buildClassIcon(node, svg) {
 	img.setAttribute("y", node.y/zoom);
 	img.setAttribute("width", 788);
 	img.setAttribute("height", 710);
-	img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
-	img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
+	img.setAttribute("href",imageUrl);
+	img.setAttribute("xlink:href",imageUrl);
 	img.setAttribute("clip-path","url(#clipper)");
 	gPanel.appendChild(img);
 	svg.appendChild(gPanel);
@@ -342,21 +342,95 @@ function buildClassIcon(node, svg) {
 
 
 function buildMasteryIcon(svg) {
+	let imageUrl = "mastery-active-selected-3.png";
+	let imageSize = {x:104,y:99};
 	let zoom = 10;
+	let masteryPosition = [{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMineActive.png", x:104,y:99},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLightningActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLifeActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEnergyActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryPoisonActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEvasionAndEnergyShieldActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDamageOverTimeActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEvasionActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAxeActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAttributesActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryChargesActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryClawsActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryStaffActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryElementalActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryProjectileActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLeechActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBowActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryReservationActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCurseActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTwoHandActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryColdActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDaggerActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryWarcryActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAttackActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryManaActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDualWieldActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMinionDefenseActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFlaskActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCriticalActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasterySwordActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTrapActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFireActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMaceActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryPhysicalActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryResistancesAndAilmentProtectionActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCasterActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMinionOffenseActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryShieldActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourAndEvasionActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasterySpellSuppressionActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBrandActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBlockActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryChaosActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLinkActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAccuracyActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTotemActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDurationActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourAndEnergyShieldActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryWandActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBleedingActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryImpaleActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFortifyActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMarkActive.png", x:320,y:580}];
+	
+	
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
 		if(value.isMastery && value.group) {
 			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 			const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
 			const group = passiveSkillTreeData.groups[value.group];
 			
-			const masteryImg = "images/mastery-connected-2_0.png";
+			const masteryImg = masteryPosition.find(m => m.mastery == value.activeIcon);
+			let offsetClipX = masteryImg.x + value.x/zoom;
+			let offsetClipY = masteryImg.y + value.y/zoom
 			
-			img.setAttribute("x", (group.x-78*zoom/2)/zoom);
-			img.setAttribute("y", (group.y-77*zoom/2)/zoom);
-			img.setAttribute("width", 78*zoom/2);
-			img.setAttribute("height", 77*zoom/2);
-			img.setAttribute("href",masteryImg);
-			img.setAttribute("xlink:href",masteryImg);
+			const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
+			clipPath.setAttribute("id","clipper");
+			const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
+			rectClip.setAttribute("x", offsetClipX);
+			rectClip.setAttribute("y", offsetClipY);
+			rectClip.setAttribute("width", imageSize.x);
+			rectClip.setAttribute("height", imageSize.y);
+			clipPath.appendChild(rectClip);
+			svg.appendChild(clipPath);
+			const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+			gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*masteryImg.x-imageSize.x/2)+","+(-1*masteryImg.y-imageSize.y/2)+")");
+			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+			const clipper = "url(#clipper" + key + ")"
+			img.setAttribute("x", node.x/zoom);
+			img.setAttribute("y", node.y/zoom);
+			img.setAttribute("width", 788);
+			img.setAttribute("height", 710);
+			img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
+			img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
+			img.setAttribute("clip-path",clipper);
 			gPanel.appendChild(img);
 			svg.appendChild(gPanel);
 		}
