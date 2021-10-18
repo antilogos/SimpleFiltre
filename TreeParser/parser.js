@@ -58,7 +58,7 @@ function extractNodesData(jsonData) {
 			nodeMap[key] = value;
 		}
 		if(value.isMastery && value.group) {
-			const group = passiveSkillTreeData.groups(value.group);
+			const group = passiveSkillTreeData.groups[value.group];
 			const nodeObject = value;
 			nodeObject.x = group.x;
 			nodeObject.y = group.y;
