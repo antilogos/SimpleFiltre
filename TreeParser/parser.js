@@ -96,8 +96,7 @@ function extractNodesData(jsonData) {
 				nodeObject.y = value.y;
 				// Store back the coordinates
 				nodeMap[value.nodes[0]] = nodeObject;
-			}
-			for( let node of value.nodes) {
+			} else {
 				const nodeObject = nodeMap[node];
 				if(node in nodeMap) {
 					if(!nodeObject.hasOwnProperty('x') && !nodeObject.hasOwnProperty('y')) {
