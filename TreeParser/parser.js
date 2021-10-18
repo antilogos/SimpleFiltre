@@ -63,62 +63,27 @@ function extractNodesData(jsonData) {
 	for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
 		// Ignore cluster jewels
 		if(!value.isProxy) {
-			// If elements in orbit
-			if(value.orbits && value.orbits.length > 0) {
-				// Orbit are at radius 0 when node is at the center
-				for( let orbit of value.orbits) {
-					// get the radius of the orbits from the groupNode
-					const radius = passiveSkillTreeData.constants.orbitRadii[orbit];		    
-					// Read only the nodes that matters and on that orbit
-					const filteredNode = value.nodes.filter(function (node) {return nodeMap[node] && nodeMap[node].orbit == orbit; });
-
-					for( let node of filteredNode) {
-						const nodeObject = nodeMap[node];
+			// No orbit declaration in group
+			for( let node of value.nodes) {
+				const nodeObject = nodeMap[node];
+				if(node in nodeMap) {
+					if(nodeObject.orbit != 0) {
+						// get the radius of the orbits from the groupNode
+						const radius = passiveSkillTreeData.constants.orbitRadii[nodeObject.orbit];
 						// Number of point on the circle
-						const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit];
+						const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit]; 
 						// Place the node in the orbit and use orbit position to get him at the right location
-						if(skillOrbit != 0 && radius != 0) {
-							nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-							nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-						} else {
-							// node from group without coordinates?
-							nodeObject.x = value.x;
-							nodeObject.y = value.y;
-							nodeObject.anomaly = true;
-						}
-						nodeObject.id = node;
-						// Store back the coordinates
-						nodeMap[node] = nodeObject;
+						nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+						nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+					} else {
+						// node from group without coordinates?
+						nodeObject.x = value.x;
+						nodeObject.y = value.y;
+						nodeObject.anomaly = true;
 					}
-				}
-			} else if(value.nodes.length == 1) {
-				// Lone element in group
-				const nodeObject = nodeMap[value.nodes[0]];
-				nodeObject.x = value.x;
-				nodeObject.y = value.y;
-				// Store back the coordinates
-				nodeMap[value.nodes[0]] = nodeObject;
-			} else {
-				// No orbit declaration in group
-				for( let node of value.nodes) {
-					const nodeObject = nodeMap[node];
-					if(node in nodeMap) {
-						// Using defaut skillOrbit, arbitrary number
-					    const radius = passiveSkillTreeData.constants.orbitRadii[nodeObject.orbit];
-					    const skillOrbit = 72; 
-						if(skillOrbit != 0 && radius != 0) {
-							nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-							nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
-						} else {
-							// node from group without coordinates?
-							nodeObject.x = value.x;
-							nodeObject.y = value.y;
-							nodeObject.anomaly = true;
-						}
-						nodeObject.id = node;
-						// Store back the coordinates
-						nodeMap[node] = nodeObject;
-					}
+					nodeObject.id = node;
+					// Store back the coordinates
+					nodeMap[node] = nodeObject;
 				}
 			}
 		}
