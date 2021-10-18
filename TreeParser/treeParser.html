@@ -28,7 +28,7 @@
 		// Drawing the links between nodes
 		for( let[key, value] of Object.entries(nodes)) {
 			// Some nodes got no x or y ? FIXME research this further
-			if(value.out && value.x && value.y)
+			if(value.out && value.x && value.y && !value.hasOwnProperty('masteryImg'))
 			for( let nodeTo of value.out) {
 				const target = nodes[nodeTo];
 				// Some nodes out point to ascendancy or large cluster jewel

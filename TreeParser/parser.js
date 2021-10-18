@@ -352,14 +352,15 @@ function buildClassIcon(node, svg) {
 function buildMasteryIcon(node, svg) {
 	let zoom = 10;
 	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
-	img.setAttribute("x", node.x/zoom);
-	img.setAttribute("y", node.y/zoom);
-	img.setAttribute("width", 78);
-	img.setAttribute("height", 77);
+	const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+	img.setAttribute("x", node.x/zoom-(78*zoom/2));
+	img.setAttribute("y", node.y/zoom-(77*zoom/2));
+	img.setAttribute("width", 78*zoom/2);
+	img.setAttribute("height", 77*zoom/2);
 	img.setAttribute("href",node.masteryImg);
 	img.setAttribute("xlink:href",node.masteryImg);
 	gPanel.appendChild(img);
-	svg.appendChild(gPanel);
+	return gPanel;
 };
 
 
