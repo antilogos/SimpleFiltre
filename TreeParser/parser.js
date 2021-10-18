@@ -99,9 +99,10 @@ function extractNodesData(jsonData) {
 				// Store back the coordinates
 				nodeMap[value.nodes[0]] = nodeObject;
 			} else {
+				// No orbit declaration in group
 				for( let node of value.nodes) {
 					const nodeObject = nodeMap[node];
-					if(node in nodeMap) );
+					if(node in nodeMap) {
 						// Using defaut skillOrbit, arbitrary number
 					    const radius = passiveSkillTreeData.constants.orbitRadii[nodeObject.orbit];
 					    const skillOrbit = 72; 
