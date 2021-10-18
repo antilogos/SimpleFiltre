@@ -405,8 +405,8 @@ function buildMasteryIcon(svg) {
 		if(value.isMastery && value.group) {
 			const group = passiveSkillTreeData.groups[value.group];			
 			const masteryImg = masteryPosition.find(m => m.mastery == value.activeIcon);
-			let offsetClipX = masteryImg.x + value.x/zoom;
-			let offsetClipY = masteryImg.y + value.y/zoom
+			let offsetClipX = masteryImg.x + group.x/zoom;
+			let offsetClipY = masteryImg.y + group.y/zoom
 			
 			const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
 			clipPath.setAttribute("id","clipper");
@@ -421,8 +421,8 @@ function buildMasteryIcon(svg) {
 			gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*masteryImg.x-imageSize.x/2)+","+(-1*masteryImg.y-imageSize.y/2)+")");
 			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 			const clipper = "url(#clipper" + key + ")"
-			img.setAttribute("x", node.x/zoom);
-			img.setAttribute("y", node.y/zoom);
+			img.setAttribute("x", group.x/zoom);
+			img.setAttribute("y", group.y/zoom);
 			img.setAttribute("width", 788);
 			img.setAttribute("height", 710);
 			img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
