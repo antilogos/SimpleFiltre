@@ -81,8 +81,10 @@ function extractNodesData(jsonData) {
 							nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 							nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 						} else {
+							// node from group without coordinates?
 							nodeObject.x = value.x;
 							nodeObject.y = value.y;
+							nodeObject.anomaly = true;
 						}
 						nodeObject.id = node;
 						// Store back the coordinates
@@ -99,15 +101,22 @@ function extractNodesData(jsonData) {
 			} else {
 				for( let node of value.nodes) {
 					const nodeObject = nodeMap[node];
-					if(node in nodeMap) {
-						if(!nodeObject.hasOwnProperty('x') && !nodeObject.hasOwnProperty('y')) {
+					if(node in nodeMap) );
+						// Using defaut skillOrbit, arbitrary number
+					    const radius = passiveSkillTreeData.constants.orbitRadii[nodeObject.orbit];
+					    const skillOrbit = 72; 
+						if(skillOrbit != 0 && radius != 0) {
+							nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+							nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
+						} else {
 							// node from group without coordinates?
 							nodeObject.x = value.x;
 							nodeObject.y = value.y;
-							nodeObject.id = node;
-							// Store back the coordinates
-							nodeMap[node] = nodeObject;
+							nodeObject.anomaly = true;
 						}
+						nodeObject.id = node;
+						// Store back the coordinates
+						nodeMap[node] = nodeObject;
 					}
 				}
 			}
