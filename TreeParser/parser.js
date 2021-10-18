@@ -97,15 +97,17 @@ function extractNodesData(jsonData) {
 				// Store back the coordinates
 				nodeMap[value.nodes[0]] = nodeObject;
 			} else {
-				const nodeObject = nodeMap[node];
-				if(node in nodeMap) {
-					if(!nodeObject.hasOwnProperty('x') && !nodeObject.hasOwnProperty('y')) {
-						// node from group without coordinates?
-						nodeObject.x = value.x;
-						nodeObject.y = value.y;
-						nodeObject.id = node;
-						// Store back the coordinates
-						nodeMap[node] = nodeObject;
+				for( let node of value.nodes) {
+					const nodeObject = nodeMap[node];
+					if(node in nodeMap) {
+						if(!nodeObject.hasOwnProperty('x') && !nodeObject.hasOwnProperty('y')) {
+							// node from group without coordinates?
+							nodeObject.x = value.x;
+							nodeObject.y = value.y;
+							nodeObject.id = node;
+							// Store back the coordinates
+							nodeMap[node] = nodeObject;
+						}
 					}
 				}
 			}
