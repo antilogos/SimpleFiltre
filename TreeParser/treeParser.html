@@ -37,6 +37,8 @@
 					svg.appendChild(buildSvgConnection(value, target, passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii));
 				}
 			}
+			if(value.masteryImg && value.x && value.y)
+				svg.appendChild(buildMasteryIcon(value, svg));
 		}
 		for( let[key, value] of Object.entries(nodes)) {
 			if(value.id) svg.appendChild(buildSvgNode(value));

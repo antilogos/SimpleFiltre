@@ -57,6 +57,14 @@ function extractNodesData(jsonData) {
 									&& !value.isBlighted && (!value.spc || value.spc.length == 0)) {
 			nodeMap[key] = value;
 		}
+		if(value.isMastery) {
+			const group = passiveSkillTreeData.groups(value.group);
+			const nodeObject = value;
+			nodeObject.x = group.x;
+			nodeObject.y = group.y;
+			nodeObject.masteryImg = "images/mastery-connected-2_0.png";
+			nodeMap[key] = nodeObject;
+		}
 	}
 
 	// Parse the groups to get coordinate of the center of circle if needed
@@ -336,6 +344,21 @@ function buildClassIcon(node, svg) {
 	img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
 	img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
 	img.setAttribute("clip-path","url(#clipper)");
+	gPanel.appendChild(img);
+	svg.appendChild(gPanel);
+};
+
+
+function buildMasteryIcon(nodes, svg) {
+	let imageUrl = nodes.masteryImg;
+	let zoom = 10;
+	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+	img.setAttribute("x", node.x/zoom);
+	img.setAttribute("y", node.y/zoom);
+	img.setAttribute("width", 78);
+	img.setAttribute("height", 77);
+	img.setAttribute("href",nodes.masteryImg);
+	img.setAttribute("xlink:href",nodes.masteryImg);
 	gPanel.appendChild(img);
 	svg.appendChild(gPanel);
 };
