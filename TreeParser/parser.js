@@ -57,7 +57,7 @@ function extractNodesData(jsonData) {
 									&& !value.isBlighted && (!value.spc || value.spc.length == 0)) {
 			nodeMap[key] = value;
 		}
-		if(value.isMastery) {
+		if(value.isMastery && value.group) {
 			const group = passiveSkillTreeData.groups(value.group);
 			const nodeObject = value;
 			nodeObject.x = group.x;
@@ -349,16 +349,15 @@ function buildClassIcon(node, svg) {
 };
 
 
-function buildMasteryIcon(nodes, svg) {
-	let imageUrl = nodes.masteryImg;
+function buildMasteryIcon(node, svg) {
 	let zoom = 10;
 	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
 	img.setAttribute("x", node.x/zoom);
 	img.setAttribute("y", node.y/zoom);
 	img.setAttribute("width", 78);
 	img.setAttribute("height", 77);
-	img.setAttribute("href",nodes.masteryImg);
-	img.setAttribute("xlink:href",nodes.masteryImg);
+	img.setAttribute("href",node.masteryImg);
+	img.setAttribute("xlink:href",node.masteryImg);
 	gPanel.appendChild(img);
 	svg.appendChild(gPanel);
 };
