@@ -104,6 +104,7 @@ function extractNodesData(jsonData) {
 						// node from group without coordinates?
 						nodeObject.x = value.x;
 						nodeObject.y = value.y;
+						nodeObject.id = node;
 						// Store back the coordinates
 						nodeMap[node] = nodeObject;
 					}
