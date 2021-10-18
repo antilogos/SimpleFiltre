@@ -398,7 +398,8 @@ function buildMasteryIcon(svg) {
 	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourActive.png", x:320,y:580},
 	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryImpaleActive.png", x:320,y:580},
 	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFortifyActive.png", x:320,y:580},
-	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMarkActive.png", x:320,y:580}];
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMarkActive.png", x:320,y:580},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBlindActive.png", x:320,y:580}];
 	
 	
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
@@ -425,8 +426,8 @@ function buildMasteryIcon(svg) {
 			img.setAttribute("y", group.y/zoom);
 			img.setAttribute("width", 788);
 			img.setAttribute("height", 710);
-			img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
-			img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
+			img.setAttribute("href",imageUrl);
+			img.setAttribute("xlink:href",imageUrl);
 			img.setAttribute("clip-path",clipper);
 			gPanel.appendChild(img);
 			svg.appendChild(gPanel);
