@@ -28,7 +28,7 @@
 		// Drawing the links between nodes
 		for( let[key, value] of Object.entries(nodes)) {
 			// Some nodes got no x or y ? FIXME research this further
-			if(value.out && value.x && value.y && !value.hasOwnProperty('masteryImg'))
+			if(value.out && value.x && value.y && !value.isMastery)
 			for( let nodeTo of value.out) {
 				const target = nodes[nodeTo];
 				// Some nodes out point to ascendancy or large cluster jewel
@@ -37,12 +37,12 @@
 					svg.appendChild(buildSvgConnection(value, target, passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii));
 				}
 			}
-			if(value.masteryImg && value.x && value.y)
-				svg.appendChild(buildMasteryIcon(value, svg));
 		}
 		for( let[key, value] of Object.entries(nodes)) {
 			if(value.id) svg.appendChild(buildSvgNode(value));
 		}
+		// Display Masteries icon
+		buildMasteryIcon(value, svg);
 		
 		// Draw a tutorial skill tree
 		if(urlParams.get("draw")) {

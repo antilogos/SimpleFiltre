@@ -57,14 +57,6 @@ function extractNodesData(jsonData) {
 									&& !value.isBlighted && (!value.spc || value.spc.length == 0)) {
 			nodeMap[key] = value;
 		}
-		if(value.isMastery && value.group) {
-			const group = passiveSkillTreeData.groups[value.group];
-			const nodeObject = value;
-			nodeObject.x = group.x;
-			nodeObject.y = group.y;
-			nodeObject.masteryImg = "images/mastery-connected-2_0.png";
-			nodeMap[key] = nodeObject;
-		}
 	}
 
 	// Parse the groups to get coordinate of the center of circle if needed
@@ -349,18 +341,26 @@ function buildClassIcon(node, svg) {
 };
 
 
-function buildMasteryIcon(node, svg) {
+function buildMasteryIcon(svg) {
 	let zoom = 10;
-	const img = document.createElementNS("http://www.w3.org/2000/svg","image");
-	const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
-	img.setAttribute("x", node.x/zoom-(78*zoom/2));
-	img.setAttribute("y", node.y/zoom-(77*zoom/2));
-	img.setAttribute("width", 78*zoom/2);
-	img.setAttribute("height", 77*zoom/2);
-	img.setAttribute("href",node.masteryImg);
-	img.setAttribute("xlink:href",node.masteryImg);
-	gPanel.appendChild(img);
-	return gPanel;
+	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+		if(value.isMastery && value.group) {
+			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+			const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+			const group = passiveSkillTreeData.groups[value.group];
+			
+			const masteryImg = "images/mastery-connected-2_0.png";
+			
+			img.setAttribute("x", (group.x-78*zoom/2)/zoom);
+			img.setAttribute("y", (group.y-77*zoom/2)/zoom);
+			img.setAttribute("width", 78*zoom/2);
+			img.setAttribute("height", 77*zoom/2);
+			img.setAttribute("href",masteryImg);
+			img.setAttribute("xlink:href",masteryImg);
+			gPanel.appendChild(img);
+			svg.appendChild(gPanel);
+		}
+	}
 };
 
 
