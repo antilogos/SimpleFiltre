@@ -424,8 +424,8 @@ function buildMasteryIcon(svg) {
 			const clipper = "url(#clipper" + key + ")"
 			img.setAttribute("x", group.x/zoom);
 			img.setAttribute("y", group.y/zoom);
-			img.setAttribute("width", 788);
-			img.setAttribute("height", 710);
+			img.setAttribute("width", 2408);
+			img.setAttribute("height", 297);
 			img.setAttribute("href",imageUrl);
 			img.setAttribute("xlink:href",imageUrl);
 			img.setAttribute("clip-path",clipper);
