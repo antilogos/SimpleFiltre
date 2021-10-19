@@ -73,7 +73,9 @@
 		let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
 		let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
 		svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX +300) + " " + (maxViewY-minViewY +300));
-		document.getElementById("maindiv").appendChild(svg);
+		let mainDiv = document.getElementById("maindiv");
+		while(mainDiv.firstChild()) mainDiv.removeElement(mainDiv.firstChild());
+		mainDiv.appendChild(svg);
 	}
 	</script>
 </head>
