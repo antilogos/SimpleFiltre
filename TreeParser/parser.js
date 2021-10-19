@@ -343,8 +343,8 @@ function buildClassIcon(node, svg) {
 
 function buildMasteryIcon(svg) {
 	let imageUrl = "mastery-active-selected-3.png";
-	let imageSize = {x:100,y:100};
-	let zoom = 10;
+	let imageSize = {x:99,y:99};
+	let zoom = 5;
 	let masteryPosition = [
 	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAccuracyActive.png", x:imageSize.x*8,y:imageSize.y*1},
 	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourActive.png", x:imageSize.x*13,y:imageSize.y*0},
