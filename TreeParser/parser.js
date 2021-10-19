@@ -411,7 +411,7 @@ function buildMasteryIcon(svg) {
 			const clipper = "url(#clipper" + key + ")"
 			
 			const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
-			clipPath.setAttribute("id",clipper);
+			clipPath.setAttribute("id","#clipper" + key);
 			const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
 			rectClip.setAttribute("x", offsetClipX);
 			rectClip.setAttribute("y", offsetClipY);
