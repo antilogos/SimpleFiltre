@@ -26,36 +26,54 @@ function parseUrl(u) {
 	const ascendancyClass = view.getInt8(5);
 	
 	const nodeSkillCount = view.getInt8(6);
-	// List of passiveNodes are UInt16 from offset 7
+	
 	var passiveNodes = [];
-	for(var i = 0; i < nodeSkillCount; i+=2){
-		try {
-	  		passiveNodes.push(view.getUint16(7+i));
-		} catch (error) {
-  			console.error(error);
-		}
-	}
-	
-	const clusterNodeCount = view.getInt8(7+2*nodeSkillCount);
-	// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
 	var clusterNodes = [];
-	for(var i = 0; i < clusterNodeCount; i+=2){
-		try {
-	  		clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
-		} catch (error) {
-  			console.error(error);
+	var masteryNodes = new Map();
+	
+	if(version == 4) {
+		// List of passiveNodes are UInt16 from offset 7
+		for(var i = 0; i < nodeSkillCount; i+=2){
+			try {
+				passiveNodes.push(view.getUint16(7+i));
+			} catch (error) {
+				console.error(error);
+			}
+		}
+	} else {
+		// List of passiveNodes are UInt16 from offset 7
+		var passiveNodes = [];
+		for(var i = 7; i < buffer.length; i+=2){
+			try {
+				passiveNodes.push(view.getUint16(i));
+			} catch (error) {
+				console.error(error);
+			}
 		}
 	}
-	
-	const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
-	// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
-	var masteryNodes = new Map();
-	for(var i = 0; i < masteryNodeCount; i+=4){
-		try {
-			let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
-	  		masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
-		} catch (error) {
-  			console.error(error);
+		
+	if(version > 4) {
+		const clusterNodeCount = view.getInt8(7+2*nodeSkillCount);
+		// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
+		for(var i = 0; i < clusterNodeCount; i+=2){
+			try {
+				clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
+		if(version > 5) {
+			const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
+			// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
+			for(var i = 0; i < masteryNodeCount; i+=4){
+				try {
+					let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
+					masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
+				} catch (error) {
+					console.error(error);
+				}
+			}
 		}
 	}
 	
