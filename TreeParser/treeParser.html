@@ -59,12 +59,8 @@
 			// Draw the explanation box
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
-			for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
-				if(parseUrl(tutorialNodes["b1"]).startingClass == passiveSkillTreeData.nodes[value].classStartIndex) {
-					// Get the passives nodes for the Starting class
-					buildClassIcon(passiveSkillTreeData.nodes[value], svg);
-				}
-			}
+			Object.entries(passiveSkillTreeData.nodes).filter(n => n.classStartIndex == parseUrl(tutorialNodes["b1"]).startingClass).forEach(n => buildClassIcon(n, svg));
+			
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
 		} else if(urlParams.get("hash")) {
 			buildPath(parseUrl(urlParams.get("hash")), "stroke:#00F;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);

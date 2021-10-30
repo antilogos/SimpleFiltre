@@ -244,9 +244,11 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 	nodesObject.mastery.forEach( (value) => {
 		const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 		nodePoint.setAttribute("cx", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].x);
-		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);		
-		nodePoint.setAttribute("fill", "#00F");
-		nodePoint.setAttribute("r", 96);
+		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);
+		nodePoint.setAttribute("fill", "#0FF");
+		nodePoint.setAttribute("stroke", "#0A6");
+		nodePoint.setAttribute("stroke-width", "30");
+		nodePoint.setAttribute("r", 66);
 		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
 		svg.appendChild(nodePoint);
 		svgElements.push(nodePoint);	
