@@ -9,10 +9,10 @@ function decodeBase64(s) {
 	}
 	return r;
 };
-	
-function parseUrl(u) {
+
+function hashToView(hash) {
 	// Converting url encoded in base64 with some quirks into binary
-	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
+	let buffer = decodeBase64(hash.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
 	let reader = new Uint8Array(buffer.length);
 	for(let i = 0; i < buffer.length; i++){
 		reader[i] = buffer[i].charCodeAt(0);
@@ -20,11 +20,17 @@ function parseUrl(u) {
 	// do something with each byte in the array
 	let view = new DataView(reader.buffer, 0);
 
+	return view;
+}
+
+function parseUrl(url) {
+	const view = hashToView(url);
 	// This is how the passive skill tree url is
 	const version = view.getInt32(0);
 	const characterClass = view.getInt8(4);
 	const ascendancyClass = view.getInt8(5);
 	
+	// or fullscreen in version 4
 	const nodeSkillCount = view.getInt8(6);
 	
 	var passiveNodes = [];
@@ -57,23 +63,22 @@ function parseUrl(u) {
 			// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
 			for(var i = 0; i < clusterNodeCount; i+=2){
 					clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
-				
+			}
+
+			if(version > 5) {
+				try {
+					const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
+					// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
+					for(var i = 0; i < masteryNodeCount; i+=4){
+							let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
+							masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
+					}
+				} catch (error) {
+					console.error(error);
+				}
 			}
 		} catch (error) {
 			console.error(error);
-		}
-
-		if(version > 5) {
-			try {
-				const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
-				// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
-				for(var i = 0; i < masteryNodeCount; i+=4){
-						let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
-						masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
-				}
-			} catch (error) {
-				console.error(error);
-			}
 		}
 	}
 	
