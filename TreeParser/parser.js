@@ -48,12 +48,12 @@ function parseUrl(u) {
 	}
 	
 	const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
-	// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
+	// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
 	var masteryNodes = new Map();
 	for(var i = 0; i < masteryNodeCount; i+=4){
 		try {
 			let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
-	  		masteryNodes.set(masteryPair & 0xffff,  masteryPair >>> 16);
+	  		masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
 		} catch (error) {
   			console.error(error);
 		}
