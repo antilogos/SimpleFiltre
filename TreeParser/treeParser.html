@@ -58,8 +58,9 @@
 			// Draw the explanation box
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
-			for( let [key, value] of Object.entries(parseUrl(tutorialNodes["b1"]))) {
-				if(passiveSkillTreeData.nodes[value].classStartIndex) {
+			for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+				if(parseUrl(tutorialNodes["b1"]).startingClass == passiveSkillTreeData.nodes[value].classStartIndex)) {
+					// Get the passives nodes for the Starting class
 					buildClassIcon(passiveSkillTreeData.nodes[value], svg);
 				}
 			}

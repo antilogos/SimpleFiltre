@@ -12,7 +12,7 @@ function decodeBase64(s) {
 	
 function parseUrl(u) {
 	// Converting url encoded in base64 with some quirks into binary
-    	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
+	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
 	let reader = new Uint8Array(buffer.length);
 	for(let i = 0; i < buffer.length; i++){
 		reader[i] = buffer[i].charCodeAt(0);
@@ -24,26 +24,42 @@ function parseUrl(u) {
 	const version = view.getInt32(0);
 	const characterClass = view.getInt8(4);
 	const ascendancyClass = view.getInt8(5);
-	const isFullscreen = view.getInt8(6);
-
-	// List of passiveNodes are Int16 from offset 5
+	
+	const nodeSkillCount = view.getInt8(6);
+	// List of passiveNodes are UInt16 from offset 7
 	var passiveNodes = [];
-	for(var i = 7; i < buffer.length; i+=2){
+	for(var i = 0; i < nodeSkillCount; i+=2){
 		try {
-	  		passiveNodes.push(view.getUint16(i));
+	  		passiveNodes.push(view.getUint16(7+i));
 		} catch (error) {
   			console.error(error);
 		}
 	}
 	
-	// Get the passives nodes for the Ascendancy and Starting class
-	for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
-        	if(value.classStartIndex == characterClass) {
-			passiveNodes.push(parseInt(key));
+	const clusterNodeCount = view.getInt8(7+2*nodeSkillCount);
+	// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
+	var clusterNodes = [];
+	for(var i = 0; i < clusterNodeCount; i+=2){
+		try {
+	  		clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
+		} catch (error) {
+  			console.error(error);
 		}
 	}
-
-	return passiveNodes;
+	
+	const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
+	// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
+	var masteryNodes = new Map();
+	for(var i = 0; i < masteryNodeCount; i+=4){
+		try {
+			let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
+	  		masteryNodes.set(masteryPair & 0xffff,  masteryPair >>> 16);
+		} catch (error) {
+  			console.error(error);
+		}
+	}
+	
+	return {tree: passiveNodes, cluster: clusterNodes, mastery: masteryNodes, startingClass: characterClass};
 };
 
 // Take the passive skill tree and extract all the nodes that are relevant with added coordinates
@@ -96,7 +112,10 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cx", node.x);
 	nodePoint.setAttribute("cy", node.y);
 	
-	if(node.isKeystone) {
+	if(node.isMastery) {
+		nodePoint.setAttribute("fill", "#00F");
+		nodePoint.setAttribute("r", 96);
+	} else if(node.isKeystone) {
 		nodePoint.setAttribute("fill", "#F00");
 		nodePoint.setAttribute("r", 96);
 	} else if(node.isNotable) {
@@ -153,10 +172,10 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 };
 
 
-function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
+function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 	var filteredNode = [];
 	var svgElements = [];
-	for( let origin of Object.values(nodeArray)) {
+	for( let origin of Object.values(nodesObject.tree)) {
         	if(nodeMap[origin]) {
 			filteredNode[origin] = nodeMap[origin];
 		}
@@ -196,6 +215,15 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 			}
 		}
 	}
+	
+	// Draw cluster nodes
+	// TODO
+	
+	// Draw masteries
+	nodesObject.mastery.forEach( (value) => {
+		buildSvgNode(value);
+	});
+	
 	return svgElements;
 };
 
@@ -340,7 +368,6 @@ function buildClassIcon(node, svg) {
 	svg.appendChild(gPanel);
 };
 
-
 function buildMasteryIcon(svg) {
 	let imageUrl = "mastery-active-selected-3.png";
 	let imageSize = {x:104,y:99};
@@ -432,6 +459,7 @@ function buildMasteryIcon(svg) {
 			gPanel.appendChild(img);
 			svg.appendChild(gPanel);
 		}
+		break;
 	}
 };
 
