@@ -223,7 +223,7 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);		
 		nodePoint.setAttribute("fill", "#00F");
 		nodePoint.setAttribute("r", 96);
-		nodePoint.setAttribute("id", "node_"+node.id);
+		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
 		svgElements.push(nodeConnection);	
 	});
 	
