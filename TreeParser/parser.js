@@ -112,10 +112,7 @@ function buildSvgNode(node) {
 	nodePoint.setAttribute("cx", node.x);
 	nodePoint.setAttribute("cy", node.y);
 	
-	if(node.isMastery) {
-		nodePoint.setAttribute("fill", "#00F");
-		nodePoint.setAttribute("r", 96);
-	} else if(node.isKeystone) {
+	if(node.isKeystone) {
 		nodePoint.setAttribute("fill", "#F00");
 		nodePoint.setAttribute("r", 96);
 	} else if(node.isNotable) {
@@ -221,7 +218,13 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 	
 	// Draw masteries
 	nodesObject.mastery.forEach( (value) => {
-		buildSvgNode(value);
+		const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		nodePoint.setAttribute("cx", passiveSkillTreeData.groups[value].x);
+		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[value].y);		
+		nodePoint.setAttribute("fill", "#00F");
+		nodePoint.setAttribute("r", 96);
+		nodePoint.setAttribute("id", "node_"+node.id);
+		svgElements.push(nodeConnection);	
 	});
 	
 	return svgElements;
