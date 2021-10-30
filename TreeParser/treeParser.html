@@ -59,7 +59,7 @@
 			// Draw the explanation box
 			buildContext(tutorialNodes["labelExt"], tutorialNodes["labelPos"],svg);
 			// Draw the icon of the class
-			Object.entries(passiveSkillTreeData.nodes).filter(n => n.classStartIndex == parseUrl(tutorialNodes["b1"]).startingClass).forEach(n => buildClassIcon(n, svg));
+			Object.values(passiveSkillTreeData.nodes).filter(n => n.classStartIndex == parseUrl(tutorialNodes["b1"]).startingClass).forEach(n => buildClassIcon(n, svg));
 			
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
 		} else if(urlParams.get("hash")) {
