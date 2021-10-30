@@ -66,7 +66,7 @@
 			}
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
 		} else if(urlParams.get("hash")) {
-			buildPath(parseUrl(urlParams.get("hash")), "#00F",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(urlParams.get("hash")), "stroke:#00F;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 		}
 
 		let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
