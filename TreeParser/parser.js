@@ -49,7 +49,7 @@ function parseUrl(url) {
 	} else {
 		try {
 			// List of passiveNodes are UInt16 from offset 7
-			for(var i = 7; i < buffer.length; i+=2){
+			for(var i = 7; i < view.buffer.length; i+=2){
 				passiveNodes.push(view.getUint16(i));
 			}
 		} catch (error) {
