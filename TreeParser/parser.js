@@ -39,7 +39,7 @@ function parseUrl(url) {
 	
 	if(version > 4) {
 		// List of passiveNodes are UInt16 from offset 7
-		for(var i = 0; i < nodeSkillCount; i+=2){
+		for(var i = 0; i < nodeSkillCount*2; i+=2){
 			try {
 				passiveNodes.push(view.getUint16(7+i));
 			} catch (error) {
@@ -61,7 +61,7 @@ function parseUrl(url) {
 		try {
 			const clusterNodeCount = view.getInt8(7+2*nodeSkillCount);
 			// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
-			for(var i = 0; i < clusterNodeCount; i+=2){
+			for(var i = 0; i < clusterNodeCount*2; i+=2){
 					clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
 			}
 
@@ -69,7 +69,7 @@ function parseUrl(url) {
 				try {
 					const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
 					// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
-					for(var i = 0; i < masteryNodeCount; i+=4){
+					for(var i = 0; i < masteryNodeCount*2; i+=4){
 							let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
 							masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
 					}
@@ -248,6 +248,7 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 		nodePoint.setAttribute("fill", "#00F");
 		nodePoint.setAttribute("r", 96);
 		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
+		svg.appendChild(nodePoint);
 		svgElements.push(nodePoint);	
 	});
 	
