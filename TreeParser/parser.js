@@ -191,7 +191,6 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 	}
 };
 
-
 function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 	var filteredNode = [];
 	var svgElements = [];
@@ -200,6 +199,8 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 			filteredNode[origin] = nodeMap[origin];
 		}
 	}
+	// Add starting class node to the route
+	filteredNode.push(Object.values(passiveSkillTreeData.nodes).find(n => n.classStartIndex == nodesObject.startingClass));
 	// Draw array by getting all nodes and cheking their out
 	for( let [key, origin] of Object.entries(filteredNode)) {
 		if(origin.x && origin.y && origin.out) {
