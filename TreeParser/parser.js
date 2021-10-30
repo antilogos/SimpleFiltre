@@ -37,7 +37,7 @@ function parseUrl(url) {
 	var clusterNodes = [];
 	var masteryNodes = new Map();
 	
-	if(version == 4) {
+	if(version > 4) {
 		// List of passiveNodes are UInt16 from offset 7
 		for(var i = 0; i < nodeSkillCount; i+=2){
 			try {
