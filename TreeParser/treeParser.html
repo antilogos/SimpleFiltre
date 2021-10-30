@@ -12,7 +12,7 @@
     	<script>
 	var passiveSkillTreeData;
 	var nodes;
-	fetch("data.json").then(response => response.json()).then(parsed => {
+	fetch("data-316.json").then(response => response.json()).then(parsed => {
 		passiveSkillTreeData = parsed;
 		nodes = extractNodesData(parsed);
 		init();
@@ -42,7 +42,8 @@
 			if(value.id) svg.appendChild(buildSvgNode(value));
 		}
 		// Display Masteries icon
-		buildMasteryIcon(svg);
+		// TODO disable while parsing masteries from url
+		// buildMasteryIcon(svg);
 		
 		// Draw a tutorial skill tree
 		if(urlParams.get("draw")) {
@@ -66,7 +67,7 @@
 			}
 			// buildPortrait(tutorialNodes["b1"], svg, nodes);
 		} else if(urlParams.get("hash")) {
-			buildPath(parseUrl(urlParams.get("hash")), "#00F",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
+			buildPath(parseUrl(urlParams.get("hash")), "stroke:#00F;stroke-width:128;stroke-linecap:round",svg,nodes,passiveSkillTreeData.constants.skillsPerOrbit, passiveSkillTreeData.constants.orbitRadii);
 		}
 
 		let minViewX = Math.ceil(Math.min(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
@@ -74,7 +75,9 @@
 		let maxViewX = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].x).map(n => n[1].x)));
 		let maxViewY = Math.ceil(Math.max(...Object.entries(nodes).filter(n => n[1].y).map(n => n[1].y)));
 		svg.setAttribute("viewBox",(minViewX -150) + " " + (minViewY -150) + " " + (maxViewX-minViewX +300) + " " + (maxViewY-minViewY +300));
-		document.getElementById("maindiv").appendChild(svg);
+		let mainDiv = document.getElementById("maindiv");
+		while(mainDiv.firstChild) mainDiv.removeChild(mainDiv.firstChild);
+		mainDiv.appendChild(svg);
 	}
 	</script>
 </head>
