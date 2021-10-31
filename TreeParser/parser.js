@@ -251,8 +251,8 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);
 		nodePoint.setAttribute("fill", "#0FF");
 		nodePoint.setAttribute("stroke", style.stroke);
-		nodePoint.setAttribute("stroke-width", "30");
-		nodePoint.setAttribute("r", 66);
+		nodePoint.setAttribute("stroke-width", style.width/4+20);
+		nodePoint.setAttribute("r", 56);
 		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
 		svg.appendChild(nodePoint);
 		svgElements.push(nodePoint);	
