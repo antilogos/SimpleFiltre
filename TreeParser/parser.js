@@ -69,7 +69,7 @@ function parseUrl(url) {
 				try {
 					const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
 					// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
-					for(var i = 0; i < masteryNodeCount*2; i+=4){
+					for(var i = 0; i < masteryNodeCount*4; i+=4){
 							let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
 							masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
 					}
