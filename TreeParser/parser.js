@@ -218,7 +218,9 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 						//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 						nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 						nodeConnection.setAttribute("fill", "none");
-						nodeConnection.setAttribute("style", style);
+						nodeConnection.setAttribute("stroke", style.stroke);
+						nodeConnection.setAttribute("stroke-width", style.width);
+						nodeConnection.setAttribute("stroke-linecap", "round");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);
 					// If not, draw line
@@ -228,7 +230,9 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("y1", origin.y);
 						nodeConnection.setAttribute("x2", dest.x);
 						nodeConnection.setAttribute("y2", dest.y);
-						nodeConnection.setAttribute("style", style);
+						nodeConnection.setAttribute("stroke", style.stroke);
+						nodeConnection.setAttribute("stroke-width", style.width);
+						nodeConnection.setAttribute("stroke-linecap", "round");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);	
 					}
@@ -246,7 +250,8 @@ function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 		nodePoint.setAttribute("cx", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].x);
 		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);
 		nodePoint.setAttribute("fill", "#0FF");
-		nodePoint.setAttribute("style", style);
+		nodePoint.setAttribute("stroke", style.stroke);
+		nodePoint.setAttribute("stroke-width", "30");
 		nodePoint.setAttribute("r", 66);
 		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
 		svg.appendChild(nodePoint);
