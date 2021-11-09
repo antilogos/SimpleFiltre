@@ -7,6 +7,50 @@
 	<style>
 	</style>
   	<script>
+			var catByClass = new Map();
+			catByClass.set("Amulet", ["amulet"]);
+			// body_armour is str-dex-int chest, armour is common to all
+			catByClass.set("Body Armour", ["body_armour", "dex_armour", "dex_int_armour", "str_dex_armour", "str_dex_int_armour", "armour", "str_armour", "str_int_armour", "int_armour"]);
+			catByClass.set("Boots", ["boots"]);
+			catByClass.set("Gloves", ["gloves"]);
+			catByClass.set("Helmet", ["helmet"]);
+			catByClass.set("Shield", ["shield", "dex_int_shield", "str_dex_shield", "dex_shield", "str_shield", "str_int_shield"]);
+			catByClass.set("StackableCurrency", []);
+			catByClass.set("AtlasRegionUpgradeItem", []);
+			catByClass.set("Belt", ["belt"]);
+			catByClass.set("Currency", []);
+			catByClass.set("DivinationCard", []);
+			catByClass.set("IncubatorStackable", []);
+			catByClass.set("ExpeditionLogbook", []);
+			catByClass.set("HybridFlask", ["no_effect_flask_mod", "hybrid_flask", "flask"]);
+			catByClass.set("LifeFlask", ["life_flask", "no_effect_flask_mod", "flask"]);
+			catByClass.set("ManaFlask", ["mana_flask", "no_effect_flask_mod", "flask"]);
+			catByClass.set("UtilityFlask", ["utility_flask", "critical_utility_flask", "flask"]);
+			catByClass.set("Active Skill Gem", []);
+			catByClass.set("Support Skill Gem", []);
+			catByClass.set("AbyssJewel", ["abyss_jewel_melee","abyss_jewel_ranged","abyss_jewel_caster","abyss_jewel_summoner","abyss_jewel"]);
+			catByClass.set("Jewel", ["jewel"]);
+			catByClass.set("MapFragment", []);
+			catByClass.set("Map", ["map", "old_map", "low_tier_map", "mid_tier_map", "top_tier_map"]);
+			catByClass.set("Quiver", ["quiver"]);
+			// unset_ring are extra mods
+			catByClass.set("Ring", ["ring","unset_ring"]);
+			catByClass.set("Claw", ["claw"]);
+			catByClass.set("Dagger", ["attack_dagger"]);
+			catByClass.set("Rune Dagger", ["dagger"]);
+			catByClass.set("One Hand Axe", ["axe"]);
+			catByClass.set("One Hand Mace", ["mace"]);
+			catByClass.set("Sceptre", ["sceptre"]);
+			catByClass.set("One Hand Sword", ["sword"]);
+			catByClass.set("Thrusting One Hand Sword", ["rapier"]);
+			catByClass.set("Wand", ["wand", "weapon_can_roll_minion_modifiers"]);
+			catByClass.set("FishingRod", []);
+			catByClass.set("Bow", ["bow"]);
+			catByClass.set("Staff", ["staff"]);
+			catByClass.set("Warstaff", ["attack_staff"]);
+			catByClass.set("Two Hand Axe", ["axe"]);
+			catByClass.set("Two Hand Mace", ["mace"]);
+			catByClass.set("Two Hand Sword", ["sword"]);
 	var allMods, itemType, loadMod;
 	fetch("https://raw.githubusercontent.com/brather1ng/RePoE/master/RePoE/data/mods.json").then(response => response.json()).then(parsed => {
 		allMods = parsed;
@@ -18,10 +62,11 @@
 		loadMod = true;
     init();
 	});
-  var baseItems, itemTag, loadItem;
+  var classItems, baseItems, itemTag, loadItem;
   fetch("https://raw.githubusercontent.com/brather1ng/RePoE/master/RePoE/data/base_items.json").then(response => response.json()).then(parsed => {
 		baseItems = parsed;
-    console.log("class list:", new Set(Object.entries(baseItems).map(m => m[1].item_class)));
+		classItems = new Set(Object.entries(baseItems).map(m => m[1].item_class));
+    console.log("class list missing:", Object.entries(classItems).filter(c => !catByClass.has(c)));
     itemTag = new Set(Object.entries(baseItems).flatMap(m => m[1].tags));
     console.log("item tag list:", itemTag);
 		loadItem = true;
@@ -40,6 +85,7 @@
 	//	tag in item not in type: "not_for_sale", "atlas_base_type", "amuletatlas1", "amuletatlas2", "amuletatlas3", "demigods", "talisman", "bootsatlas1", "bootsatlas2", "bootsatlas3", "bootsatlasdexint", "glovesatlasdex", "glovesatlasint", "glovesatlasstr", "glovesatlasstrint", "helmetatlas1", "currency", "watchstone", "beltatlas1", "beltatlas2", "bestiary_net", "high_level_map", "sextant", "currency_shard", "affliction_orb", "quality_currency", "breachstone_splinter", "breach_blessing", "essence", "catalyst", "legion_splinter", "harbinger_orb_shard", "mushrune", "weapon_divination", "divination_card", "jewellery_divination", "shaper_divination", "armour_divination", "elder_divination", "gem", "up_to_level_8_gem", "up_to_level_2_gem", "level_capped_gem", "vaal_gem", "support_gem", "heist_coin", "dexjewel", "intjewel", "strjewel", "affliction_splinter", "breachstone", "breachstone2", "breachstone3", "breachstone4", "atziri1", "atziri2", "indoors_area", "dungeon", "mountain", "urban", "cave", "temple", "swamp", "forest", "beach", "shaped_map", "can_be_infected_map", "quiveratlas1", "twostonering", "ringatlas1", "ringatlas2", "ringatlas3", "ringatlas4", "ringatlas5", "rusted_scarab", "polished_scarab", "gilded_scarab", "jewelled_scarab", "onehand", "maraketh", "wandatlas1", "twohand", "small_staff", "warstaff"
 	// sample from itemType: "one_handed_mod", "specific_weapon", "two_handed_mod", "shield_mod", "dual_wielding_mod", "bow_elder", "sword_shaper", "body_armour_crusader", "gloves_eyrie", "sword_basilisk", "axe_basilisk", "claw_basilisk", "dagger_basilisk", "rune_dagger_basilisk", "bow_basilisk", "2h_sword_basilisk", "2h_axe_basilisk", "2h_sword_shaper", "2h_axe_shaper", "axe_shaper", "claw_shaper", "dagger_shaper", "rune_dagger_shaper", "bow_shaper", "ring_eyrie", "quiver_elder", "ring_shaper", "ring_adjudicator", "mace_basilisk", "sceptre_basilisk", "2h_mace_basilisk", "staff_basilisk", "warstaff_basilisk", "2h_mace_shaper", "staff_shaper", "warstaff_shaper", "mace_shaper", "sceptre_shaper", "ring_elder", "wand_basilisk", "wand_shaper", "ring_crusader", "helmet_eyrie", "helmet_shaper", "quiver_adjudicator", "quiver_shaper", "2h_sword_elder", "2h_axe_elder", "staff_elder", "warstaff_elder", "sword_elder", "gloves_elder", "shield_elder", "shield_eyrie", "amulet_eyrie", "body_armour_basilisk", "body_armour_elder", "body_armour_shaper", "shield_adjudicator", "amulet_adjudicator", "boots_adjudicator", "boots_basilisk", "quiver_basilisk", "amulet_basilisk", "amulet_elder", "2h_sword_adjudicator", "2h_axe_adjudicator", "staff_adjudicator", "warstaff_adjudicator", "bow_adjudicator", "helmet_elder", "gloves_shaper", "affliction_area_damage", "affliction_axe_and_sword_damage", "affliction_mace_and_staff_damage", "affliction_dagger_and_claw_damage", "affliction_bow_damage", "affliction_wand_damage", "affliction_damage_with_two_handed_melee_weapons", "affliction_attack_damage_while_dual_wielding_", "affliction_attack_damage_while_holding_a_shield", "affliction_attack_damage_", "affliction_aura_effect", "affliction_brand_damage", "affliction_spell_damage", "affliction_channelling_skill_damage", "affliction_chaos_damage", "affliction_cold_damage", "affliction_critical_chance", "affliction_curse_effect", "affliction_fire_damage_over_time_multiplier", "affliction_chaos_damage_over_time_multiplier", "affliction_physical_damage_over_time_multiplier", "affliction_cold_damage_over_time_multiplier", "affliction_damage_over_time_multiplier", "affliction_effect_of_non-damaging_ailments", "affliction_elemental_damage", "affliction_fire_damage", "affliction_life_and_mana_recovery_from_flasks", "affliction_flask_duration"
 
+
 	function init() {
 		if(loadMod && loadItem) {
 	    // all item mods
@@ -49,16 +95,77 @@
 			tagsCommon = Array.from(itemType).filter(o => Array.from(itemTag).includes(o));
 			tagsUnlink = Array.from(itemType).filter(o => !Array.from(itemTag).includes(o));
 			Object.values(allMods).filter(m => m.spawn_weights.filter(s => s.weight > 0).map(s => s.tag).includes(tagsUnlink[1]))
+			// after loading, display all item class
+			displayItemClass();
 		}
-	}
+	};
 
-	function listAffixFromCat(cat) = {
-		
-	}
+	function listAffixFromCat(cat) {
+		return Object.values(allMods).filter(m => m.domain == "item" && Object.entries(m.spawn_weights).filter(s => s[1].tag === cat).length > 0);
+	};
+
+	function displayItemClass() {
+		let classdiv = document.getElementById("classdiv");
+		while(classdiv.firstChild) classdiv.removeChild(classdiv.firstChild);
+		Array.from(classItems).filter(c => catByClass.get(c).length > 0).map( i => {
+			let button = document.createElement("button");
+			button.innerHTML = i;
+			button.onclick = function() { displayCatListForClass(i) };
+			classdiv.appendChild(button);
+		});
+	};
+
+	function displayCatListForClass(itemClass) {
+		let catdiv = document.getElementById("catdiv");
+		while(catdiv.firstChild) catdiv.removeChild(catdiv.firstChild);
+		Array.from(catByClass.get(itemClass)).filter(c => listAffixFromCat(c).length > 0).map( i => {
+			let button = document.createElement("button");
+			button.innerHTML = i;
+			button.onclick = function() { displayAffixForCat(i) };
+			catdiv.appendChild(button);
+		});
+	};
+
+	function displayAffixForCat(category) {
+		let affixdiv = document.getElementById("affixdiv");
+		while(affixdiv.firstChild) affixdiv.removeChild(affixdiv.firstChild);
+		// separate by generation_type
+		let generationType = new Set(listAffixFromCat(category).map(a => a.generation_type));
+		Array.from(generationType).map( i => {
+			let generationdiv = document.createElement("div");
+			generationdiv.style = "display: table; width: 100%;";
+			let generationdivcaption = document.createElement("div");
+			generationdivcaption.innerHTML = i;
+			generationdivcaption.style = "display: table-caption; font-weight: bold;";
+			generationdiv.appendChild(generationdivcaption);
+			// regroup by type
+			let affixType = new Set(listAffixFromCat(category).filter(a => a.generation_type == i).map(a => a.type));
+			Array.from(affixType).map( j => {
+				let rowdiv = document.createElement("div");
+				rowdiv.style = "display: table-row";
+				generationdiv.appendChild(rowdiv);
+				let typediv = document.createElement("div");
+				typediv.style = "display: table-cell";
+				typediv.innerHTML = j;
+				rowdiv.appendChild(typediv);
+				let statdiv = document.createElement("div");
+				statdiv.style = "display: table-cell";
+				statdiv.innerHTML = Array.from(listAffixFromCat(category)).filter(a => a.generation_type == i && a.type == j).flatMap(a => a.stats).map(s => s.id + ": " + s.min + "-" + s.max).join("<br />");
+				rowdiv.appendChild(statdiv);
+			});
+			affixdiv.appendChild(generationdiv);
+		});
+	};
 	</script>
 </head>
 	<body height="100vh">
 		<div id="maindiv" height="100vh">
+		</div>
+		<div id="classdiv" height="100vh">
+		</div>
+		<div id="catdiv" height="100vh">
+		</div>
+		<div id="affixdiv" height="100vh">
 		</div>
 	</body>
 </html>
