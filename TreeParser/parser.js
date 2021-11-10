@@ -9,10 +9,10 @@ function decodeBase64(s) {
 	}
 	return r;
 };
-	
-function parseUrl(u) {
+
+function hashToView(hash) {
 	// Converting url encoded in base64 with some quirks into binary
-    	let buffer = decodeBase64(u.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
+	let buffer = decodeBase64(hash.split("/").pop().replaceAll("-","+").replaceAll("_","/"));
 	let reader = new Uint8Array(buffer.length);
 	for(let i = 0; i < buffer.length; i++){
 		reader[i] = buffer[i].charCodeAt(0);
@@ -20,30 +20,69 @@ function parseUrl(u) {
 	// do something with each byte in the array
 	let view = new DataView(reader.buffer, 0);
 
+	return view;
+}
+
+function parseUrl(url) {
+	const view = hashToView(url);
 	// This is how the passive skill tree url is
 	const version = view.getInt32(0);
 	const characterClass = view.getInt8(4);
 	const ascendancyClass = view.getInt8(5);
-	const isFullscreen = view.getInt8(6);
-
-	// List of passiveNodes are Int16 from offset 5
+	
+	// or fullscreen in version 4
+	const nodeSkillCount = view.getInt8(6);
+	
 	var passiveNodes = [];
-	for(var i = 7; i < buffer.length; i+=2){
+	var clusterNodes = [];
+	var masteryNodes = new Map();
+	
+	if(version > 4) {
+		// List of passiveNodes are UInt16 from offset 7
+		for(var i = 0; i < nodeSkillCount*2; i+=2){
+			try {
+				passiveNodes.push(view.getUint16(7+i));
+			} catch (error) {
+				console.error(error);
+			}
+		}
+	} else {
 		try {
-	  		passiveNodes.push(view.getUint16(i));
+			// List of passiveNodes are UInt16 from offset 7
+			for(var i = 7; i < view.buffer.length; i+=2){
+				passiveNodes.push(view.getUint16(i));
+			}
 		} catch (error) {
-  			console.error(error);
+			console.error(error);
+		}
+	}
+		
+	if(version > 4) {
+		try {
+			const clusterNodeCount = view.getInt8(7+2*nodeSkillCount);
+			// List of extra cluster node are UInt16 from offset 7+ 2x number of skill nodes
+			for(var i = 0; i < clusterNodeCount*2; i+=2){
+					clusterNodes.push(view.getUint16(8+2*nodeSkillCount+i));
+			}
+
+			if(version > 5) {
+				try {
+					const masteryNodeCount = view.getInt8(8+2*nodeSkillCount+2*clusterNodeCount);
+					// List of mastery group/effect pair are UInt16 from offset 7+ 2x number of skill nodes
+					for(var i = 0; i < masteryNodeCount*4; i+=4){
+							let masteryPair = view.getUint32(9+2*nodeSkillCount+2*clusterNodeCount+i);
+							masteryNodes.set(masteryPair >>> 16,  masteryPair & 0xffff);
+					}
+				} catch (error) {
+					console.error(error);
+				}
+			}
+		} catch (error) {
+			console.error(error);
 		}
 	}
 	
-	// Get the passives nodes for the Ascendancy and Starting class
-	for( let [key, value] of Object.entries(passiveSkillTreeData.nodes)) {
-        	if(value.classStartIndex == characterClass) {
-			passiveNodes.push(parseInt(key));
-		}
-	}
-
-	return passiveNodes;
+	return {tree: passiveNodes, cluster: clusterNodes, mastery: masteryNodes, startingClass: characterClass};
 };
 
 // Take the passive skill tree and extract all the nodes that are relevant with added coordinates
@@ -61,25 +100,25 @@ function extractNodesData(jsonData) {
 
 	// Parse the groups to get coordinate of the center of circle if needed
 	for( let [key, value] of Object.entries(passiveSkillTreeData.groups)) {
+		// Ignore cluster jewels
 		if(!value.isProxy) {
-			// Orbit are at radius 0 when node is at the center
-			for( let orbit of value.orbits) {
-				// get the radius of the orbits from the groupNode
-				const radius = passiveSkillTreeData.constants.orbitRadii[orbit];		    
-				// Read only the nodes that matters and on that orbit
-				const filteredNode = value.nodes.filter(function (node) {return nodeMap[node] && nodeMap[node].orbit == orbit; });
-
-				for( let node of filteredNode) {
-					const nodeObject = nodeMap[node];
-					// Number of point on the circle
-					const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit];
-					// Place the node in the orbit and use orbit position to get him at the right location
-					if(skillOrbit != 0 && radius != 0) {
+			// No orbit declaration in group
+			for( let node of value.nodes) {
+				const nodeObject = nodeMap[node];
+				if(node in nodeMap) {
+					if(nodeObject.orbit != 0) {
+						// get the radius of the orbits from the groupNode
+						const radius = passiveSkillTreeData.constants.orbitRadii[nodeObject.orbit];
+						// Number of point on the circle
+						const skillOrbit = passiveSkillTreeData.constants.skillsPerOrbit[nodeObject.orbit]; 
+						// Place the node in the orbit and use orbit position to get him at the right location
 						nodeObject.x = value.x + (Math.sin(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 						nodeObject.y = value.y - (Math.cos(Math.PI*2*nodeObject.orbitIndex/skillOrbit)*radius);
 					} else {
+						// node from group without coordinates?
 						nodeObject.x = value.x;
 						nodeObject.y = value.y;
+						nodeObject.anomaly = true;
 					}
 					nodeObject.id = node;
 					// Store back the coordinates
@@ -152,15 +191,16 @@ function buildSvgConnection(origin, dest, orbitMap, radiiMap) {
 	}
 };
 
-
-function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
+function buildPath(nodesObject, style, svg, nodeMap, orbitMap, radiiMap) {
 	var filteredNode = [];
 	var svgElements = [];
-	for( let origin of Object.values(nodeArray)) {
+	for( let origin of Object.values(nodesObject.tree)) {
         	if(nodeMap[origin]) {
 			filteredNode[origin] = nodeMap[origin];
 		}
 	}
+	// Add starting class node to the route
+	filteredNode.push(Object.values(passiveSkillTreeData.nodes).find(n => n.classStartIndex == nodesObject.startingClass));
 	// Draw array by getting all nodes and cheking their out
 	for( let [key, origin] of Object.entries(filteredNode)) {
 		if(origin.x && origin.y && origin.out) {
@@ -178,7 +218,9 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 						//if(value.orbitIndex > target.orbitIndex) isBefore = "0";
 						nodeConnection.setAttribute("d", ["M",origin.x,origin.y,"A",radiiMap[dest.orbit],radiiMap[dest.orbit],"0","0",isBefore,dest.x,dest.y].join(" "));
 						nodeConnection.setAttribute("fill", "none");
-						nodeConnection.setAttribute("style", style);
+						nodeConnection.setAttribute("stroke", style.stroke);
+						nodeConnection.setAttribute("stroke-width", style.width);
+						nodeConnection.setAttribute("stroke-linecap", "round");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);
 					// If not, draw line
@@ -188,7 +230,9 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 						nodeConnection.setAttribute("y1", origin.y);
 						nodeConnection.setAttribute("x2", dest.x);
 						nodeConnection.setAttribute("y2", dest.y);
-						nodeConnection.setAttribute("style", style);
+						nodeConnection.setAttribute("stroke", style.stroke);
+						nodeConnection.setAttribute("stroke-width", style.width);
+						nodeConnection.setAttribute("stroke-linecap", "round");
 						svg.appendChild(nodeConnection);
 						svgElements.push(nodeConnection);	
 					}
@@ -196,6 +240,24 @@ function buildPath(nodeArray, style, svg, nodeMap, orbitMap, radiiMap) {
 			}
 		}
 	}
+	
+	// Draw cluster nodes
+	// TODO
+	
+	// Draw masteries
+	nodesObject.mastery.forEach( (value) => {
+		const nodePoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+		nodePoint.setAttribute("cx", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].x);
+		nodePoint.setAttribute("cy", passiveSkillTreeData.groups[passiveSkillTreeData.nodes[value].group].y);
+		nodePoint.setAttribute("fill", "#0FF");
+		nodePoint.setAttribute("stroke", style.stroke);
+		nodePoint.setAttribute("stroke-width", style.width/4+20);
+		nodePoint.setAttribute("r", 56);
+		nodePoint.setAttribute("id", "node_"+passiveSkillTreeData.nodes[value].id);
+		svg.appendChild(nodePoint);
+		svgElements.push(nodePoint);	
+	});
+	
 	return svgElements;
 };
 
@@ -333,11 +395,107 @@ function buildClassIcon(node, svg) {
 	img.setAttribute("y", node.y/zoom);
 	img.setAttribute("width", 788);
 	img.setAttribute("height", 710);
-	img.setAttribute("href","https://pathofexile.com/image/gen/inventory-sprite.png");
-	img.setAttribute("xlink:href","https://pathofexile.com/image/gen/inventory-sprite.png");
+	img.setAttribute("href",imageUrl);
+	img.setAttribute("xlink:href",imageUrl);
 	img.setAttribute("clip-path","url(#clipper)");
 	gPanel.appendChild(img);
 	svg.appendChild(gPanel);
+};
+
+function buildMasteryIcon(svg) {
+	let imageUrl = "mastery-active-selected-3.png";
+	let imageSize = {x:99,y:99};
+	let zoom = 5;
+	let masteryPosition = [
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAccuracyActive.png", x:imageSize.x*8,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourActive.png", x:imageSize.x*13,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourAndEnergyShieldActive.png", x:imageSize.x*14,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryArmourAndEvasionActive.png", x:imageSize.x*17,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAttackActive.png", x:imageSize.x*23,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAttributesActive.png", x:imageSize.x*21,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryAxeActive.png", x:imageSize.x*2,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBleedingActive.png", x:imageSize.x*7,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBlindActive.png", x:imageSize.x*22,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBlockActive.png", x:imageSize.x*22,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBowActive.png", x:imageSize.x*21,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryBrandActive.png", x:imageSize.x*18,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryChaosActive.png", x:imageSize.x*11,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryChargesActive.png", x:imageSize.x*15,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCasterActive.png", x:imageSize.x*14,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryClawsActive.png", x:imageSize.x*5,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryColdActive.png", x:imageSize.x*18,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCriticalActive.png", x:imageSize.x*10,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryCurseActive.png", x:imageSize.x*5,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDaggerActive.png", x:imageSize.x*0,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDamageOverTimeActive.png", x:imageSize.x*10,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDualWieldActive.png", x:imageSize.x*0,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryDurationActive.png", x:imageSize.x*16,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryElementalActive.png", x:imageSize.x*0,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEnergyActive.png", x:imageSize.x*7,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEvasionActive.png", x:imageSize.x*19,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryEvasionAndEnergyShieldActive.png", x:imageSize.x*4,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFlaskActive.png", x:imageSize.x*12,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFireActive.png", x:imageSize.x*16,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryFortifyActive.png", x:imageSize.x*1,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryImpaleActive.png", x:imageSize.x*8,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLightningActive.png", x:imageSize.x*13,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLifeActive.png", x:imageSize.x*12,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLeechActive.png", x:imageSize.x*19,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryLinkActive.png", x:imageSize.x*2,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMaceActive.png", x:imageSize.x*4,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryManaActive.png", x:imageSize.x*11,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMarkActive.png", x:imageSize.x*23,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMineActive.png", x:imageSize.x*20,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMinionDefenseActive.png", x:imageSize.x*3,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryMinionOffenseActive.png", x:imageSize.x*5,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryPhysicalActive.png", x:imageSize.x*15,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryPoisonActive.png", x:imageSize.x*3,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryProjectileActive.png", x:imageSize.x*6,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryReservationActive.png", x:imageSize.x*17,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryResistancesAndAilmentProtectionActive.png", x:imageSize.x*6,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryShieldActive.png", x:imageSize.x*6,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasterySpellSuppressionActive.png", x:imageSize.x*2,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryStaffActive.png", x:imageSize.x*3,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasterySwordActive.png", x:imageSize.x*1,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTotemActive.png", x:imageSize.x*9,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTrapActive.png", x:imageSize.x*1,y:imageSize.y*2},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryTwoHandActive.png", x:imageSize.x*4,y:imageSize.y*1},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryWarcryActive.png", x:imageSize.x*20,y:imageSize.y*0},
+	{mastery:"Art/2DArt/SkillIcons/passives/MasteryPassiveIcons/PassiveMasteryWandActive.png", x:imageSize.x*9,y:imageSize.y*1}];
+	
+	
+	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+		if(value.isMastery && value.group) {
+			const group = passiveSkillTreeData.groups[value.group];			
+			const masteryImg = masteryPosition.find(m => m.mastery == value.activeIcon);
+			let offsetClipX = masteryImg.x + group.x/zoom;
+			let offsetClipY = masteryImg.y + group.y/zoom
+			const clipper = "url(#clipper" + key + ")"
+			
+			const clipPath = document.createElementNS("http://www.w3.org/2000/svg","clipPath");
+			clipPath.setAttribute("id","clipper" + key);
+			const rectClip = document.createElementNS("http://www.w3.org/2000/svg","rect");
+			rectClip.setAttribute("x", offsetClipX);
+			rectClip.setAttribute("y", offsetClipY);
+			rectClip.setAttribute("width", imageSize.x);
+			rectClip.setAttribute("height", imageSize.y);
+			clipPath.appendChild(rectClip);
+			svg.appendChild(clipPath);
+			const gPanel = document.createElementNS("http://www.w3.org/2000/svg","g");
+			gPanel.setAttribute("transform","scale("+zoom+") translate("+(-1*masteryImg.x-imageSize.x/2)+","+(-1*masteryImg.y-imageSize.y/2)+")");
+			const img = document.createElementNS("http://www.w3.org/2000/svg","image");
+			img.setAttribute("x", group.x/zoom);
+			img.setAttribute("y", group.y/zoom);
+			img.setAttribute("width", 2408);
+			img.setAttribute("height", 297);
+			img.setAttribute("href",imageUrl);
+			img.setAttribute("xlink:href",imageUrl);
+			img.setAttribute("clip-path",clipper);
+			gPanel.appendChild(img);
+			svg.appendChild(gPanel);
+		}
+		break;
+	}
 };
 
 
