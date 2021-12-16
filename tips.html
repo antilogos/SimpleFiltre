@@ -1,7 +1,7 @@
 <script type="text/javascript" language="JavaScript">
 
 const urlParams = new URLSearchParams(window.location.search);
-const numberOfTips = 60;
+const numberOfTips = 58;
 if(urlParams.get('r')) {
 	var randomNumber = urlParams.get('r') 
 }
@@ -50,25 +50,25 @@ showAll = function() {
 </style>
 
 <div id="tips1">
-1. Vous pouvez empêcher votre profil de passer AFK. Il suffit de laisser ouvrir l'écran social à l'onglet des groupes publiques.</br>
+1. La gemmes de soutien Générosité augmente les effets de l'aura du Golem de foudre et de Courroux.</br>
 </div>
 <div id="tips2">
-2. La gemmes de soutien Générosité augmente les effets de l'aura du Golem de foudre et de Courroux.</br>
+2. Les Attaques ont besoin d'un second jet de Précision pour confirmer un Coup Critique, autrement, il ne font que les dégâts normaux. C'est pourquoi la Précision est très importante et que le bouclier unique Lycosidae et le mod artisanal de Vagan sont très puissant.</br>
 </div>
 <div id="tips3">
-3. Les Attaques ont besoin d'un second jet de Précision pour confirmer un Coup Critique, autrement, il ne font que les dégâts normaux. C'est pourquoi la Précision est très importante et que le bouclier unique Lycosidae et le mod artisanal de Vagan sont très puissant.</br>
+3. Le bonus de Qualité des gemmes sur les Hérauts élémentaires sont des bonus globaux.</br>
 </div>
 <div id="tips4">
-4. Le bonus de Qualité des gemmes sur les Hérauts élémentaires sont des bonus globaux.</br>
+4. Il est conseillé de mettre le déplacement forcé sur le clic gauche pour éviter de stopper son mouvement quand vous fuyer à travers un groupe d'ennemis. Alternativement, vous pouvez mettre une compétence d'invocation de Golem ou une aptitude instantanée.</br>
 </div>
 <div id="tips5">
 5. Les joyaux unique qui convertissent des stats dans leurs rayons fonctionnent aussi sur les stats de créatures (si applicable).</br>
 </div>
 <div id="tips6">
-6. Vous pouvez mettre une compétence d'invocation de Golem en clic gauche. Cela apportera la même fonctionnalité que le «Déplacement uniquement», mais vous pourrez invoquer le Golem avec la touche Maj.</br>
+6. Les Coffres-fort ont un modificateur masqué d'augmentation de quantité basé sur leur Rareté.</br>
 </div>
 <div id="tips7">
-7. Déclenchement par seuil de dégâts subis niveau 1 + sort niveau 1 + Toucher maudit niveau 20 et une Malédiction niveau 20. Cela nécessite 4 emplacements de gemmes, mais c'est peut être ce dont votre build à besoin.</br>
+7. Déclenchement par seuil de dégâts subis niveau 1 + sort niveau 1 + Toucher calamiteux niveau 20 et une Malédiction niveau 20. Cela nécessite 4 emplacements de gemmes, mais c'est peut être ce dont votre build à besoin.</br>
 </div>
 <div id="tips8">
 8. Utiliser une compétence avec un délai (comme les pièges ou Flèche Explosive) en utilisant la même gemme à la même position dans votre configuration d'armes alternative, permet de lancer la première compétence avec un niveau et des supports différents (comme piège multiple ou projectile multiple), puis de changer d'armes avec une gemme niveau max et des soutiens de dégâts, ce seront ces gemmes qui seront pris en compte pour les dégâts.</br>
@@ -77,10 +77,10 @@ showAll = function() {
 9. Les mines et les pièges ont un temps d'armement de base de 0,5 seconde. Il est répété si vos mines ou pièges peuvent se déclencher plusieurs fois.</br>
 </div>
 <div id="tips10">
-10. Les compétences créant des entités utilisant vos stats (pièges, mines, totem) peuvent déclencher le gain de Charges de Frénésies aux alliés proches du Bouclier unique Charité de Victario.</br>
+10. Chaînes Temporelles n'affectent pas la durée des temps de recharges des Gemmes de déclenchement.</br>
 </div>
 <div id="tips11">
-11. Si vous utilisez des joyaux corrompus pour réduire votre maximum de charge à 0, vous serez toujours au maximum de Charges.</br>
+11. Réduire son maximum de charge à 0 sert uniquement à conserver l'état "au maximum de Charges".</br>
 </div>
 <div id="tips12">
 12. Un blocage compte comme prendre un coup, ce qui réinitialise l'entropie de votre Évasion.</br>
@@ -92,52 +92,52 @@ showAll = function() {
 14. Maintenir la souris enfoncer pour se déplacer n'est pas conseiller car envoie un nombre important d'action au serveur. Si votre build se fait ejecté du serveur pour cette raison, essayer de vous déplacer par des clics discontinus.</br>
 </div>
 <div id="tips15">
-15. Chaînes Temporelles n'affectent pas la durée des temps de recharges des Gemmes de déclenchement.</br>
+15. La "vitesse d'action" (comme avec Chaînes Temporelles et l'Autel d'Accélération) ne change pas directement votre vitesse de déplacement, d'Incantation ou d'Attaque. Il s'agit du temps relatif pour votre personnage et affecte donc la durée des actions, ce qui comprend le déplacement, l'incantation et l'attaque.</br>
 </div>
 <div id="tips16">
 16. Chaînes Temporelles ne ralentit pas vos Totems (ils ont leurs propres vitesse d'action et ne sont pas affectés par les malédictions), alors qu'un Affaiblissement vous affectant sera répercuté sur eux.</br>
 </div>
 <div id="tips17">
-17. Les Essences Reminescences de corruption s'utilisent sur les autres Essences. Leurs seuls intérêt est cependant limité aux Essences viollettes (Détresse, Éffroi, Mépris et Convoitise)</br>
+17. Les Essences "Vestiges de corruption" s'utilisent sur les autres Essences. Leurs seuls intérêt est cependant limité aux Essences viollettes (Détresse, Éffroi, Mépris et Convoitise) afin d'obtenir des essences "uniques" (Délire, Horreur, Hystérie et Démence)</br>
 </div>
 <div id="tips18">
-18. Le Flacon d'Atziri, Aubuscule, Coeur Incandescent, Ombre de Solaris et les mods de Rajout de dégâts élémentaires en chaos fonctionnent comme trois mods distinct, une pour chaque élément. Le gain des dégâts Rajoutés est donc plus important en cas de conversion d'un élément en un autre.</br>
+18. Les mods de Rajout de dégâts élémentaires/non-chaos en chaos fonctionnent comme des mods distinct, un pour chaque type. Le gain des dégâts Rajoutés est donc plus important en cas de conversion d'un type au suivant.</br>
 </div>
 <div id="tips19">
-19. La réduction des dégâts du mod sur le torse unique Kintsugi marche sur le reflet et les dégâts sur la durée, et ceux-ci ne déclenchent pas de coups.</br>
+19. Utilisez les Flacons uniques Saveurs défendus suivi de Distillat de Divination pour profiter des ses effets. Certains vont même jusqu'à utiliser Sagesse de Lavianga avec Arrache-âme à la place de Saveurs défendus</br>
 </div>
 <div id="tips20">
-20. Les Coffres-fort ont un modificateur masqué d'augmentation de quantité basé sur leur Rareté.</br>
+20. Les Burins de Cartographes sont les seuls objets monétaire affectant la qualité pouvant être placés sur un objet non-idenfié.</br>
 </div>
 <div id="tips21">
-21. Chaînes Temporelles et l'Autel d'Accélération ne change pas votre vitesse de déplacement, d'Incantation ou d'Attaque, mais le temps relatif pour votre personnage. Les flacons et les compétences Vaals durent plus longtemps sur vous si vous êtes affecté par Chaîne temporelle.</br>
+21. Les bonus aux quantité et rareté de butin sur une Carte n'est pas additive mais multiplicative avec vos stats d'augmentation du butin. Mais la modification de quantité de butin sur vous n'est pas pris en compte pour le butin des Cartes (non-uniques).</br>
 </div>
 <div id="tips22">
-22. Feu Vertueux à un coût en Mana de 0. En utilisant le Soutien Totem incantateur, et d'autre support avec un multiplicateur de Mana important, ils seront tous multipliés par 0... Les Totems de Feu Purificateur resteront donc gratuit en Mana.</br>
+22. Les Coffres-fort sont modifiés par les affixes de la Carte, comme n'importe quel autre monstre. Certains Affixes du Coffre-fort peuvent devenir beaucoup plus dangereux de cette manière.</br>
 </div>
 <div id="tips23">
-23. Les personnages créés avec l'option "joueur contre joueur uniquement" font d'excellentes Mules. Ils peuvent être inviter et rejoindre les repaires des autres, commencent directement dans votre repaire, et n'ont pas besoin de tuer Hillock.</br>
+23.  Vous pouvez soutenir Feu Vertueux avec le bonus de Déclenchement pendant la canalisation. Lancez le sort de Canalisation jusqu'à déclenché Feu Vertueux, puis remplacer ce sort par un autre soutien.</br>
 </div>
 <div id="tips24">
-24. Utilisez les Flacons uniques Saveurs Défendus suivi de Distillat de Divination pour profiter des ses effets.</br>
+24. Feu Vertueux à un coût en Mana de 0. En utilisant le Soutien Totem incantateur, et d'autre support avec un multiplicateur de Mana important, ils seront tous multipliés par 0... Les Totems de Feu Purificateur resteront donc gratuit en Mana.</br>
 </div>
 <div id="tips25">
-25. Les Burins de Cartographes sont les seuls objets monétaire affectant la qualité pouvant être placés sur un objet non-idenfié.</br>
+25. La plupart des ennemis ont des temps de recharge sur leurs compétences et ont mêmes une autre version de certaines compétences qu'ils utilisent quand ils sont animés en Spectre.</br>
 </div>
 <div id="tips26">
-26. Les prophéties augmentant le nombre d'ennemi, et donc la quantité d'objet et d'expérience, sont recherchées à haut niveau.</br>
+26. Vous pouvez supprimer la notification de niveau supérieure d'une gemme en faisant un clic droit dessus. Elles n'apparaîtront plus que en bas de votre inventaire.</br>
 </div>
 <div id="tips27">
-27. Vous pouvez soutenir Feu Vertueux avec le bonus de Déclenchement pendant la canalisation. Lancez le sort de Canalisation jusqu'à déclenché Feu Vertueux, puis remplacer ce sort par un autre soutien.</br>
+27. Maintenez Majuscule pour attaquer depuis votre position actuelle. Vous pouvez aussi cliquer sur l'icône de la compétence puis activer l'option "toujours attaquer sur place".</br>
 </div>
 <div id="tips28">
-28. Les bonus aux quantité et rareté de butin sur une Carte n'est pas additive mais multiplicative avec vos stats d'augmentation du butin. Mais la modification de quantité de butin sur vous n'est pas pris en compte pour le butin des Cartes (non-uniques).</br>
+28. Les gemmes de soutien doivent être placées dans des châsses reliées pour affecter une autre gemme. L'ordre et la distance importe peu.</br>
 </div>
 <div id="tips29">
-29. La plupart des ennemis ont des temps de recharge sur leurs compétences et ont mêmes une autre version de certaines compétences qu'ils utilisent quand ils sont animés en Spectre.</br>
+29. Les joueurs du même groupe rejoindront les mêmes instances.</br>
 </div>
 <div id="tips30">
-30. Placer un sol Frigorifiant sous les ennemis ne compte pas mécaniquement comme étant vous qui les avez Frigorifiés. Les effets de Vortex, Armure Arctic ou Flèche de glace ne marcheront donc pas avec le mod de la Hache unique Dyadus "Les ennemis que vous avez Frigorifiés ont 100% d'augmentation des dégâts subies provenant de Brulûres".</br>
+30. Placer un sol Frigorifiant sous les ennemis ne compte pas mécaniquement comme étant vous qui les avez Frigorifiés. Les effets de Vortex, Armure Arctique, Vague de froid ou Givre dévorant ne marcheront donc pas avec le mod de la Hache unique Dyadus "Les ennemis que vous avez Frigorifiés ont 100% d'augmentation des dégâts subies provenant de Brulûres".</br>
 </div>
 <div id="tips31">
 31. "Vous n'êtes pas affecté" par un effet néfaste considère que vous avez l'effet néfaste sur vous, mais sans en subir les effets, contrairement à "Immunisé". Cela peut être important pour certains mod conditionnel comme "Si vous êtes maudit" qui fonctionnera si vous "n'êtes pas affecté par les malédictions" et pas si vous êtes "immunisé" aux malédictions.</br>
@@ -149,31 +149,31 @@ showAll = function() {
 33. Quand un ennemi meurt par un dégâts sur la durée, et qu'il subissait plusieurs dégâts sur la durée, le jeu considère que seul l'effet le plus ancien a tué l'ennemi. Vous pouvez donc utiliser un dégâts sur la durée avec des soutien comme Augmentation de durée et Rareté des objets avant d'autre dégâts sur la durée pour profiter du bonus de butin.</br>
 </div>
 <div id="tips34">
-34. Si un ennemi meurt d'un dégâts sur la durée provenant d'un piège, d'une mine, d'un totem ou d'une créature, c'est le joueur qui est considéré comme l'ayant tué.</br>
+34. Si un ennemi meurt d'un dégâts sur la durée provenant d'un piège, d'une mine, d'un totem ou d'une créature, c'est le joueur qui est considéré comme l'ayant tué. (Dû à une limitation technique) </br>
 </div>
 <div id="tips35">
-35. Les Coffres-fort sont modifiés par les affixes de la Carte, comme n'importe quel autre monstre. Certains Affixes du Coffre-fort peuvent devenir beaucoup plus dangereux de cette manière.</br>
+35. Ne communiquez jamais votre mot de passe à qui que ce soit.</br>
 </div>
 <div id="tips36">
-36. Vous pouvez supprimer la notification de niveau supérieure d'une gemme en faisant un clic droit dessus. Elles n'apparaîtront plus que en bas de votre inventaire.</br>
+36. Certains objets doivent être identifiés avec un Parchemin de sagesse avant de pouvoir être utilisés.</br>
 </div>
 <div id="tips37">
-37. Les joueurs du même groupe rejoindront les mêmes instances.</br>
+37. La Partie II et l'Épilogue vous inflige une pénalité d'expérience à la mort. 5% et 10% respectivement. Cela ne peut descendre votre niveau, donc assurez-vous de terminez votre niveau avant la confrontation d'un boss difficile.</br>
 </div>
 <div id="tips38">
-38. Les gemmes de soutien doivent être placées dans des châsses reliées pour affecter une autre gemme. L'ordre et la distance importe peu.</br>
+38. Une fois les 10 actes terminées, utilisez la commande '/passifs' dans le tchat pour vérifier que vous n'avez pas manqué de point de talent passifs en récompense de quête.</br>
 </div>
 <div id="tips39">
-39. Maintenez Majuscule pour attaquer depuis votre position actuelle. Vous pouvez aussi cliquer sur l'icône de la compétence puis activer l'option "toujours attaquer sur place".</br>
+39. L'Ascendance peut être changée en enlevant tous vos points d'Ascendance (5 points de remboursement pour chaque point), et en allant à l'Autel d'Ascendance à la fin du Labyrinthe (enlevez vos points une fois devant et pas avant de commencer le labyrinthe).</br>
 </div>
 <div id="tips40">
-40. Ne communiquez jamais votre mot de passe à qui que ce soit.</br>
+40. Dans votre Repaire, vous aurez accès aux réserves pour les hortisanats, les pièces marquées, contrats et plans, ainsi que les artefacts d'expédition.</br>
 </div>
 <div id="tips41">
-41. Certains objets doivent être identifiés avec un Parchemin de sagesse avant de pouvoir être utilisés.</br>
+41. Dans votre Repaire, le point de téléportation, l'établi d'artisant et le dispositif cartographique ont plusieurs modèles disponibles et peuvent être déplacés.</br>
 </div>
 <div id="tips42">
-42. La Partie II et l'Épilogue vous inflige une pénalité d'expérience à la mort. 5% et 10% respectivement. Cela ne peut descendre votre niveau, donc assurez-vous de terminez votre niveau avant la confrontation d'un boss difficile.</br>
+42. Si vos armes disparaissent subîtement, vérifiez qu'elles ne sont pas simplement dans la configuration d'armes secondaire, en appuyant sur 'X'.</br>
 </div>
 <div id="tips43">
 43. Les Gemmes de compétences acquièrent de l'expérience comme vous lorsqu'elles sont équipées. Même en configuration d'armes secondaire.</br>
@@ -218,16 +218,16 @@ showAll = function() {
 56. Si vous êtes à court de Parchemin de sagesse, vendre des Orbes de transmutation au marchand est le moyen le plus efficace et sans perte de vous en refaire un stock.</br>
 </div>
 <div id="tips57">
-57. L'Ascendance peut être changée en enlevant tous vos points d'Ascendance (5 points de remboursement pour chaque point), et en allant à l'Autel d'Ascendance à la fin du Labyrinthe (enlevez vos points une fois devant et pas avant de commencer le labyrinthe).</br>
+57. Il est possible d'enchâsser un joyau intemporel dans une châsse non alloué de l'arbre avec les touches Shift+Ctrl, afin de voir les modifications apporté dans le rayon.</br>
 </div>
 <div id="tips58">
-58. Dans votre Repaire, le point de téléportation, l'établi d'artisant et le dispositif cartographique ont plusieurs modèles disponibles et peuvent être déplacés.</br>
+58. Les préférences d'onglets permet de ranger certains types d'objets sans avoir à changer d'onglet.</br>
 </div>
 <div id="tips59">
-59. Si vos armes disparaissent subîtement, vérifiez qu'elles ne sont pas simplement dans la configuration d'armes secondaire, en appuyant sur 'X'.</br>
+59. 
 </div>
 <div id="tips60">
-60. Une fois les 10 actes terminées, utilisez la commande '/passifs' dans le tchat pour vérifier que vous n'avez pas manqué de point de talent passifs en récompense de quête.</br>
+60. 
 </div>
 <br/>
 <div>
