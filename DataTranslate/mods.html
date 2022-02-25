@@ -33,27 +33,27 @@
 			dicoTag.set("boots", "Boots");
 			dicoTag.set("helmet", "Helmet");
 			// Try to regroup each mod tag with a basic category to look at
-			var catByClass = new Map();
+			var modGroup = new Map();
 			// body_armour is str-dex-int chest, armour is common to all
 			var itemBaseInfluence = ["sword", "2h_sword", "2h_axe", "axe", "claw", "dagger", "rune_dagger", "bow", "2h_mace", "staff", "warstaff", "mace", "sceptre", "wand", "helmet", "body_armour", "quiver", "gloves", "belt", "boots", "shield", "ring", "amulet"];
 			var influenceType = ["_shaper", "_elder", "_basilisk", "_eyrie", "_adjudicator", "_crusader"];
-			catByClass.set("Influence Elder", itemBaseInfluence.map( base => influenceType.map( influence => base.concat(influence) )).reduce((a,b)=> a.concat(b), []));
-			catByClass.set("One Handed Weapon", ["one_hand_weapon", "claw", "axe","mace", "sceptre", "rapier", "wand", "weapon_can_roll_minion_modifiers", "sword", "dagger", "attack_dagger", "weapon", "ranged", "dual_wielding_mod"]);
-			catByClass.set("Two Handed Weapon", ["bow", "warstaff", "staff", "attack_staff", "axe","mace", "sword", "fishing_rod", "weapon", "ranged", "two_hand_weapon", "two_handed_mod"]);
-			catByClass.set("Body Armour", ["default", "body_armour", "dex_armour", "dex_int_armour", "str_dex_armour", "str_dex_int_armour", "armour", "str_armour", "str_int_armour", "int_armour", "not_int", "not_str", "not_dex", "focus"]);
-			catByClass.set("Boots", ["boots", "ward_armour"]);
-			catByClass.set("Gloves", ["gloves", "ward_armour"]);
-			catByClass.set("Helmet", ["helmet", "ward_armour"]);;
-			catByClass.set("Accessories", ["ring","unset_ring", "belt", "amulet"]);
-			catByClass.set("Offhand", ["quiver", "shield", "dex_int_shield", "str_dex_shield", "dex_shield", "str_shield", "str_int_shield", "shield_mod"]);
-			catByClass.set("Jewel", ["jewel", "abyss_jewel_melee","abyss_jewel_ranged","abyss_jewel_caster","abyss_jewel_summoner","abyss_jewel", "expansion_jewel_large", "expansion_jewel_medium", "expansion_jewel_small"]);
-			catByClass.set("Flask", ["utility_flask", "critical_utility_flask", "life_flask", "no_effect_flask_mod", "flask", "expedition_flask"]);
-			catByClass.set("Map", ["map", "low_tier_map", "mid_tier_map", "top_tier_map", "maven_map", "primordial_map", "maven_void_map_feared", "maven_void_map", "secret_area"]);
-			catByClass.set("Logbook", ["expedition_logbook", "expedition_faction_black_scythe", "expedition_faction_order_of_the_chalice", "expedition_faction_knights_of_the_sun", "expedition_faction_druids_of_the_broken_circle"]);
-			catByClass.set("Large Cluster Jewel", ["affliction_axe_and_sword_damage", "affliction_mace_and_staff_damage", "affliction_dagger_and_claw_damage", "affliction_bow_damage", "affliction_wand_damage", "affliction_damage_with_two_handed_melee_weapons", "affliction_attack_damage_while_dual_wielding_", "affliction_attack_damage_while_holding_a_shield", "affliction_attack_damage_", "affliction_brand_damage", "affliction_spell_damage", "affliction_chaos_damage", "affliction_cold_damage", "affliction_elemental_damage", "affliction_fire_damage", "affliction_lightning_damage", "affliction_minion_damage", "affliction_physical_damage"]);
-			catByClass.set("Medium Cluster Jewel", ["affliction_area_damage", "affliction_critical_chance", "affliction_fire_damage_over_time_multiplier", "affliction_chaos_damage_over_time_multiplier", "affliction_physical_damage_over_time_multiplier", "affliction_cold_damage_over_time_multiplier", "affliction_damage_over_time_multiplier", "affliction_effect_of_non-damaging_ailments", "affliction_projectile_damage", "affliction_totem_damage", "affliction_trap_and_mine_damage", "affliction_warcry_buff_effect", "affliction_channelling_skill_damage", "affliction_life_and_mana_recovery_from_flasks", "affliction_flask_duration", "affliction_damage_while_you_have_a_herald", "affliction_minion_damage_while_you_have_a_herald", "affliction_minion_life", "old_do_not_use_affliction_aura_effect", "old_do_not_use_affliction_curse_effect"]);
-			catByClass.set("Small Cluster Jewel", ["affliction_maximum_life", "affliction_chance_to_dodge_attacks", "affliction_cold_resistance", "affliction_chaos_resistance", "affliction_armour", "affliction_evasion", "affliction_fire_resistance", "affliction_maximum_mana", "affliction_curse_effect_small", "affliction_maximum_energy_shield", "affliction_lightning_resistance", "affliction_chance_to_block", "affliction_reservation_efficiency_small"]);
-			var currCat = Array.from(catByClass.values()).reduce((a,b)=> a.concat(b), []);
+			modGroup.set("Influences", itemBaseInfluence.map( base => influenceType.map( influence => base.concat(influence) )).reduce((a,b)=> a.concat(b), []));
+			modGroup.set("One Handed Weapon", ["one_hand_weapon", "claw", "axe","mace", "sceptre", "rapier", "wand", "weapon_can_roll_minion_modifiers", "sword", "dagger", "attack_dagger", "weapon", "ranged", "dual_wielding_mod"]);
+			modGroup.set("Two Handed Weapon", ["bow", "warstaff", "staff", "attack_staff", "axe","mace", "sword", "fishing_rod", "weapon", "ranged", "two_hand_weapon", "two_handed_mod"]);
+			modGroup.set("Body Armour", ["default", "body_armour", "dex_armour", "dex_int_armour", "str_dex_armour", "str_dex_int_armour", "armour", "str_armour", "str_int_armour", "int_armour", "not_int", "not_str", "not_dex", "focus"]);
+			modGroup.set("Boots", ["boots", "ward_armour"]);
+			modGroup.set("Gloves", ["gloves", "ward_armour"]);
+			modGroup.set("Helmet", ["helmet", "ward_armour"]);;
+			modGroup.set("Accessories", ["ring","unset_ring", "belt", "amulet"]);
+			modGroup.set("Offhand", ["quiver", "shield", "dex_int_shield", "str_dex_shield", "dex_shield", "str_shield", "str_int_shield", "shield_mod"]);
+			modGroup.set("Jewel", ["jewel", "abyss_jewel_melee","abyss_jewel_ranged","abyss_jewel_caster","abyss_jewel_summoner","abyss_jewel", "expansion_jewel_large", "expansion_jewel_medium", "expansion_jewel_small"]);
+			modGroup.set("Flask", ["utility_flask", "critical_utility_flask", "life_flask", "no_effect_flask_mod", "flask", "expedition_flask"]);
+			modGroup.set("Map", ["map", "low_tier_map", "mid_tier_map", "top_tier_map", "maven_map", "primordial_map", "maven_void_map_feared", "maven_void_map", "secret_area"]);
+			modGroup.set("Logbook", ["expedition_logbook", "expedition_faction_black_scythe", "expedition_faction_order_of_the_chalice", "expedition_faction_knights_of_the_sun", "expedition_faction_druids_of_the_broken_circle"]);
+			modGroup.set("Large Cluster Jewel", ["affliction_axe_and_sword_damage", "affliction_mace_and_staff_damage", "affliction_dagger_and_claw_damage", "affliction_bow_damage", "affliction_wand_damage", "affliction_damage_with_two_handed_melee_weapons", "affliction_attack_damage_while_dual_wielding_", "affliction_attack_damage_while_holding_a_shield", "affliction_attack_damage_", "affliction_brand_damage", "affliction_spell_damage", "affliction_chaos_damage", "affliction_cold_damage", "affliction_elemental_damage", "affliction_fire_damage", "affliction_lightning_damage", "affliction_minion_damage", "affliction_physical_damage"]);
+			modGroup.set("Medium Cluster Jewel", ["affliction_area_damage", "affliction_critical_chance", "affliction_fire_damage_over_time_multiplier", "affliction_chaos_damage_over_time_multiplier", "affliction_physical_damage_over_time_multiplier", "affliction_cold_damage_over_time_multiplier", "affliction_damage_over_time_multiplier", "affliction_effect_of_non-damaging_ailments", "affliction_projectile_damage", "affliction_totem_damage", "affliction_trap_and_mine_damage", "affliction_warcry_buff_effect", "affliction_channelling_skill_damage", "affliction_life_and_mana_recovery_from_flasks", "affliction_flask_duration", "affliction_damage_while_you_have_a_herald", "affliction_minion_damage_while_you_have_a_herald", "affliction_minion_life", "old_do_not_use_affliction_aura_effect", "old_do_not_use_affliction_curse_effect"]);
+			modGroup.set("Small Cluster Jewel", ["affliction_maximum_life", "affliction_chance_to_dodge_attacks", "affliction_cold_resistance", "affliction_chaos_resistance", "affliction_armour", "affliction_evasion", "affliction_fire_resistance", "affliction_maximum_mana", "affliction_curse_effect_small", "affliction_maximum_energy_shield", "affliction_lightning_resistance", "affliction_chance_to_block", "affliction_reservation_efficiency_small"]);
+			var currCat = Array.from(modGroup.values()).reduce((a,b)=> a.concat(b), []);
 
 			// Load all mods from repoe file
 	var allMods, itemType, loadMod;
@@ -103,7 +103,7 @@
 			tagsUnlink = Array.from(itemType).filter(o => !Array.from(itemTag).includes(o));
 			Object.values(allMods).filter(m => m.spawn_weights.filter(s => s.weight > 0).map(s => s.tag).includes(tagsUnlink[1]))
 			// after loading, display all item class
-			displayItemClass();
+			displayModsGroup();
 		}
 	};
 
@@ -112,18 +112,43 @@
 	};
 
 // Display
-	function displayItemClass() {
+	function displayModsGroup() {
 		let classdiv = document.getElementById("classdiv");
 		while(classdiv.firstChild) classdiv.removeChild(classdiv.firstChild);
-		Array.from(catByClass.values()).map( i => {
+		modGroup.forEach( (value, key, map) => {
+			let button = document.createElement("button");
+			button.innerHTML = key;
+			button.onclick = function() { displayCatListForGroup(value) };
+			classdiv.appendChild(button);
+		});
+	};
+
+	function displayItemClass() {
+		/* Not used anymore
+		let classdiv = document.getElementById("classdiv");
+		while(classdiv.firstChild) classdiv.removeChild(classdiv.firstChild);
+		Array.from(classItems).filter(c => catByClass.get(c) && catByClass.get(c).length > 0).map( i => {
 			let button = document.createElement("button");
 			button.innerHTML = i;
 			button.onclick = function() { displayCatListForClass(i) };
 			classdiv.appendChild(button);
 		});
+		*/
+	};
+
+	function displayCatListForGroup(groupMod) {
+		let catdiv = document.getElementById("catdiv");
+		while(catdiv.firstChild) catdiv.removeChild(catdiv.firstChild);
+		Array.from(groupMod).filter(c => listAffixFromCat(c).length > 0).map( i => {
+			let button = document.createElement("button");
+			button.innerHTML = i;
+			button.onclick = function() { displayAffixForCat(i) };
+			catdiv.appendChild(button);
+		});
 	};
 
 	function displayCatListForClass(itemClass) {
+		/* Not used anymore
 		let catdiv = document.getElementById("catdiv");
 		while(catdiv.firstChild) catdiv.removeChild(catdiv.firstChild);
 		Array.from(catByClass.get(itemClass)).filter(c => listAffixFromCat(c).length > 0).map( i => {
@@ -132,6 +157,7 @@
 			button.onclick = function() { displayAffixForCat(i) };
 			catdiv.appendChild(button);
 		});
+		*/
 	};
 
 	function cascadeDisplay(elem, display) {
