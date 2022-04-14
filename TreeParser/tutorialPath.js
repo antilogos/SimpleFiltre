@@ -9,6 +9,7 @@ necromancer["e3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.
 necromancer["labelExt"] = ["Reine","Horde","Cendre"];
 necromancer["labelPos"] = [100,100];
 
+var elementalist = {};
 elementalist["b1"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.17.0/AAAABgMCHgDwSbEfAjbFMFtJsiL0LJzYJO-IAuOsl9fP-Te86mpDB6VVxm0Zg9sI9DpY37BsC1ZIHYOCEAQHES2TJwAB-vEA8A==";
 elementalist["b2"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.17.0/AAAABgMCOEmxSVEwW0my18_YJKyXBx686mpDFr8A8H7HpwgEB6yY8NWdrmwL37CD2-WLEQ8RLVVLjRlrF20ZNsVVxhGW3Ywi9CycJpXviALjOlhQQvk3jDZ-rwelYeLgEn_GlS4fAgj0UzVWSB2DghDZXxvxkycAAfrxAPA=";
 elementalist["b3"] = "https://fr.pathofexile.com/fullscreen-passive-skill-tree/3.17.0/AAAABgMCUBBYrJfdjLzqakMWv6cIL51sC8BmJpVVxiL0LJxQQgLj8B_VpuASBLN8g1ZIjDZJsUlRMFtJstfPlS4kqhbzBx5_xiY8Fm_jaoKbGmwEBzbpdhGdrq7_37CiAOWLHwIRLWsXMtHr7tgkEQ9FnRGWVUuD2_DVrJgI9DpYYeJTUvk374h-rwelAPBtGUVHNsV-x40ZUzWa4B2DghDZXxvxkycAAfrxAPA=";
