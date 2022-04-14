@@ -16,8 +16,10 @@
 			let tutorialTrees = tutorial[urlParams.get("link")];
 			if(urlParams.get("step")) {
 				let tutorialStep = tutorialTrees[urlParams.get("step")];
-				window.location.href = tutorialStep;
-				const redirectText = "Vous allez être redirigez vers " + tutorialStep;
+				let version = "3.17.0"
+				let baseUrlPath = "https://fr.pathofexile.com/fullscreen-passive-skill-tree"
+				window.location.href = baseUrlPath + "/" + version + "/" + tutorialStep;
+				const redirectText = "Vous allez être redirigez vers " + baseUrlPath + "/" + version + "/" + tutorialStep;
 				const text = document.createTextNode(redirectText);
 				document.getElementById("maindiv").appendChild(text);
 			}
