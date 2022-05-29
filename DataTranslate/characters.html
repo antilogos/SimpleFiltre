@@ -13,7 +13,8 @@
 	var jsonCharacters = [];
 			// Load all characters
 	accountName.forEach( account => {
-		fetch(baseApiUrl+characterApiUrl+account).then(response => response.json()).then(parsed => jsonCharacters += parsed);
+		//fetch(baseApiUrl+characterApiUrl+account, {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
+		fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/characters.html", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
 	});
 	
 	function init() {
