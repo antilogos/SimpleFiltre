@@ -13,13 +13,17 @@
 	var jsonCharacters = [];
 			// Load all characters
 	accountName.forEach( account => {
-		//fetch(baseApiUrl+characterApiUrl+account, {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
-		fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/get-characters.json", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
-	});
-	
-	function init() {
-	
-	};
+		fetch(baseApiUrl+characterApiUrl+account, {mode: 'no-cors',  headers: {
+		   'Access-Control-Allow-Origin' : '*'
+		}, referrerPolicy: 'no-referrer'})
+		.then(response => {
+			console.log("response : ", response);
+			response.json()}
+		).then(parsed => jsonCharacters += parsed);
+			//fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/get-characters.json", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
+		});
+		
+	function init() {};
 
 // Display
 	</script>
