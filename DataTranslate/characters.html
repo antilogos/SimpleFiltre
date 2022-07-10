@@ -19,8 +19,9 @@
 				   'Access-Control-Allow-Origin' : '*'
 				}, referrerPolicy: 'no-referrer'}
 				).then(response => {
-					console.log("response : ", response);
-					response.json()}
+					console.log("response: ", response);
+					console.log("response body: ", response.body);
+					response.body.json()}
 				).then(parsed => jsonCharacters += parsed);
 					//fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/get-characters.json", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
 			}).then( () => { recursiveFetch(i+1) });
