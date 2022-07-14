@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CHARATER DATA TO JSON CONVERTER</title>
+	<link rel="shortcut icon" type="image/png" href="https://docs.google.com/drawings/d/e/2PACX-1vRmsUqz_w0baXylHjox1oadVVCB2B0kq8LtyvLEx9M7rZTjSr18UDf0IaDljbf5db3uUkd2Fi9MRwHX/pub?w=51&h=50"/>
+	<style>
+	</style>
+	<!-- script src="tutorialPath.js" type="text/javascript"></script -->
+	<script>
+	const urlParams = new URLSearchParams(window.location.search);
+			
+	function init() {
+		// Redirect to a tutorial skill tree
+		if(urlParams.get("account")) {
+			let baseUrlPath = "https://fr.pathofexile.com/character-window/get-characters?&accountName="
+			window.location.href = baseUrlPath + urlParams.get("account");
+			const redirectText = "Vous allez être redirigez vers " + baseUrlPath + urlParams.get("account");
+			const text = document.createTextNode(redirectText);
+			document.getElementById("maindiv").appendChild(text);
+		}
+	}
+	</script>
+</head>
+	<body height="100vh" onload="init()">
+		<div id="maindiv" height="100vh">
+		</div>
+	</body>
+</html>
