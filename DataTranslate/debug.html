@@ -13,12 +13,13 @@
 	
 	// Load all characters but no more than 1 per second
 	function recursiveFetch(i) {
-		fetch("https://filesamples.com/samples/code/json/sample2.json", {mode: 'no-cors', referrerPolicy: 'no-referrer'}
+		fetch("https://filesamples.com/samples/code/json/sample2.json", {mode: 'no-cors', referrerPolicy: 'no-referrer',headers:{'Cache-Control':'no-cache,no-store,must-revalidate','Pragma':'no-cache','Expires':0}}
 		).then(response => {
 			console.log("response: ", response);
 			console.log("response body: ", response.body);
-			console.log("response body json: ", response.body.json());
-		).then(parsed => jsonCharacters += parsed);
+			console.log("response body json: ", response.json());
+			jsonCharacters += parsed;
+		});
 	};
 	
 	var baseApiUrl = "https://www.pathofexile.com/";
