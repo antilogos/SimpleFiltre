@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>MODS DATA TO XLS CONVERTER</title>
+	<link rel="shortcut icon" type="image/png" href="https://docs.google.com/drawings/d/e/2PACX-1vRmsUqz_w0baXylHjox1oadVVCB2B0kq8LtyvLEx9M7rZTjSr18UDf0IaDljbf5db3uUkd2Fi9MRwHX/pub?w=51&h=50"/>
+	<style>
+	</style>
+  	<script>
+	function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+	};
+	
+	// Load all characters but no more than 1 per second
+	function recursiveFetch(i) {
+				fetch("https://filesamples.com/samples/code/json/sample2.json", {mode: 'no-cors',  headers: {
+				   'Access-Control-Allow-Origin' : '*'
+				}, referrerPolicy: 'no-referrer'}
+				).then(response => {
+					console.log("response: ", response);
+					console.log("response body: ", response.body);
+					response.body.json()}
+				).then(parsed => jsonCharacters += parsed);
+					//fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/get-characters.json", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
+			};
+	};
+	
+	var baseApiUrl = "https://www.pathofexile.com/";
+	var characterApiUrl = "character-window/get-characters?&accountName="
+	var accountName = ["vindoq","vindoq2","vindoq3","vindoq4","vindoq5","vindoq6","vindoqChance","vindoqName","vindoqGem","poefrguide"];
+	var jsonCharacters = [];
+	recursiveFetch(0);
+	function init() {};
+
+// Display
+	</script>
+</head>
+	<body height="100vh">
+		<div id="maindiv" height="100vh">
+		</div>
+		<div id="classdiv" height="100vh">
+		</div>
+		<div id="catdiv" height="100vh">
+		</div>
+		<div id="affixdiv" height="100vh">
+		</div>
+	</body>
+</html>
