@@ -13,16 +13,13 @@
 	
 	// Load all characters but no more than 1 per second
 	function recursiveFetch(i) {
-				fetch("https://filesamples.com/samples/code/json/sample2.json", {mode: 'no-cors',  headers: {
-				   'Access-Control-Allow-Origin' : '*'
-				}, referrerPolicy: 'no-referrer'}
-				).then(response => {
-					console.log("response: ", response);
-					console.log("response body: ", response.body);
-					response.body.json()}
-				).then(parsed => jsonCharacters += parsed);
-					//fetch("https://antilogos.github.io/SimpleFiltre/DataTranslate/get-characters.json", {mode: 'cors'}).then(response => response.json()).then(parsed => jsonCharacters += parsed);
-			};
+		fetch("https://filesamples.com/samples/code/json/sample2.json", {mode: 'no-cors', referrerPolicy: 'no-referrer'}
+		).then(response => {
+			console.log("response: ", response);
+			console.log("response body: ", response.body);
+			console.log("response body json: ", response.body.json());
+		).then(parsed => jsonCharacters += parsed);
+	};
 	
 	var baseApiUrl = "https://www.pathofexile.com/";
 	var characterApiUrl = "character-window/get-characters?&accountName="
