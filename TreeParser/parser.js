@@ -515,5 +515,5 @@ function extractNotables() {
 			nodeMap[key] = {icon: value.icon, stats: value.stats.concat(value.reminderText), name: value.name, type: typeNode};
 		}
 	}
-	return nodeMap;
+	return Object.values(nodeMap);
 };
