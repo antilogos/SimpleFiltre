@@ -504,7 +504,7 @@ function extractNotables() {
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
 		// No ascendencies, no placeholder masteries, no annointed-only and no cluster jewels
 		if((value.isNotable || value.isKeystone) && (!value.spc || value.spc.length == 0)) {
-			const typeNode;
+			var typeNode;
 			if(value.isKeystone) { 
 				typeNode = "keystone";
 			} else if(value.ascendancyName) {
