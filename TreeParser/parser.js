@@ -498,4 +498,14 @@ function buildMasteryIcon(svg) {
 	}
 };
 
-
+function extractNotables() {
+	// keep a map of nodes that matters
+	const nodeMap = new Map();
+	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
+		// No ascendencies, no placeholder masteries, no annointed-only and no cluster jewels
+		if(value.ascendancyName || value.isNotable && (!value.spc || value.spc.length == 0)) {
+			nodeMap[key] = value;
+		}
+	}
+	return nodeMap;
+};
