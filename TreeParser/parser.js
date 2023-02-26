@@ -504,7 +504,14 @@ function extractNotables() {
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
 		// No ascendencies, no placeholder masteries, no annointed-only and no cluster jewels
 		if((value.isNotable || value.isKeystone) && (!value.spc || value.spc.length == 0)) {
-			nodeMap[key] = {icon: value.icon, stats: value.stats.concat(value.reminderText), name: value.name};
+			const typeNode = if(value.isKeystone) { 
+				"keystone";
+			} else if(value.ascendancyName) {
+				"ascendancy notable";
+			} else {
+				"notable";
+			}
+			nodeMap[key] = {icon: value.icon, stats: value.stats.concat(value.reminderText), name: value.name, type: typeNode};
 		}
 	}
 	return nodeMap;
