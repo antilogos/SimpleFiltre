@@ -503,8 +503,8 @@ function extractNotables() {
 	const nodeMap = new Map();
 	for( let[key, value] of Object.entries(passiveSkillTreeData.nodes)) {
 		// No ascendencies, no placeholder masteries, no annointed-only and no cluster jewels
-		if(value.ascendancyName || value.isNotable && (!value.spc || value.spc.length == 0)) {
-			nodeMap[key] = value;
+		if((value.isNotable || value.isKeystone) && (!value.spc || value.spc.length == 0)) {
+			nodeMap[key] = {icon: value.icon, stats: value.stats.concat(value.reminderText), name: value.name};
 		}
 	}
 	return nodeMap;
