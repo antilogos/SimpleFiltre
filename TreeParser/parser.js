@@ -517,5 +517,5 @@ function extractNotables() {
 			nodeMap[value.name] = {reference:value.name, icon: value.icon, data: {stats: stats, name: value.name, type: typeNode}};
 		}
 	}
-	return Object.values(nodeMap);
+	return nodeMap;
 };
