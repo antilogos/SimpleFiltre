@@ -512,7 +512,9 @@ function extractNotables() {
 			} else {
 				typeNode = "notable";
 			}
-			nodeMap[key] = {icon: value.icon, stats: value.stats.concat(value.reminderText), name: value.name, type: typeNode};
+			var stats = value.stats;
+			if(value.reminderText) stats.concat(value.reminderText);
+			nodeMap[key] = {icon: value.icon, stats: stats, name: value.name, type: typeNode};
 		}
 	}
 	return Object.values(nodeMap);
