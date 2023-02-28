@@ -374,7 +374,7 @@ function buildContext(labels, pos, svg) {
 
 function buildClassIcon(node, svg) {
 	let imageUrl = "./inventory-sprite.png";
-	let classPosition = [{x:658,y:80},{x:320,y:580},{x:480,y:580},{x:658,y:480},{x:320,y:500},{x:658,y:160},{x:658,y:400}];
+	let classPosition = [{x:658,y:80},{x:658,y:480},{x:480,y:580},{x:160,y:500},{x:320,y:580},{x:160,y:580},{x:80,y:580}];
 	let imageSize = {x:76,y:80};
 	let zoom = 10;
 	let offsetClipX = classPosition[node.classStartIndex-1].x + node.x/zoom;
